@@ -1,0 +1,253 @@
+--- 
+status: publish
+meta: 
+  _thumbnail_id: "1746"
+  views: "63"
+  _aktt_hash_meta: ""
+  _layout: right_sidebar
+  aktt_notify_twitter: "no"
+  _bitly_trim: http://www.josephcrawford.com/?p=933
+  _edit_last: "1"
+  _radiostation_dependencies: s:6:"a:0:{}";
+type: post
+layout: post
+title: "Mojo Lists: The Depot Data Source (Part 4)"
+published: true
+tags: 
+- Development
+- Frameworks
+- JavaScript
+- Palm
+- Tutorials
+---
+In this tutorial we are going to cover using the Depot as a data source for a list.  We will be expanding on the code written in the previous parts of this tutorial listed below.
+
+Part 1: <a href="http://www.josephcrawford.com/2009/09/13/mojo-lists-part-1/">Mojo Lists</a><br />
+Part 2: <a href="http://www.josephcrawford.com/2009/09/21/mojo-lists-using-a-cookie-as-a-data-source-part-2/">Mojo Lists: Using a Cookie as a Data Source</a><br />
+Part 3: <a href="http://www.josephcrawford.com/2009/10/03/mojo-lists-restructuring-our-code-part-3/">Mojo Lists: Restructuring our Code</a>
+
+If you were able to follow along with using the cookie as a data source this is going to be relatively easy for you to integrate into the existing code.
+
+The first thing that I know we will create is the WBDepot model so we will open up our sources.json file and add that right after our WBCookie model.</p>
+	
+<pre lang="javascript" line="1">
+[
+    {“source”: “app/lib/utils.js”},
+    {“source”: “app/lib/WBModel.js”},
+    {“source”: “app/lib/WBBase.js”},
+    {“source”: “app/lib/WBCookie.js”},
+    {“source”: “app/lib/WBDepot.js”},
+    {“source”: “app/assistants/stage-assistant.js”},
+    {
+        “source”: “app/assistants/main-assistant.js”,
+        “scenes”: “main”
+    },
+    {
+        “source”: “app/assistants/cookie-assistant.js”,
+        “scenes”: “cookie”
+    },
+    {
+        “source”: “app/assistants/depot-assistant.js”,
+        “scenes”: “depot”
+    },
+    {
+        “source”: “app/assistants/sqlite-assistant.js”,
+        “scenes”: “sqlite”
+    },
+    {
+        “source”: “app/assistants/altervalue-assistant.js”,
+        “scenes”: “altervalue”
+    }
+]
+</pre>
+
+<p>Now we need to actually create the file for our WBDepot model so create the file /lib/WBDepot.js and add the following code.</p>
+
+<pre lang="javascript" line="1">
+// Inherit the WBBase object
+WBDepot.prototype = new WBBase;
+ 
+function WBDepot() {
+    var options = { name: ‘wb_depot_list_demo’, version: 1, replace: false, estimatedSize: 100000 };
+    this.depot = new Mojo.Depot(options, this.openSuccess.bind(this), this.openFailure.bind(this));
+}
+ 
+/**
+* Public methods that need to exist in all of our model objects, these override the methods in WBBase
+* Think of these as abstract methods.
+*/
+WBDepot.prototype.save = function(listContents)
+{
+    Mojo.Log.info(“Depot save started.”);
+    this.depot.add(
+        ‘listContents’,
+        listContents,
+        this.saveContentsSuccess.bind(this),
+        this.saveContentsFailure.bind(this)
+    );
+};
+ 
+ 
+/**
+* Methods that belong solely to the WBDepot object, these are only called internally and never called on the object instance
+*/
+WBDepot.prototype.openSuccess = function() {
+    Mojo.Log.info(“Depot opened successfully”);
+    this.depot.get(
+        “listContents”,
+        this.loadDepotContents.bind(this),
+        this.loadDefaultContents.bind(this)
+    );
+};
+ 
+WBDepot.prototype.openFailure = function(result) {
+    Mojo.Log.warn(“Unable to open depot: “, result);
+};
+ 
+WBDepot.prototype.loadDepotContents = function(result) {
+    if(result === null) {
+        Mojo.Log.warn(“Retrieved empty or null contents from the depot, using defaults.”);
+        this.loadDefaultContents();
+    } else {
+        Mojo.Log.info(“Retrieved contents from the depot.”);
+        this.list = result;
+    }
+};
+ 
+WBDepot.prototype.loadDefaultContents = function() {
+    Mojo.Log.info(“Loading default contents”);
+    this.contents = this.defaultContents;
+};
+ 
+WBDepot.prototype.saveContentsSuccess = function() {
+    Mojo.Log.info(“Contents saved to the depot.”);
+};
+ 
+WBDepot.prototype.saveContentsFailed = function(result) {
+  Mojo.Log.warn(“Depot save failed: “, result); 
+};
+</pre>
+
+<p>At first look this might seem like a confusing object because it has quite a few more methods than our WBCookie object.  This is not true it just has to have these methods due to the asynchronous nature of the depot.  In the constructor you will notice that we create our connection to the depot.  We pass in the options and a success and failure callback methods.  If the depot is opened successfully it calls the success method otherwise it calls the failed method.  In the success method we log an entry to our log and then try to fetch the contents from our depot for the key 'listContents'.  Again you will notice that we have passed in some callback methods.  If it is successful in fetching the data from the depot it calls the loadDepotContents method otherwise it will call the loadDefaultContents method.  Basically it boils down to it will either fetch the contents of our list from the depot or it will load our default contents.  You will also notice that this object inherits from the WBBase object we created in <a href="http://www.josephcrawford.com/2009/10/03/mojo-lists-restructuring-our-code-part-3/">Part 3</a>.  If you are wondering where the this.defaultContents is coming from recall that in the WBBase object we have the defaultListContents defined and since WBDepot inherits from WBBase it is able to use the values defined there.  You will also see some methods in there which are used as callback in the save method.</p>
+
+<p>So with our model in place we now have to work on our depot-assistant.js file and the associated view files.  Make your depot-assistant.js look like my code below.</p>
+
+<pre lang="javascript" line="1">
+function DepotAssistant() {
+    this.listModel = {};
+    this.model = null;
+}
+ 
+DepotAssistant.prototype.setup = function() {
+    this.model = new WBModel(‘depot’);
+ 
+    this.listModel = {
+    items: {}
+    };
+   
+    Mojo.Log.info(“listModel: %j”, this.listModel);
+   
+    this.controller.setupWidget(“depotListWgt”,
+        {
+            itemTemplate: “depot/depotRowTemplate”,
+            listTemplate: “depot/depotListTemplate”,
+            swipeToDelete: false,
+            renderLimit: 40,
+            reorderable: false
+        },
+    this.listModel
+    );
+    this.depotListHandler = this.loadAlterValueScene.bindAsEventListener(this);
+    this.controller.listen(this.controller.get(“depotListWgt”), Mojo.Event.listTap, this.depotListHandler);
+};
+ 
+DepotAssistant.prototype.loadAlterValueScene = function(event)
+{
+    Mojo.Controller.stageController.pushScene( ‘altervalue’, ‘depot’, event.index, this.listModel.items );
+};
+ 
+DepotAssistant.prototype.activate = function(event) {
+    this.listModel.items = this.model.getListContents();
+    this.controller.modelChanged(this.listModel);
+};
+ 
+ 
+DepotAssistant.prototype.deactivate = function(event) {
+ 
+};
+ 
+DepotAssistant.prototype.cleanup = function(event) {
+    Mojo.Event.stopListening(this.controller.get(“depotListWgt”), Mojo.Event.listTap, this.depotListHandler);
+};
+</pre>
+
+<p>If you look at the code above and compare it to our cookie-assistant.js file you will see that very little has changed.  We changed the instances of the word cookie to depot and that is it.  You should be starting to see why I introduced the restructuring of the code in <a href="http://www.josephcrawford.com/2009/10/03/mojo-lists-restructuring-our-code-part-3/">Part 3</a>.  It makes it ridiculously simple to add another data source for our lists.  So now that we have the assistant out of the way we need to create our view files so create the following files.</p>
+
+<pre lang="html" line="1">
+<!– views/depot/depot-scene.html –>
+<div id=“feedTitle” class=“palm-header center”> Depot List
+</div> <div class=“palm-header-spacer”></div> <div id=“mainScene” class=“mainScene”>
+<div x-mojo-element=“List” id=“depotListWgt”></div> </div>
+</pre>
+
+<pre lang="html" line="1">
+<!– views/depot/depotListTemplate.html –>
+<div class=“palm-list”>#{-listElements}</div>
+</pre>
+
+<pre lang="html" line="1">
+<!– views/depot/depotListTemplate.html –>
+<div class=“palm-row” x-mojo-touch-feedback=“delayed”>
+    <div class=“palm-row-wrapper”>
+        <div id=“itemTitle” class=“title truncating-text”>#{title}</div>
+    </div>
+</div>
+</pre>
+
+<p>With these files in place we are almost ready to start using our depot list.  There are a few more changes we need to make though.  We need to go back to our WBModel.js object and allow for the depot storage type.  Make your WBModel object look like the code below.</p>
+
+<pre lang="javascript" line="1">
+function WBModel(storageType)
+{
+  /*
+   * Default storageType
+   *
+   * This is set so that if the developer does not send in a storageType type value it will default to a cookie.
+   * It will also default to cookie if the storageType type specified is not in our supported list of supported storageType types.
+   */
+  this.defaultStorageType = ‘cookie’;
+  this.supportedStorageTypes = [‘cookie’, ‘depot’];
+ 
+  // set the initial storageType type to the default storageType type
+  this.storageType = this.defaultStorageType;
+ 
+  // check to make sure that our specified storageType type is in our supported storageType types – The in_array function is in our utils.js file.
+  if(in_array(storageType, this.supportedStorageTypes))
+  {
+    // set the storageType type to the specified storageType type.
+    this.storageType = storageType;
+  }
+  else
+  {
+    Mojo.Log.info(“Unsupported storage type ‘%s’ using the ‘%s’ as default”, storageType, this.defaultStorageType);
+  }
+ 
+  return this.factory(storageType);
+}
+ 
+WBModel.prototype.factory = function(storageType) {
+  switch(this.storageType)
+  {
+    case ‘depot’:
+      // Placeholder for Depot Object Instantiation
+      return new WBDepot();
+      break;
+    case ‘cookie’:
+    default:
+      // Cookie storage by default
+      return new WBCookie();
+  }
+}
+</pre>
+
+<p>The only changes we have made in the code above is adding the 'depot' to our list of supportedStorageTypes and in the initialize method we have instantiated the model for the depot option.  If you run the code at this point you will be able to work with both the Cookie and Depot lists in our demo application.  In Part 5 will will conclude this series by taking a look at using SqLite for our storage mechanism.</p>

@@ -1,0 +1,50 @@
+--- 
+status: publish
+meta: 
+  views: "865"
+  _wp_page_template: default
+  _edit_last: "1"
+type: page
+layout: page
+title: Looking at NSObject
+published: true
+tags: []
+
+---
+<p>Starting out with Cocoa the best thing you can do is take a look at some of the more simple classes and understand what makes them work.  I decided to start with looking at NSObject because it is the object that most other Cocoa classes inherit from.  Knowing what functionality this class has will help greatly when working with other classes that inherit functionality from NSObject.  I am not going to cover all of the methods of NSObject just yet, I am just starting out and will need to learn those myself, however I will cover the most used.  I will update this page as I learn more so keep checking back.</p>
+
+<p>As I stated above NSObject is a base class, it does not inherit from any other objects.  However it does conform to a protocol called NSObject.  This protocol gives it a basic interface to the run-time system.  NSObject alone cannot do much other than act like an object.  The Apple documentation states that NSObject is not strictly an abstract class but you can pretty much think of it like that.  Any object that inherits from NSObject gains the ability to behave like an object.  NSObject is not only an object but it is also a Protocol, both of which are necessary for an object to work properly.  NSObject is not the only object that conforms to the NSObject protocol, ALL base classes must conform to this protocol for them to work properly.</p>
+
+<p>NSObject is the object that gives all other objects access to the alloc and init methods.  These methods are used to allocate and initialize any object that you have created.  Now you can start to see how NSObject plays a very important role in Cocoa development.  Now that I have stated that NSObject gives our created classes access to methods that we need, let's take a look at what some of them are.   This will also populate the isa property with a data structure that will describe the class.</p>
+
+<p><em><strong>alloc</strong></em> - The alloc method will return a new instance of the recieving object.  If you allocate a car object it will return an instance of the car object for your use.  When you use alloc it will store your object in the default memory zone.  If you would like to specify the zone you can use allocWithZone.  A default NSZone is created on start-up and all objects default to being allocated there.  <br/><br/>
+<em><strong>allocWithZone</strong></em> - This does exactly the same thing as alloc except it allows you to specify the zone you wish to use.  This requires you to pass in an object that is of type NSZone.<br/><br/>
+Here is some example code of how you use these methods.
+[objc]
+// The normal alloc command
+NSNumber *number = [[NSNumber alloc] init];
+
+// grab 4096 bytes starting at 8192, the yes tells the zone that it can free the memory
+NSZone* tempZone = NSCreateZone(8192, 4096, YES);
+NSNumber *number = [[NSNumber allocWithZone:tempZone] init];
+[/objc]
+I am not going to go into too much detail about how NSZone's work or why you would want to use them in this article.  Just know that you can use them if you would like to.
+</p>
+
+<p><em><strong>init</strong></em> - Initialize the object after the memory has been allocated for it.  You must initialize an object before you can use it.  You can see how init is used in the code above.<br/><br/>
+<em><strong>description</strong></em> - Return a string that describes the contents of the receiver.  When you are using the debuggers print object command it will indirectly invoke this method to tell you more about the object.  This is nice because you can specify what you want returned when something attempts to print out an object.<br/><br/>
+<em><strong>dealloc</strong></em> - Just before an object is freed from memory the dealloc method is called.  This allows you to do any cleanup work that you might have to do for the class.  I am not going into detail about the Notification Center code below, just know that a notification center is a place for objects to send messages to objects and listen for messages from objects.  When your object is put into a notification center it is your responsibility to remove it so this is done in the dealloc method.  Also note that whenever you implement a dealloc method you MUST always call the dealloc method of the parent object as is done below.
+[objc]
+@interface Car : NSObject {
+   - (void)dealloc
+   {
+	[self setSpeed:nil];
+	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	[nc removeObserver:self];
+	[super dealloc];
+   }
+}
+
+@end
+[/objc]
+</p>

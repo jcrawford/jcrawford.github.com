@@ -1,0 +1,27 @@
+--- 
+status: publish
+meta: 
+  _thumbnail_id: "1782"
+  views: "3051"
+  _layout: right_sidebar
+  _bitly_trim: http://www.josephcrawford.com/?p=476
+  _edit_last: "1"
+  _radiostation_dependencies: s:6:"a:0:{}";
+type: post
+layout: post
+title: Customizing the Leopard Dock
+published: true
+tags: 
+- Entertainment
+- Internet
+- Mac
+- Raves
+- Tips &amp; Tricks
+---
+Many people seem to be irritated by the new Leopard dock.  I myself was a bit upset with the new indicator icon change.  They used to have black triangles that would allow you to know what applications were open at a quick glance.  Now they have changed that indicator to a light blue orb which is kinda hard to see.  I found a method on changing the indicators back at a website.  I tested it and it worked however the indicator icons were not the proper dimensions as they looked stretched.</p>  <p>I then found another site which had a much better set of indicators which will be used here.</p>
+
+<p>Below are the steps which you need to complete in order to change your indicator icons.</p>  <p align="left"></p>  <p>  </p>  <!--more-->1.) Download the <a title="Dock Indicators" href="http://www.josephcrawford.com/wp-content/uploads/2007/10/indicators.zip">Dock Indicators</a>  <p align="left">2.) Unzip them to your desktop.</p>  <p align="left">3.) open Terminal.app and issue the following command<br />                    <font face="Courier"><em> cd /System/Library/CoreServices/Dock.app/Content/Resources/</em></font></p> 
+
+<p align="left">4.) Now that you are in that directory you need to rename the current dock indicators for a backup<br />                    <font face="Courier"><em> sudo mv indicator_small.png original_indicator_small.png<br />                     sudo mv indicator_medium.png original_indicator_medium.png<br />                     sudo mv indicator_large.png original_indicator_large.png</em></font></p>  <p align="left">5.) With the backups made it is time to copy over the indicators that you downloaded.<br />                    <font face="Courier"><em> sudo cp -rf /Users         <username>/Desktop/indicators/indicator_* /System/Library/CoreServices/Dock.app/Content/Resources/</username></em></font></p>  <p align="left">6.) The final step is to restart the dock with the following command<br />                    <font face="Courier"> killall Dock</font></p>  <p>After you have completed the above steps you will be able to have that lovely black triangle back as the dock indicator.</p>  
+
+<p align="left">People have also figured out that you can change the color of the dock as well.&nbsp; You do this in the same manner as you did above for the dock indicator, the only difference is that you are dealing with different images.&nbsp; The images you want to be concerned with are the scurve_x.png images in the /Content/Resources/ directory along with the indicator images.&nbsp; Make sure you back up the original images before you do anything.&nbsp; You can download the modified <a title="Dock Images" href="http://www.josephcrawford.com/wp-content/uploads/2007/10/dock.zip">Dock Images</a> and save them to your desktop.&nbsp; I have included both the black and orange colors, you just need to rename them to scurve_x.png where x is the size sm, m, l, xl.&nbsp; Once you put the proper images in place do not forget to do the killall Dock command to restart the dock.&nbsp; Now I did notice that these images will only work if your dock is on the bottom of your screen, they will not work for the right or left sides.&nbsp; I do imagine it is just another image switch like these though.&nbsp; Above is a picture of my current Dock.&nbsp; While the initial setup of this is a bit technical I for see some smart developer writing a small application which will allow you to do this in a very easy method.&nbsp; The only question that lies is why did Apple not make the ability to accomplish this rather than allowing some 3rd party to do it?<br />  </p>

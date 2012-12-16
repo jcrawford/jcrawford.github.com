@@ -1,0 +1,41 @@
+--- 
+status: publish
+meta: 
+  _thumbnail_id: "1740"
+  views: "221"
+  _bitly_trim: http://www.josephcrawford.com/?p=12
+type: post
+layout: post
+title: Bad Practices in use
+published: true
+tags: []
+
+---
+I have been doing work for several clients who already had a code base that they wanted me to work with.  They generally outsourced the work overseas before coming to me.  A lot of the code would have taken advantage of bad practices just because they could.  What i find a lot is something like this
+
+[php]
+/*
+**  $items is a set array with many
+**  elements, maybe 50
+*/
+$itemCnt = count($items);
+foreach($i = 0; $i < = count($items); $i++) {
+// code here to be executed with each loop
+}
+
+[/php]
+
+While the above code will work pretty well, if you start using this method inside of a large application, you will find the application performance could take quite a hit.  The reason this is bad practice is because the for look has the count() function embedded into the evaluation statement.  Every time that the for loop is executed the count function is called upon this may seem trivial to some people, however the count function takes processing time (as little as it may be) every time it is called.
+
+If you array has 1000 elements it will call the count function 1000 times.  Your array in this case is not going to change in size, you are merely looping over the items.  A better way to implement this could is below.
+[php]
+/*
+**  $items is a set array with many
+**  elements, maybe 50
+*/
+$itemCnt = count($items);
+foreach($i = 0; $i < = $itemCnt; $i++) {
+// code here to be executed with each loop
+}
+[/php]
+The only difference in this case is that the count function is moved out of the foreach declaration.  This code will only call the count function once reguardless of how many elements your array has.  This is the best practice in this situation, most projects start out small but then continue on their way to becoming a large application.  If you program the site using bad practices you are going to see a significant difference in speed when you fix all those issues.
