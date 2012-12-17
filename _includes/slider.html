@@ -1,0 +1,23 @@
+<div id="slider_module">
+	<div id="slider_module_inner">
+		<div class="miss_preloader_large" style="text-align:center;">
+			<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/production/transparent.gif" style="background-image: url(http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/production/preloader.png);">
+		</div>
+		<div id="miss_flexslider">
+			<ul class="slides">
+				{% for slide in site.slides limit:10 %}
+					<li>
+						<a href="{{ slide.url }}" class="flex-imageLink">
+							<img src="{{ slide.image }}" title="" alt="{{ slide.title }}" width="720" height="auto" />
+							<div class="flex-caption">
+								<h2 class="slider_title">{{ slide.title }}</h2>
+								<div class="slider_desc">{{ slide.excerpt }}</div>
+							</div>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div><!-- #miss_flexslider -->
+		<div class="clearboth"></div>
+	</div>
+</div>

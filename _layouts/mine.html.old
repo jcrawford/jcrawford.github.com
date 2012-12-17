@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<!--[if !IE]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford - {{ page.title }}</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<meta property="og:title" content="Joseph CrawfordJoseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	
+	<!--[if lt IE 10]> <link rel="stylesheet" type="text/css" href="css/_ie/ie.css"> <![endif]-->
+	<link rel='stylesheet' id='miss_prettyphoto-css'  href='css/prettyPhoto.css?ver=1.1.1' type='text/css' media='screen' />
+	<link rel='stylesheet' id='missfont1-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C700italic%2C800italic%2C400%2C800%2C700%2C600%2C300&#038;ver=1.1.1' type='text/css' media='screen' />
+	<link rel='stylesheet' id='missfont2-css'  href='http://fonts.googleapis.com/css?family=Droid+Sans%3A400%2C700&#038;ver=1.1.1' type='text/css' media='screen' />
+	<link rel='stylesheet' id='missfont3-css'  href='http://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%2C900%2C900italic&#038;ver=1.1.1' type='text/css' media='screen' />
+	<link rel='stylesheet' id='misswidgets-css'  href='css/widgets.css' type='text/css' media='screen' />
+	<link rel='stylesheet' id='missgeneral-css'  href='css/style.css' type='text/css' media='screen' />
+	<link rel='stylesheet' id='missresponsive-css'  href='css/responsive.css' type='text/css' media='screen' />
+	<link rel='stylesheet' id='missscore-css'  href='css/score.css' type='text/css' media='screen' />
+	<link rel='stylesheet' id='misscustom_css-css'  href='css/light_lightblue.css' type='text/css' media='screen' />
+
+	<meta name="generator" content="Jekyll" />
+
+	<!-- Jetpack Open Graph Tags -->
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com/" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	<style type="text/css">
+		.recentcomments a {
+			display:inline !important;
+			padding:0 !important;
+			margin:0 !important;
+		}
+	</style>
+	<style type="text/css">
+		.broken_link, a.broken_link {
+			text-decoration: line-through;
+		}
+	</style>
+
+</head>
+
+<body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" />
+							</a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span>
+							<span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+				</div>
+			</div><!-- #header -->
+			<div id="main_menu" class="sixteen columns row">
+				<div class="main_navigation">
+					<ul id="menu-menu" class="">
+						<li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+							<a href="http://www.josephcrawford.com/">
+								<span>Home</span>
+							</a>
+						</li>
+						<li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
+							<a href="#">
+								<span>Articles</span>
+							</a>
+							<ul class="sub-menu">
+								<li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
+									<a href="#">PHP</a>
+									<ul class="sub-menu">
+										<li id="menu-item-2072" class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="http://www.josephcrawford.com/php=articles/an-offensive-word-filter/">
+												Offensive Word Filter
+											</a>
+										</li>
+										<li id="menu-item-2077" class="menu-item menu-item-type-custom menu-item-object-custom">
+											<a href="http://www.josephcrawford.com/php-articles/going-deep-inside-php-sessions/">
+												Deep into PHP Sessions
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+							<a href="http://www.josephcrawford.com/about/">
+								<span>About</span>
+							</a>
+						</li>
+						<li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
+							<a href="#">
+								<span>Resume</span>
+							</a>
+							<ul class="sub-menu">
+								<li id="menu-item-2022" class="menu-item menu-item-type-custom menu-item-object-custom">
+									<a href="http://www.josephcrawford.com/wp-content/uploads/2012/11/resume.pdf">PDF</a>
+								</li>
+								<li id="menu-item-2023" class="menu-item menu-item-type-custom menu-item-object-custom">
+									<a href="http://www.josephcrawford.com/wp-content/uploads/2012/11/resume.doc">Word</a>
+								</li>
+							</ul>
+						</li>
+						<li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
+							<a href="http://www.josephcrawford.com/contact-me/">
+								<span>Contact Me</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="clearboth"></div>
+			</div><!-- #main_menu -->
+			<div id="content">
+				<div id="content_inner">
+					<div id="main" class="ten columns clearfix">
+						<div id="main_inner">
+							<ul class="post_list blog_layout2">
+								{% for post in site.posts limit:10 %}
+								<li class="post type-post status-publish format-standard hentry category-entertainment category-internet category-news category-websites post_list_module">
+									<div class="post_list_image"style="width:210px;">
+										<a href="{{ page.url }}" title="{{ post.title }}" class="blog_index_image_load" style="background:no-repeat center center;display:block;position:relative;height:210px;width:210px;">
+											<span class="noscript">
+												<img class="hover_fade_js" src="images/{{ post.image }}" title="{{ post.title }}" alt="Old Look" width="200" height="200" />
+											</span>
+											<div class="miss_preloader">
+											</div>
+										</a>
+									</div>
+									<div class="post_list_content">
+										<h2 class="post_title">
+											<a href="{{ page.url }}" title="{{ post.title }}" rel="bookmark">{{ post.title }}</a>
+										</h2>
+										<p class="post_meta">
+											<span class="meta_date">
+												Posted <a href="http://www.josephcrawford.com/2012/11/" title="{{ post.date | date: '%B' }} {{ post.date | date: '%e' }}, {{ post.date | date: '%Y' }}">{{ post.date | date: '%B' }} {{ post.date | date: '%e' }}, {{ post.date | date: '%Y' }}</a>
+											</span>
+											<span class="meta_category"> in 
+												<a href="http://www.josephcrawford.com/category/entertainment/" rel="tag">Entertainment</a>, 
+												<a href="http://www.josephcrawford.com/category/internet/" rel="tag">Internet</a>, 
+												<a href="http://www.josephcrawford.com/category/news/" rel="tag">News</a>, 
+												<a href="http://www.josephcrawford.com/category/websites/" rel="tag">Websites</a>
+											</span>
+											<span class="meta_comments">
+												 with <a href="{{ page.url }}#respond" title="Comment on A New Look">0 Comments</a>
+											</span>
+										</p>
+										<div class="post_excerpt">
+											<p>
+												{{ post.excerpt }}
+												<small>&#8230;</small>
+											</p>
+											<p class="read_more_link">
+													<a class="post_more_link" href="{{ page.url }}">Read More</a>
+											</p>
+										</div>
+									</div><!-- /post_list_content -->
+								</li><!-- #post-## -->
+								{% endfor %}
+							</ul>
+						<div class="wp-pagenavi">
+							<span class="pagenavi-pages">Page 1 of 24</span>
+							<span class="current">1</span>
+							<a href="http://www.josephcrawford.com/page/2/" class="pagenavi-page" title="2">2</a>
+							<a href="http://www.josephcrawford.com/page/3/" class="pagenavi-page" title="3">3</a>
+							<a href="http://www.josephcrawford.com/page/4/" class="pagenavi-page" title="4">4</a>
+							<a href="http://www.josephcrawford.com/page/5/" class="pagenavi-page" title="5">5</a>
+							<a href="http://www.josephcrawford.com/page/2/" >&rarr;</a>
+							<a href="http://www.josephcrawford.com/page/10/" class="pagenavi-page" title="10">10</a>
+							<a href="http://www.josephcrawford.com/page/20/" class="pagenavi-page" title="20">20</a>
+							<span class="extend">...</span>
+							<a href="http://www.josephcrawford.com/page/24/" class="last" title="Last &raquo;">Last &raquo;</a>
+						</div>
+						<div class="clearboth"></div>
+					</div><!-- #main_inner -->
+				</div><!-- #main -->
+				<div id="sidebar" class="six columns">
+					<div id="sidebar_inner">
+						<div id="recent-posts-3" class="widget widget_recent_entries">
+							<h4 class="widgettitle">
+								<span>Recent Posts</span>
+							</h4>
+							<ul>
+								<li><a href="http://www.josephcrawford.com/2012/11/a-new-look/" title="A New Look">A New Look</a></li>
+								<li><a href="http://www.josephcrawford.com/2012/10/review-timing/" title="Review: Timing">Review: Timing</a></li>
+								<li><a href="http://www.josephcrawford.com/2012/10/review-markdown-pro/" title="Review: Markdown Pro">Review: Markdown Pro</a></li>
+								<li><a href="http://www.josephcrawford.com/2012/10/sub-domain-pointing-to-my-home-computer/" title="Sub-Domain Pointing to my Home Computer">Sub-Domain Pointing to my Home Computer</a></li>
+								<li><a href="http://www.josephcrawford.com/2012/10/time-between-posts/" title="Time Between Posts">Time Between Posts</a></li>
+							</ul>
+						</div>
+						<div id="top-posts-2" class="widget widget_top-posts">
+							<h4 class="widgettitle">
+								<span>Top Posts &amp; Pages</span>
+								</h4>
+								<ul class='widgets-list-layout no-grav'>
+									<li>
+										<img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+										<div class="widgets-list-layout-links">
+											<a href="http://www.josephcrawford.com/php-articles/going-deep-inside-php-sessions/" class="bump-view" data-bump-view="tp">Going deep inside PHP sessions</a>
+										</div>
+									</li>
+									<li>
+										<img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2011/03/eye-fi-featured.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
+										<div class="widgets-list-layout-links">
+											<a href="http://www.josephcrawford.com/2011/03/image-previews-on-ipad-in-the-field/" class="bump-view" data-bump-view="tp">Image Previews on iPad in the Field</a>
+										</div>
+									</li>
+									<li>
+										<img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2012/10/what-is-dns-diagram12.jpeg?resize=40%2C40" class='widgets-list-layout-blavatar' />
+										<div class="widgets-list-layout-links">
+											<a href="http://www.josephcrawford.com/2012/10/sub-domain-pointing-to-my-home-computer/" class="bump-view" data-bump-view="tp">Sub-Domain Pointing to my Home Computer</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div id="categories-3" class="widget widget_categories">
+								<h4 class="widgettitle">
+									<span>Categories</span>
+								</h4>
+								<ul>
+									<li class="cat-item cat-item-3"><a href="http://www.josephcrawford.com/category/css/" title="View all posts filed under CSS">CSS</a></li>
+									<li class="cat-item cat-item-4"><a href="http://www.josephcrawford.com/category/development/" title="Development topics not covered under the PHP Development category">Development</a></li>
+									<li class="cat-item cat-item-5"><a href="http://www.josephcrawford.com/category/entertainment/" title="Things that i find entertaining">Entertainment</a></li>
+									<li class="cat-item cat-item-6"><a href="http://www.josephcrawford.com/category/family/" title="View all posts filed under Family">Family</a></li>
+									<li class="cat-item cat-item-7"><a href="http://www.josephcrawford.com/category/frameworks/" title="View all posts filed under Frameworks">Frameworks</a></li>
+									<li class="cat-item cat-item-8"><a href="http://www.josephcrawford.com/category/internet/" title="Internet">Internet</a></li>
+									<li class="cat-item cat-item-9"><a href="http://www.josephcrawford.com/category/javascript/" title="View all posts filed under JavaScript">JavaScript</a>\</li>
+									<li class="cat-item cat-item-10"><a href="http://www.josephcrawford.com/category/jokes/" title="Random Off The Wall Jokes">Jokes</a></li>
+									<li class="cat-item cat-item-11"><a href="http://www.josephcrawford.com/category/local/" title="Local Happenings">Local</a></li>
+									<li class="cat-item cat-item-12"><a href="http://www.josephcrawford.com/category/mac/" title="Mac Related Stuff">Mac</a></li>
+									<li class="cat-item cat-item-13"><a href="http://www.josephcrawford.com/category/news/" title="News">News</a></li>
+									<li class="cat-item cat-item-14"><a href="http://www.josephcrawford.com/category/palm/" title="View all posts filed under Palm">Palm</a></li>
+									<li class="cat-item cat-item-15"><a href="http://www.josephcrawford.com/category/php/" title="PHP Related Articles">PHP</a></li>
+									<li class="cat-item cat-item-16"><a href="http://www.josephcrawford.com/category/political/" title="View all posts filed under Political">Political</a></li>
+									<li class="cat-item cat-item-17"><a href="http://www.josephcrawford.com/category/ppp/" title="PayPerPost">PPP</a></li>
+									<li class="cat-item cat-item-18"><a href="http://www.josephcrawford.com/category/rants/" title="What will i rant about next?">Rants</a></li>
+								</ul>
+							</div>
+						</div><!-- #sidebar_inner -->
+					</div><!-- #sidebar -->
+					<div class="clearboth"></div>
+				</div><!-- #content_inner -->
+			</div><!-- #content -->
+		</div> <!-- .container -->
+		<div id="footer">
+			<div class="background">
+				<div class="background"></div>
+			</div>
+			<div class="container">
+				<div class="sixteen columns">
+					<div class="one_fourth">
+						<div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
+							<h4 class="widgettitle"><span>Sponsors</span></h4>
+							<div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div>
+						</div>
+					</div>
+					<div class="three_fourth last"></div>
+					<div class="clearboth"></div>
+				</div>
+			</div>
+		</div><!-- #footer -->
+		<div id="sub_footer">
+			<div class="container">
+				<div class="sixteen columns">
+					<div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div>
+				</div><!-- columns -->
+			</div><!-- container -->
+		</div><!-- #sub_footer -->
+	</div><!-- #page_inner -->
+</body>
+</html>
