@@ -1,0 +1,34 @@
+--- 
+wordpress_id: 419
+layout: post
+wordpress_url: http://www.josephcrawford.com/2007/04/05/nike-ipod-statistics-rise/
+categories: 
+- slug: development
+  autoslug: development
+  title: Development
+- slug: entertainment
+  autoslug: entertainment
+  title: Entertainment
+- slug: internet
+  autoslug: internet
+  title: Internet
+- slug: mac
+  autoslug: mac
+  title: Mac
+- slug: news
+  autoslug: news
+  title: News
+- slug: raves
+  autoslug: raves
+  title: Raves
+- slug: software
+  autoslug: software
+  title: Software
+- slug: websites
+  autoslug: websites
+  title: Websites
+tags: []
+
+title: Nike+ iPod Statistics Rise!
+---
+Over the last week I have made some extra time for running, I have also taken the time to really dig into how the system works.  It's really simple actually.  I have written a small program that will execute when I connect my Nano to my computer.  The script will upload my nike+ data to my web server and then open iTunes to send the data off to [nikeplus.com](http://www.nikeplus.com "NikePlus") so that I can still take part in challenges on that site.Having the ability to grab this data definately opens new doors.  Hey I could start my own site that would track your data, show more graphs, even allow competitions on the site.  I am doing this so that a small group of people and I can track our stats on my site without having to hammer on the [nikeplus.com](http://www.nikeplus.com/ "NikePlus") site because I am sure enough people start fetching the data from them and they will not be happy.  If they wanted people to fetch the data from them they would have made the API easier to use than they have.<!--more-->So far I have the application uploading the files to my server perfectly,  when it runs for the first time it checks to see if your user folder is in the directory where it should be, if not it will create it and import ALL of your running data stored on the iPod.  Yes ALL of your data!  When you connect the iPod subsequent times it will only upload the new data since your last update.I am not going to release this to the public because it is not very secure, my FTP password is stored in the program and easilly accessable by anyone who has the program. Right now I am going to setup the site on  but it might branch off into it's own site in the near future.  If you would be interested in joining this project and know any of the following you should contact me.  JavaScript (AJAX), XHTML, CSS, Icon/Graphic/Web Design, C, C++, Java.In the future I will probably want to have a small application developed that will be cross platform so that both windows and mac users can take advantage of this site.  I would however want the FTP password to remain secure inside the application.  Once I am done with this little application and the website for parsing and inserting the data I will release it on this site.  I was given quite a bit of help from people in different communities namely the mac community while creating this so I will give back.  However since this little application is so insecure you would want to limit it's use to a close pack of friends.Stay tuned for more information!

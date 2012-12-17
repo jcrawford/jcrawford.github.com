@@ -1,0 +1,39 @@
+--- 
+wordpress_id: 129
+layout: post
+wordpress_url: http://www.josephcrawford.com/2006/10/18/rex-stores-what-a-joke/
+categories: 
+- slug: entertainment
+  autoslug: entertainment
+  title: Entertainment
+- slug: internet
+  autoslug: internet
+  title: Internet
+- slug: local
+  autoslug: local
+  title: Local
+- slug: news
+  autoslug: news
+  title: News
+- slug: rants
+  autoslug: rants
+  title: Rants
+- slug: reviews
+  autoslug: reviews
+  title: Reviews
+tags: []
+
+title: "Review: Rex Stores, What a Joke"
+---
+
+So a while back I went to the local Rex Electronics store here in Rutland, VT.  I was looking to buy a 32" LCD TV for use as my television but also as my computer display.  It would allow me to use a wireless mouse and keyboard and work from my couch.  I was looking for one that had a DVI input on the back since my video card was DVI.  I went into the local store and the store looked empty, I mean I didn’t see anyone.  I just started to look around at the TV's and then I noticed a sales associate sitting in a chair watching the football game on one of the big screen TV's.  I walked around a bit more, making sure he noticed me in the store.  Finally I went up and asked him if it would be disturbing his game to get some assistance, he said no and came over to me. 
+
+I told him that I was looking to buy an LCD with DVI inputs and he told me that they had none.  As I was walking out of the store I found it hard to believe that none of the 30+ TV's they had offered DVI so I looked at about 3 on my way out.  All 3 of them had the connector that I needed.  Later that week I went back in to look for a surround sound system.  I planned on buying both around the same time.  I spoke with the same sales associate and asked how many watts a particular system was.  He went in the back room to check the owner’s manual.
+<!--more-->
+About 5 minutes later he came back out from the back room, and instantly started talking with another customer and helping them rather than returning to help me.  I couldn’t believe it; he either forgot what he was doing within the 5-minute window or he was blatantly ignoring me.
+
+Now it's not like I am a frequent visitor to this store and I am not in there always having them do work / research without buying anything.  I could understand this treatment in that situation.  I immediately started to seek out the manager of the store.  I waited while he finished with his customer and then I notified him of the situation that I had with the particular sales associate.  The manager really did not care; his response was "Well it's his loss, now he doesn't get the commission.”  I couldn't believe that was his response, I said well no it's the stores loss because he just lost the store about $3,000 in sales.  He apologized and said well if you change your mind I will give you a 10% discount.  After that reaction from the manager I told him that I do not deserve to be treated like I was, and would not return for the purchase no matter what the discount was.
+
+After dealing with the manager I did not have the energy to contact corporate, I could not handle any more incompetent people. 
+
+I did not end up buying the LCD TV because I purchased the Power Mac G5 with the 23" ACD as the LCD TV's did not have the resolution that I required, however I did purchase an $800 sound system.  I have not been to the store since and I doubt that I will ever return to that store.  The customer service was horrible and there are other electronics stores in the area and even if there was not there is always eBay or online.

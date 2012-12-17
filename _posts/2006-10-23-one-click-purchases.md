@@ -1,0 +1,28 @@
+--- 
+wordpress_id: 133
+layout: post
+wordpress_url: http://www.josephcrawford.com/2006/10/23/one-click-purchases/
+categories: 
+- slug: entertainment
+  autoslug: entertainment
+  title: Entertainment
+- slug: internet
+  autoslug: internet
+  title: Internet
+- slug: mac
+  autoslug: mac
+  title: Mac
+- slug: news
+  autoslug: news
+  title: News
+- slug: raves
+  autoslug: raves
+  title: Raves
+tags: []
+
+title: One Click Purchases
+---
+
+Almost everyone know's that Amazon has patented the one click technology (in my opinion it's a crock that anyone can patent a method like that) and that Apple leases the use of the technology from Amazon for thier iTunes store.  However what not everyone may know is that the Amazon patent is under review by the U.S. patent and Trademark office.  I wonder if anyone will be able to use this method in the future without having to pay Amazon to do so.
+
+This was revealed to me through a blog post that discussed IBM sueing Amazon over 5 patent infringments. you can read the article on [TMO's blog entry](http://www.macobserver.com/article/2006/10/23.9.shtml). 

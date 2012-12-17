@@ -1,0 +1,33 @@
+--- 
+wordpress_id: 928
+layout: post
+wordpress_url: http://josephcrawford.com/?p=928
+categories: 
+- slug: entertainment
+  autoslug: entertainment
+  title: Entertainment
+- slug: internet
+  autoslug: internet
+  title: Internet
+- slug: palm
+  autoslug: palm
+  title: Palm
+- slug: raves
+  autoslug: raves
+  title: Raves
+- slug: reviews
+  autoslug: reviews
+  title: Reviews
+- slug: useful
+  autoslug: useful
+  title: Useful
+tags: []
+
+title: "Review: The Palm Pre"
+---
+
+[![Palm Pre Sprint](http://josephcrawford.com/wp-content/uploads/2009/07/palm-pre-sprint.jpg "Palm Pre Sprint")](http://josephcrawford.com/wp-content/uploads/2009/07/palm-pre-sprint.jpg)First I have to say I have not been following the rumours about the Pre so I was not that knowledgeable on what it was prior to last week.  However I had been reading quite a bit on it lately and decided to go buy one a few nights ago.  In this review I am going to cover both the Pro’s and Con’s that I have found.In my opinion the phone is so great I am not even sure where to begin.  The overall look and feel of the device is amazing.  They definitely spent quite a bit of time on the design.  They have said that the phone feels like a polished stone and the curvature of the device does make it sit well in the palm of your hand.  I have noticed that the device does contain a proximity sensor and a light sensor which work as you would expect.  When you put the phone to your ear the screen goes off to save on the battery power.  On the top of the device there is the power button, a switch for turning the phone into silent mode and a standard 3.5mm headphone jack.  This means you can use any headphones with the unit rather than having to buy a special pair as most phones require.I noticed that they had created “gestures” just like the iPhone has, you can zoom in and out by pinching your fingers, you flip through the cards by swiping your finger across the screen.  This is all very nice and after seeing that I had to google only to find that Apple is suing them over Intellectual Property rights.  I do feel however that the keyboard could have been made a bit larger.  I personally have not had any problems with the keyboard myself but I could see some people having a bit of a hard time hitting the proper keys.  I am actually amazed that I have had no problems, my fingers are not small and the keys are so it does have a good design to it.  When you push the screen upwards to reveal the keyboard you will find that it gives you a hard time if you try to push up from the bottom of the screen.  You actually have to place your thumb in the center of the screen and push up to get the nice smooth feel.  On the left side of the device there are buttons to turn the volume up and down.  On the right side there is a plug for the cable to connect it to your compute r or the AC adapter.One thing that I really did like was the ability to link contacts.  If you created an entry in your address book for “Joe Blow” and then added your AIM account the device sometimes picks up on the fact that they are the same person.  I am not sure how it all works but it is cool.  You can also manually link contacts which is very nice.  Linking contacts allows you to see SMS and AIM messages in a threaded format.  No longer is there a separate conversation thread for SMS and Instant Messages.
+
+When I first started looking into this device I was not fully up to speed on the new [WebOS](http://en.wikipedia.org/wiki/WebOS) developed by [Palm](http://www.palm.com/).  However the selling point for me was that developers use HTML, CSS and JavaScript to create the applications for the phone.  This was a huge selling point to me because I am a web developer that use these technologies on a daily basis already.  I do find that it does seem a bit slow when opening applications, however to their defense the suggested use for the device states that you should keep several applications open and use the gestures to switch between them.
+
+There are only a few cons that I have come up with and out of the 3 only one is hardware related.  I’ll start with the hardware con.  I have found that the speaker on the device is utter crap.  If you put a call on speaker-phone you have a really hard time hearing what they are saying unless you are in an extremely quite environment.  At first I could not believe it, my fiancés Samsung Exclaim has a better speaker for listening to music or doing speaker-phone calls than mine?  I do not think that I will be using that speaker too often due to how unimpressive it is.The other cons that I have are software related and hopefully they will push some updates to the applications soon so that they can alleviate this issue.  When you are in the Contacts or Email applications, you have to delete each entry one by one.  I personally imported my Google address book and what a mistake that was.  I now have 600+ contacts in my phone and out of them probably 500 are not wanted in my phone.  There is no easy way to get rid of those 500 unwanted contacts either.  You have to delete them one by one.  It would be nice if you could select multiple contacts to delete all at once.  The same goes for the emails.  If you are viewing your in-box and have 100 messages you first have to click one, wait for the detail screen then hit the trash icon.  This becomes a rather large pain in the rear if you need to delete about 50 emails and have to do it one by one.

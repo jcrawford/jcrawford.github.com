@@ -6,7 +6,7 @@ module WordPress
   def self.import(database, user, password, table_prefix = "wp", host = 'localhost')
     db = Sequel.mysql(database, :user => user, :password => password, :host => host, :encoding => 'utf8')
 
-    %w(_posts _drafts images/posts/featured).each{|folder| FileUtils.mkdir_p folder}
+    %w(_posts _slides images/posts/featured).each{|folder| FileUtils.mkdir_p folder}
 
     query = <<-EOS
 
@@ -67,10 +67,20 @@ module WordPress
          'tags'          => post_tags
        }.delete_if { |k,v| v.nil? || v == ''}.to_yaml
 
-      File.open("#{status == 'publish' ? '_posts' : '_drafts'}/#{name}", "w") do |f|
-        f.puts data
-        f.puts "---"
-        f.puts content
+       if status == 'publish'
+         if post[:post_title].start_with? 'Review: '
+           File.open("#{'_slides'}/#{name}", "w") do |f|
+             f.puts data
+             f.puts "---"
+             f.puts content
+           end
+        else
+          File.open("#{'_posts'}/#{name}", "w") do |f|
+            f.puts data
+            f.puts "---"
+            f.puts content
+          end
+        end
       end
     end
   end

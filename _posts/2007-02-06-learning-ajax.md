@@ -1,0 +1,19 @@
+--- 
+wordpress_id: 309
+layout: post
+wordpress_url: http://www.josephcrawford.com/2007/02/06/learning-ajax/
+categories: 
+- slug: development
+  autoslug: development
+  title: Development
+- slug: internet
+  autoslug: internet
+  title: Internet
+- slug: raves
+  autoslug: raves
+  title: Raves
+tags: []
+
+title: Learning AJAX
+---
+Ok yea so I used the Buzzword.Â  Shoot me already.Â  I have been looking into the use of JavaScript lately for the simple use of AJAX, implementing a few things here and there.Â  I have noticed that many of the examples on the net really are NOT AJAX rather they are something else.Â  They do the same thing as AJAX except for the fact that they do not use XML.Â  I have seen examples that also use JSON and HTML rather than XML.Â  Why do people use JSON over XML?Â  I am guessing because all they have to do is eval() the JSON and get right to work.Â  There is no need to parse all of the elements etc.I thought JavaScript was going to be harder than it really is, although I do have to say that I have been seeing some rather advanced stuff that just confuses the hell out of me.Â  I look forward to getting my hands more and more dirty with JavaScript in the near future.Â  Any good books that you can recommend on this topic?

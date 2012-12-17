@@ -1,0 +1,44 @@
+--- 
+wordpress_id: 606
+layout: post
+wordpress_url: http://josephcrawford.com/?p=606
+categories: 
+- slug: development
+  autoslug: development
+  title: Development
+- slug: entertainment
+  autoslug: entertainment
+  title: Entertainment
+- slug: raves
+  autoslug: raves
+  title: Raves
+- slug: reviews
+  autoslug: reviews
+  title: Reviews
+- slug: tips-tricks
+  autoslug: tips-&amp;-tricks
+  title: Tips &amp; Tricks
+- slug: useful
+  autoslug: useful
+  title: Useful
+- slug: websites
+  autoslug: websites
+  title: Websites
+tags: []
+
+title: The Mac Developer Network
+---
+
+![](http://josephcrawford.com/wp-content/uploads/2008/07/cocoa_programming_for_mac_osx_cover.jpg "Cocoa Programming for Mac OS X (3rd. Ed.)")As you may or may not know I have recently been getting into Mac Development.  I have been going through the new [Cocoa Programming for Mac OS X (3rd Ed.)](http://www.amazon.com/Cocoa-Programming-Mac-OS-3rd/dp/0321503619/ref=pd_bbs_1?ie=UTF8&s=books&qid=1215807339&sr=8-1) by [Aaron Hillegass](http://www.bignerdranch.com/instructors/hillegass.shtml).  It is an extremely useful book and I believe it is also used as the textbook for the [Cocoa Bootcamp](http://bignerdranch.com/classes/cocoa.shtml) course they hold at the [Big Nerd Ranch](http://www.bignerdranch.com/).  I have wanted to take this course however the costs of the course are out of my reach.  I have been going through the book at a slow pace trying to understand everything it has to offer.  I have asked questions on forums, IRC chat and mailing lists to answer things that I could not figure out.
+<!--more-->
+A few months ago I found the Mac Developer Network.  They offer free podcasts for developers and now are also offering Video Training Courses.  I was in touch with the owner of The MDN (Steve Scott  - aka. Scotty) and was asking about the courses.  He let me know that over the following week they were planning on launching the video training courses.  The other day I noticed that they had posted the first 2 videos.- [Memory Management in Objective-C](http://mac-developer-network.com/videocourses/memorymanagement/index.html)
+- [Adding Items to the Status Bar](http://mac-developer-network.com/videocourses/statusbaritems/index.html)
+
+
+[![](http://josephcrawford.com/wp-content/uploads/2008/07/mdn_logo.png "The Mac Developer Network")](http://mac-developer-network.com/)I quickly purchased an MDN membership and both courses.  If you are an MDN member you receive 50% off from all video courses that they offer.  The one thing that I love about the MDN courses is that they are offered in several formats.  You can download it in 1 full movie or you can download it where it is split up into chapters.  Now the resolution for the video(s) is set to 1280 x 720 for viewing on your TV or computer screen.  They also offer versions that are 480 x 272 which are made for the iPhone and iPod Touch. I have not been able to watch both of the courses yet however I have finished with the Memory Management course.  I found this course to be very thorough showing examples of memory leaks and they also explain in detail why there is a leak and how to prevent it.  After going over the 6 rules of memory management they show you how to find memory leaks using a new feature of XCode 3 called Instruments.  They also show you how to find issues in your code where you release an object until the reference count is 0 and then try to access it again.  They state that this can be a very pesky bug that a lot of people run into.  They show you how to see the issue by using NSZombie and the console while your application is being run.  I am not too sure how easy it will be to find the issue as all the console really told you was the memory address where the object was as opposed to where in your code you reference it.
+
+Overall I found the pricing structure for the courses to be really quite affordable.  The price of [the memory management course](http://mac-developer-network.com/videocourses/memorymanagement/index.html) is $9.99 for non [MDN members](http://mac-developer-network.com/whyjoin/) and $4.99 for [MDN Members](http://mac-developer-network.com/whyjoin/).  For $9.99 you get an 86 minute HD quality training course that is money well spent in my opinion.  The price for [the status bar item course](http://mac-developer-network.com/videocourses/statusbaritems/index.html) is $4.99 for non [MDN members](http://mac-developer-network.com/whyjoin/) and ***only*** $1.99 for [MDN members](http://mac-developer-network.com/whyjoin/).  I am not sure how you could ever find quality training like this at such low prices.  I look forward to seeing what other courses they release over time.  I am not sure exactly how often they will be publishing but I believe I recall Scotty stating he was going to try to put out 1-2 new courses a month.  Now as time constraints take place don't hold me on this because things do tend to come up in everyone's lives.
+
+I found there to be a few issues in the video such as typos that were not corrected at any point in the video, it was just small things like this_NSString *string = [NSString alloc] initWithString:@"String 1"];_Notice that it is missing the first opening bracket.  It was just small things like that which any beginner will pick up on.  I am not that great with Obj-C yet but they were easy for me to catch.  I have reported the issues that I found to maintainer however whether they will be fixed or not is their call.  I am not sure what it would entail to fix a part of a video like that after it has been released.
+
+Just to get back on point, I would ***highly*** recommend both the [Aaron Hillegass](http://www.bignerdranch.com/instructors/hillegass.shtml) book and the training courses offered by the [Mac Developer Network](http://mac-developer-network.com/).  If you think that you will buy several courses in the future it might be very well worth the $25 yearly membership so that you can get 50% off the courses as they come out.  Now just because I mentioned the membership to the site and the video courses being paid services the [MDN](http://mac-developer-network.com/) actually has a lot of free stuff to offer to developers.  They run several free podcasts that are free to subscribe to.  Check out what they have to offer, it very well may benefit you.

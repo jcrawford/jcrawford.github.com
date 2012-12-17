@@ -1,0 +1,14 @@
+--- 
+wordpress_id: 110
+layout: post
+wordpress_url: http://www.josephcrawford.com/2006/09/30/milestone-reached/
+categories: 
+- slug: raves
+  autoslug: raves
+  title: Raves
+tags: []
+
+title: Milestone Reached
+---
+
+I am happy to announce that I have hit the first milestone for this site, i never thought it would be after the second month of being live.  My goal withing the first 4 months was to get 1000 visitors here in a month.  In August we had about 500 readers, and in September we jumped to just over 1000.  I want to thank all of you who read this site and look forward to making this site even better over time.  I hope that the content i provide will be enough to occupy your free time ;) 

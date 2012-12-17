@@ -1,0 +1,31 @@
+--- 
+wordpress_id: 469
+layout: post
+wordpress_url: http://www.josephcrawford.com/2007/09/21/review-linkinus/
+categories: 
+- slug: entertainment
+  autoslug: entertainment
+  title: Entertainment
+- slug: internet
+  autoslug: internet
+  title: Internet
+- slug: mac
+  autoslug: mac
+  title: Mac
+- slug: news
+  autoslug: news
+  title: News
+- slug: raves
+  autoslug: raves
+  title: Raves
+- slug: reviews
+  autoslug: reviews
+  title: Reviews
+- slug: websites
+  autoslug: websites
+  title: Websites
+tags: []
+
+title: "Review: Linkinus"
+---
+![Linkinus](http://www.josephcrawford.com/wp-content/uploads/2007/09/linkinus.jpg)Generally I tend to spend quite a bit of time on IRC in help channels relevant to programming.  I have the luxury of working from home so I do not always have other colleagues around so I can ask them questions, etc.  Having a good IRC client that is friendly on the eyes is something that is a must for me.  Prior to migrating to the Mac platform I used a few IRC clients.  The most well knows is [mIRC](http://www.mirc.com/) however I did not spend much time on that client because it had it's own scripting language.  I figured there was no point in learning another language only for scripting mIRC.  I eventually found [Klient](http://www.klient.com/) and fell in love with it.  It was geared more towards the developer.  It allowed scripting but also allowed you to create plug-ins using various languages.with the migration over to the Mac it has taken a while to find a nice IRC client.  I have been stuck using [Xchat Aqua](http://xchataqua.sourceforge.net/twiki/bin/view/Main/WebHome) which is nice but lacks a lot of features for developers, it also lacked quite a bit on how many scripts were out there for you to use.  Today another IRC user [drudge](http://www.conceitedsoftware.com/) recommended that I try [Linkinus](http://www.linkinus.com/).  I had never heard of this IRC client before so I decided to give it a shot.  The first thing I noticed was that it is interfaced with Growl which is a very nice notification system.  You can set it to notify you when a pre-set highlight word is said in any channel, or when you receive a private message.<!--more-->I was actually very relieved to see that with this IRC client you can actually change themes (using the Theme SDK), write scripts (with AppleScript) and it also has a Plugin SDK so that you can extend the clients functionality using Objective-C.  How great is it that it allows for this?  Recently I started getting into Objective-C programming and this will allow me to write small plugins and learn from it.  I love it when an IRC client makes it possible to use an already existing language for scripting/plug-ins.  Why learn another language that you will only use for that program.![Private Message](http://www.josephcrawford.com/wp-content/uploads/2007/09/linkinus1.jpg)Taking a look through the preferences for [Linkinus](http://www.linkinus.com/) revealed that there are a lot of settings which you can change so they are giving the user quite a bit of control.One of the really nice features that I like is the fact that they have what they call "Detach" mode.  This is the point where you are asking yourself what is detach mode.  Well simply put it allows you to close your IRC client but remain connected to IRC.  While you are in detach mode the Dock icon and application seem closed however in the menu bar there is an icon similar to Adium which allows you to change your status from away to back, etc.  You might be asking yourself why you would go into detach mode.  Most people who use detach mode use it when they need to get work done and just do not want IRC open and in the way.  Another good reason to use it would be if you are low on memory.  There's no need to have the UI loaded and constantly refreshing.  However while you are in detach people will still be able to get your attention because it is interfaced with Growl.One thing that I do like about the application is how it handles the channels.  Rather than using a status bar like most applications it uses a tree view.  It is very easy to jump from channel to channel and see exactly what channels you are in and on what server.  [Linkinus](http://www.linkinus.com/) also "remembers" what channels you have been in.  For instance if you connected to a server and joined a channel talked for a bit and then quit.  When you connected again the channel would be in the list of channels for that server and would allow you to just click it to join.  You can also check the channel in the server preferences to setup auto join.I have yet to use this feature but in the preference pane I see that it has support for [ezbounce](http://www.linuxftw.com/ezbounce/) which is a program you run on your machine (or your web hosting machine) which will allow you to totally quit out of your IRC client yet remain connected to IRC.  This is like a "super" detach mode.  Maybe one of these days when I get a dedicated machine I will give that a shot.  It is used as a proxy and allows for anonymity however you can also use it to give yourself a nifty host name such as ~user@domain.com.The only downfall I see to [Linkinus](http://www.linkinus.com/) is that it is not free to use.  Most IRC clients now days are free to use.  Whether they are open source or free-ware you can use them without paying.  In the past I have paid for my IRC clients such as [Klient](http://www.klient.com/) and I will do so in the future with [Linkinus](http://www.linkinus.com/) as well.  However even though it is only $20 for a license not everyone can afford that who uses an IRC client.

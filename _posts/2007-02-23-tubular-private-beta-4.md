@@ -1,0 +1,28 @@
+--- 
+wordpress_id: 380
+layout: post
+wordpress_url: http://www.josephcrawford.com/2007/02/23/tubular-private-beta-4/
+categories: 
+- slug: development
+  autoslug: development
+  title: Development
+- slug: internet
+  autoslug: internet
+  title: Internet
+- slug: news
+  autoslug: news
+  title: News
+- slug: rants
+  autoslug: rants
+  title: Rants
+- slug: reviews
+  autoslug: reviews
+  title: Reviews
+- slug: software
+  autoslug: software
+  title: Software
+tags: []
+
+title: Tubular Private Beta 4
+---
+About an hour ago I received an e-mail telling me that a new beta version of Tubular was released. I was inclined to check this version out as soon as possible because they were talking about how they have been rewriting the video component to use [Perian](http://perian.org) rather than the flash YouTube player. This change was going to fix several issues when it came to video playback.This new method of video playback was also supposed to fix the issue of crashing Tubular when you were attempting to play a video that was rated for adult viewing only. When you are on YouTube it will prompt you to say yes that you want to continue viewing but in Tubular it would just cause problems. I have yet to see any issues with the new player aside from the obvious. You have to completely load the video before you can start watching it. If you are attempting to watch a rather large video this can take quite a bit of time. I hate to wait!<!--more-->> Right now, the only problem weâ€™re having with Perian is that the video needs to preload fully before you can play it. Weâ€™re working on making it so you can stream the videos, so you only need to preload a small amount before it starts playing (like YouTubeâ€™s player). You can scrub to any frame you want, which is a huge advantage over the YouTube player (and, for that matter, any Flash video player, as it is a limitation of the technology).They have stated that they plan to work on the ability to stream the videos so that you can buffer a little bit and start watching it just as the YouTube player does and I think it will be great once that is implemented. Tubular is a nice browser for YouTube however with all of the wait time it does not make much sense over going directly to YouTube. I will not be using it a lot until they fix this issue. I am almost inclined to say that I liked the last version with the bugs over this version and having to wait to watch the video. After all isn't that why I have the fastest broadband in my area?This application still has a long way to go before it is actually going to be very useful.  There are still quite a few outstanding bugs that need to be taken care of.  You can see other users responses in the comments section of the [Tubular Blog](http://tubularapp.com/blog/26/094-thats-right#comments) post.Â  If you are thinking about pre-ordering a copy of this software I would highly discourage it.Â  I think it will be a waste of money, I am starting to think that the developer will fall off the planet before a solid version is ever released.

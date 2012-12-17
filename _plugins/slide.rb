@@ -31,7 +31,7 @@ module Jekyll
     # Returns <Post>
     def initialize(site, source, dir, name)
       @site = site
-      @base = File.join(source, dir, 'slides')
+      @base = File.join(source, dir, '_slides')
       @name = name
 
       self.categories = dir.split('/').reject { |x| x.empty? }
@@ -207,25 +207,6 @@ module Jekyll
 
     def inspect
       "<Slide: #{self.id}>"
-    end
-
-    def next
-      pos = self.site.slides.index(self)
-
-      if pos && pos < self.site.slides.length-1
-        self.site.slides[pos+1]
-      else
-        nil
-      end
-    end
-
-    def previous
-      pos = self.site.slides.index(self)
-      if pos && pos > 0
-        self.site.slides[pos-1]
-      else
-        nil
-      end
     end
   end
 

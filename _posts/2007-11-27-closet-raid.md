@@ -1,0 +1,28 @@
+--- 
+wordpress_id: 507
+layout: post
+wordpress_url: http://www.josephcrawford.com/2007/11/27/closet-raid/
+categories: 
+- slug: development
+  autoslug: development
+  title: Development
+- slug: entertainment
+  autoslug: entertainment
+  title: Entertainment
+- slug: raves
+  autoslug: raves
+  title: Raves
+tags: []
+
+title: Closet Raid
+---
+
+I have been thinking about setting up a raid server in my closet that will run on Wi-Fi.  I would like to do this because any computer in the house would be able to access the share.  When I first started to think about getting a backup system I thought about getting a ReadyNAS NV+ which is a device you can put up to 4 hard drives in and have RAID 5 which is a great bonus.
+  
+![3ware](http://www.josephcrawford.com/wp-content/uploads/2007/11/3ware.jpg)I searched around and found that the ReadyNAS NV+ costs $1,049.00 (directly from NETGEAR) as an empty unit (meaning no hard drives).  I found this to be quite expensive for lack of growth that it offers.  You can only have 4 drives, they can be no larger than 750GB each.  You are limited to 3TB of storage space.
+  
+I have been pricing out all the hardware I would need to setup a massive RAID system and actually it's a lot cheaper than I thought it was going to be.  The main PC components such as case, motherboard, processor, memory, power supply only run about $450.  The kicker though and what is stopping me right now is the fact that if I do this I want to do it right.  I have been looking at a [3ware](http://www.newegg.com/product/product.asp?item=N82E16816116059) SATA II RAID Controller card that will support up to 16 SATA II drives.  It is quite pricey though.  It is $749.99 just for the PCI-X card.
+  <!--more-->  
+You might be saying to yourself "christ just buy the Infrant" but with this system I would not be limited to the  amount of space like 3TB.  In theory if it was financially possible I could throw 16 1TB drives in the case and have a heck of a server.  I do not plan to do that though, I will wait for the cost of the drives to drop ;)
+  
+I plan to start off with 3-4 500GB SATA drives and every month or so throw another drive or 2 at it  You must be thinking why does he need all of that storage space?  Truthfully I don't but it will be nice to know you will never ever run out of storage space.  I am going to start buying the pieces to this system over the next few months and hopefully have it built by February of 2008.  I also plan to have the machine be a dedicated computer for the [seti@home](http://setiathome.berkeley.edu/) and [rosetta@home](http://boinc.bakerlab.org/rosetta/) projects.  I also plan to use it as my development machine with Apache, MySQL, PHP, SVN, etc all installed.

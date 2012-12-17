@@ -1,0 +1,42 @@
+--- 
+wordpress_id: 609
+layout: post
+wordpress_url: http://josephcrawford.com/?p=609
+categories: 
+- slug: entertainment
+  autoslug: entertainment
+  title: Entertainment
+- slug: internet
+  autoslug: internet
+  title: Internet
+- slug: raves
+  autoslug: raves
+  title: Raves
+- slug: reviews
+  autoslug: reviews
+  title: Reviews
+- slug: software
+  autoslug: software
+  title: Software
+- slug: useful
+  autoslug: useful
+  title: Useful
+- slug: websites
+  autoslug: websites
+  title: Websites
+- slug: work
+  autoslug: work
+  title: Work
+tags: []
+
+title: "Coda: An after use review"
+---
+
+[![](http://josephcrawford.com/wp-content/uploads/2008/07/coda-logo.png "Coda Logo")](http://www.panic.com/coda/)If you have not already read [my review](http://josephcrawford.com/2008/07/10/an-in-depth-look-at-coda/) on [Coda](http://www.panic.com/coda/) you should do that now before you read this one.  This review is based on what I personally feel are drawbacks in the application.  I have been using [Coda](http://www.panic.com/coda/) for the last few days pretty heavily for work.  I feel that I have given it a good chance to prove itself as the tool of choice for development.  In my last review I went over a lot of the good features that [Coda](http://www.panic.com/coda/) has to offer, in this post however I will go over what I find to be drawbacks in the application. 
+<!--more-->
+1. **No Save All Command**I am not sure about you however when I am working generally I have several files open in the editor at one time.  I have been unable to find a command that will offer the save all functionality that I am used to.  I would love to see a save all menu item integrated into a later version of [Coda](http://www.panic.com/coda/).  This does not seem like a big deal but if you have 20 files open and edited you have to save them all individually rather than hitting one menu item or one keyboard short cut.  It just tends to be a bit of a pain for me.  **In a response from [Panic](http://www.panic.com/) I was told that holding down the opt key while choosing save will give you a save all option.**
+**No Close All Files Command**I have been unable to find a command to close all of the opened files in a site that I am working on.  I have found a work around but it is not the best way.  I would love to see a close all files command added to a later version of [Coda](http://www.panic.com/coda/).  Currently I have to right click on the tab of an open file and choose close others.  I then have to close the remaining file that is left opened.**Unable to set Default view when opening Coda**This is not a show stopper when it comes to using [Coda](http://www.panic.com/coda/), however it is a bit annoying.  When I open [Coda](http://www.panic.com/coda/) it always opens to the edit tab view of the interface with an untitled document open.  It would be nice if I could make it open to the sites tab view rather than the edit file.  I would like to open [Coda](http://www.panic.com/coda/) and see all of my sites there ready for work. **In the response from [Panic](http://www.panic.com/) they also told me that you can set the view in the general preferences pane.  New windows open with?****Symbolic Link Issues**I added a symbolic link to a directory, went back to the edit view in [Coda](http://www.panic.com/coda/) and refreshed the directory.  I noticed that I used the wrong path when creating the symbolic link so I had to go back into the terminal and delete the symbolic link and re-create it.  After re-creating the link in the terminal I went back to the edit view and refreshed the directory.  To my surprise the symbolic link did not reload.  It still went to the old path from the first symbolic link created.  It did not update the symbolic link in the file list until I actually restarted [Coda](http://www.panic.com/coda/).**F5 for Refresh**While messing with the symbolic link stuff I noticed that there is only one way to refresh the file listing in [Coda](http://www.panic.com/coda/).  You have to right click and choose refresh.  It would be nice if I could click on a file and hit F5 to refresh the directory that I am viewing.  **[Panic](http://www.panic.com/) also told me that you can refresh a directory by pushing Command-R if the file list is active it will refresh.****Terminal Settings**I noticed that when setting up a site the terminal portion of the application uses the same Remote Root as the site.  It would be nice if I had the option to use a different Remote Root.  I have setup my site to use a Remote Root that is for instance /home/jcrawford/projects/site/trunk/workspace/.  This directory has symbolic links to different parts of the project such as the www, api, video, etc.  When I open the terminal app i constantly have to cd .. before I can run any svn commands.  This is because ./ is the svn root and not ./workspace/**Searching A Site**I have been unable to find a way to actually search a site for a string.  I am so used to having this ability.  Open a search dialog, tell it to search all files in a site and have it return the files where the match was found.  This is extremely helpful when it comes to finding strings in an entire project.  I thing this is the biggest issue I have with [Coda](http://www.panic.com/coda/).  It would be very nice to have this feature.**Loses Remote Connection**I have noticed that with [Coda](http://www.panic.com/coda/) if you leave the application open for a while still connected to a remote site and then return to use it you will have to close the application and then re-open it.  Something happens with the remote connection when there is no activity because when I go to lunch and then come back trying to open a file results in an error from [Coda](http://www.panic.com/coda/).  Every time I try to open a file I would get a dialog that says "write error"  This happens until I restart the application.  I am not sure if this is an issue with [Coda](http://www.panic.com/coda/) or if this is an issue with SSH, however couldn't [Coda](http://www.panic.com/coda/) send a command to the site every so often to stop the timeouts?**Code Templates**When using Zend Studio I got used to the code templates that they offered.  You could go into the preferences and define a keyword such as 'prdebug' and you could have it use a specified set of code.  In the editor when you type 'prde' it would pop up a dialog much like the ones for the PHP functions that would put code in your editor for you.  I got used to the prdebug template that I created that would put nicely formatted print_r debugging commands in place.  The code I had generated wasecho '<pre>'; print_r($api_result); echo '</pre>'; exit;**Variable Detection**In other editors that I have used if you do something like the following:$var = 1;Later in your code if you started to type '$va' it would pop up the dialog box much like the php functions do that will allow you to choose the defined variables.  If for instance you had $var1 and $variable defined the popup would allow you to choose either variable.**Active Line Highlighting**It would be nice if [Coda](http://www.panic.com/coda/) were to hilite the active line with a different color, a medium gray perhaps?  This would make it very easy to detect where your cursor was at any given time.
+
+These are all issues that I have found over the past few days.  Now I am sure that I will find other issues and features that I did not know about at the time of this writing.  I will not be doing another review on this application unless a new version is released.  None of the drawbacks listed above are a total show stopper for me.  Although I like the ability to search all files in a site I can just launch the terminal and grep or use Zend Studio to do my searching.
+
+The team over at [Panic](http://www.panic.com/) really does know how to develop some great software.  Their most well known application is [Transmit](http://www.panic.com/transmit/) an FTP application.  I actually found that [Coda](http://www.panic.com/coda/) uses the [Transmit](http://www.panic.com/transmit/) core for transmitting files to the remote servers.  My personal thoughts on [Coda](http://www.panic.com/coda/) are that it is a nice application and I will use it daily until I find an issue that is a total show stopper for me.
