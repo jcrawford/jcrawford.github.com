@@ -1,0 +1,3 @@
+include = "{*,.tm_properties}"
+excludeFiles = "{$exclude,*.tmproj}"
+includeDirectories = "{*,.phrozn}"
