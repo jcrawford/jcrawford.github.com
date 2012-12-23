@@ -89,7 +89,7 @@ body {
 	font-size:16px;
 	font-weight:normal;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 	padding-top: 27px;
 }
 
@@ -99,7 +99,7 @@ h1 {
 	font-size:32px;
 	font-weight:600;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 }
 
 h2 {
@@ -108,7 +108,7 @@ h2 {
 	font-size:18px;
 	font-weight:500;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 }
 
 h3 {
@@ -117,7 +117,7 @@ h3 {
 	font-size:22px;
 	font-weight:500;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 }
 
 h4 {
@@ -126,7 +126,7 @@ h4 {
 	font-style: normal;
 	font-weight: bold;
 	line-height:14px;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 }
 
 #main h4 span {
@@ -142,7 +142,7 @@ h5 {
 	font-size:14px;
 	font-weight:normal;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 }
 
 h6 {
@@ -151,7 +151,7 @@ h6 {
 	font-size:12px;
 	font-weight:normal;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 }
 
 a {
@@ -206,7 +206,7 @@ body {
 	font-size:11px;
 	font-weight:normal;
 	font-style:normal;
-	font-family:inherit;
+	font-family: 'Monda', sans-serif;:inherit;
 }
 
 .header_links li a {
@@ -225,7 +225,7 @@ body {
 	line-height: 40px;
 	font-weight:900;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 	letter-spacing: -1px;
 }
 
@@ -259,7 +259,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:11px;
 	font-weight:bold;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 	text-transform:uppercase;
 }
 
@@ -323,7 +323,7 @@ font-family: 'Rum Raisin', sans-serif;
 	padding-left: 0;
 	font-weight: 600;
 	font-style: normal;
-font-family: 'Rum Raisin', sans-serif;
+font-family: 'Monda', sans-serif;: 'Rum Raisin', sans-serif;
 }
 
 #sidebar .post_title a {
@@ -332,7 +332,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:13px;
 	font-weight:400;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+ffont-family: 'Monda', sans-serif; 'Rum Raisin', sans-serif;
 }
 
 /*:Main Content End ~*~*/
@@ -352,7 +352,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:12px;
 	font-weight:normal;
 	font-style:normal;
-	font-family:inherit;
+	font-family: 'Monda', sans-serif;:inherit;
 }
 
 
@@ -362,7 +362,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:20px;
 	font-weight: 900;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+ffont-family: 'Monda', sans-serif; 'Rum Raisin', sans-serif;
 }
 
 #footer a {
@@ -397,7 +397,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:12px;
 	font-weight:normal;
 	font-style:normal;
-	font-family:inherit;
+	font-family: 'Monda', sans-serif;:inherit;
 }
 
 #sub_footer a {
@@ -406,7 +406,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:12px;
 	font-weight:normal;
 	font-style:normal;
-	font-family:inherit;
+	font-family: 'Monda', sans-serif;:inherit;
 	text-decoration:none;
 }
 
@@ -427,7 +427,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:13px;
 	font-weight:normal;
 	font-style:italic;
-font-family: 'Rum Raisin', sans-serif;
+ffont-family: 'Monda', sans-serif; 'Rum Raisin', sans-serif;
 }
 
 .button, button, a.button_link, a.post_more_link, input[type="submit"], input[type="reset"], input[type="button"]{
@@ -453,7 +453,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:20px;
 	font-weight:600;
 	font-style:normal;
-	font-family:inherit;
+	font-family: 'Monda', sans-serif;:inherit;
 }
 
 .flex-caption { 
@@ -462,7 +462,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:12px;
 	font-weight:normal;
 	font-style:normal;
-	font-family:inherit;
+	font-family: 'Monda', sans-serif;:inherit;
 }
 
 .widget_tag_cloud a
@@ -472,7 +472,7 @@ font-family: 'Rum Raisin', sans-serif;
     font-size:inherit;
     font-weight:400;
     font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+fontfont-family: 'Monda', sans-serif;um Raisin', sans-serif;
 }
 
 .single_post_content .post_title {
@@ -481,7 +481,7 @@ font-family: 'Rum Raisin', sans-serif;
 	font-size:30px;
 	font-weight:400;
 	font-style:normal;
-font-family: 'Rum Raisin', sans-serif;
+ffont-family: 'Monda', sans-serif; 'Rum Raisin', sans-serif;
 }
 
 
