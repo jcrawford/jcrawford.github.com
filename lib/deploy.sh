@@ -12,7 +12,7 @@ else
     mkdir "/tmp/jekyll/build"
 fi
 
-cd /Volumes/Storage/Dropbox/Projects/jcrawford.github.com
+cd "/Volumes/Storage/Dropbox/Projects/jcrawford.github.com/"
 git checkout dev
 rm -rf _site/
 jekyll
