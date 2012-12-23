@@ -11,7 +11,6 @@ fi
 
 cd "/Volumes/Storage/Dropbox/Projects/jcrawford.github.com/"
 git checkout dev > /dev/null 2>&1
-rm -rf _site/ > /dev/null 2>&1
 echo 'PROCESSING BUILD'
 jekyll > /dev/null 2>&1
 if [ -d "_site" ]; then
