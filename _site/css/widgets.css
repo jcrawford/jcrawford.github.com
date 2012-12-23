@@ -1,0 +1,496 @@
+/* General */
+.widget li
+{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.widget .list li
+{
+  padding-top: 0;
+}
+
+.widget li ul
+{
+  padding-top: 5px;
+}
+
+.textwidget
+{
+  clear: both;
+}
+
+.widget_tag_cloud a
+{
+  padding: 4px;
+}
+
+/* Popular Posts */
+#sidebar .miss_recent_widget .post_list_content,
+#sidebar .miss_popular_widget .post_list_content
+{
+  max-width: 160px;
+}
+
+/* Recent Posts */
+#sidebar .miss_recent_widget .post_list_content {
+  max-width: 160px;
+}
+#footer .miss_recent_widget .small_post_list .post_list_module {
+  margin-bottom: 2px !important;
+  border-bottom-width: 0 !important;
+}
+#footer .miss_recent_widget .small_post_list .post_list_module img {
+  margin-bottom: 0 !important;
+  border: rgba(255,255,255,.10) 1px solid;
+  padding: 5px;
+  background: #010101;
+  border: 1px solid rgba(0,0,0,.12);
+}
+
+/* Popular Posts */
+.small_post_list .post_title
+{
+  margin-bottom: 0;
+}
+
+.small_post_list .post_meta
+{
+  margin-bottom: 0;
+}
+/* Embedded Code */
+
+.embed_code {
+  background-color: #fff;
+}
+.embed_code p {
+  margin-bottom: 0;
+  margin: 0;
+  padding: 4px 12px 12px 12px;
+  line-height: 17px;
+  font-size: 11px;
+}
+
+/* Twitter */
+.miss_twitter_widget ul
+{
+  list-style: none;
+  padding-left: 0;
+}
+.miss_twitter_widget li
+{
+  margin-bottom: 1px !important;
+  margin-top: 0 !important; !
+  padding: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.miss_twitter_widget li a
+{
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  min-height: 20px;
+  font-size: 12px;
+  background-color: rgba(255,255,255,.9);
+  background-image: url('../images/production/widgets/icon-twitter-02.png');
+  background-repeat: no-repeat;
+  padding: 14px 28px 14px 43px;
+  background-position: 10px 12px;
+}
+
+.miss_twitter_widget li a
+{
+  display: block;
+}
+
+.miss_twitter_widget li a:hover
+{
+  background-image: url('../images/production/widgets/icon-twitter-01.png');
+  background-color: rgba(0,0,0,.02);
+  color: #808080;
+}
+#footer .miss_twitter_widget li a {
+  background-color: rgba(0,0,0,0);
+}
+
+#footer .miss_twitter_widget li a:hover
+{
+  background-image: url('../images/production/widgets/icon-twitter-03.png') !important;
+}
+
+/* Flickr Widget */
+.flickr_wrap
+{
+  position: relative;
+  margin-left: -2px;
+  margin-right: -6px;
+}
+
+.flickr_badge_image
+{
+  float: left;
+  line-height: 100%;
+  padding: 0 5px 5px 0;
+}
+#footer .flickr_badge_image img {
+  border: rgba(255,255,255,.10) 1px solid;
+}
+.flickr_badge_image img
+{
+  padding: 5px;
+  margin: 2px;
+  background: #010101;
+  border: 1px solid rgba(0,0,0,.12);
+}
+
+/* Recent Comments */
+#recentcomments
+{
+  list-style: none;
+  padding-left: 0;
+}
+
+.recentcomments
+{
+  list-style: none;
+  padding-left: 25px !important;
+  background: url('../images/shortcodes/icons/icons_222222.png') no-repeat -380px -237px;
+}
+
+/* Contacts */
+.contact_widget_name
+{
+  background: url('../images/shortcodes/icons/icons_222222.png') no-repeat -420px -203px;
+}
+
+.contact_widget_phone
+{
+  background: url('../images/shortcodes/icons/icons_222222.png') no-repeat -379px -241px;
+}
+
+.contact_widget_email
+{
+  background: url('../images/shortcodes/icons/icons_222222.png') no-repeat -338px -281px;
+}
+
+.contact_widget_name,.contact_widget_address,.contact_widget_city,.contact_widget_phone,.contact_widget_email
+{
+  padding-left: 25px;
+  display: inline-block;
+}
+
+/* Calendar */
+#wp-calendar
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 11px;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+
+#sidebar_inner #wp-calendar {
+/*  background-color: rgba(255,255,255,.9); */
+}
+.widget_calendar .widgettitle {
+  display: none;
+}
+.widget_calendar caption {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  background: #fff;
+  padding: 12px !important;
+}
+
+#wp-calendar caption,#wp-calendar th,#wp-calendar td,#wp-calendar tfoot
+{
+  font-family: Lato, "Open Sans", Helvetica, Arial !important;
+  padding: 5px;
+}
+
+#wp-calendar tfoot td
+{
+  border: none!important;
+}
+#wp-calendar tbody {
+border-spacing: 1px;
+}
+#wp-calendar th
+{
+  background-color: rgba(0,0,0,.35) !important;
+  color: #fff !important;
+  font-weight: 900 !important;
+  font-size: 12px;
+}
+
+#wp-calendar thead th:hover
+{
+  background-color: rgba(0,0,0,.56) !important;
+  color: #fff;
+}
+#wp-calendar tbody td
+{
+  margin-bottom: 1px;
+  margin-right: 1px;
+  background-color: rgba(255,255,255,1) !important;
+  color: #666666;
+}
+#wp-calendar tbody td {
+  border-right: 1px #f4f4f4 solid;
+}
+#wp-calendar tbody td:last-child {
+  border-right-width: 0;
+}
+
+#wp-calendar tbody tr td {
+  border-top: 1px #f4f4f4 solid;
+}
+#wp-calendar tbody tr:last-child td {
+}
+#wp-calendar tbody td:hover,
+#wp-calendar tbody td:hover a
+{
+  color: #fff;
+}
+#wp-calendar tbody td:hover,
+#wp-calendar tbody td:last-child:hover
+
+{
+  background-color: rgba(0,0,0,.56) !important;
+}
+
+#wp-calendar tbody tr:hover
+{
+  background-color: rgba(100,100,100,.05);
+}
+#wp-calendar td.pad:hover, #wp-calendar tr #prev:hover, #wp-calendar tr #next:hover,#wp-calendar tbody tr td:last-child
+{
+  background-color: rgba(255,255,255,.8) !important;
+}
+
+#wp-calendar tbody #today
+{
+  font-weight: 900 !important;
+  color: #fff !important;
+  background: rgba(0,0,0,.90) !important;
+}
+
+#next
+{
+  text-align: right;
+}
+
+#prev
+{
+  text-align: left;
+}
+
+#next a
+{
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#prev a
+{
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* RSS Widget */
+.rss-date
+{
+  color: #bbb;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.widget_rss li a
+{
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.rssSummary
+{
+  margin-bottom: 5px;
+}
+
+/* Facebook Likes Widget */
+.fbConnectWidgetTopmost
+{
+  border-width: 0;
+  border-color: transparent !important;
+}
+.fbConnectWidgetTopmost div:first-child; {
+	max-width:305px !important;
+}
+
+#footer .widget_recent_entries li:hover, #footer .miss_subnav_widget li:hover {
+  background-color: rgba(255,255,255,.04);
+}
+
+/* Social Counters */
+
+.facebook_like iframe[style] {width: 100% !important;}
+
+.feed-counter div {
+    width:30%;
+    position:relative;
+    margin-right:5%;
+    margin-bottom:20px;
+    float:left;
+    height:100px;
+}
+
+.feed-counter div:last-child {
+    margin-right: 0!important;
+    clear: right;
+}
+
+#socialCounterWidget {
+  text-align:center;
+}
+#socialCounterWidget .socialCounterBox {
+  background-color: rgba(255,255,255,.9);
+  border-right: 1px rgba(0,0,0,.07) solid;
+}
+.feed_link_widget {
+  background-color: rgba(255,255,255,.9);
+}
+#socialCounterWidget .socialCounterBox:last-child {
+  border-right-width: 0;
+}
+#socialCounterWidget .count {
+    line-height: 15px;
+    font-weight:normal;
+    display:block;
+    font-size:18px;
+    font-family: "Open Sans", "Georgia", serif;
+}
+
+.feed_link_widget .title {
+    line-height: 15px;
+    font-weight:normal;
+    display:block;
+    font-size:18px;
+    font-family: "Open Sans", "Georgia", serif;
+    padding-top: 12px;
+}
+
+#socialCounterWidget a#sc_rss {
+    display:block;
+    width:99px;
+    float:left;
+}
+.feed_link_widget .icon {
+    display:block;
+    width:99px;
+    float:left;
+}
+.feed_link_widget .icon, #sc_rss .icon {
+    background-image:url('../images/production/counters/rss-variant1.png');
+}
+
+#socialCounterWidget a#sc_delicous {
+    display:block;
+    width:99px;
+    float:left;
+}
+a#sc_delicous .icon {
+    background-image:url('../images/production/counters/delicous-variant1.png');
+}
+
+#socialCounterWidget a#sc_twitter {
+    display:block;
+    width:99px;
+    float:left;
+}
+
+a#sc_twitter .icon {
+    background-image:url('../images/production/counters/twitter-variant1.png');
+}
+
+#socialCounterWidget a#sc_facebook {
+    display:block;
+    width:99px;
+    float:left;
+}
+
+a#sc_facebook .icon {
+    background-image:url('../images/production/counters/facebook-variant1.png');
+}
+
+#socialCounterWidget .icon {
+    width:47px;
+    height:40px;
+    display:block;
+    margin-left:26px;
+    margin-bottom:9px;
+    padding-top: 2px;
+    background-position: center 2px;
+    background-repeat: no-repeat;
+}
+
+.feed_link_widget .icon{
+    width:47px;
+    height:40px;
+    display:block;
+    margin-bottom:9px;
+    padding-top: 2px;
+    background-position: center 2px;
+    background-repeat: no-repeat;
+}
+
+#socialCounterWidget .title {
+    font-size:11px;
+    color:#909090;
+    font-weight: 300;
+    letter-spacing:1px;
+    font-family:Lato, Helvetia, Arial, Tahoma, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.feed_link_widget .description {
+    font-size:11px;
+    color:#909090;
+    display:block;
+    font-weight: 300;
+    letter-spacing:1px;
+    font-family:Lato, Helvetia, Arial, Tahoma, Verdana, sans-serif;
+    font-style: italic;
+    padding-bottom: 6px;
+}
+
+/* Last FT Tab */
+#sidebar .lastfm_record {
+  padding: 5px;
+}
+#sidebar .lastfm_record img {
+  position: relative !important;
+}
+.lastfm_record .mosaic-overlay {
+  background: rgba(0,0,0,.8);
+  font-weight: 600;
+  color: #fff !important;
+  vertical-align: middle;
+  text-align:center;
+}
+#sidebar .lastfm_record .mosaic-overlay {
+  height: 100%;
+  text-align:left;
+  padding-top: 20px;
+  background: rgba(0,0,0,.8);
+  font-weight: 600;
+  color: #fff;
+  vertical-align: middle;
+}
