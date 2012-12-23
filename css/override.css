@@ -1,4 +1,4 @@
-div.highlight pre {
+div.highlight pre, div.highlight code {
     background-color: transparent;
     border: medium none;
     margin: 0;
