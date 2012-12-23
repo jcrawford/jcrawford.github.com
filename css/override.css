@@ -1,0 +1,26 @@
+div.syntax pre {
+    background-color: transparent;
+    border: medium none;
+    margin: 0;
+    overflow: auto;
+    padding: 10px;
+}
+
+div.syntax {
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.syntax {
+    background: none repeat scroll 0 0 #272822;
+    color: #F8F8F2;
+}
+
+.highlight {
+    background-color: #272822 !important;
+}
+
+#main_inner {
+    font-size: 14px;
+}
