@@ -1,13 +1,10 @@
 #!/bin/bash
 
 if [ -d "/tmp/jekyll" ]; then
-    echo 'DELETING TEMP DIRECTORY'
     rm -rf "/tmp/jekyll"
-    echo 'CREATING TEMP DIRECTORY'
     mkdir "/tmp/jekyll"
     mkdir "/tmp/jekyll/build"
 else
-    echo 'CREATING TEMP DIRECTORY'
     mkdir "/tmp/jekyll"
     mkdir "/tmp/jekyll/build"
 fi
