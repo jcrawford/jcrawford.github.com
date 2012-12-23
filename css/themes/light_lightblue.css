@@ -36,6 +36,10 @@ a:hover,
  color: #808080;
 }
 
+#main_inner {
+    font-size: 14px;
+}
+
 #footer a:hover,
 .post_meta a:hover {
 /*:Meta Links*/
