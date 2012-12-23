@@ -13,15 +13,15 @@ else
 fi
 
 cd "/Volumes/Storage/Dropbox/Projects/jcrawford.github.com/"
-git checkout dev
-rm -rf _site/
-jekyll
+git checkout dev > /dev/null 2>&1
+rm -rf _site/ > /dev/null 2>&1
+jekyll > /dev/null 2>&1
 if [ -d "_site" ]; then
     if [ -d "/tmp/jekyll/build/" ]; then
         echo "Copying Build"
-        cp -rf "_site/" "/tmp/jekyll/build/"
+        cp -rf "_site/" "/tmp/jekyll/build/" > /dev/null 2>&1
         echo "Checking out the MASTER branch"
-        git checkout master
+        git checkout master > /dev/null 2>&1
         echo "Deleting all old files"
         rm -rf *
         if [ -d "/tmp/jekyll/build/" ]; then
@@ -30,9 +30,9 @@ if [ -d "_site" ]; then
             git add . > /dev/null 2>&1
             git commit -am "running site build process"
             echo "Pushing site build to Github"
-            git push origin master
+            git push origin master > /dev/null 2>&1
             echo "Checking out the development branch"
-            git checkout dev
+            git checkout dev > /dev/null 2>&1
         else
             echo 'BUILD FAILED!!'
         fi
