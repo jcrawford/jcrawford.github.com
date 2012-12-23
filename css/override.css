@@ -1,5 +1,4 @@
 div.highlight pre, div.highlight code {
-    background-color: transparent;
     border: medium none;
     margin: 0;
     overflow: auto;
@@ -11,6 +10,7 @@ div.highlight pre, div.highlight code {
 }
 
 div.highlight {
+    background-color: #272822 !important;
     border-bottom: 1px solid #CCCCCC;
     border-top: 1px solid #CCCCCC;
     margin-bottom: 10px;
