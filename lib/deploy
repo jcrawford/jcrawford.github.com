@@ -19,20 +19,20 @@ echo 'PROCESSING BUILD'
 jekyll > /dev/null 2>&1
 if [ -d "_site" ]; then
     if [ -d "/tmp/jekyll/build/" ]; then
-        echo "Copying Build"
+        echo "COPYING BUILD"
         cp -rf "_site/" "/tmp/jekyll/build/" > /dev/null 2>&1
-        echo "Checking out the MASTER branch"
+        echo "GOING TO MASTER"
         git checkout master > /dev/null 2>&1
-        echo "Deleting all old files"
+        echo "DELETING OLD FILES"
         rm -rf *
         if [ -d "/tmp/jekyll/build/" ]; then
-            echo "Copying build into MASTER branch"
+            echo "COPYING BUILD FILES"
             cp -rf /tmp/jekyll/build/* . > /dev/null 2>&1
             git add . > /dev/null 2>&1
-            git commit -am "running site build process"
-            echo "Pushing site build to Github"
+            git commit -am "running site build process" > /dev/null 2>&1
+            echo "PUSHING NEW BUILD TO GITHUB"
             git push origin master > /dev/null 2>&1
-            echo "Checking out the development branch"
+            echo "GOING TO DEV"
             git checkout dev > /dev/null 2>&1
         else
             echo 'BUILD FAILED!!'
