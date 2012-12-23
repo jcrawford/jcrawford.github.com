@@ -1,0 +1,16 @@
+--- 
+layout: post
+is_review: false
+title: Flock 0.7.10.1 Released
+tags: 
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+---
+![Flock Window Menu Bug](http://www.josephcrawford.com/wp-content/uploads/2007/02/picture-2.png) Today my Flock automatically updated to 0.7.10.1 and I immediately found a bug.Â  I am not sure why it is doing this, however when I clicked on the Window menu I noticed this.  I am not sure why it is not showing the name of the window or the page title as it did before, but this is a minor bug that they will need to squash.  I am so looking forward to 0.8 to be released and to see what they have done for improving the all around usability of Flock.

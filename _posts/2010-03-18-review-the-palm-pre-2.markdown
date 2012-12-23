@@ -1,0 +1,30 @@
+--- 
+layout: post
+is_review: true
+image: WebOS.png
+title: "Review: The Palm Pre"
+tags: 
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+- title: Rants
+  autoslug: rants
+  slug: rants
+- title: News
+  autoslug: news
+  slug: news
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Palm
+  autoslug: palm
+  slug: palm
+- title: Useful
+  autoslug: useful
+  slug: useful
+excerpt: If you have ready anything on my site regarding the <a href="http://www.josephcrawford.com/?s=Palm+Pre">Palm Pre</a> you will find that every review is good in nature.  However I feel those reviews have more to do with the functionality of the phone and not the actual hardware.
+---
+If you have ready anything on my site regarding the [Palm Pre](http://www.josephcrawford.com/?s=Palm+Pre) you will find that every review is good in nature.  However I feel those reviews have more to do with the functionality of the phone and not the actual hardware.  While this post will not go into details about the hardware specifications it will deal with hardware quality.  So without wasting any time let's get started.I have had 2 Palm Pre's on my Sprint account for the last 10 months.  My fiance and I both have the phones and have been happy with them for the most part.  However what really makes me angry is the quality of the phone.  Now you see I can understand having to replace a defective phone from time to time but this is getting ridiculous.  I have replaced my phone 3 or 4 times and my fiances phone is being replaced for a 3rd time now.  Surely 2 phones should not have to be replaced 7-8 times over the course of a year.  Shouldn't phones that are "this expensive" actually be quality devices?  I have no qualms with the way the phone operates.  I rather like the WebOS operating system but without a phone that will function the OS is rendered useless as well.I have contacted Sprint to see about getting different phones but I feel they are going to tell me that I am out of luck.  This is the point where I will just end the contract with Sprint and find service elsewhere.  I will update this post once I hear back from Sprint with their response.Do you have a Pre?  How many times have you had to have yours repaired/replaced?  Please leave a comment and let me know.

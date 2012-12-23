@@ -1,0 +1,17 @@
+--- 
+layout: post
+is_review: false
+title: iTunes 7 Album Art
+tags: 
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Mac
+  autoslug: mac
+  slug: mac
+- title: Rants
+  autoslug: rants
+  slug: rants
+---
+
+I have to say the album art is a nice feature on iTunes 7 however one thing that i do not like is that they say it will add the art to all albums whether or not you bought it on the iTMS.  I tried to add Elton John - Peachtree Road and Blues Traveler - Live on the Rocks, neither of which can be found on iTMS.  I am guessing they only support the music that they sell for the cover art and am dissapointed that not all albums could be gathered like this.  I guess we are stuck updating the album art which iTunes cannot find manually.

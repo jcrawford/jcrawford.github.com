@@ -1,0 +1,27 @@
+--- 
+layout: post
+is_review: true
+title: "Review: Advertising"
+tags: 
+- title: Rants
+  autoslug: rants
+  slug: rants
+- title: News
+  autoslug: news
+  slug: news
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+---
+
+So as you may have read previously I was going to check out a few different methods of advertising on the site.  Determine which method would give the best return and also not be intrusive to the viewers.  I tried Google AdSense and found that to be too intrusive.  The good thing about AdSense is that it is integrated with Google Analytics which is a very nice statistics tool.  In the future I may give AdSense a try again if I can figure out how to make it look less intrusive with my layout.
+
+After I gave up on AdSense I tried Kontera which is an in-text method.  You place a small bit of javascript before your <body> tag and it will link certain terms in your text.  It would also show more information when the visotor hovers over the links.  The only issue i have found with this is that it does not have a very good return.  I think visitors may find it a bit intrusive when they move the mouse around the screen to have all of these info boxes popping up.
+</body>
+I also found that when using IE 6 the links are messed up, they appear out of place.  I am going to leave Kontera in place for now but once the site gets listed in Google I think I will give Text Link Ad's a try.  TLA is not intrusive to the user at all and from what i can see will increase page rank and visitors very well.  I have started the testing for TLA by buying 6 ad's for my site.  So far though I have not seen many visitors come to the site from any of the TLA's that I purchased which makes me a bit weary about the idea.

@@ -1,0 +1,36 @@
+--- 
+layout: post
+is_review: true
+title: "Review: Hunt Valley Marriott"
+tags: 
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Raves
+  autoslug: raves
+  slug: raves
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+- title: Work
+  autoslug: work
+  slug: work
+---
+
+Through my lifetime I have had to stay in quite a few different hotels.  Recently work has been calling me down to Timonium, MD and they have been putting me up in the Hunt Valley [Marriott](http://www.marriott.com/).  I must say that this is one of the nicest hotels I have stayed in.  Upon check-in I was greeted by very courteous staff who were set out to do anything they could to make your stay enjoyable.
+
+However cost comes with the nice decor.  The room I have been staying in have been around $220 per night.  The bedding is some of the best I have seen.  They have down comforters on every bed, nice fluffy pillows and the mattresses are very comfortable.  The room I am staying in even has a flat panel LCD tv which is very nice.
+<!--more-->
+This hotel has it all.  A nice restaurant, a gift shop, a bar, a gym, a pool and much more.  Last time I was here I went to the bar a few times for some drinks.  While it is not the cheapest place to drink it does have the convenience of only being downstairs.  There is no driving or cab fares to go to and from the bar or club.  I do not recall the exact price for a drink but I think it was somewhere around $7 for a small drink.
+
+Tonight I gave room service a shot and while the food was pretty good the prices were expensive.  I guess that is to be expected for a hotel of this class.  The staff did get my order wrong as I ordered the cinnamon cheese cake with graham cracker crust and got 2 round cheesecakes drizzled with strawberry syrup with blueberries and strawberries.  It was all the same to me but it is a good thing I do not have allergies to these items.  Dinner tonight ran me $45 for the cheesecake, a plate of chicken and broccoli Alfredo and a 10 oz bottle of Pepsi.  If you are not exhausted I would suggest that you stay away from room service and walk down to the restaurant yourself.  Tonight I was just too wiped out as it was a long day on the planes to get here.
+
+I spent about an hour in the gym tonight and I was actually surprised at the assortment of machines they had for you to work with.  They even had the dumbbells that I use in one of my exercises.  The gym was nice, although it did have a body odor smell to it..   Again that is to be expected for a gym.  I did some cardio on the tread mills and they were not the best machines.  They did not seem to be padded at all so you felt a lot of impact on your ankles.  Overall it was a good gym for any of the hotels I have visited.
+
+The last time I stayed here I was pleased with the cleanliness of the room, this time however I am not as pleased.  The toilet in my room has yellow stains on the basin.  It looks like it has not been cleaned in a week or two.  The shower has a little soap scum on the wall.  While this is not something that would make me change my mind about the hotel it is a little disappointing.
+
+I am also very pleased with the wireless internet access that they have covering the building.  I walked the halls from one end to the other on the 3rd floor and never lost signal on my laptop.  I did this out of sheer boredom.  What can I do next?  The internet access at the hotel is free to access as long as you are a guest at the hotel which makes things even more convenient for me.  Since it gives me something to do while sitting at the hotel.  I was actually able to write this review.
+
+I have been very pleased with this hotel and look forward to future stays when called down here for work.  I love to travel and will be doing some traveling this summer if things go the way I want them to.  I will try to post reviews of hotels, theme parks, etc on here when I return from that venture.
+
+On an added note the maintenance men were doing something close to my room.  I was up until midnight due to them banging on stuff.  Let's hope tonight is a much better night.

@@ -1,0 +1,22 @@
+--- 
+layout: post
+is_review: false
+title: Skype for Mac
+tags: 
+- title: Raves
+  autoslug: raves
+  slug: raves
+- title: Mac
+  autoslug: mac
+  slug: mac
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+---
+Recently I have been using Skype for video conferencing A LOT.  I have to say that the Mac version of Skype works pretty well.  The video clarity is decent on full screen when neither person is doing anything on the internet.  As expected when you are doing something on the internet the video becomes very pixelated and the audio will get choppy.  With the Mac becoming more and more popular as a platform my only dissapointment is that the Mac version is lacking a lot of the features you will find in the windows version.I hope that they will continue to develop the mac version to add new features and try to get things up to speed with the feature set that you can find in the windows version of Skype.

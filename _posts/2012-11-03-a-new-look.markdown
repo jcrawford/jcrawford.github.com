@@ -1,0 +1,21 @@
+--- 
+layout: post
+is_review: false
+image: Old-Look.png
+title: A New Look
+tags: 
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: News
+  autoslug: news
+  slug: news
+- title: Websites
+  autoslug: websites
+  slug: websites
+excerpt: You might noticed that there has been some downtime for my site today, I apologize however I was working on changing the look of the site.  I wanted to be able to keep up with Wordpress and the features they offer for themes however I was unable to find the time to custom write my theme again.
+---
+You might noticed that there has been some downtime for my site today, I apologize however I was working on changing the look of the site.  I wanted to be able to keep up with Wordpress and the features they offer for themes however I was unable to find the time to custom write my theme again.One of my main goals was also to make my site responsive so that it would work on any device, be using this theme I gain the benefits of a responsive site.I have opted to go with a paid theme to save me time.  I wanted something that was clean and easy to loo at.  I think this theme suits the site well.  Now that I do not have to take any time to work on my theme I can focus on providing more content.  Not only am I going to provide more content but it is actually going to have more substance to it.I look forward to writing more great content for many years to come.

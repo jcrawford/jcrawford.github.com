@@ -1,0 +1,19 @@
+--- 
+layout: post
+is_review: false
+title: BrowserReports.Com
+tags: 
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+- title: Websites
+  autoslug: websites
+  slug: websites
+---
+Today one of my friends showed me something that they have been working on.  [BrowserReports.Com](http://www.browserreports.com/) is a browser reporting website.  It's pretty cool, they detail out how many people are using what browser.  They even have graphs for the usage of each browser.  There is even an archive that you can view.If you would care to help out with the gathering of the browser statistics you can grab one of the dynamic images from [the site](http://www.browserreports.com/dynamic) and display the statistics on your site.  If you would rather have a way to help out that is non-intrusive they have a 1x1 transparent image you could use.  This is what i have used on this site, and no one would ever know.  What are the benefits of helping out here?  Well you will automatically show up in the sponsors tag cloud.  The brightness and size of your link on the sponsors page will depend on how much traffic your site is getting.  The more data they can compile the better.  Below is an example of only one of the images you can get for your site.![BrowserReports.com](http://www.browserreports.com/top2.png)You might be wondering if you can use these on more than your website, the answer is yes.  You can put them in forum signitures, web based email signitures, anywhere on the web.  The only downfall to putting them in your forum signitures is that the forum will be ranked, not you personally.I cannot disclose what the future will hold for BrowserReports.Org but I can tell you that after discussing this with him, he has some really nice features in the works.  I cannot wait to see some of the features that he is currently working on.

@@ -1,0 +1,28 @@
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Passing by reference</span>
+<span class="sd"> *</span>
+<span class="sd"> * Outputs</span>
+<span class="sd"> *</span>
+<span class="sd"> * 10 - before add() call</span>
+<span class="sd"> * 10 - after add() call</span>
+<span class="sd"> * 15 - after addref() call</span>
+<span class="sd"> */</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$a</span><span class="p">;</span>
+<span class="nx">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$a</span><span class="p">;</span>
+<span class="nx">addref</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$a</span><span class="p">;</span>
+
+<span class="k">function</span> <span class="nf">addref</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$a</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="nf">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$a</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
