@@ -19,6 +19,8 @@ div.syntax {
 
 .highlight {
     background-color: #272822 !important;
+    font-family:  "Lato", "Open Sans", sans-serif;
+    font-size: 13px;
 }
 
 #main_inner {
