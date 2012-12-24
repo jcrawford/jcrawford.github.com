@@ -49,16 +49,7 @@ module WordPress
             `wget -O "images/posts/featured/#{image}" "#{post[:post_image]}"` unless File::exists?("images/posts/featured/#{image}") || post[:post_image].nil?
 
             db[categories_and_tags_query % post[:ID]].each do |category_or_tag|
-                eval(category_or_tag[:taxonomy].pluralize) << {
-                    "title"    => category_or_tag[:name],
-                    "slug"     => category_or_tag[:slug],
-                    "autoslug" => category_or_tag[:name].downcase.gsub(" ", "-")
-                }
-            end
-            
-            post_tags = Array.new
-            categories.each do |category|
-              post_tags << category["title"]
+                eval(category_or_tag[:taxonomy].pluralize) << category_or_tag[:name]
             end
             
             data = {
@@ -67,7 +58,8 @@ module WordPress
                 'is_review'     => post[:post_title].start_with?("Review: "),
                 'excerpt'       => post[:post_excerpt].to_s,
                 'image'         => image,
-                'tags'          => post_tags
+                'tags'          => post_tags,
+                'categories'    => categories
             }.delete_if { |k,v| v.nil? || v == ''}.to_yaml
 
             File.open("#{status == 'publish' ? '_posts' : '_drafts'}/#{name}", "w") do |f|
