@@ -86,6 +86,8 @@
     <script type='text/javascript' src='/js/tabs.min.js'></script>
     <script type='text/javascript' src='/js/jquery.flexslider-min.js'></script>
     <script type='text/javascript' src='/js/custom.js'></script>
+    <script type='text/javascript' src='/js/stemmer.js'></script>
+    <script type='text/javascript' src='/js/site-search.js'></script>
 
     <meta name="generator" content="Jekyll 0.11.2" />
     <link rel='shortlink' href='http://wp.me/sEFF' />
@@ -219,21 +221,21 @@
                             /* <![CDATA[ */
                                 jQuery(document).ready(function(){
                                     // YouTube video present
-                                    if( jQuery('.youtube_video').length>0 ) {
-                                        jQuery('.youtube_video').each(function(index, youtube_video){
+                                    if( $('.youtube_video').length>0 ) {
+                                        $('.youtube_video').each(function(index, youtube_video){
                                             onYouTubePlayerAPIReady(youtube_video.id);
                                         });
                                     }
 
                                     // Vimeo video present
-                                    if( jQuery('.vimeo_video').length>0 ) {
-                                        jQuery('.vimeo_video').each(function(index, vimeo_video){
+                                    if( $('.vimeo_video').length>0 ) {
+                                        $('.vimeo_video').each(function(index, vimeo_video){
                                             Froogaloop.init([vimeo_video]);
                                             vimeo_video.addEvent('onLoad', VimeoEmbed.vimeo_player_loaded);
                                         });
                                     }
     
-                                    jQuery('#miss_flexslider').flexslider({
+                                    $('#miss_flexslider').flexslider({
                                         animation:'',
                                         slideDirection:'',
                                         slideshow: true,
@@ -255,8 +257,8 @@
                                         pauseOnAction: false,
                                         pauseOnHover: false,
                                         after: function() {
-                                            jQuery('#slider_module .miss_preloader_large').remove();
-                                            jQuery('#miss_flexslider').removeClass('noscript');
+                                            $('#slider_module .miss_preloader_large').remove();
+                                            $('#miss_flexslider').removeClass('noscript');
                                         }
                                     });
                                 });
@@ -266,14 +268,14 @@
                         <div id="slider_module">
                             <div id="slider_module_inner">
                                 <div class="miss_preloader_large" style="text-align:center;">
-                                    <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/production/transparent.gif" style="background-image: url(http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/production/preloader.png);">
+                                    <img src="/images/production/transparent.gif" style="background-image: url(h/images/production/preloader.png);">
                                 </div>
                                 <div id="miss_flexslider">
                                     <ul class="slides">
                                         
                                             <li>
-                                                <a href="/page16/index.html" class="flex-imageLink">
-                                                    <img src="images/posts/featured/timing-featured.png" title="" alt="Review: Timing" width="720" height="auto" />
+                                                <a href="/2012/10/review-timing" class="flex-imageLink">
+                                                    <img src="/images/posts/featured/timing-featured.png" title="" alt="Review: Timing" width="720" height="auto" />
                                                     <div class="flex-caption">
                                                         <h2 class="slider_title">Review: Timing</h2>
                                                         <div class="slider_desc">A few weeks ago I started a new position with Acronym Media.  It has been a while since I have worked remotely so I wanted to make sure that I remain on task during work hours and get distracted as little as possible.  I started looking for productivity apps which could track what applications I am using and what percentage of my time is going to Work and Play. </div>
@@ -282,8 +284,8 @@
                                             </li>
                                         
                                             <li>
-                                                <a href="/page16/index.html" class="flex-imageLink">
-                                                    <img src="images/posts/featured/markdown-pro-featured.png" title="" alt="Review: Markdown Pro" width="720" height="auto" />
+                                                <a href="/2012/10/review-markdown-pro" class="flex-imageLink">
+                                                    <img src="/images/posts/featured/markdown-pro-featured.png" title="" alt="Review: Markdown Pro" width="720" height="auto" />
                                                     <div class="flex-caption">
                                                         <h2 class="slider_title">Review: Markdown Pro</h2>
                                                         <div class="slider_desc">When I was working at <a href="http://www.dailybreak.com/" title="Dailybreak" target="_blank">Dailybreak</a> I was asked to write some documentation so that the company would have this information after my departure.  They were using <a href="http://www.github.com/" title="GitHub" target="_blank">GitHub</a> for their scm so they asked that I place all of my documentation in the wiki.  The GitHub wiki supports <a href="http://daringfireball.net/projects/markdown/" title="Markdown" target="_blank">Markdown</a> as a format in which you can save pages.  I quickly got up to speed with the format of Markdown and found it quite easy and very quick to write documentation with. </div>
@@ -292,8 +294,8 @@
                                             </li>
                                         
                                             <li>
-                                                <a href="/page16/index.html" class="flex-imageLink">
-                                                    <img src="images/posts/featured/WAZE.png" title="" alt="Review: Waze" width="720" height="auto" />
+                                                <a href="/2011/09/review-waze-2" class="flex-imageLink">
+                                                    <img src="/images/posts/featured/WAZE.png" title="" alt="Review: Waze" width="720" height="auto" />
                                                     <div class="flex-caption">
                                                         <h2 class="slider_title">Review: Waze</h2>
                                                         <div class="slider_desc">A few weeks ago I bought myself a Bluetooth headset for my motorcycle helmet.  I figured now that I have speakers in my helmet it was time to check out the navigation options for my Android phone.  The first application I found was the built in Navigation application and while it works great I wanted to see what other options I had.  I did some searching and found a community driven navigation project named <a href="http://www.waze.com/" title="Waze" target="_blank">Waze</a>.  I have been using Waze for the last few weeks to get an idea how the system works and just how well it would work for me. </div>
@@ -302,8 +304,8 @@
                                             </li>
                                         
                                             <li>
-                                                <a href="/page16/index.html" class="flex-imageLink">
-                                                    <img src="images/posts/featured/total-finder.png" title="" alt="Review: Total Finder" width="720" height="auto" />
+                                                <a href="/2011/08/review-total-finder" class="flex-imageLink">
+                                                    <img src="/images/posts/featured/total-finder.png" title="" alt="Review: Total Finder" width="720" height="auto" />
                                                     <div class="flex-caption">
                                                         <h2 class="slider_title">Review: Total Finder</h2>
                                                         <div class="slider_desc">I have been using an application called Visor for quite some time now and when I installed Lion it stopped working.  It appeared in the Incompatible Applications folder that Lion creates during install.  I quickly went to the site and downloaded the new version (which is now called <a href="http://totalterminal.binaryage.com/" title="Total Terminal" target="_blank">Total Terminal</a>).  </div>
@@ -312,8 +314,8 @@
                                             </li>
                                         
                                             <li>
-                                                <a href="/page16/index.html" class="flex-imageLink">
-                                                    <img src="images/posts/featured/n900.png" title="" alt="Review: The Nokia N900" width="720" height="auto" />
+                                                <a href="/2010/05/review-the-nokia-n900" class="flex-imageLink">
+                                                    <img src="/images/posts/featured/n900.png" title="" alt="Review: The Nokia N900" width="720" height="auto" />
                                                     <div class="flex-caption">
                                                         <h2 class="slider_title">Review: The Nokia N900</h2>
                                                         <div class="slider_desc">I am writing this post from my new N900 which was provided to me by my employer.  I have been using the phone for the last few days.  At first i was a it concerned that i was not going to like the device, i will explain why next.  When i powered the device on the first thing i wanted to check out was the ovi store. </div>
@@ -322,8 +324,8 @@
                                             </li>
                                         
                                             <li>
-                                                <a href="/page16/index.html" class="flex-imageLink">
-                                                    <img src="images/posts/featured/WebOS.png" title="" alt="Review: The Palm Pre" width="720" height="auto" />
+                                                <a href="/2010/03/review-the-palm-pre-2" class="flex-imageLink">
+                                                    <img src="/images/posts/featured/WebOS.png" title="" alt="Review: The Palm Pre" width="720" height="auto" />
                                                     <div class="flex-caption">
                                                         <h2 class="slider_title">Review: The Palm Pre</h2>
                                                         <div class="slider_desc">If you have ready anything on my site regarding the <a href="http://www.josephcrawford.com/?s=Palm+Pre">Palm Pre</a> you will find that every review is good in nature.  However I feel those reviews have more to do with the functionality of the phone and not the actual hardware. </div>
@@ -332,8 +334,8 @@
                                             </li>
                                         
                                             <li>
-                                                <a href="/page16/index.html" class="flex-imageLink">
-                                                    <img src="images/posts/featured/WebOS.png" title="" alt="Review: Mojo and WebOS" width="720" height="auto" />
+                                                <a href="/2009/08/review-mojo-and-webos" class="flex-imageLink">
+                                                    <img src="/images/posts/featured/WebOS.png" title="" alt="Review: Mojo and WebOS" width="720" height="auto" />
                                                     <div class="flex-caption">
                                                         <h2 class="slider_title">Review: Mojo and WebOS</h2>
                                                         <div class="slider_desc"> </div>
@@ -342,8 +344,8 @@
                                             </li>
                                         
                                             <li>
-                                                <a href="/page16/index.html" class="flex-imageLink">
-                                                    <img src="images/posts/featured/wii-fit-featured.png" title="" alt="Review: Nintendo Wii & Wii Fit" width="720" height="auto" />
+                                                <a href="/2009/06/review-nintendo-wii-wii-fit" class="flex-imageLink">
+                                                    <img src="/images/posts/featured/wii-fit-featured.png" title="" alt="Review: Nintendo Wii & Wii Fit" width="720" height="auto" />
                                                     <div class="flex-caption">
                                                         <h2 class="slider_title">Review: Nintendo Wii & Wii Fit</h2>
                                                         <div class="slider_desc"> </div>
@@ -356,317 +358,326 @@
                                 <div class="clearboth"></div>
                             </div>
                         </div>
-                        <ul class="post_list blog_layout2">
-                            
-                                
-                                    <li class="post type-post status-publish format-standard hentry post_list_module">
-                                        <div class="post_list_content">
-                                            <h2 class="post_title">
-                                                <a href="/page16/index.html" title="Dear Recruiters" rel="bookmark">Dear Recruiters</a>
-                                            </h2>
-                                            <p class="post_meta">
-                                                <span class="meta_date">Posted <a href="http://www.josephcrawford.com/2012/12/" title="20 Dec 2012">20 Dec 2012</a></span>
-                                                <span class="meta_author">by  <a href="http://www.josephcrawford.com/author/jcrawford/">jcrawford</a></span>
-                                                <span class="meta_category"> in 
-                                                    
-                                                        <a href="tags/useful/" rel="tag">Useful</a>, 
-                                                    
-                                                        <a href="tags/news/" rel="tag">News</a>, 
-                                                    
-                                                        <a href="tags/local/" rel="tag">Local</a>, 
-                                                    
-                                                        <a href="tags/internet/" rel="tag">Internet</a>, 
-                                                    
-                                                        <a href="tags/development/" rel="tag">Development</a>, 
-                                                    
-                                                        <a href="tags/work/" rel="tag">Work</a>, 
-                                                    
-                                                </span>
-                                                <span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on Dear Recruiters">0 Comments</a></span>
-                                            </p>
-                                            <div class="post_excerpt">
-                                                <p>I was recently in contact with a recruiter who thought that I was unprofessional and/or that I did not appreciate all the hard work they put in for me during a previous job search, they also implied that I was not acting in a professional manner because their clients expect them to represent the most professional developers.<small>&#8230;</small></p>
-                                                <p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p>
-                                            </div>
-                                        </div><!-- .content_class -->
-                                    </li><!-- #post-## -->
-                                
-                            
-                                
-                                    <li class="post type-post status-publish format-standard hentry post_list_module">
-                                        <div class="post_list_content">
-                                            <h2 class="post_title">
-                                                <a href="/page16/index.html" title="PHP Master Series" rel="bookmark">PHP Master Series</a>
-                                            </h2>
-                                            <p class="post_meta">
-                                                <span class="meta_date">Posted <a href="http://www.josephcrawford.com/2012/12/" title="18 Dec 2012">18 Dec 2012</a></span>
-                                                <span class="meta_author">by  <a href="http://www.josephcrawford.com/author/jcrawford/">jcrawford</a></span>
-                                                <span class="meta_category"> in 
-                                                    
-                                                        <a href="tags/raves/" rel="tag">Raves</a>, 
-                                                    
-                                                        <a href="tags/internet/" rel="tag">Internet</a>, 
-                                                    
-                                                        <a href="tags/entertainment/" rel="tag">Entertainment</a>, 
-                                                    
-                                                        <a href="tags/development/" rel="tag">Development</a>, 
-                                                    
-                                                        <a href="tags/php/" rel="tag">Php</a>, 
-                                                    
-                                                        <a href="tags/useful/" rel="tag">Useful</a>, 
-                                                    
-                                                </span>
-                                                <span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on PHP Master Series">0 Comments</a></span>
-                                            </p>
-                                            <div class="post_excerpt">
-                                                <p>What are your plans December 21st?  Other than the world coming to an end <a href="http://blog.calevans.com/" title="Cal Evans" target="_blank">Cal Evans</a> has organized an amazing online PHP conference.  If you are a PHP Developer there will be no better way to spend that day than to attend the <a href="http://phpmasterseriesv1.eventbrite.com/" title="PHP Master Series" target="_blank">PHP Master Series</a> online developer conference.  Seriously if you are a PHP developer <strong>YOU NEED TO ATTEND</strong> this online conference.<small>&#8230;</small></p>
-                                                <p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p>
-                                            </div>
-                                        </div><!-- .content_class -->
-                                    </li><!-- #post-## -->
-                                
-                            
-                                
-                                    <li class="post type-post status-publish format-standard hentry post_list_module">
-                                        <div class="post_list_content">
-                                            <h2 class="post_title">
-                                                <a href="/page16/index.html" title="A New Look" rel="bookmark">A New Look</a>
-                                            </h2>
-                                            <p class="post_meta">
-                                                <span class="meta_date">Posted <a href="http://www.josephcrawford.com/2012/12/" title="03 Nov 2012">03 Nov 2012</a></span>
-                                                <span class="meta_author">by  <a href="http://www.josephcrawford.com/author/jcrawford/">jcrawford</a></span>
-                                                <span class="meta_category"> in 
-                                                    
-                                                        <a href="tags/entertainment/" rel="tag">Entertainment</a>, 
-                                                    
-                                                        <a href="tags/internet/" rel="tag">Internet</a>, 
-                                                    
-                                                        <a href="tags/news/" rel="tag">News</a>, 
-                                                    
-                                                        <a href="tags/websites/" rel="tag">Websites</a>, 
-                                                    
-                                                </span>
-                                                <span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on A New Look">0 Comments</a></span>
-                                            </p>
-                                            <div class="post_excerpt">
-                                                <p>You might noticed that there has been some downtime for my site today, I apologize however I was working on changing the look of the site.  I wanted to be able to keep up with Wordpress and the features they offer for themes however I was unable to find the time to custom write my theme again.<small>&#8230;</small></p>
-                                                <p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p>
-                                            </div>
-                                        </div><!-- .content_class -->
-                                    </li><!-- #post-## -->
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    <li class="post type-post status-publish format-standard hentry post_list_module">
-                                        <div class="post_list_content">
-                                            <h2 class="post_title">
-                                                <a href="/page16/index.html" title="Sub-Domain Pointing to my Home Computer" rel="bookmark">Sub-Domain Pointing to my Home Computer</a>
-                                            </h2>
-                                            <p class="post_meta">
-                                                <span class="meta_date">Posted <a href="http://www.josephcrawford.com/2012/12/" title="21 Oct 2012">21 Oct 2012</a></span>
-                                                <span class="meta_author">by  <a href="http://www.josephcrawford.com/author/jcrawford/">jcrawford</a></span>
-                                                <span class="meta_category"> in 
-                                                    
-                                                        <a href="tags/websites/" rel="tag">Websites</a>, 
-                                                    
-                                                        <a href="tags/useful/" rel="tag">Useful</a>, 
-                                                    
-                                                        <a href="tags/tips &amp; tricks/" rel="tag">Tips &amp; tricks</a>, 
-                                                    
-                                                        <a href="tags/raves/" rel="tag">Raves</a>, 
-                                                    
-                                                        <a href="tags/news/" rel="tag">News</a>, 
-                                                    
-                                                        <a href="tags/internet/" rel="tag">Internet</a>, 
-                                                    
-                                                        <a href="tags/entertainment/" rel="tag">Entertainment</a>, 
-                                                    
-                                                        <a href="tags/development/" rel="tag">Development</a>, 
-                                                    
-                                                        <a href="tags/tutorials/" rel="tag">Tutorials</a>, 
-                                                    
-                                                        <a href="tags/work/" rel="tag">Work</a>, 
-                                                    
-                                                </span>
-                                                <span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on Sub-Domain Pointing to my Home Computer">0 Comments</a></span>
-                                            </p>
-                                            <div class="post_excerpt">
-                                                <p>For many years I have always wondered just how difficult it would be to make a sub-domain point to my home computer.  I never really took the time to look into it because my web host Lunarpages does not offer this ability through CPanel.  However recently I changed domain registrars from GoDaddy to <a href="http://www.namecheap.com/" title="NameCheap" target="_blank">NameCheap</a> due to the SOPA controversy started by <a href="http://www.josephcrawford.com/2012/01/02/godaddy-sopa-domains-transferre/" title="Godaddy SOPA: Domains Transferred">GoDaddy publicly supporting SOPA</a>.  Since I switched to <a href="http://www.namecheap.com/" title="NameCheap" target="_blank">NameCheap</a> I noticed that they offer free dns services.  I started to look into this today and found that it works exactly as I thought and will allow you to customize your DNS to your liking.<small>&#8230;</small></p>
-                                                <p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p>
-                                            </div>
-                                        </div><!-- .content_class -->
-                                    </li><!-- #post-## -->
-                                
-                            
-                                
-                                    <li class="post type-post status-publish format-standard hentry post_list_module">
-                                        <div class="post_list_content">
-                                            <h2 class="post_title">
-                                                <a href="/page16/index.html" title="Time Between Posts" rel="bookmark">Time Between Posts</a>
-                                            </h2>
-                                            <p class="post_meta">
-                                                <span class="meta_date">Posted <a href="http://www.josephcrawford.com/2012/12/" title="10 Oct 2012">10 Oct 2012</a></span>
-                                                <span class="meta_author">by  <a href="http://www.josephcrawford.com/author/jcrawford/">jcrawford</a></span>
-                                                <span class="meta_category"> in 
-                                                    
-                                                        <a href="tags/websites/" rel="tag">Websites</a>, 
-                                                    
-                                                        <a href="tags/useful/" rel="tag">Useful</a>, 
-                                                    
-                                                        <a href="tags/raves/" rel="tag">Raves</a>, 
-                                                    
-                                                        <a href="tags/news/" rel="tag">News</a>, 
-                                                    
-                                                        <a href="tags/local/" rel="tag">Local</a>, 
-                                                    
-                                                        <a href="tags/internet/" rel="tag">Internet</a>, 
-                                                    
-                                                        <a href="tags/entertainment/" rel="tag">Entertainment</a>, 
-                                                    
-                                                        <a href="tags/development/" rel="tag">Development</a>, 
-                                                    
-                                                        <a href="tags/family/" rel="tag">Family</a>, 
-                                                    
-                                                        <a href="tags/work/" rel="tag">Work</a>, 
-                                                    
-                                                </span>
-                                                <span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on Time Between Posts">0 Comments</a></span>
-                                            </p>
-                                            <div class="post_excerpt">
-                                                <p>I want to start out by apologizing that I have not been posting that frequently and not really posting any content with meat.  Things will be changing soon and I will be updating this site more and more frequently.  I plan to continue writing about PHP but I also might start looking at Python and writing about that too.<small>&#8230;</small></p>
-                                                <p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p>
-                                            </div>
-                                        </div><!-- .content_class -->
-                                    </li><!-- #post-## -->
-                                
-                            
-                                
-                                    <li class="post type-post status-publish format-standard hentry post_list_module">
-                                        <div class="post_list_content">
-                                            <h2 class="post_title">
-                                                <a href="/page16/index.html" title="XpertTech Update" rel="bookmark">XpertTech Update</a>
-                                            </h2>
-                                            <p class="post_meta">
-                                                <span class="meta_date">Posted <a href="http://www.josephcrawford.com/2012/12/" title="11 Sep 2012">11 Sep 2012</a></span>
-                                                <span class="meta_author">by  <a href="http://www.josephcrawford.com/author/jcrawford/">jcrawford</a></span>
-                                                <span class="meta_category"> in 
-                                                    
-                                                        <a href="tags/useful/" rel="tag">Useful</a>, 
-                                                    
-                                                        <a href="tags/rants/" rel="tag">Rants</a>, 
-                                                    
-                                                        <a href="tags/news/" rel="tag">News</a>, 
-                                                    
-                                                        <a href="tags/local/" rel="tag">Local</a>, 
-                                                    
-                                                        <a href="tags/internet/" rel="tag">Internet</a>, 
-                                                    
-                                                        <a href="tags/entertainment/" rel="tag">Entertainment</a>, 
-                                                    
-                                                        <a href="tags/websites/" rel="tag">Websites</a>, 
-                                                    
-                                                </span>
-                                                <span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on XpertTech Update">0 Comments</a></span>
-                                            </p>
-                                            <div class="post_excerpt">
-                                                <p>Over the past few weeks recruiters from this company started to reach out to me again.  I started emailing them back telling them to leave me alone and it did not help.  Today I tried another tactic.  I told them that if they did not leave me alone I would focus all of my energy on pissing them off.  I blasted them with a few faxes from a free online service showing the link to my <a href="http://www.josephcrawford.com/2012/04/13/annoying-recruiters-xperttech/" title="Annoying Recruiters (XpertTech)">last post about xpertech</a> and I think I might have finally gotten through to them.<small>&#8230;</small></p>
-                                                <p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p>
-                                            </div>
-                                        </div><!-- .content_class -->
-                                    </li><!-- #post-## -->
-                                
-                            
-                                
-                                    <li class="post type-post status-publish format-standard hentry post_list_module">
-                                        <div class="post_list_content">
-                                            <h2 class="post_title">
-                                                <a href="/page16/index.html" title="Northeast PHP Conference 2012" rel="bookmark">Northeast PHP Conference 2012</a>
-                                            </h2>
-                                            <p class="post_meta">
-                                                <span class="meta_date">Posted <a href="http://www.josephcrawford.com/2012/12/" title="13 Aug 2012">13 Aug 2012</a></span>
-                                                <span class="meta_author">by  <a href="http://www.josephcrawford.com/author/jcrawford/">jcrawford</a></span>
-                                                <span class="meta_category"> in 
-                                                    
-                                                        <a href="tags/reviews/" rel="tag">Reviews</a>, 
-                                                    
-                                                        <a href="tags/raves/" rel="tag">Raves</a>, 
-                                                    
-                                                        <a href="tags/news/" rel="tag">News</a>, 
-                                                    
-                                                        <a href="tags/local/" rel="tag">Local</a>, 
-                                                    
-                                                        <a href="tags/internet/" rel="tag">Internet</a>, 
-                                                    
-                                                        <a href="tags/entertainment/" rel="tag">Entertainment</a>, 
-                                                    
-                                                        <a href="tags/php/" rel="tag">Php</a>, 
-                                                    
-                                                        <a href="tags/websites/" rel="tag">Websites</a>, 
-                                                    
-                                                </span>
-                                                <span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on Northeast PHP Conference 2012">0 Comments</a></span>
-                                            </p>
-                                            <div class="post_excerpt">
-                                                <p><img src="http://www.josephcrawford.com/wp-content/uploads/2012/08/logo.png" alt="" title="logo" width="300" height="169" class="floatleft" />This weekend had to be one of the most enjoyable weekends that did not include close friends or family.  I was finally able to attend my first PHP Conference after working with PHP since 1997 which was the <a href="http://www.northeastphp.org/" title="Northeast PHP Conference" target="_blank">Northeast PHP Conference</a>.  You might be asking why this was the first conference I have attended?  Well if you are familiar with conferences then you know that the tickets are generally over a thousand dollars.  It has not an easy task to get any of my past employers to pay for your conference ticket never-mind your airline and hotel.  I personally could not afford to do things like that myself as it would cost as much as a small vacation.<small>&#8230;</small></p>
-                                                <p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p>
-                                            </div>
-                                        </div><!-- .content_class -->
-                                    </li><!-- #post-## -->
-                                
-                            
-                                
-                                    <li class="post type-post status-publish format-standard hentry post_list_module">
-                                        <div class="post_list_content">
-                                            <h2 class="post_title">
-                                                <a href="/page16/index.html" title="OUYA: Android Based Gaming Console" rel="bookmark">OUYA: Android Based Gaming Console</a>
-                                            </h2>
-                                            <p class="post_meta">
-                                                <span class="meta_date">Posted <a href="http://www.josephcrawford.com/2012/12/" title="10 Jul 2012">10 Jul 2012</a></span>
-                                                <span class="meta_author">by  <a href="http://www.josephcrawford.com/author/jcrawford/">jcrawford</a></span>
-                                                <span class="meta_category"> in 
-                                                    
-                                                        <a href="tags/useful/" rel="tag">Useful</a>, 
-                                                    
-                                                        <a href="tags/software/" rel="tag">Software</a>, 
-                                                    
-                                                        <a href="tags/raves/" rel="tag">Raves</a>, 
-                                                    
-                                                        <a href="tags/news/" rel="tag">News</a>, 
-                                                    
-                                                        <a href="tags/internet/" rel="tag">Internet</a>, 
-                                                    
-                                                        <a href="tags/entertainment/" rel="tag">Entertainment</a>, 
-                                                    
-                                                        <a href="tags/websites/" rel="tag">Websites</a>, 
-                                                    
-                                                </span>
-                                                <span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on OUYA: Android Based Gaming Console">0 Comments</a></span>
-                                            </p>
-                                            <div class="post_excerpt">
-                                                <p>Early this morning at 1am OUYA kicked off the <a href="http://www.kickstarter.com/projects/ouya/ouya-a-new-kind-of-video-game-console" title="OUYA on Kickstarter">Kickstarter project</a> to get funding for a new Android 4 based gaming console that would be an open system.<small>&#8230;</small></p>
-                                                <p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p>
-                                            </div>
-                                        </div><!-- .content_class -->
-                                    </li><!-- #post-## -->
-                                
-                            
-                        </ul>
+                        <ul class="post_list blog_layout2"><li class="post type-post status-publish format-standard hentry post_list_module"><div class="post_list_content"><h2 class="post_title"><a href="/2012/12/dear-recruiters" title="Dear Recruiters" rel="bookmark">Dear Recruiters</a></h2><p class="post_meta"><span class="meta_date">Posted <a href="/2012/12/" title="December 20, 2012">December 20, 2012</a></span><span class="meta_category">in 
+    
+        <a href="tags/useful/" rel="tag">
+            Useful
+        </a>
+        ,  
+    
+        <a href="tags/news/" rel="tag">
+            News
+        </a>
+        ,  
+    
+        <a href="tags/local/" rel="tag">
+            Local
+        </a>
+        ,  
+    
+        <a href="tags/internet/" rel="tag">
+            Internet
+        </a>
+        ,  
+    
+        <a href="tags/development/" rel="tag">
+            Development
+        </a>
+        ,  
+    
+        <a href="tags/work/" rel="tag">
+            Work
+        </a>
+         
+    
+</span><span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on Dear Recruiters">0 Comments</a></span></p><div class="post_excerpt"><p>I was recently in contact with a recruiter who thought that I was unprofessional and/or that I did not appreciate all the hard work they put in for me during a previous job search, they also implied that I was not acting in a professional manner because their clients expect them to represent the most professional developers.<small>&#8230;</small></p><p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p></div></div><!-- .content_class --></li><!-- #post-## --><li class="post type-post status-publish format-standard hentry post_list_module"><div class="post_list_content"><h2 class="post_title"><a href="/2012/12/php-master-series" title="PHP Master Series" rel="bookmark">PHP Master Series</a></h2><p class="post_meta"><span class="meta_date">Posted <a href="/2012/12/" title="December 18, 2012">December 18, 2012</a></span><span class="meta_category">in 
+    
+        <a href="tags/raves/" rel="tag">
+            Raves
+        </a>
+        ,  
+    
+        <a href="tags/internet/" rel="tag">
+            Internet
+        </a>
+        ,  
+    
+        <a href="tags/entertainment/" rel="tag">
+            Entertainment
+        </a>
+        ,  
+    
+        <a href="tags/development/" rel="tag">
+            Development
+        </a>
+        ,  
+    
+        <a href="tags/php/" rel="tag">
+            Php
+        </a>
+        ,  
+    
+        <a href="tags/useful/" rel="tag">
+            Useful
+        </a>
+         
+    
+</span><span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on PHP Master Series">0 Comments</a></span></p><div class="post_excerpt"><p>What are your plans December 21st?  Other than the world coming to an end <a href="http://blog.calevans.com/" title="Cal Evans" target="_blank">Cal Evans</a> has organized an amazing online PHP conference.  If you are a PHP Developer there will be no better way to spend that day than to attend the <a href="http://phpmasterseriesv1.eventbrite.com/" title="PHP Master Series" target="_blank">PHP Master Series</a> online developer conference.  Seriously if you are a PHP developer <strong>YOU NEED TO ATTEND</strong> this online conference.<small>&#8230;</small></p><p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p></div></div><!-- .content_class --></li><!-- #post-## --><li class="post type-post status-publish format-standard hentry post_list_module"><div class="post_list_content"><h2 class="post_title"><a href="/2012/11/a-new-look" title="A New Look" rel="bookmark">A New Look</a></h2><p class="post_meta"><span class="meta_date">Posted <a href="/2012/11/" title="November 03, 2012">November 03, 2012</a></span><span class="meta_category">in 
+    
+        <a href="tags/entertainment/" rel="tag">
+            Entertainment
+        </a>
+        ,  
+    
+        <a href="tags/internet/" rel="tag">
+            Internet
+        </a>
+        ,  
+    
+        <a href="tags/news/" rel="tag">
+            News
+        </a>
+        ,  
+    
+        <a href="tags/websites/" rel="tag">
+            Websites
+        </a>
+         
+    
+</span><span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on A New Look">0 Comments</a></span></p><div class="post_excerpt"><p>You might noticed that there has been some downtime for my site today, I apologize however I was working on changing the look of the site.  I wanted to be able to keep up with Wordpress and the features they offer for themes however I was unable to find the time to custom write my theme again.<small>&#8230;</small></p><p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p></div></div><!-- .content_class --></li><!-- #post-## --><li class="post type-post status-publish format-standard hentry post_list_module"><div class="post_list_content"><h2 class="post_title"><a href="/2012/10/sub-domain-pointing-to-my-home-computer" title="Sub-Domain Pointing to my Home Computer" rel="bookmark">Sub-Domain Pointing to my Home Computer</a></h2><p class="post_meta"><span class="meta_date">Posted <a href="/2012/10/" title="October 21, 2012">October 21, 2012</a></span><span class="meta_category">in 
+    
+        <a href="tags/websites/" rel="tag">
+            Websites
+        </a>
+        ,  
+    
+        <a href="tags/useful/" rel="tag">
+            Useful
+        </a>
+        ,  
+    
+        <a href="tags/tips &amp; tricks/" rel="tag">
+            Tips &amp; tricks
+        </a>
+        ,  
+    
+        <a href="tags/raves/" rel="tag">
+            Raves
+        </a>
+        ,  
+    
+        <a href="tags/news/" rel="tag">
+            News
+        </a>
+        ,  
+    
+        <a href="tags/internet/" rel="tag">
+            Internet
+        </a>
+        ,  
+    
+        <a href="tags/entertainment/" rel="tag">
+            Entertainment
+        </a>
+        ,  
+    
+        <a href="tags/development/" rel="tag">
+            Development
+        </a>
+        ,  
+    
+        <a href="tags/tutorials/" rel="tag">
+            Tutorials
+        </a>
+        ,  
+    
+        <a href="tags/work/" rel="tag">
+            Work
+        </a>
+         
+    
+</span><span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on Sub-Domain Pointing to my Home Computer">0 Comments</a></span></p><div class="post_excerpt"><p>For many years I have always wondered just how difficult it would be to make a sub-domain point to my home computer.  I never really took the time to look into it because my web host Lunarpages does not offer this ability through CPanel.  However recently I changed domain registrars from GoDaddy to <a href="http://www.namecheap.com/" title="NameCheap" target="_blank">NameCheap</a> due to the SOPA controversy started by <a href="http://www.josephcrawford.com/2012/01/02/godaddy-sopa-domains-transferre/" title="Godaddy SOPA: Domains Transferred">GoDaddy publicly supporting SOPA</a>.  Since I switched to <a href="http://www.namecheap.com/" title="NameCheap" target="_blank">NameCheap</a> I noticed that they offer free dns services.  I started to look into this today and found that it works exactly as I thought and will allow you to customize your DNS to your liking.<small>&#8230;</small></p><p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p></div></div><!-- .content_class --></li><!-- #post-## --><li class="post type-post status-publish format-standard hentry post_list_module"><div class="post_list_content"><h2 class="post_title"><a href="/2012/10/time-between-posts" title="Time Between Posts" rel="bookmark">Time Between Posts</a></h2><p class="post_meta"><span class="meta_date">Posted <a href="/2012/10/" title="October 10, 2012">October 10, 2012</a></span><span class="meta_category">in 
+    
+        <a href="tags/websites/" rel="tag">
+            Websites
+        </a>
+        ,  
+    
+        <a href="tags/useful/" rel="tag">
+            Useful
+        </a>
+        ,  
+    
+        <a href="tags/raves/" rel="tag">
+            Raves
+        </a>
+        ,  
+    
+        <a href="tags/news/" rel="tag">
+            News
+        </a>
+        ,  
+    
+        <a href="tags/local/" rel="tag">
+            Local
+        </a>
+        ,  
+    
+        <a href="tags/internet/" rel="tag">
+            Internet
+        </a>
+        ,  
+    
+        <a href="tags/entertainment/" rel="tag">
+            Entertainment
+        </a>
+        ,  
+    
+        <a href="tags/development/" rel="tag">
+            Development
+        </a>
+        ,  
+    
+        <a href="tags/family/" rel="tag">
+            Family
+        </a>
+        ,  
+    
+        <a href="tags/work/" rel="tag">
+            Work
+        </a>
+         
+    
+</span><span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on Time Between Posts">0 Comments</a></span></p><div class="post_excerpt"><p>I want to start out by apologizing that I have not been posting that frequently and not really posting any content with meat.  Things will be changing soon and I will be updating this site more and more frequently.  I plan to continue writing about PHP but I also might start looking at Python and writing about that too.<small>&#8230;</small></p><p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p></div></div><!-- .content_class --></li><!-- #post-## --><li class="post type-post status-publish format-standard hentry post_list_module"><div class="post_list_content"><h2 class="post_title"><a href="/2012/09/xperttech-update" title="XpertTech Update" rel="bookmark">XpertTech Update</a></h2><p class="post_meta"><span class="meta_date">Posted <a href="/2012/09/" title="September 11, 2012">September 11, 2012</a></span><span class="meta_category">in 
+    
+        <a href="tags/useful/" rel="tag">
+            Useful
+        </a>
+        ,  
+    
+        <a href="tags/rants/" rel="tag">
+            Rants
+        </a>
+        ,  
+    
+        <a href="tags/news/" rel="tag">
+            News
+        </a>
+        ,  
+    
+        <a href="tags/local/" rel="tag">
+            Local
+        </a>
+        ,  
+    
+        <a href="tags/internet/" rel="tag">
+            Internet
+        </a>
+        ,  
+    
+        <a href="tags/entertainment/" rel="tag">
+            Entertainment
+        </a>
+        ,  
+    
+        <a href="tags/websites/" rel="tag">
+            Websites
+        </a>
+         
+    
+</span><span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on XpertTech Update">0 Comments</a></span></p><div class="post_excerpt"><p>Over the past few weeks recruiters from this company started to reach out to me again.  I started emailing them back telling them to leave me alone and it did not help.  Today I tried another tactic.  I told them that if they did not leave me alone I would focus all of my energy on pissing them off.  I blasted them with a few faxes from a free online service showing the link to my <a href="http://www.josephcrawford.com/2012/04/13/annoying-recruiters-xperttech/" title="Annoying Recruiters (XpertTech)">last post about xpertech</a> and I think I might have finally gotten through to them.<small>&#8230;</small></p><p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p></div></div><!-- .content_class --></li><!-- #post-## --><li class="post type-post status-publish format-standard hentry post_list_module"><div class="post_list_content"><h2 class="post_title"><a href="/2012/08/northeast-php-conference-2012" title="Northeast PHP Conference 2012" rel="bookmark">Northeast PHP Conference 2012</a></h2><p class="post_meta"><span class="meta_date">Posted <a href="/2012/08/" title="August 13, 2012">August 13, 2012</a></span><span class="meta_category">in 
+    
+        <a href="tags/reviews/" rel="tag">
+            Reviews
+        </a>
+        ,  
+    
+        <a href="tags/raves/" rel="tag">
+            Raves
+        </a>
+        ,  
+    
+        <a href="tags/news/" rel="tag">
+            News
+        </a>
+        ,  
+    
+        <a href="tags/local/" rel="tag">
+            Local
+        </a>
+        ,  
+    
+        <a href="tags/internet/" rel="tag">
+            Internet
+        </a>
+        ,  
+    
+        <a href="tags/entertainment/" rel="tag">
+            Entertainment
+        </a>
+        ,  
+    
+        <a href="tags/php/" rel="tag">
+            Php
+        </a>
+        ,  
+    
+        <a href="tags/websites/" rel="tag">
+            Websites
+        </a>
+         
+    
+</span><span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on Northeast PHP Conference 2012">0 Comments</a></span></p><div class="post_excerpt"><p><img src="http://www.josephcrawford.com/wp-content/uploads/2012/08/logo.png" alt="" title="logo" width="300" height="169" class="floatleft" />This weekend had to be one of the most enjoyable weekends that did not include close friends or family.  I was finally able to attend my first PHP Conference after working with PHP since 1997 which was the <a href="http://www.northeastphp.org/" title="Northeast PHP Conference" target="_blank">Northeast PHP Conference</a>.  You might be asking why this was the first conference I have attended?  Well if you are familiar with conferences then you know that the tickets are generally over a thousand dollars.  It has not an easy task to get any of my past employers to pay for your conference ticket never-mind your airline and hotel.  I personally could not afford to do things like that myself as it would cost as much as a small vacation.<small>&#8230;</small></p><p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p></div></div><!-- .content_class --></li><!-- #post-## --><li class="post type-post status-publish format-standard hentry post_list_module"><div class="post_list_content"><h2 class="post_title"><a href="/2012/07/ouya-android-based-gaming-console" title="OUYA: Android Based Gaming Console" rel="bookmark">OUYA: Android Based Gaming Console</a></h2><p class="post_meta"><span class="meta_date">Posted <a href="/2012/07/" title="July 10, 2012">July 10, 2012</a></span><span class="meta_category">in 
+    
+        <a href="tags/useful/" rel="tag">
+            Useful
+        </a>
+        ,  
+    
+        <a href="tags/software/" rel="tag">
+            Software
+        </a>
+        ,  
+    
+        <a href="tags/raves/" rel="tag">
+            Raves
+        </a>
+        ,  
+    
+        <a href="tags/news/" rel="tag">
+            News
+        </a>
+        ,  
+    
+        <a href="tags/internet/" rel="tag">
+            Internet
+        </a>
+        ,  
+    
+        <a href="tags/entertainment/" rel="tag">
+            Entertainment
+        </a>
+        ,  
+    
+        <a href="tags/websites/" rel="tag">
+            Websites
+        </a>
+         
+    
+</span><span class="meta_comments"> with <a href="/page16/index.html/#respond" title="Comment on OUYA: Android Based Gaming Console">0 Comments</a></span></p><div class="post_excerpt"><p>Early this morning at 1am OUYA kicked off the <a href="http://www.kickstarter.com/projects/ouya/ouya-a-new-kind-of-video-game-console" title="OUYA on Kickstarter">Kickstarter project</a> to get funding for a new Android 4 based gaming console that would be an open system.<small>&#8230;</small></p><p class="read_more_link"><a class="post_more_link" href="/page16/index.html">Read More</a></p></div></div><!-- .content_class --></li><!-- #post-## --></ul>
                             
                         <div class="wp-pagenavi">
                             <span class="pagenavi-pages">Page 1 of 24</span>
                             <span class="current">1</span>
-                            <a href="http://www.josephcrawford.com/page/2/" class="pagenavi-page" title="2">2</a>
-                            <a href="http://www.josephcrawford.com/page/3/" class="pagenavi-page" title="3">3</a>
-                            <a href="http://www.josephcrawford.com/page/4/" class="pagenavi-page" title="4">4</a>
-                            <a href="http://www.josephcrawford.com/page/5/" class="pagenavi-page" title="5">5</a>
-                            <a href="http://www.josephcrawford.com/page/2/" >&rarr;</a><a href="http://www.josephcrawford.com/page/10/" class="pagenavi-page" title="10">10</a>
-                            <a href="http://www.josephcrawford.com/page/20/" class="pagenavi-page" title="20">20</a>
+                            <a href="/page/2/" class="pagenavi-page" title="2">2</a>
+                            <a href="/page/3/" class="pagenavi-page" title="3">3</a>
+                            <a href="/page/4/" class="pagenavi-page" title="4">4</a>
+                            <a href="/page/5/" class="pagenavi-page" title="5">5</a>
+                            <a href="/page/2/" >&rarr;</a>
+                            <a href="/page/10/" class="pagenavi-page" title="10">10</a>
+                            <a href="/page/20/" class="pagenavi-page" title="20">20</a>
                             <span class="extend">...</span>
-                            <a href="http://www.josephcrawford.com/page/24/" class="last" title="Last &raquo;">Last &raquo;</a>
+                            <a href="/page/24/" class="last" title="Last &raquo;">Last &raquo;</a>
                         </div>
                         <div class="clearboth"></div>
                     </div><!-- #main_inner -->
@@ -675,9 +686,8 @@
                                 <div id="sidebar" class="six columns">
                     <div id="sidebar_inner">
                         <div id="search-3" class="widget widget_search">
-                            <form id="searchform" method="get" action="http://www.josephcrawford.com/">
-                                <input type="text" name="s" id="s" value="To search type and hit enter" onfocus="if(this.value=='To search type and hit enter')this.value='';" onblur="if(this.value=='')this.value='To search type and hit enter';">
-                                <input type="submit" value=Search id="searchsubmit" />
+                            <form id="searchform">
+                                <input type="text" name="s" id="s" value="Enter Your Search Term" onfocus="if(this.value=='Enter Your Search Term')this.value='';" onblur="if(this.value=='')this.value='Enter Your Search Term';">
                             </form>
                         </div>
 						<div id="themes">
