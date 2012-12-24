@@ -48,6 +48,7 @@ $(document).ready( function () {
       } else if (e.which == 27) {
           $("#s").val("").blur();
           $("#search-results").hide();
+          $(".icon-remove").remove();
 		} else {
       if (searchTimer == null)
         searchTimer = setTimeout("siteSearch($('#s').val())", 500);		
