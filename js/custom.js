@@ -38,19 +38,11 @@
 	if($('ul.tabs').length > 0){
 		$('ul.tabs').tabs('> .tabs_content');
 	}
-	if($('ul.tabs_framed').length > 0){
-		$('ul.tabs_framed').tabs('> .tabs_framed_content');
-	}
+
 	if($('ul.tabs_button').length > 0){
 		$('ul.tabs_button').tabs('> .tabs_button_content');
 	}
-	if($('.tabs_vertical_frame').length > 0){
-		$('.tabs_vertical_frame').tabs('> .tabs_vertical_content');
-		$('.tabs_vertical_frame').data('tabs').onBeforeClick(function(e,index) {
-			this.getTabs().parent().removeClass('current');
-			this.getTabs().eq(index).parent().addClass('current');
-		});
-	}
+
 	if($('ul.blog_tabs').length > 0){
 		$('ul.blog_tabs').tabs('> .blog_tabs_content');
 		$('ul.blog_tabs').data('tabs').onClick(function(index) {

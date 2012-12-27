@@ -1,1 +1,686 @@
-<p>I have been using <a href="http://www.fuelly.com" title="Fuelly">Fuelly.com</a> for a while now to track my gas mileage on my motorcycle.  Every-time I fill-up my tank I send an SMS to Fuelly with the odometer reading, the price per gallon and how many gallons I put into the bike.A sample SMS message that I send looks like this&gt; h 2799 4.099 3.06I prefix the message with the letter I have assigned to the vehicle in Fuelly so that it knows which vehicle to apply the fuel-up to.  This is very handy since Fuelly does all the calculations and shows my history for gas mileage.  However I was looking for a way to get the data from Fuelly to display on my site.  Currently even with the demand high Fuelly does not have the proper resources to develop and support an API at this time.  I sat down over the last week and began working on a <a href="http://www.josephcrawford.com/wp-content/uploads/2011/10/Fuelly-0.2-alpha.zip">library of Fuelly classes (Fuelly-0.2-alpha)</a> that could be used to fetch your data from the site.  Currently it requires that you provide a valid Fuelly username and password to fetch data but in the future I plan to remove this dependency.  In the future when you use this library to reach out to Fuelly if you do not pass a valid user object it will fetch only the &quot;public&quot; data that it can.  If you pass it a valid authenticated user object then it will also grab data which only you can see when you log-in. &lt;!--more--&gt;Currently it is very simple, the library consists of a handful of classes which are outlined below with a description of what each does.Fulley_Scraper - This is the heart of the library, it is the class that actually reaches out to Fuelly and fetches all the statistics.  It&#39;s then responsible for populating the other objects with the data.Fuelly_Response - This object is really just a container object at this time, it&#39;s only duty right now is to hold references to all the other objects keeping things organized nicely.  In the future I may add more functionality to this object but not at this time.Fuelly_User - This is the user object which you create with your username and password for Fuelly.  It is used for authenticated requests throughout the scraping process.Fuelly_Vehicle - This is the object that will hold all of the vehicle information along with a collection of fuel-ups for that particular vehicle.  Currently this is solely a container object as well.Fuelly_Fuelup - This object is what is populated for every fuel-up added to a vehicle.  The Fuelly_Vehicle holds a collection of fuel-ups which are all instances of Fuelly_FuelupFuelly_Object - This is the base object which all other objects inherit from.  It provides some base functionality such as magic <strong>get, __set and __call methods.Fuelly_Exception - This is just an exception class which currently only inherits the functionality of the built-in Exception object.Now that you know what all of the classes are and what they do it&#39;s time to look at some actual implementation code.  I have the library structured like the following:|- index.php|-- lib/|---- Fuelly/|------ Exception.php|------ Fuelup.php|------ Object.php|------ Scraper.php|------ Vehicle.phpThe index file is the where the process begins.  It does some preparatory tasks such as setting the include path and implementing an autoloader function.  Once this is setup you simply create an instance of Fuelly_User with your username and password and then you pass the Fuelly_User object into an instance of Fuelly_Scraper.  Once you have the scraper object there are 2 ways you can use it.  You can simply call the run method with no parameters and this will reach out and collect the statistics for every vehicle you have listed in Fuelly.  The other option is to pass in a vehicle display name and the library will only collect statistics on the specified vehicle.<pre lang="php" line="1">&lt;?phpdate_default_timezone_set(&#39;America/New_York&#39;);ini_set(&#39;include_path&#39;, get_include_path() . PATH_SEPARATOR . realpath(dirname(</strong>FILE__)).&#39;/lib/&#39;);function <strong>autoload($className) {$segments = explode(&#39;_&#39;, $className);$className = implode(&#39;/&#39;, $segments);if(file_exists(&#39;lib/&#39;.$className . &#39;.php&#39;)) include &#39;lib/&#39;.$className . &#39;.php&#39;;}try {$user = new Fuelly_User(&#39;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&#39;, &#39;test&#39;);$response = Fuelly_Scraper::getInstance($user)-&gt;run();var_dump($response); exit;} catch(Fuelly_Exception $e) {echo $e-&gt;getMessage();}</pre>Ok I get it, implementation is easy but what does the output look like?  As you can see above I am currently just dumping the response object so that you can see the values, however there is much more you can do with this.  For instance you could total up the total miles driven for all vehicles or you could calculate how many miles you have driven over a date range, or for a specific day such as yesterday or today.  Currently none of the features I just talked about are implemented however it would be pretty easy to calculate.  For instance to calculate the total miles driven for all vehicles you could do something like this.<pre lang="php" line="1">&lt;?phpdate_default_timezone_set(&#39;America/New_York&#39;);ini_set(&#39;include_path&#39;, get_include_path() . PATH_SEPARATOR . realpath(dirname(</strong>FILE__)).&#39;/lib/&#39;);function __autoload($className) {$segments = explode(&#39;_&#39;, $className);$className = implode(&#39;/&#39;, $segments);if(file_exists(&#39;lib/&#39;.$className . &#39;.php&#39;)) include &#39;lib/&#39;.$className . &#39;.php&#39;;}try {$user = new Fuelly_User(&#39;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&#39;, &#39;test&#39;);$response = Fuelly_Scraper::getInstance($user)-&gt;run();        $totalMiles = 0;        foreach($response-&gt;getVehicles() as $vehicle) {                $totalMiles += $vehicle-&gt;getTotalMilesTracked();        }        echo &quot;I have driven a total of &quot;.$totalMiles.&quot; in all vehicles tracked by Fuelly.&quot;;} catch(Fuelly_Exception $e) {echo $e-&gt;getMessage();}</pre>Currently there is no documentation for this code other than reading through it to see what is going on however that will be coming in the near future as well.  I want to get the library somewhat evolved before spending too much time on the documentation for the methods, etc.  PHPDoc will be a friend over the next few months.Ok so you are dying to see what a response object looks like when it&#39;s all populated here it is:<pre lang="php" line="1">object(Fuelly_Response)#3 (1) {  [&quot;_properties&quot;:protected]=&gt;  array(6) {    [&quot;searchByVehicleName&quot;]=&gt;    bool(false)    [&quot;searchVehicleFound&quot;]=&gt;    bool(false)    [&quot;searchVehicleString&quot;]=&gt;    string(0) &quot;&quot;    [&quot;totalVehiclesFound&quot;]=&gt;    int(1)    [&quot;user&quot;]=&gt;    object(Fuelly_User)#1 (1) {      [&quot;_properties&quot;:protected]=&gt;      array(4) {        [&quot;email&quot;]=&gt;        string(19) &quot;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&quot;        [&quot;password&quot;]=&gt;        string(4) &quot;test&quot;        [&quot;displayName&quot;]=&gt;        string(6) &quot;test27&quot;        [&quot;isLoggedIn&quot;]=&gt;        bool(true)      }    }    [&quot;vehicles&quot;]=&gt;    array(1) {      [&quot;2WT&quot;]=&gt;      object(Fuelly_Vehicle)#11 (1) {        [&quot;_properties&quot;:protected]=&gt;        array(15) {          [&quot;id&quot;]=&gt;          string(5) &quot;93749&quot;          [&quot;name&quot;]=&gt;          string(3) &quot;2WT&quot;          [&quot;displayName&quot;]=&gt;          string(3) &quot;2WT&quot;          [&quot;avgMilesPerGallon&quot;]=&gt;          string(4) &quot;47.5&quot;          [&quot;lastMilesPerGallon&quot;]=&gt;          string(4) &quot;64.5&quot;          [&quot;bestMilesPerGallon&quot;]=&gt;          string(4) &quot;64.5&quot;          [&quot;avgPricePerGallon&quot;]=&gt;          string(5) &quot;$3.92&quot;          [&quot;avgPricePerFuelUp&quot;]=&gt;          string(6) &quot;$12.14&quot;          [&quot;avgPricePerMile&quot;]=&gt;          string(6) &quot;$0.082&quot;          [&quot;totalFuelups&quot;]=&gt;          int(5)          [&quot;totalSpent&quot;]=&gt;          string(6) &quot;$60.71&quot;          [&quot;totalMilesTracked&quot;]=&gt;          string(3) &quot;589&quot;          [&quot;totalMilesToday&quot;]=&gt;          int(0)          [&quot;hasFirstFuelupOfTheDayBeenCompleted&quot;]=&gt;          bool(false)          [&quot;fuelups&quot;]=&gt;          array(5) {            [0]=&gt;            object(Fuelly_Fuelup)#18 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1318365120)                [&quot;odometer&quot;]=&gt;                string(3) &quot;590&quot;                [&quot;miles&quot;]=&gt;                int(200)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(64.5)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.899&quot;                [&quot;note&quot;]=&gt;                string(16) &quot;Cumberland Farms&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.09&quot;              }            }            [1]=&gt;            object(Fuelly_Fuelup)#19 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317663120)                [&quot;odometer&quot;]=&gt;                string(3) &quot;390&quot;                [&quot;miles&quot;]=&gt;                int(109)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(35.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.999&quot;                [&quot;note&quot;]=&gt;                string(5) &quot;Mobil&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.40&quot;              }            }            [2]=&gt;            object(Fuelly_Fuelup)#21 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317576660)                [&quot;odometer&quot;]=&gt;                string(3) &quot;281&quot;                [&quot;miles&quot;]=&gt;                int(140)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(45.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.799&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$11.78&quot;              }            }            [3]=&gt;            object(Fuelly_Fuelup)#22 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317490200)                [&quot;odometer&quot;]=&gt;                string(3) &quot;141&quot;                [&quot;miles&quot;]=&gt;                int(140)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(45.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.899&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.09&quot;              }            }            [4]=&gt;            object(Fuelly_Fuelup)#23 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317490140)                [&quot;odometer&quot;]=&gt;                string(1) &quot;1&quot;                [&quot;miles&quot;]=&gt;                int(0)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(0)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.989&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.37&quot;              }            }          }        }      }    }  }}</pre>Now what happens when you search for a specific vehicle which cannot be located in Fuelly?  Check the response below.<pre lang="php" line="1">object(Fuelly_Response)#3 (1) {  [&quot;_properties&quot;:protected]=&gt;  array(6) {    [&quot;searchByVehicleName&quot;]=&gt;    bool(true)    [&quot;searchVehicleFound&quot;]=&gt;    bool(false)    [&quot;searchVehicleString&quot;]=&gt;    string(5) &quot;MyCar&quot;    [&quot;totalVehiclesFound&quot;]=&gt;    int(0)    [&quot;user&quot;]=&gt;    object(Fuelly_User)#1 (1) {      [&quot;_properties&quot;:protected]=&gt;      array(4) {        [&quot;email&quot;]=&gt;        string(19) &quot;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&quot;        [&quot;password&quot;]=&gt;        string(4) &quot;test&quot;        [&quot;displayName&quot;]=&gt;        string(6) &quot;test27&quot;        [&quot;isLoggedIn&quot;]=&gt;        bool(true)      }    }    [&quot;vehicles&quot;]=&gt;    array(0) {    }  }}</pre>You guessed it, it will return a response object without any vehicles.  Now one thing I want to point out is that the response object has a few properties that are related to the searching of vehicles.  You can see if a search for a vehicle was requested, if any match was found and also the name of the vehicle that is being searched for.You might have noticed that in the response object I have not parsed out any of the $ in the prices.  This is because I have not really played around with Fuelly too much and am not sure if Fuelly supports other languages yet or if everything is always in USD.  Once I figure that out I will be sure to have the code properly handle the currency symbols along with number_format rules for those languages.  I also have not supported posting any data to Fuelly, this might come in the future as it is possible however I wanted to start with pulling the data first as that is what I have a use for.I have licensed this code under the Creative Commons license so please feel free to use it as you wish.  If you end up using this code please let me know, as well if you have ideas for improvement or enhancement let me know that too.This library would not have had nearly as much progress made if it were not for the assistance of other people in ##php on irc.freenode.net most notably ymas and TML so a BIG THANK YOU to those guys for dealing with my XPath and DOMDocument questions.</p>
+<!DOCTYPE html>
+<!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Fuelly Library (0.2-alpha)</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    
+    <meta property="og:type" content="blog" />
+    <meta property="og:title" content="Joseph Crawford" />
+    <meta property="og:url" content="http://www.josephcrawford.com" />
+    <meta property="og:site_name" content="Joseph Crawford" />
+    
+        <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
+    <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
+    <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
+    <!--[if IE 9]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie9.css"> <![endif]-->
+    <!--[if lt IE 10]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie.css"> <![endif]-->
+
+    <style type="text/css">
+        .floatleft {
+            float: left;
+            margin: 0px 10px 10px 0px;
+            border: 1px solid #000000;
+            padding: 2px;
+            display: inline;
+        }
+
+        .floatcenter {
+            text-align: center;
+            margin: 0px 10px 10px 0px;
+            border: 1px solid #000000;
+            padding: 2px;
+        }
+
+        .floatright {
+            float: right;
+            margin: 0px 0px 10px 10px;
+            border: 1px solid #000000;
+            padding: 2px;
+            display: inline;
+        }
+    </style>
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        var imageResize = "wordpress",
+            resizeDisabled = "",
+            assetsUri = "/images/production",
+            imageNonce = "7072fe5b36";
+        document.write('<style type="text/css">.noscript{visibility: hidden;}</style>');
+    /* ]]> */
+    </script>
+    
+
+
+    <link rel='stylesheet' id='pygments-css'  href='/css/pygments.css' type='text/css' media='screen' /> 
+    <link rel='stylesheet' id='miss_prettyphoto-css'  href='/css/prettyPhoto.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missfont1-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C700italic%2C800italic%2C400%2C800%2C700%2C600%2C300&#038;ver=1.0.8' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missfont2-css'  href='http://fonts.googleapis.com/css?family=Droid+Sans%3A400%2C700&#038;ver=1.0.8' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missfont3-css'  href='http://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%2C900%2C900italic&#038;ver=1.0.8' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missfont4-css'  href='http://fonts.googleapis.com/css?family=Monda' type='text/css' media='screen' />
+    
+    <link rel='stylesheet' id='missshortcodes-css'  href='/css/shortcodes.css' type='text/css' media='screen' />
+	<link rel='stylesheet' id='misswidgets-css'  href='/css/widgets.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missgeneral-css'  href='/css/style.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missresponsive-css'  href='/css/responsive.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missscore-css'  href='/css/score.css' type='text/css' media='screen' /> 
+    <link rel='stylesheet' id='dropkick-css'  href='/css/jquery.selectbox.css' type='text/css' media='screen' />
+    
+    <link rel='stylesheet' id='light_lightblue-css'  href='/css/themes/light_lightblue.css' type='text/css' media='screen' title="light_lightblue" />
+    <link rel='alternate stylesheet' id='gravity-css'  href='/css/themes/gravity.css' type='text/css' media='screen' title="gravity" />	
+    <link rel='alternate stylesheet' id='dark_blue-css'  href='/css/themes/dark_blue.css' type='text/css' media='screen' title="dark_blue" />
+    <link rel='alternate stylesheet' id='dark_coral-css'  href='/css/themes/dark_coral.css' type='text/css' media='screen' title="dark_coral" />
+    <link rel='alternate stylesheet' id='dark_glance-css'  href='/css/themes/dark_glance.css' type='text/css' media='screen' title="dark_glance" />
+    <link rel='alternate stylesheet' id='dark_crimson-css'  href='/css/themes/dark_crimson.css' type='text/css' media='screen' title="dark_crimson" />
+    <link rel='alternate stylesheet' id='dark_glance-css'  href='/css/themes/dark_glance.css' type='text/css' media='screen' title="dark_glance" />
+    <link rel='alternate stylesheet' id='dark_green-css'  href='/css/themes/dark_green.css' type='text/css' media='screen' title="dark_green" />
+    <link rel='alternate stylesheet' id='dark_hotpink-css'  href='/css/themes/dark_hotpink.css' type='text/css' media='screen' title="dark_hotpink" />
+
+    <link rel='stylesheet' id='override-css'  href='/css/override.css' type='text/css' media='screen' /> 
+    <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type='text/javascript' src="/js/style-switcher.js"></script>
+	<script type='text/javascript' src="/js/jquery.selectbox-0.2.min.js"></script>
+    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+    <script type='text/javascript' src='/js/tabs.min.js'></script>
+    <script type='text/javascript' src='/js/jquery.flexslider-min.js'></script>
+    <script type='text/javascript' src='/js/custom.js'></script>
+    <script type='text/javascript' src='/js/stemmer.js'></script>
+    <script type='text/javascript' src='/js/site-search.js'></script>
+
+    <meta name="generator" content="Jekyll 0.11.2" />
+    <link rel='shortlink' href='http://wp.me/sEFF' />
+
+    <!-- Jetpack Open Graph Tags -->
+
+    <script type="text/javascript">
+		$(document).ready(function() {
+			var cookie = readCookie("style");
+			var title = cookie ? cookie : getPreferredStyleSheet();
+			setActiveStyleSheet(title);
+			
+			$("#switcher").selectbox({
+				onChange: function (val, inst) {
+					setActiveStyleSheet(val);
+				},
+			});
+			
+		});
+	
+        // var _gaq = _gaq || [];
+        // _gaq.push(['_setAccount', 'UA-18267810-1']);
+        // _gaq.push(['_trackPageview']);
+        (function() {
+           // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+		
+
+    </script>
+</head>
+
+<body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
+    <div class="background">
+        <div class="background_inner"></div>
+    </div>
+
+    <div id="page_inner">
+        <div class="top-pattern"></div>
+        <div class="container">
+            <div class="sixteen columns">
+                <div id="header_extras">
+                    <div class="header_social">
+                        <div class="social_icon default">
+                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+                        </div>
+                        <div class="social_icon default">
+                            <a href="https://www.facebook.com/joseph.crawford.16">
+                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header_text">I also waste time on the following social networks:</div>
+                    <div class="clearboth"></div>
+                </div><!-- #header_extras -->
+            </div>
+            <div id="header">
+                <div class="sixteen columns">
+                    <div class="logo">
+                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+                            <span>Joseph</span><span>Crawford</span>
+                        </a>
+                    </div><!-- .logo -->
+                    <div id="header_ad">
+                    <script type="text/javascript">
+                        <!--
+                            google_ad_client = "ca-pub-4815878521361271";
+                            /* header right */
+                            google_ad_slot = "4528456168";
+                            google_ad_width = 234;
+                            google_ad_height = 60;
+                        //-->
+                    </script>
+
+                    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+                </div>
+            </div>
+        </div><!-- #header -->
+        
+                <div id="main_menu" class="sixteen columns row">
+            <div class="main_navigation">
+                <ul id="menu-menu" class="">
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="http://www.josephcrawford.com/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
+                        <a href="#"><span>Articles</span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
+                                <a href="#">PHP</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-2072" class="menu-item menu-item-type-custom menu-item-object-custom">
+                                        <a href="http://www.josephcrawford.com/php-articles/an-offensive-word-filter/">Offensive Word Filter</a>
+                                    </li>
+                                    <li id="menu-item-2077" class="menu-item menu-item-type-custom menu-item-object-custom">
+                                        <a href="http://www.josephcrawford.com/php-articles/going-deep-inside-php-sessions/">Deep into PHP Sessions</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="http://www.josephcrawford.com/about/"><span>About</span></a>
+                    </li>
+                    <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
+                        <a href="#"><span>Resume</span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-2022" class="menu-item menu-item-type-custom menu-item-object-custom">
+                                <a href="http://www.josephcrawford.com/wp-content/uploads/2012/11/resume.pdf">PDF</a>
+                            </li>
+                            <li id="menu-item-2023" class="menu-item menu-item-type-custom menu-item-object-custom">
+                                <a href="http://www.josephcrawford.com/wp-content/uploads/2012/11/resume.doc">Word</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="http://www.josephcrawford.com/contact-me/"><span>Contact Me</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearboth"></div>
+        </div><!-- #main_menu -->
+        
+        <div id="content">
+            <div id="content_inner">
+                <div id="main" class="ten columns clearfix">
+            	    <div id="main_inner">
+                        <div class="single_post_module">
+                            <div id="post" class="post type-post status-publish format-standard hentry">
+            			        <div class="single_post_content">
+            				        <h2 class="post_title">Fuelly Library (0.2-alpha)</h2>
+                                    <p class="post_meta">
+                                        <span class="meta_date">Posted <a href="/2011/10/" title="October 15, 2011">October 15, 2011</a></span>
+                                        <span class="meta_category">in <a class='category' href='/category/entertainment/'>Entertainment</a>, <a class='category' href='/category/internet/'>Internet</a>, <a class='category' href='/category/raves/'>Raves</a>, <a class='category' href='/category/software/'>Software</a>, <a class='category' href='/category/useful/'>Useful</a>, <a class='category' href='/category/websites/'>Websites</a></span>
+                                        <span class="meta_comments"> with <a href="/2012/12/php-master-series/#respond" title="Comment on PHP Master Series">0 Comments</a></span>
+                                    </p>
+                                    <div class="single_post_image"style="width:730px;">
+                                        <img class="hover_fade_js" src="/images/posts/featured/Fuelly-Featured.png" title="PHP Master Series" alt="Phpmaster" width="720" height="380" />
+                                    </div>
+                                    <div class="clearboth"></div>
+            				        <div class="entry">
+                                        <p>I have been using <a href="http://www.fuelly.com" title="Fuelly">Fuelly.com</a> for a while now to track my gas mileage on my motorcycle.  Every-time I fill-up my tank I send an SMS to Fuelly with the odometer reading, the price per gallon and how many gallons I put into the bike.A sample SMS message that I send looks like this&gt; h 2799 4.099 3.06I prefix the message with the letter I have assigned to the vehicle in Fuelly so that it knows which vehicle to apply the fuel-up to.  This is very handy since Fuelly does all the calculations and shows my history for gas mileage.  However I was looking for a way to get the data from Fuelly to display on my site.  Currently even with the demand high Fuelly does not have the proper resources to develop and support an API at this time.  I sat down over the last week and began working on a <a href="http://www.josephcrawford.com/wp-content/uploads/2011/10/Fuelly-0.2-alpha.zip">library of Fuelly classes (Fuelly-0.2-alpha)</a> that could be used to fetch your data from the site.  Currently it requires that you provide a valid Fuelly username and password to fetch data but in the future I plan to remove this dependency.  In the future when you use this library to reach out to Fuelly if you do not pass a valid user object it will fetch only the &quot;public&quot; data that it can.  If you pass it a valid authenticated user object then it will also grab data which only you can see when you log-in. &lt;!--more--&gt;Currently it is very simple, the library consists of a handful of classes which are outlined below with a description of what each does.Fulley_Scraper - This is the heart of the library, it is the class that actually reaches out to Fuelly and fetches all the statistics.  It&#39;s then responsible for populating the other objects with the data.Fuelly_Response - This object is really just a container object at this time, it&#39;s only duty right now is to hold references to all the other objects keeping things organized nicely.  In the future I may add more functionality to this object but not at this time.Fuelly_User - This is the user object which you create with your username and password for Fuelly.  It is used for authenticated requests throughout the scraping process.Fuelly_Vehicle - This is the object that will hold all of the vehicle information along with a collection of fuel-ups for that particular vehicle.  Currently this is solely a container object as well.Fuelly_Fuelup - This object is what is populated for every fuel-up added to a vehicle.  The Fuelly_Vehicle holds a collection of fuel-ups which are all instances of Fuelly_FuelupFuelly_Object - This is the base object which all other objects inherit from.  It provides some base functionality such as magic <strong>get, __set and __call methods.Fuelly_Exception - This is just an exception class which currently only inherits the functionality of the built-in Exception object.Now that you know what all of the classes are and what they do it&#39;s time to look at some actual implementation code.  I have the library structured like the following:|- index.php|-- lib/|---- Fuelly/|------ Exception.php|------ Fuelup.php|------ Object.php|------ Scraper.php|------ Vehicle.phpThe index file is the where the process begins.  It does some preparatory tasks such as setting the include path and implementing an autoloader function.  Once this is setup you simply create an instance of Fuelly_User with your username and password and then you pass the Fuelly_User object into an instance of Fuelly_Scraper.  Once you have the scraper object there are 2 ways you can use it.  You can simply call the run method with no parameters and this will reach out and collect the statistics for every vehicle you have listed in Fuelly.  The other option is to pass in a vehicle display name and the library will only collect statistics on the specified vehicle.<pre lang="php" line="1">&lt;?phpdate_default_timezone_set(&#39;America/New_York&#39;);ini_set(&#39;include_path&#39;, get_include_path() . PATH_SEPARATOR . realpath(dirname(</strong>FILE__)).&#39;/lib/&#39;);function <strong>autoload($className) {$segments = explode(&#39;_&#39;, $className);$className = implode(&#39;/&#39;, $segments);if(file_exists(&#39;lib/&#39;.$className . &#39;.php&#39;)) include &#39;lib/&#39;.$className . &#39;.php&#39;;}try {$user = new Fuelly_User(&#39;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&#39;, &#39;test&#39;);$response = Fuelly_Scraper::getInstance($user)-&gt;run();var_dump($response); exit;} catch(Fuelly_Exception $e) {echo $e-&gt;getMessage();}</pre>Ok I get it, implementation is easy but what does the output look like?  As you can see above I am currently just dumping the response object so that you can see the values, however there is much more you can do with this.  For instance you could total up the total miles driven for all vehicles or you could calculate how many miles you have driven over a date range, or for a specific day such as yesterday or today.  Currently none of the features I just talked about are implemented however it would be pretty easy to calculate.  For instance to calculate the total miles driven for all vehicles you could do something like this.<pre lang="php" line="1">&lt;?phpdate_default_timezone_set(&#39;America/New_York&#39;);ini_set(&#39;include_path&#39;, get_include_path() . PATH_SEPARATOR . realpath(dirname(</strong>FILE__)).&#39;/lib/&#39;);function __autoload($className) {$segments = explode(&#39;_&#39;, $className);$className = implode(&#39;/&#39;, $segments);if(file_exists(&#39;lib/&#39;.$className . &#39;.php&#39;)) include &#39;lib/&#39;.$className . &#39;.php&#39;;}try {$user = new Fuelly_User(&#39;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&#39;, &#39;test&#39;);$response = Fuelly_Scraper::getInstance($user)-&gt;run();        $totalMiles = 0;        foreach($response-&gt;getVehicles() as $vehicle) {                $totalMiles += $vehicle-&gt;getTotalMilesTracked();        }        echo &quot;I have driven a total of &quot;.$totalMiles.&quot; in all vehicles tracked by Fuelly.&quot;;} catch(Fuelly_Exception $e) {echo $e-&gt;getMessage();}</pre>Currently there is no documentation for this code other than reading through it to see what is going on however that will be coming in the near future as well.  I want to get the library somewhat evolved before spending too much time on the documentation for the methods, etc.  PHPDoc will be a friend over the next few months.Ok so you are dying to see what a response object looks like when it&#39;s all populated here it is:<pre lang="php" line="1">object(Fuelly_Response)#3 (1) {  [&quot;_properties&quot;:protected]=&gt;  array(6) {    [&quot;searchByVehicleName&quot;]=&gt;    bool(false)    [&quot;searchVehicleFound&quot;]=&gt;    bool(false)    [&quot;searchVehicleString&quot;]=&gt;    string(0) &quot;&quot;    [&quot;totalVehiclesFound&quot;]=&gt;    int(1)    [&quot;user&quot;]=&gt;    object(Fuelly_User)#1 (1) {      [&quot;_properties&quot;:protected]=&gt;      array(4) {        [&quot;email&quot;]=&gt;        string(19) &quot;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&quot;        [&quot;password&quot;]=&gt;        string(4) &quot;test&quot;        [&quot;displayName&quot;]=&gt;        string(6) &quot;test27&quot;        [&quot;isLoggedIn&quot;]=&gt;        bool(true)      }    }    [&quot;vehicles&quot;]=&gt;    array(1) {      [&quot;2WT&quot;]=&gt;      object(Fuelly_Vehicle)#11 (1) {        [&quot;_properties&quot;:protected]=&gt;        array(15) {          [&quot;id&quot;]=&gt;          string(5) &quot;93749&quot;          [&quot;name&quot;]=&gt;          string(3) &quot;2WT&quot;          [&quot;displayName&quot;]=&gt;          string(3) &quot;2WT&quot;          [&quot;avgMilesPerGallon&quot;]=&gt;          string(4) &quot;47.5&quot;          [&quot;lastMilesPerGallon&quot;]=&gt;          string(4) &quot;64.5&quot;          [&quot;bestMilesPerGallon&quot;]=&gt;          string(4) &quot;64.5&quot;          [&quot;avgPricePerGallon&quot;]=&gt;          string(5) &quot;$3.92&quot;          [&quot;avgPricePerFuelUp&quot;]=&gt;          string(6) &quot;$12.14&quot;          [&quot;avgPricePerMile&quot;]=&gt;          string(6) &quot;$0.082&quot;          [&quot;totalFuelups&quot;]=&gt;          int(5)          [&quot;totalSpent&quot;]=&gt;          string(6) &quot;$60.71&quot;          [&quot;totalMilesTracked&quot;]=&gt;          string(3) &quot;589&quot;          [&quot;totalMilesToday&quot;]=&gt;          int(0)          [&quot;hasFirstFuelupOfTheDayBeenCompleted&quot;]=&gt;          bool(false)          [&quot;fuelups&quot;]=&gt;          array(5) {            [0]=&gt;            object(Fuelly_Fuelup)#18 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1318365120)                [&quot;odometer&quot;]=&gt;                string(3) &quot;590&quot;                [&quot;miles&quot;]=&gt;                int(200)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(64.5)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.899&quot;                [&quot;note&quot;]=&gt;                string(16) &quot;Cumberland Farms&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.09&quot;              }            }            [1]=&gt;            object(Fuelly_Fuelup)#19 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317663120)                [&quot;odometer&quot;]=&gt;                string(3) &quot;390&quot;                [&quot;miles&quot;]=&gt;                int(109)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(35.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.999&quot;                [&quot;note&quot;]=&gt;                string(5) &quot;Mobil&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.40&quot;              }            }            [2]=&gt;            object(Fuelly_Fuelup)#21 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317576660)                [&quot;odometer&quot;]=&gt;                string(3) &quot;281&quot;                [&quot;miles&quot;]=&gt;                int(140)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(45.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.799&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$11.78&quot;              }            }            [3]=&gt;            object(Fuelly_Fuelup)#22 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317490200)                [&quot;odometer&quot;]=&gt;                string(3) &quot;141&quot;                [&quot;miles&quot;]=&gt;                int(140)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(45.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.899&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.09&quot;              }            }            [4]=&gt;            object(Fuelly_Fuelup)#23 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317490140)                [&quot;odometer&quot;]=&gt;                string(1) &quot;1&quot;                [&quot;miles&quot;]=&gt;                int(0)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(0)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.989&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.37&quot;              }            }          }        }      }    }  }}</pre>Now what happens when you search for a specific vehicle which cannot be located in Fuelly?  Check the response below.<pre lang="php" line="1">object(Fuelly_Response)#3 (1) {  [&quot;_properties&quot;:protected]=&gt;  array(6) {    [&quot;searchByVehicleName&quot;]=&gt;    bool(true)    [&quot;searchVehicleFound&quot;]=&gt;    bool(false)    [&quot;searchVehicleString&quot;]=&gt;    string(5) &quot;MyCar&quot;    [&quot;totalVehiclesFound&quot;]=&gt;    int(0)    [&quot;user&quot;]=&gt;    object(Fuelly_User)#1 (1) {      [&quot;_properties&quot;:protected]=&gt;      array(4) {        [&quot;email&quot;]=&gt;        string(19) &quot;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&quot;        [&quot;password&quot;]=&gt;        string(4) &quot;test&quot;        [&quot;displayName&quot;]=&gt;        string(6) &quot;test27&quot;        [&quot;isLoggedIn&quot;]=&gt;        bool(true)      }    }    [&quot;vehicles&quot;]=&gt;    array(0) {    }  }}</pre>You guessed it, it will return a response object without any vehicles.  Now one thing I want to point out is that the response object has a few properties that are related to the searching of vehicles.  You can see if a search for a vehicle was requested, if any match was found and also the name of the vehicle that is being searched for.You might have noticed that in the response object I have not parsed out any of the $ in the prices.  This is because I have not really played around with Fuelly too much and am not sure if Fuelly supports other languages yet or if everything is always in USD.  Once I figure that out I will be sure to have the code properly handle the currency symbols along with number_format rules for those languages.  I also have not supported posting any data to Fuelly, this might come in the future as it is possible however I wanted to start with pulling the data first as that is what I have a use for.I have licensed this code under the Creative Commons license so please feel free to use it as you wish.  If you end up using this code please let me know, as well if you have ideas for improvement or enhancement let me know that too.This library would not have had nearly as much progress made if it were not for the assistance of other people in ##php on irc.freenode.net most notably ymas and TML so a BIG THANK YOU to those guys for dealing with my XPath and DOMDocument questions.</p>
+
+                                        <div class="clearboth"></div>
+            						</div><!-- .entry -->
+            				        <p class="post_meta_bottom">
+                                        <span class="meta_post_tag"> <em>Tags:</em>&nbsp;<a class='tag' href='/tags/entertainment/'>Entertainment</a>, <a class='tag' href='/tags/frameworks/'>Frameworks</a>, <a class='tag' href='/tags/internet/'>Internet</a>, <a class='tag' href='/tags/php/'>PHP</a>, <a class='tag' href='/tags/raves/'>Raves</a>, <a class='tag' href='/tags/software/'>Software</a>, <a class='tag' href='/tags/useful/'>Useful</a>, <a class='tag' href='/tags/websites/'>Websites</a></span>
+                                    </p>
+                                    <div class="share_this_module">
+                                        <div class="share_this_content">
+                                            <a href="http://twitter.com/home?status=PHP%20Master%20Series%20-%20http://www.josephcrawford.com/?p=2116">
+                                                <img alt="Twitter" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/twitter.png" />
+                                            </a>
+                                            <a href="http://www.stumbleupon.com/submit?url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series">
+                                                <img alt="StumbleUpon" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/stumbleupon.png" />
+                                            </a>
+                                            <a href="http://reddit.com/submit?url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series">
+                                                <img alt="Reddit" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/reddit.png" />
+                                            </a>
+                                            <a href="http://digg.com/submit?phase=2&amp;url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series&amp;bodytext=What%20are%20your%20plans%20December%2021st%3F%20%20Other%20than%20the%20world%20coming%20to%20an%20end%20Cal%20Evans%20has%20organized%20an%20amazing%20online%20PHP%20conference.%20%20If%20you%20are%20a%20PHP%20Developer%20there%20will%20be%20no%20better%20way%20to%20spend%20that%20day%20than%20to%20attend%20the%20PHP%20Master%20Series%20online%20developer%20conference.%20%20Seriously%20if%20you%20are%20a%20PHP%20developer%20YOU%20NEED%20TO%20ATTEND%20this%20online%20conference."><img alt="Digg" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/digg.png" />
+                                            </a>
+                                            <a href="http://delicious.com/post?url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series&amp;notes=What%20are%20your%20plans%20December%2021st%3F%20%20Other%20than%20the%20world%20coming%20to%20an%20end%20Cal%20Evans%20has%20organized%20an%20amazing%20online%20PHP%20conference.%20%20If%20you%20are%20a%20PHP%20Developer%20there%20will%20be%20no%20better%20way%20to%20spend%20that%20day%20than%20to%20attend%20the%20PHP%20Master%20Series%20online%20developer%20conference.%20%20Seriously%20if%20you%20are%20a%20PHP%20developer%20YOU%20NEED%20TO%20ATTEND%20this%20online%20conference.">
+                                                <img alt="del.icio.us" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/delicious.png" />
+                                            </a>
+                                            <a href="http://www.facebook.com/share.php?u=http://www.josephcrawford.com/?p=2116&amp;t=PHP%20Master%20Series">
+                                                <img alt="Facebook" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/facebook.png" />
+                                            </a>
+                                            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series&amp;source=Joseph+Crawford+&amp;summary=What%20are%20your%20plans%20December%2021st%3F%20%20Other%20than%20the%20world%20coming%20to%20an%20end%20Cal%20Evans%20has%20organized%20an%20amazing%20online%20PHP%20conference.%20%20If%20you%20are%20a%20PHP%20Developer%20there%20will%20be%20no%20better%20way%20to%20spend%20that%20day%20than%20to%20attend%20the%20PHP%20Master%20Series%20online%20developer%20conference.%20%20Seriously%20if%20you%20are%20a%20PHP%20developer%20YOU%20NEED%20TO%20ATTEND%20this%20online%20conference.">
+                                                <img alt="LinkedIn" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/linkedin.png" />
+                                            </a>
+                                        </div><!-- .share_this_content -->
+                                    </div><!-- .share_this_module -->
+                                </div><!-- .single_post_content -->
+                            </div><!-- #post-## -->
+                        </div><!-- .single_post_module -->
+            		    <div class="additional_posts_module">
+                            <div class="blog_tabs_container">
+                                <ul class="blog_tabs">
+                                    <li><a href="#" class="current">Popular Posts</a></li>
+                                    <li><a href="#">Related Posts</a></li>
+                                </ul>
+                                <div class="blog_tabs_content">
+                                    <div class="post_grid four_column_blog">
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2007/11/phpwomen-a-site-for-women-programming-php/" title="PHPWomen: A site for women programming PHP">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/php_women_thumb.png" title="PHPWomen: A site for women programming PHP" alt="PHP Women" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content" >
+                                                    <p class="post_title">
+                                                        <a href="/2007/11/phpwomen-a-site-for-women-programming-php/" title="PHPWomen: A site for women programming PHP" rel="bookmark">PHPWomen: A site for women programming PHP</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2009/03/the-new-itunes-hdcp-content/" title="The New iTunes HDCP Content">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/hdcp-featured-153x75.png" title="The New iTunes HDCP Content" alt="Hdcp Featured" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content" >
+                                                    <p class="post_title">
+                                                        <a href="/2009/03/the-new-itunes-hdcp-content/" title="The New iTunes HDCP Content" rel="bookmark">The New iTunes HDCP Content</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2007/10/customizing-the-leopard-dock/" title="Customizing the Leopard Dock">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/dock-featured-153x75.png" title="Customizing the Leopard Dock" alt="Dock Featured" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content" >
+                                                    <p class="post_title">
+                                                        <a href="/2007/10/customizing-the-leopard-dock/" title="Customizing the Leopard Dock" rel="bookmark">Customizing the Leopard Dock</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one_fourth last">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2010/03/zf-creating-restful-applications/" title="ZF: Creating RESTful Applications">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/zend-framework-featured-153x75.png" title="ZF: Creating RESTful Applications" alt="Zend Framework Featured" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content" >
+                                                    <p class="post_title">
+                                                        <a href="/2010/03/zf-creating-restful-applications/" title="ZF: Creating RESTful Applications" rel="bookmark">ZF: Creating RESTful Applications</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog_tabs_content">
+                                    <div class="post_grid four_column_blog">
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2012/12/dear-recruiters/" title="Dear Recruiters">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/Recruiters-153x75.png" title="Dear Recruiters" alt="Recruiters" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2012/12/dear-recruiters/" title="Dear Recruiters" rel="bookmark">Dear Recruiters</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2012/11/a-new-look/" title="A New Look">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/Old-Look-153x75.png" title="A New Look" alt="Old Look" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2012/11/a-new-look/" title="A New Look" rel="bookmark">A New Look</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2012/10/sub-domain-pointing-to-my-home-computer/" title="Sub-Domain Pointing to my Home Computer">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/what-is-dns-diagram12-153x75.jpeg" title="Sub-Domain Pointing to my Home Computer" alt="What Is Dns Diagram12" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2012/10/sub-domain-pointing-to-my-home-computer/" title="Sub-Domain Pointing to my Home Computer" rel="bookmark">Sub-Domain Pointing to my Home Computer</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="one_fourth last">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2012/10/time-between-posts/" title="Time Between Posts">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/clock-featured-153x75.png" title="Time Between Posts" alt="Clock Featured" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2012/10/time-between-posts/" title="Time Between Posts" rel="bookmark">Time Between Posts</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>							
+                        <div class="clearboth"></div>
+            	    </div><!-- #main_inner -->
+                </div><!-- #main -->
+
+                                <div id="sidebar" class="six columns">
+                    <div id="sidebar_inner">
+                        <div id="search-3" class="widget widget_search">
+                            <form id="searchform">
+                                <input type="text" name="s" id="s" value="Enter Your Search Term" onfocus="if(this.value=='Enter Your Search Term')this.value='';" onblur="if(this.value=='')this.value='Enter Your Search Term';">
+                            </form>
+                        </div>
+						<div id="themes">
+							<div id="style-switcher">
+								<span style="font-size: 16px;">Select Theme: </span>
+								<select name="switcher" id="switcher" style="pretty dk">
+									<option value='light_lightblue'>Default</option>
+									<option value='gravity'>Gravity</option>
+									<option value='dark_blue'>Dark Blue</option>
+									<option value='dark_coral'>Dark Coral</option>
+									<option value='dark_crimson'>Dark Crimson</option>
+									<option value='dark_glance'>Dark Glance</option>
+									<option value='dark_green'>Dark Green</option>
+									<option value='dark_hotpink'>Dark Hotpink</option>
+								</select>
+							</div>
+						</div>
+                        
+						<div class="clearboth"></div>
+                        
+                        <div id="categories-3" class="widget widget_categories">
+                            <h4 class="widgettitle"><span>Categories</span></h4>
+                            <ul>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/uncategorized/" title="Uncategorized">Uncategorized</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/development/" title="Development">Development</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/reviews/" title="Reviews">Reviews</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/mac/" title="Mac">Mac</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/raves/" title="Raves">Raves</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/software/" title="Software">Software</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/rants/" title="Rants">Rants</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/entertainment/" title="Entertainment">Entertainment</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/local/" title="Local">Local</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/news/" title="News">News</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/work/" title="Work">Work</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/internet/" title="Internet">Internet</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/jokes/" title="Jokes">Jokes</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/tutorials/" title="Tutorials">Tutorials</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/tv/" title="Tv">Tv</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/ppp/" title="Ppp">Ppp</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/useful/" title="Useful">Useful</a>
+                                </li>
+                                
+                      		</ul>
+                        </div>
+                        
+                        <div class="clearboth"></div>
+                        
+                        <div id="recent-posts-3" class="widget widget_recent_entries">
+                            <h4 class="widgettitle"><span>Recent Posts</span></h4>
+                            <ul>
+                                <li><a href="http://www.josephcrawford.com/2012/12/test/" title="Test">Test</a></li>
+                                <li><a href="http://www.josephcrawford.com/2012/12/php-master-series/" title="PHP Master Series">PHP Master Series</a></li>
+                                <li><a href="http://www.josephcrawford.com/2012/11/a-new-look/" title="A New Look">A New Look</a></li>
+                                <li><a href="http://www.josephcrawford.com/2012/10/review-timing/" title="Review: Timing">Review: Timing</a></li>
+                                <li><a href="http://www.josephcrawford.com/2012/10/review-markdown-pro/" title="Review: Markdown Pro">Review: Markdown Pro</a></li>
+                            </ul>
+                        </div>
+                        <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/php-articles/going-deep-inside-php-sessions/" class="bump-view" data-bump-view="tp">Going deep inside PHP sessions</a></div>
+                            </li>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2012/12/php-master-series/" class="bump-view" data-bump-view="tp">PHP Master Series</a></div>
+                            </li>
+                            <li>
+                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2008/04/tagchimp.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2008/05/metax-and-tagchimp/" class="bump-view" data-bump-view="tp">MetaX and tagChimp</a></div>
+                            </li>
+                            <li>
+                                <img src="http://i1.wp.com/www.josephcrawford.com/wp-content/uploads/2009/05/ffusa-featured.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2009/05/first-financial-usa-ffusa/" class="bump-view" data-bump-view="tp">First Financial USA (FFUSA)</a></div>
+                            </li>
+                            <li>
+                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2009/08/WebOS.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2009/08/a-basic-webos-application-and-the-depot/" class="bump-view" data-bump-view="tp">A Basic WebOS Application and the Depot</a></div>
+                            </li>
+                            <li>
+                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2006/11/photo_isight.jpeg?resize=40%2C40" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2006/11/scary-isight-trick/" class="bump-view" data-bump-view="tp">Scary iSight Trick</a></div>
+                            </li>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2010/09/bose-companion-5-and-ubuntu/" class="bump-view" data-bump-view="tp">Bose Companion 5 and Ubuntu (SOLVED)</a></div>
+                            </li>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/about/" class="bump-view" data-bump-view="tp">About</a></div>
+                            </li>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/macdev-articles/using-foundations-nslog-function/" class="bump-view" data-bump-view="tp">Using Foundation&#039;s NSLog Function</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="popularwidget-2" class="widget miss_popular_widget">
+                        <h4 class="widgettitle">
+                            <span>Popular Posts</span>
+                        </h4>
+                        <ul class="post_list small_post_list">
+                            <li class="post_list_module">
+                                <div class="post_list_image">
+                                    <a href="http://www.josephcrawford.com/2007/11/phpwomen-a-site-for-women-programming-php/" title="PHPWomen: A site for women programming PHP">
+                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/php_women_2010_large_calendar-p158038689179469171b7aic_400-119x72.jpeg" title="PHPWomen: A site for women programming PHP" alt="Php Women 2010 Large Calendar P158038689179469171b7aic 400" width="119" height="72" />
+                                    </a>
+                                </div>
+                                <div class="post_list_content">
+                                    <p class="post_title">
+                                        <a rel="bookmark" href="http://www.josephcrawford.com/2007/11/phpwomen-a-site-for-women-programming-php/" title="PHPWomen: A site for women programming PHP">PHPWomen: A site for women programming PHP</a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="post_list_module">
+                                <div class="post_list_image">
+                                    <a href="http://www.josephcrawford.com/2009/03/the-new-itunes-hdcp-content/" title="The New iTunes HDCP Content">
+                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/hdcp-featured-119x72.png" title="The New iTunes HDCP Content" alt="Hdcp Featured" width="119" height="72" />
+                                    </a>
+                                </div>
+                                <div class="post_list_content">
+                                    <p class="post_title">
+                                        <a rel="bookmark" href="http://www.josephcrawford.com/2009/03/the-new-itunes-hdcp-content/" title="The New iTunes HDCP Content">The New iTunes HDCP Content</a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="post_list_module">
+                                <div class="post_list_image">
+                                    <a href="http://www.josephcrawford.com/2007/10/customizing-the-leopard-dock/" title="Customizing the Leopard Dock">
+                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/dock-featured-119x72.png" title="Customizing the Leopard Dock" alt="Dock Featured" width="119" height="72" />
+                                    </a>
+                                </div>
+                                <div class="post_list_content">
+                                    <p class="post_title">
+                                        <a rel="bookmark" href="http://www.josephcrawford.com/2007/10/customizing-the-leopard-dock/" title="Customizing the Leopard Dock">Customizing the Leopard Dock</a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="popularwidget-2" class="widget">
+                        <h4 class="widgettitle">
+                            <span>Tag Cloud</span>
+                        </h4>
+                        <span style='font-size: 75%'><a href='/tags/uncategorized/'>Uncategorized</a></span>
+<span style='font-size: 128%'><a href='/tags/development/'>Development</a></span>
+<span style='font-size: 206%'><a href='/tags/reviews/'>Reviews</a></span>
+<span style='font-size: 140%'><a href='/tags/mac/'>Mac</a></span>
+<span style='font-size: 280%'><a href='/tags/raves/'>Raves</a></span>
+<span style='font-size: 89%'><a href='/tags/software/'>Software</a></span>
+<span style='font-size: 148%'><a href='/tags/rants/'>Rants</a></span>
+<span style='font-size: 280%'><a href='/tags/entertainment/'>Entertainment</a></span>
+<span style='font-size: 108%'><a href='/tags/local/'>Local</a></span>
+<span style='font-size: 280%'><a href='/tags/news/'>News</a></span>
+<span style='font-size: 75%'><a href='/tags/work/'>Work</a></span>
+<span style='font-size: 280%'><a href='/tags/internet/'>Internet</a></span>
+<span style='font-size: 75%'><a href='/tags/jokes/'>Jokes</a></span>
+<span style='font-size: 75%'><a href='/tags/tutorials/'>Tutorials</a></span>
+<span style='font-size: 162%'><a href='/tags/websites/'>Websites</a></span>
+<span style='font-size: 75%'><a href='/tags/tv/'>TV</a></span>
+<span style='font-size: 75%'><a href='/tags/ppp/'>PPP</a></span>
+<span style='font-size: 75%'><a href='/tags/javascript/'>JavaScript</a></span>
+<span style='font-size: 75%'><a href='/tags/php/'>PHP</a></span>
+<span style='font-size: 86%'><a href='/tags/useful/'>Useful</a></span>
+<span style='font-size: 75%'><a href='/tags/frameworks/'>Frameworks</a></span>
+<span style='font-size: 75%'><a href='/tags/family/'>Family</a></span>
+<span style='font-size: 75%'><a href='/tags/tmc/'>TMC</a></span>
+<span style='font-size: 75%'><a href='/tags/macdev/'>MacDev</a></span>
+<span style='font-size: 75%'><a href='/tags/scams/'>Scams</a></span>
+<span style='font-size: 75%'><a href='/tags/palm/'>Palm</a></span>
+<span style='font-size: 75%'><a href='/tags/css/'>CSS</a></span>
+<span style='font-size: 75%'><a href='/tags/political/'>Political</a></span>
+
+                        <!-- tagcloud goes here -->
+                    </div>
+                </div><!-- #sidebar_inner -->
+            </div><!-- #sidebar -->
+              
+                <div class="clearboth"></div>
+            </div><!-- #content_inner -->
+        </div><!-- #content -->
+    </div> <!-- .container -->
+    
+    <div id="footer">
+        <div class="background">
+            <div class="background"></div>
+        </div>
+        <div class="container">
+            <div class="sixteen columns">
+                <div class="one_fourth">
+                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
+                        <h4 class="widgettitle">
+                            <span>Sponsors</span>
+                        </h4>
+                        <div class="textwidget">
+                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="three_fourth last"></div>
+                <div class="clearboth"></div>
+            </div>
+        </div>
+    </div><!-- #footer -->
+    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
+    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    jQuery('.single_post_module').preloader({
+        imgSelector: '.blog_index_image_load span img',
+        imgAppend: '.blog_index_image_load'
+    });
+    /* ]]> */
+
+    <!--[if lt IE 10]>
+        <script type="text/javascript">
+          jQuery(".flex - imageLink img ").animate({
+              height ":"
+              386px 
+          },500);
+        </script>
+    <![endif]-->
+    </body>
+</html>
