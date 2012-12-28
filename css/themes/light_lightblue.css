@@ -601,20 +601,29 @@ body {
     width: 100%;
 }
 .sbToggle{
-	background: url('images/light-lightblue-select-icons.png') 0 -116px no-repeat;
+	background: url('images/light_lightblue/select-icons.png') 0 -116px no-repeat;
 }
 .sbToggle:hover{
-	background: url(images/light-lightblue-select-icons.png) 0 -167px no-repeat;
+	background: url('images/light_lightblue/select-icons.png') 0 -167px no-repeat;
 }
 .sbToggleOpen{
-	background: url(images/light-lightblue-select-icons.png) 0 -16px no-repeat;
+	background: url('images/light_lightblue/select-icons.png') 0 -16px no-repeat;
 }
 .sbToggleOpen:hover{
-	background: url(images/light-lightblue-select-icons.png) 0 -66px no-repeat;
+	background: url('images/light_lightblue/select-icons.png') 0 -66px no-repeat;
 }
 
 .sbSelector:link, .sbSelector:visited, .sbSelector:hover{
 	color: #4b70a4;
+}
+
+blockquote {
+float: none;
+width: auto;
+margin: 1em 0;
+overflow: hidden;
+padding: 0.2em 1.25em 0.2em 24px;
+background: #CACACA url('images/light_lightblue/bg_blockquote.png') top left no-repeat;
 }
 
 .sbOptions a:hover,
