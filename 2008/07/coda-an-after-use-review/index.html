@@ -228,10 +228,16 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p><a href="http://www.panic.com/coda/"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/coda-logo.png" alt="" title="Coda Logo"></a>If you have not already read <a href="http://josephcrawford.com/2008/07/10/an-in-depth-look-at-coda/">my review</a> on <a href="http://www.panic.com/coda/">Coda</a> you should do that now before you read this one.  This review is based on what I personally feel are drawbacks in the application.  I have been using <a href="http://www.panic.com/coda/">Coda</a> for the last few days pretty heavily for work.  I feel that I have given it a good chance to prove itself as the tool of choice for development.  In my last review I went over a lot of the good features that <a href="http://www.panic.com/coda/">Coda</a> has to offer, in this post however I will go over what I find to be drawbacks in the application. 
-&lt;!--more--&gt;
-1. <strong>No Save All Command</strong>I am not sure about you however when I am working generally I have several files open in the editor at one time.  I have been unable to find a command that will offer the save all functionality that I am used to.  I would love to see a save all menu item integrated into a later version of <a href="http://www.panic.com/coda/">Coda</a>.  This does not seem like a big deal but if you have 20 files open and edited you have to save them all individually rather than hitting one menu item or one keyboard short cut.  It just tends to be a bit of a pain for me.  <strong>In a response from <a href="http://www.panic.com/">Panic</a> I was told that holding down the opt key while choosing save will give you a save all option.</strong>
-<strong>No Close All Files Command</strong>I have been unable to find a command to close all of the opened files in a site that I am working on.  I have found a work around but it is not the best way.  I would love to see a close all files command added to a later version of <a href="http://www.panic.com/coda/">Coda</a>.  Currently I have to right click on the tab of an open file and choose close others.  I then have to close the remaining file that is left opened.**Unable to set Default view when opening Coda**This is not a show stopper when it comes to using <a href="http://www.panic.com/coda/">Coda</a>, however it is a bit annoying.  When I open <a href="http://www.panic.com/coda/">Coda</a> it always opens to the edit tab view of the interface with an untitled document open.  It would be nice if I could make it open to the sites tab view rather than the edit file.  I would like to open <a href="http://www.panic.com/coda/">Coda</a> and see all of my sites there ready for work. <strong>In the response from <a href="http://www.panic.com/">Panic</a> they also told me that you can set the view in the general preferences pane.  New windows open with?</strong>**Symbolic Link Issues**I added a symbolic link to a directory, went back to the edit view in <a href="http://www.panic.com/coda/">Coda</a> and refreshed the directory.  I noticed that I used the wrong path when creating the symbolic link so I had to go back into the terminal and delete the symbolic link and re-create it.  After re-creating the link in the terminal I went back to the edit view and refreshed the directory.  To my surprise the symbolic link did not reload.  It still went to the old path from the first symbolic link created.  It did not update the symbolic link in the file list until I actually restarted <a href="http://www.panic.com/coda/">Coda</a>.**F5 for Refresh**While messing with the symbolic link stuff I noticed that there is only one way to refresh the file listing in <a href="http://www.panic.com/coda/">Coda</a>.  You have to right click and choose refresh.  It would be nice if I could click on a file and hit F5 to refresh the directory that I am viewing.  <strong><a href="http://www.panic.com/">Panic</a> also told me that you can refresh a directory by pushing Command-R if the file list is active it will refresh.</strong>**Terminal Settings**I noticed that when setting up a site the terminal portion of the application uses the same Remote Root as the site.  It would be nice if I had the option to use a different Remote Root.  I have setup my site to use a Remote Root that is for instance /home/jcrawford/projects/site/trunk/workspace/.  This directory has symbolic links to different parts of the project such as the www, api, video, etc.  When I open the terminal app i constantly have to cd .. before I can run any svn commands.  This is because ./ is the svn root and not ./workspace/**Searching A Site**I have been unable to find a way to actually search a site for a string.  I am so used to having this ability.  Open a search dialog, tell it to search all files in a site and have it return the files where the match was found.  This is extremely helpful when it comes to finding strings in an entire project.  I thing this is the biggest issue I have with <a href="http://www.panic.com/coda/">Coda</a>.  It would be very nice to have this feature.**Loses Remote Connection**I have noticed that with <a href="http://www.panic.com/coda/">Coda</a> if you leave the application open for a while still connected to a remote site and then return to use it you will have to close the application and then re-open it.  Something happens with the remote connection when there is no activity because when I go to lunch and then come back trying to open a file results in an error from <a href="http://www.panic.com/coda/">Coda</a>.  Every time I try to open a file I would get a dialog that says &quot;write error&quot;  This happens until I restart the application.  I am not sure if this is an issue with <a href="http://www.panic.com/coda/">Coda</a> or if this is an issue with SSH, however couldn&#39;t <a href="http://www.panic.com/coda/">Coda</a> send a command to the site every so often to stop the timeouts?**Code Templates**When using Zend Studio I got used to the code templates that they offered.  You could go into the preferences and define a keyword such as &#39;prdebug&#39; and you could have it use a specified set of code.  In the editor when you type &#39;prde&#39; it would pop up a dialog much like the ones for the PHP functions that would put code in your editor for you.  I got used to the prdebug template that I created that would put nicely formatted print_r debugging commands in place.  The code I had generated wasecho &#39;<pre>&#39;; print_r($api_result); echo &#39;</pre>&#39;; exit;**Variable Detection**In other editors that I have used if you do something like the following:$var = 1;Later in your code if you started to type &#39;$va&#39; it would pop up the dialog box much like the php functions do that will allow you to choose the defined variables.  If for instance you had $var1 and $variable defined the popup would allow you to choose either variable.**Active Line Highlighting**It would be nice if <a href="http://www.panic.com/coda/">Coda</a> were to hilite the active line with a different color, a medium gray perhaps?  This would make it very easy to detect where your cursor was at any given time.</p>
+                                        <p><a href="http://www.panic.com/coda/"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/coda-logo.png" title="Coda Logo" alt="" /></a>If you have not already read <a href="http://josephcrawford.com/2008/07/10/an-in-depth-look-at-coda/">my review</a> on <a href="http://www.panic.com/coda/">Coda</a> you should do that now before you read this one.  This review is based on what I personally feel are drawbacks in the application.  I have been using <a href="http://www.panic.com/coda/">Coda</a> for the last few days pretty heavily for work.  I feel that I have given it a good chance to prove itself as the tool of choice for development.  In my last review I went over a lot of the good features that <a href="http://www.panic.com/coda/">Coda</a> has to offer, in this post however I will go over what I find to be drawbacks in the application.</p>
+
+<!--more-->
+
+
+<ol>
+<li><strong>No Save All Command</strong>I am not sure about you however when I am working generally I have several files open in the editor at one time.  I have been unable to find a command that will offer the save all functionality that I am used to.  I would love to see a save all menu item integrated into a later version of <a href="http://www.panic.com/coda/">Coda</a>.  This does not seem like a big deal but if you have 20 files open and edited you have to save them all individually rather than hitting one menu item or one keyboard short cut.  It just tends to be a bit of a pain for me.  <strong>In a response from <a href="http://www.panic.com/">Panic</a> I was told that holding down the opt key while choosing save will give you a save all option.</strong>
+<strong>No Close All Files Command</strong>I have been unable to find a command to close all of the opened files in a site that I am working on.  I have found a work around but it is not the best way.  I would love to see a close all files command added to a later version of <a href="http://www.panic.com/coda/">Coda</a>.  Currently I have to right click on the tab of an open file and choose close others.  I then have to close the remaining file that is left opened.<strong>Unable to set Default view when opening Coda</strong>This is not a show stopper when it comes to using <a href="http://www.panic.com/coda/">Coda</a>, however it is a bit annoying.  When I open <a href="http://www.panic.com/coda/">Coda</a> it always opens to the edit tab view of the interface with an untitled document open.  It would be nice if I could make it open to the sites tab view rather than the edit file.  I would like to open <a href="http://www.panic.com/coda/">Coda</a> and see all of my sites there ready for work. <strong>In the response from <a href="http://www.panic.com/">Panic</a> they also told me that you can set the view in the general preferences pane.  New windows open with?</strong><strong>Symbolic Link Issues</strong>I added a symbolic link to a directory, went back to the edit view in <a href="http://www.panic.com/coda/">Coda</a> and refreshed the directory.  I noticed that I used the wrong path when creating the symbolic link so I had to go back into the terminal and delete the symbolic link and re-create it.  After re-creating the link in the terminal I went back to the edit view and refreshed the directory.  To my surprise the symbolic link did not reload.  It still went to the old path from the first symbolic link created.  It did not update the symbolic link in the file list until I actually restarted <a href="http://www.panic.com/coda/">Coda</a>.<strong>F5 for Refresh</strong>While messing with the symbolic link stuff I noticed that there is only one way to refresh the file listing in <a href="http://www.panic.com/coda/">Coda</a>.  You have to right click and choose refresh.  It would be nice if I could click on a file and hit F5 to refresh the directory that I am viewing.  <strong><a href="http://www.panic.com/">Panic</a> also told me that you can refresh a directory by pushing Command-R if the file list is active it will refresh.</strong><strong>Terminal Settings</strong>I noticed that when setting up a site the terminal portion of the application uses the same Remote Root as the site.  It would be nice if I had the option to use a different Remote Root.  I have setup my site to use a Remote Root that is for instance /home/jcrawford/projects/site/trunk/workspace/.  This directory has symbolic links to different parts of the project such as the www, api, video, etc.  When I open the terminal app i constantly have to cd .. before I can run any svn commands.  This is because ./ is the svn root and not ./workspace/<strong>Searching A Site</strong>I have been unable to find a way to actually search a site for a string.  I am so used to having this ability.  Open a search dialog, tell it to search all files in a site and have it return the files where the match was found.  This is extremely helpful when it comes to finding strings in an entire project.  I thing this is the biggest issue I have with <a href="http://www.panic.com/coda/">Coda</a>.  It would be very nice to have this feature.<strong>Loses Remote Connection</strong>I have noticed that with <a href="http://www.panic.com/coda/">Coda</a> if you leave the application open for a while still connected to a remote site and then return to use it you will have to close the application and then re-open it.  Something happens with the remote connection when there is no activity because when I go to lunch and then come back trying to open a file results in an error from <a href="http://www.panic.com/coda/">Coda</a>.  Every time I try to open a file I would get a dialog that says "write error"  This happens until I restart the application.  I am not sure if this is an issue with <a href="http://www.panic.com/coda/">Coda</a> or if this is an issue with SSH, however couldn't <a href="http://www.panic.com/coda/">Coda</a> send a command to the site every so often to stop the timeouts?<strong>Code Templates</strong>When using Zend Studio I got used to the code templates that they offered.  You could go into the preferences and define a keyword such as 'prdebug' and you could have it use a specified set of code.  In the editor when you type 'prde' it would pop up a dialog much like the ones for the PHP functions that would put code in your editor for you.  I got used to the prdebug template that I created that would put nicely formatted print_r debugging commands in place.  The code I had generated wasecho '<pre>'; print_r($api_result); echo '</pre>'; exit;<strong>Variable Detection</strong>In other editors that I have used if you do something like the following:$var = 1;Later in your code if you started to type '$va' it would pop up the dialog box much like the php functions do that will allow you to choose the defined variables.  If for instance you had $var1 and $variable defined the popup would allow you to choose either variable.<strong>Active Line Highlighting</strong>It would be nice if <a href="http://www.panic.com/coda/">Coda</a> were to hilite the active line with a different color, a medium gray perhaps?  This would make it very easy to detect where your cursor was at any given time.</li>
+</ol>
+
 
 <p>These are all issues that I have found over the past few days.  Now I am sure that I will find other issues and features that I did not know about at the time of this writing.  I will not be doing another review on this application unless a new version is released.  None of the drawbacks listed above are a total show stopper for me.  Although I like the ability to search all files in a site I can just launch the terminal and grep or use Zend Studio to do my searching.</p>
 
@@ -376,13 +382,13 @@
                                         <div class="one_fourth">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2009/03/review-inspectorkit-10-released" title="Review: InspectorKit 1.0 Released">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: InspectorKit 1.0 Released" alt="Review: InspectorKit 1.0 Released" width="153" height="75">
+                                                    <a href="/2008/02/more-leopard-docks" title="More Leopard Docks">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="More Leopard Docks" alt="More Leopard Docks" width="153" height="75">
                                                     </a>
                                                 </div>
                                                 <div class="post_grid_content">
                                                     <p class="post_title">
-                                                        <a href="/2009/03/review-inspectorkit-10-released" title="Review: InspectorKit 1.0 Released" rel="bookmark">Review: InspectorKit 1.0 Released</a>
+                                                        <a href="/2008/02/more-leopard-docks" title="More Leopard Docks" rel="bookmark">More Leopard Docks</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -391,13 +397,13 @@
                                         <div class="one_fourth last">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2008/05/review-securityspy" title="Review: SecuritySpy">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: SecuritySpy" alt="Review: SecuritySpy" width="153" height="75">
+                                                    <a href="/2012/10/sub-domain-pointing-to-my-home-computer" title="Sub-Domain Pointing to my Home Computer">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/dns.png" title="Sub-Domain Pointing to my Home Computer" alt="Sub-Domain Pointing to my Home Computer" width="153" height="75">
                                                     </a>
                                                 </div>
                                                 <div class="post_grid_content">
                                                     <p class="post_title">
-                                                        <a href="/2008/05/review-securityspy" title="Review: SecuritySpy" rel="bookmark">Review: SecuritySpy</a>
+                                                        <a href="/2012/10/sub-domain-pointing-to-my-home-computer" title="Sub-Domain Pointing to my Home Computer" rel="bookmark">Sub-Domain Pointing to my Home Computer</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -449,14 +455,6 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/development/" title="Development">Development</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/mac/" title="Mac">Mac</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/raves/" title="Raves">Raves</a>
                                 </li>
                                 
@@ -465,7 +463,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/software/" title="Software">Software</a>
+                                    <a href="/category/development/" title="Development">Development</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -473,7 +471,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/uncategorized/" title="Uncategorized">Uncategorized</a>
+                                    <a href="/category/work/" title="Work">Work</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -481,7 +479,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/local/" title="Local">Local</a>
+                                    <a href="/category/internet/" title="Internet">Internet</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -489,15 +487,11 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/work/" title="Work">Work</a>
+                                    <a href="/category/mac/" title="Mac">Mac</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/internet/" title="Internet">Internet</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/jokes/" title="Jokes">Jokes</a>
+                                    <a href="/category/software/" title="Software">Software</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -505,23 +499,23 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/tv/" title="Tv">Tv</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/ppp/" title="Ppp">Ppp</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
+                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/local/" title="Local">Local</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
                                     <a href="/category/useful/" title="Useful">Useful</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
                                 </li>
                                 
                       		</ul>
@@ -529,16 +523,6 @@
                         
                         <div class="clearboth"></div>
                         
-                        <div id="recent-posts-3" class="widget widget_recent_entries">
-                            <h4 class="widgettitle"><span>Recent Posts</span></h4>
-                            <ul>
-                                <li><a href="http://www.josephcrawford.com/2012/12/test/" title="Test">Test</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/12/php-master-series/" title="PHP Master Series">PHP Master Series</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/11/a-new-look/" title="A New Look">A New Look</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-timing/" title="Review: Timing">Review: Timing</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-markdown-pro/" title="Review: Markdown Pro">Review: Markdown Pro</a></li>
-                            </ul>
-                        </div>
                         <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
                             <li>
                                 <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
@@ -625,45 +609,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <span style='font-size: 75%'><a href='/tags/php/'>php</a></span>
-<span style='font-size: 75%'><a href='/tags/server-side/'>server-side</a></span>
-<span style='font-size: 75%'><a href='/tags/best-practices/'>best-practices</a></span>
-<span style='font-size: 75%'><a href='/tags/ide/'>ide</a></span>
-<span style='font-size: 75%'><a href='/tags/software/'>software</a></span>
-<span style='font-size: 174%'><a href='/tags/development/'>Development</a></span>
-<span style='font-size: 194%'><a href='/tags/mac/'>Mac</a></span>
-<span style='font-size: 280%'><a href='/tags/raves/'>Raves</a></span>
-<span style='font-size: 279%'><a href='/tags/reviews/'>Reviews</a></span>
-<span style='font-size: 128%'><a href='/tags/software/'>Software</a></span>
-<span style='font-size: 203%'><a href='/tags/rants/'>Rants</a></span>
-<span style='font-size: 75%'><a href='/tags/uncategorized/'>Uncategorized</a></span>
-<span style='font-size: 280%'><a href='/tags/entertainment/'>Entertainment</a></span>
-<span style='font-size: 150%'><a href='/tags/local/'>Local</a></span>
-<span style='font-size: 280%'><a href='/tags/news/'>News</a></span>
-<span style='font-size: 75%'><a href='/tags/work/'>Work</a></span>
-<span style='font-size: 280%'><a href='/tags/internet/'>Internet</a></span>
-<span style='font-size: 75%'><a href='/tags/jokes/'>Jokes</a></span>
-<span style='font-size: 100%'><a href='/tags/tutorials/'>Tutorials</a></span>
-<span style='font-size: 224%'><a href='/tags/websites/'>Websites</a></span>
-<span style='font-size: 75%'><a href='/tags/tv/'>TV</a></span>
-<span style='font-size: 75%'><a href='/tags/ppp/'>PPP</a></span>
-<span style='font-size: 75%'><a href='/tags/javascript/'>JavaScript</a></span>
-<span style='font-size: 75%'><a href='/tags/php/'>PHP</a></span>
-<span style='font-size: 113%'><a href='/tags/useful/'>Useful</a></span>
-<span style='font-size: 75%'><a href='/tags/frameworks/'>Frameworks</a></span>
-<span style='font-size: 75%'><a href='/tags/family/'>Family</a></span>
-<span style='font-size: 75%'><a href='/tags/tmc/'>TMC</a></span>
-<span style='font-size: 75%'><a href='/tags/macdev/'>MacDev</a></span>
-<span style='font-size: 75%'><a href='/tags/scams/'>Scams</a></span>
-<span style='font-size: 75%'><a href='/tags/palm/'>Palm</a></span>
-<span style='font-size: 75%'><a href='/tags/css/'>CSS</a></span>
-<span style='font-size: 75%'><a href='/tags/political/'>Political</a></span>
-<span style='font-size: 75%'><a href='/tags/recruiters/'>Recruiters</a></span>
-<span style='font-size: 75%'><a href='/tags/hardware/'>Hardware</a></span>
-<span style='font-size: 75%'><a href='/tags/phones/'>Phones</a></span>
-<span style='font-size: 75%'><a href='/tags/nokia/'>Nokia</a></span>
-<span style='font-size: 75%'><a href='/tags/markdown/'>Markdown</a></span>
-<span style='font-size: 75%'><a href='/tags/productivity/'>Productivity</a></span>
+                        <a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
 
                         <!-- tagcloud goes here -->
                     </div>

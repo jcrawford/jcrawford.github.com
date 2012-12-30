@@ -234,29 +234,47 @@
 
 <p>On our main scene we are going to show a static list of items.  This means that we are going to use an array of elements which will never change over the lifetime of the application.  The list item data will be specified by us and not fetched from any data source.  The main list will give you options to choose from such as using a Cookie, Depot or Sqlite for the data source.  When you tap on one of these options another scene will be displayed that will actually load another list.  The data that populates these lists will come from the data source that you specified.  This should give you the ability to write your own lists using any data source that you see fit.</p>
 
-<p>The very first thing that you need to do is create a new WebOS application and add a new scene to it called main.  Now that we have the main scene created we need to alter our stage-controller.js so that it actually pushes the main-scene on startup.  Open the file and make the code look like this.
+<p>The very first thing that you need to do is create a new WebOS application and add a new scene to it called main.  Now that we have the main scene created we need to alter our stage-controller.js so that it actually pushes the main-scene on startup.  Open the file and make the code look like this.</p>
+
 <pre lang="javascript" line="1">function StageAssistant() {} StageAssistant.prototype.setup = function() {    Mojo.Controller.stageController.pushScene(“main”);}</pre>
-With that in place it&#39;s time to actually start working on the view file.  Let&#39;s open the main-scene.html file and add the following code to it.
+
+
+<p>With that in place it's time to actually start working on the view file.  Let's open the main-scene.html file and add the following code to it.</p>
+
 <pre lang="html" line="1"><div id=“feedTitle” class=“palm-header center”> List Data Sources <div class="“palm-header-spacer”"></div> <div id="“mainScene”" class="“mainScene”"><div x-mojo-element="“List”" id="“mainListWgt”"></div> </div></pre>
-This is pretty basic HTML for the most part.  The only item that is really of concern here is the div that specifies the x-mojo-element=&quot;List&quot;.  This tells the Mojo Framework that you wish to have a list reside in that position in the view.  Now that we have the view in place and Mojo knows where we want our list to display it&#39;s time to actually start working on our list.  We will first need to create 2 template files.  We will put these files in the same directory as the main-scene.html file.  We will need one template for our list and then another template for each row in our list.  We will start off with the List template so create a file called mainListTemplate.html and add the following code to it.
+
+
+<p>This is pretty basic HTML for the most part.  The only item that is really of concern here is the div that specifies the x-mojo-element="List".  This tells the Mojo Framework that you wish to have a list reside in that position in the view.  Now that we have the view in place and Mojo knows where we want our list to display it's time to actually start working on our list.  We will first need to create 2 template files.  We will put these files in the same directory as the main-scene.html file.  We will need one template for our list and then another template for each row in our list.  We will start off with the List template so create a file called mainListTemplate.html and add the following code to it.</p>
+
 <pre lang="html" line="1"><div class="“palm-list”">#{-listElements}</div></pre>
-All this file really does is create a div for our listElements to be placed in.  Think of a listElement as a row in the list.  You will notice one thing above that might look a little out of place and that is the use of the - (dash) in the template code.  Since each of our rows will contain HTML we need a way to tell Mojo not to escape this HTML so that our list will render properly.  Whenever you are using a value in a template with #{value} Mojo will escape the HTML and things will not look good.  If you add the dash as in #{-value} this specifically tells Mojo that we do not want the HTML escaped.</p>
 
-<p>Let&#39;s continue on and create the list row template.  Create another file called mainRowTemplate.html.  Add the following contents.
+
+<p>All this file really does is create a div for our listElements to be placed in.  Think of a listElement as a row in the list.  You will notice one thing above that might look a little out of place and that is the use of the - (dash) in the template code.  Since each of our rows will contain HTML we need a way to tell Mojo not to escape this HTML so that our list will render properly.  Whenever you are using a value in a template with #{value} Mojo will escape the HTML and things will not look good.  If you add the dash as in #{-value} this specifically tells Mojo that we do not want the HTML escaped.</p>
+
+<p>Let's continue on and create the list row template.  Create another file called mainRowTemplate.html.  Add the following contents.</p>
+
 <pre lang="html" line="1"><div class="“palm-row”" x-mojo-touch-feedback="“delayed”">    <div class="“palm-row-wrapper”">        <div id=“itemTitle” class=“title truncating-text”>#{title}</div>    </div></pre>
-This file has a little bit more code than the last but it is all trivial.  First we create a div and use the class palm-row which is a CSS class defined in the Mojo Framework.  We are just applying some Palm default styling here.  You will also see the x-mojo-touch-feedback=&quot;delayed&quot;.  This tells the framework to have a short delay when a user taps on the item.  You can see this once you have everything setup and test the list.  We continue on to create another div and assign it the palm-row-wrapper class.  This is just a wrapper div that takes care of the look of the list row.  Inside that div is the actual div that you want to be concerned with.  You can notice that we are using the truncating-text class for this element.  All this does is truncate the text if it is too long to fit on the screen.  Rather than seeing the list look bad if the text is too long the style will truncate it at that perfect length as to not disturb how the list looks.  You might also notice that we are using #{title}.  You might wonder why we are not telling the framework to escape the HTML of the title however we do not want someone to inadvertently add HTML markup to the title and be able to change how things look in our list.  Letting Mojo escape the HTML will not add any formatting that we did not intend to have in place.</p>
 
-<p>We are almost completed with our static list.  The last thing we need to do is actually put the JavaScript code in our assistant so that our list becomes something we can interact with.  We are going to open up the main-assistant file and make it look like the code below.
+
+<p>This file has a little bit more code than the last but it is all trivial.  First we create a div and use the class palm-row which is a CSS class defined in the Mojo Framework.  We are just applying some Palm default styling here.  You will also see the x-mojo-touch-feedback="delayed".  This tells the framework to have a short delay when a user taps on the item.  You can see this once you have everything setup and test the list.  We continue on to create another div and assign it the palm-row-wrapper class.  This is just a wrapper div that takes care of the look of the list row.  Inside that div is the actual div that you want to be concerned with.  You can notice that we are using the truncating-text class for this element.  All this does is truncate the text if it is too long to fit on the screen.  Rather than seeing the list look bad if the text is too long the style will truncate it at that perfect length as to not disturb how the list looks.  You might also notice that we are using #{title}.  You might wonder why we are not telling the framework to escape the HTML of the title however we do not want someone to inadvertently add HTML markup to the title and be able to change how things look in our list.  Letting Mojo escape the HTML will not add any formatting that we did not intend to have in place.</p>
+
+<p>We are almost completed with our static list.  The last thing we need to do is actually put the JavaScript code in our assistant so that our list becomes something we can interact with.  We are going to open up the main-assistant file and make it look like the code below.</p>
+
 <pre lang="javascript" line="1">function MainAssistant() {        this.listItems = [            {                title: “Cookie”            },            {                title: “Depot”            },            {                title: “SqLite”            }        ];} MainAssistant.prototype.setup = function() {    this.controller.setupWidget(“mainListWgt”,        {            itemTemplate: “main/mainRowTemplate”,            listTemplate: “main/mainListTemplate”,            swipeToDelete: false,            renderLimit: 40,            reorderable: false        },        {            items: this.listItems        }    );       this.mainListHandler = this.loadDataSource.bindAsEventListener(this);    this.controller.listen(“mainListWgt”, Mojo.Event.listTap, this.mainListHandler);} MainAssistant.prototype.loadDataSource = function(event){    Mojo.Controller.stageController.pushScene( this.listItems[event.index].title.toLowerCase() );} MainAssistant.prototype.activate = function(event) { }  MainAssistant.prototype.deactivate = function(event) { } MainAssistant.prototype.cleanup = function(event) { }</pre>
-If you were to build your application right now it would load up the main scene and show you the static list.  It is not very pretty it is just a list that gives you the ability to choose a storage mechanism.  You can see in the MainAssistant() constructor I am initializing a variable called this.listItems which is an array that holds objects.  The objects are really basic as they only contain a title property however you could put any information in there.  If for instance you wanted a short description below the title of the list element you could add a description: &quot;this is a brief description&quot; to the objects and then put the code in place on the view for it to be displayed.  The objects are really just being used as a static storage mechanism for this main list.  When you look into the setup method you are going to see a few things that might seem foreign to you.  First you will sett a call to this.controller.setupWidget()  This is a method that we call which will actually set-up our list widget for use.  You have to pass in 3 parameters to this method.  First the ID of the element in the view, second the attributes which describe our widget.  For instance you will notice that we had to specify the list templates here.  The last item you have to provide is the model and that is the data that will populate the widget.</p>
+
+
+<p>If you were to build your application right now it would load up the main scene and show you the static list.  It is not very pretty it is just a list that gives you the ability to choose a storage mechanism.  You can see in the MainAssistant() constructor I am initializing a variable called this.listItems which is an array that holds objects.  The objects are really basic as they only contain a title property however you could put any information in there.  If for instance you wanted a short description below the title of the list element you could add a description: "this is a brief description" to the objects and then put the code in place on the view for it to be displayed.  The objects are really just being used as a static storage mechanism for this main list.  When you look into the setup method you are going to see a few things that might seem foreign to you.  First you will sett a call to this.controller.setupWidget()  This is a method that we call which will actually set-up our list widget for use.  You have to pass in 3 parameters to this method.  First the ID of the element in the view, second the attributes which describe our widget.  For instance you will notice that we had to specify the list templates here.  The last item you have to provide is the model and that is the data that will populate the widget.</p>
 
 <p>The last two lines of code you see in the setup method are the lines that actually set-up listening for the event handler.  The first line does the actual binding and sets that to a property of the MainAssistant.  The second line makes the call to the controller to setup the listener for the event we want.  We want something to be done when a user taps a list item so we are using the Mojo.Event.listTap event.  This method is very much like the setupWidget method as it also takes 3 arguments.  First the ID of the element in the HTML view file then the event we wish to listen for.  Finally you specify your method that you want called when the event is captured.  In our case we are going to call the method loadDataSource every-time a list item is tapped.</p>
 
 <p>When the loadDataSource method is called the tap event is passed into it.  This is useful for finding out which list item was tapped.  We are using an array remember so when you tap an item the element index is passed into our method.  We simply reference the scene that we want pushed with the this.listItems[event.index].title.toLowerCase().  This is just fetching the proper item and converting the title to lowercase.  We need to call our scene by lowercase.  If you were to tap the Cookie item in the list then this code pushes the scene to cookie-scene.</p>
 
-<p>There are just a few more things we need to do.  If you recall back in the setup method of the main-assistant we created a listener.  Now we need to clean up after that listener.  When the application is closed we want to stop listening for events.  If you do not clean up after your listeners your application will end up having memory leaks.  Luckily it is very easy to clean up after yourself.  Go back to your main-assistant file and add the following code to your cleanup method.
+<p>There are just a few more things we need to do.  If you recall back in the setup method of the main-assistant we created a listener.  Now we need to clean up after that listener.  When the application is closed we want to stop listening for events.  If you do not clean up after your listeners your application will end up having memory leaks.  Luckily it is very easy to clean up after yourself.  Go back to your main-assistant file and add the following code to your cleanup method.</p>
+
 <pre lang="javascript" line="1">MainAssistant.prototype.cleanup = function(event){   Mojo.Event.stopListening(this.controller.get(“mainListWgt”), Mojo.Event.listTap, this.mainListHandler);}</pre>
-The final bit that we need to do before we complete Part 1 is actually create the other scenes that we will need for each storage mechanism.  Create 3 more scenes named cookie, depot and sqlite.  Once you have done that you can feel free to build the application and test it out.  Tapping on a list item will show the default template.  In part 2 we will work on the ability to use a cookie as a storage mechanism.</p>
+
+
+<p>The final bit that we need to do before we complete Part 1 is actually create the other scenes that we will need for each storage mechanism.  Create 3 more scenes named cookie, depot and sqlite.  Once you have done that you can feel free to build the application and test it out.  Tapping on a list item will show the default template.  In part 2 we will work on the ability to use a cookie as a storage mechanism.</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -470,14 +488,6 @@ The final bit that we need to do before we complete Part 1 is actually create th
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/development/" title="Development">Development</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/mac/" title="Mac">Mac</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/raves/" title="Raves">Raves</a>
                                 </li>
                                 
@@ -486,7 +496,7 @@ The final bit that we need to do before we complete Part 1 is actually create th
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/software/" title="Software">Software</a>
+                                    <a href="/category/development/" title="Development">Development</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -494,7 +504,7 @@ The final bit that we need to do before we complete Part 1 is actually create th
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/uncategorized/" title="Uncategorized">Uncategorized</a>
+                                    <a href="/category/work/" title="Work">Work</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -502,7 +512,7 @@ The final bit that we need to do before we complete Part 1 is actually create th
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/local/" title="Local">Local</a>
+                                    <a href="/category/internet/" title="Internet">Internet</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -510,15 +520,11 @@ The final bit that we need to do before we complete Part 1 is actually create th
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/work/" title="Work">Work</a>
+                                    <a href="/category/mac/" title="Mac">Mac</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/internet/" title="Internet">Internet</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/jokes/" title="Jokes">Jokes</a>
+                                    <a href="/category/software/" title="Software">Software</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -526,23 +532,23 @@ The final bit that we need to do before we complete Part 1 is actually create th
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/tv/" title="Tv">Tv</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/ppp/" title="Ppp">Ppp</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
+                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/local/" title="Local">Local</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
                                     <a href="/category/useful/" title="Useful">Useful</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
                                 </li>
                                 
                       		</ul>
@@ -550,16 +556,6 @@ The final bit that we need to do before we complete Part 1 is actually create th
                         
                         <div class="clearboth"></div>
                         
-                        <div id="recent-posts-3" class="widget widget_recent_entries">
-                            <h4 class="widgettitle"><span>Recent Posts</span></h4>
-                            <ul>
-                                <li><a href="http://www.josephcrawford.com/2012/12/test/" title="Test">Test</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/12/php-master-series/" title="PHP Master Series">PHP Master Series</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/11/a-new-look/" title="A New Look">A New Look</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-timing/" title="Review: Timing">Review: Timing</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-markdown-pro/" title="Review: Markdown Pro">Review: Markdown Pro</a></li>
-                            </ul>
-                        </div>
                         <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
                             <li>
                                 <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
@@ -646,45 +642,35 @@ The final bit that we need to do before we complete Part 1 is actually create th
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <span style='font-size: 75%'><a href='/tags/php/'>php</a></span>
-<span style='font-size: 75%'><a href='/tags/server-side/'>server-side</a></span>
-<span style='font-size: 75%'><a href='/tags/best-practices/'>best-practices</a></span>
-<span style='font-size: 75%'><a href='/tags/ide/'>ide</a></span>
-<span style='font-size: 75%'><a href='/tags/software/'>software</a></span>
-<span style='font-size: 174%'><a href='/tags/development/'>Development</a></span>
-<span style='font-size: 194%'><a href='/tags/mac/'>Mac</a></span>
-<span style='font-size: 280%'><a href='/tags/raves/'>Raves</a></span>
-<span style='font-size: 279%'><a href='/tags/reviews/'>Reviews</a></span>
-<span style='font-size: 128%'><a href='/tags/software/'>Software</a></span>
-<span style='font-size: 203%'><a href='/tags/rants/'>Rants</a></span>
-<span style='font-size: 75%'><a href='/tags/uncategorized/'>Uncategorized</a></span>
-<span style='font-size: 280%'><a href='/tags/entertainment/'>Entertainment</a></span>
-<span style='font-size: 150%'><a href='/tags/local/'>Local</a></span>
-<span style='font-size: 280%'><a href='/tags/news/'>News</a></span>
-<span style='font-size: 75%'><a href='/tags/work/'>Work</a></span>
-<span style='font-size: 280%'><a href='/tags/internet/'>Internet</a></span>
-<span style='font-size: 75%'><a href='/tags/jokes/'>Jokes</a></span>
-<span style='font-size: 100%'><a href='/tags/tutorials/'>Tutorials</a></span>
-<span style='font-size: 224%'><a href='/tags/websites/'>Websites</a></span>
-<span style='font-size: 75%'><a href='/tags/tv/'>TV</a></span>
-<span style='font-size: 75%'><a href='/tags/ppp/'>PPP</a></span>
-<span style='font-size: 75%'><a href='/tags/javascript/'>JavaScript</a></span>
-<span style='font-size: 75%'><a href='/tags/php/'>PHP</a></span>
-<span style='font-size: 113%'><a href='/tags/useful/'>Useful</a></span>
-<span style='font-size: 75%'><a href='/tags/frameworks/'>Frameworks</a></span>
-<span style='font-size: 75%'><a href='/tags/family/'>Family</a></span>
-<span style='font-size: 75%'><a href='/tags/tmc/'>TMC</a></span>
-<span style='font-size: 75%'><a href='/tags/macdev/'>MacDev</a></span>
-<span style='font-size: 75%'><a href='/tags/scams/'>Scams</a></span>
-<span style='font-size: 75%'><a href='/tags/palm/'>Palm</a></span>
-<span style='font-size: 75%'><a href='/tags/css/'>CSS</a></span>
-<span style='font-size: 75%'><a href='/tags/political/'>Political</a></span>
-<span style='font-size: 75%'><a href='/tags/recruiters/'>Recruiters</a></span>
-<span style='font-size: 75%'><a href='/tags/hardware/'>Hardware</a></span>
-<span style='font-size: 75%'><a href='/tags/phones/'>Phones</a></span>
-<span style='font-size: 75%'><a href='/tags/nokia/'>Nokia</a></span>
-<span style='font-size: 75%'><a href='/tags/markdown/'>Markdown</a></span>
-<span style='font-size: 75%'><a href='/tags/productivity/'>Productivity</a></span>
+                        <a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
 
                         <!-- tagcloud goes here -->
                     </div>

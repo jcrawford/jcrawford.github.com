@@ -228,7 +228,7 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>Over the last few days I have been digging deep into the concepts of REST.  I have been reading through my copy of <a href="http://www.amazon.com/RESTful-Web-Services-Leonard-Richardson/dp/0596529260/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1240926906&amp;sr=8-1">RESTful Web Services</a>.  Out of curiosity I searched <a href="http://www.josephcrawford.com/2008/02/15/iphone-usage-shocks-google/" title="Google">Google</a> for a &quot;php REST library&quot; and it turned up the <a href="http://wiki.developer.myspace.com/index.php?title=Category:MDP_Libraries#Official_MySpace_REST_API_PHP_Library">Official MySpace PHP REST Library</a>.I started to look through the code and noticed something really weird about how the code is structured.  It looks like they are trying to use an Object Oriented approach however I think they are going about things improperly.  The code looks a lot like the following.[php]      class Configs {          public static $APPLICATION_KEY = &quot;api_oauth_consumer_key&quot;;          public static $APPLICATION_SECRET = &quot;api_oauth_consumer_secret&quot;;      }      class SelectorType {          public static $ME = &quot;@me&quot;;          public static $ALL = &quot;@all&quot;;          public static $SELF = &quot;@self&quot;;          public static $FRIENDS = &quot;@friends&quot;;      }[/php]Now the structure of these classes is fine, but it does bring out the question as to why they are using classes for this type of stuff. The classes have no methods, they have only provided public static properties. I am not sure why they took this approach. I am not sure if they are trying to remain backwards compatible with PHP 4 or not. If they are however I think they would be better off using constants for these values in the Common.php file, also I am pretty sure they are not trying to support PHP 4 because they are using the static keyword in the classes and I believe PHP 4 would FAIL with that being there. I am unsure why they are not using class constants. I would suggest a better way of doing things.[php]// PHP 4 Backwards Compatabilitydefine(&#39;APPLICATION_KEY&#39;, &#39;api_oauth_consumer_key&#39;);define(&#39;APPLICATION_SECRET&#39;, &#39;api_oauth_consumer_secret&#39;);define(&#39;SELECTOR_TYPE_ME&#39;, &#39;@me&#39;);define(&#39;SELECTOR_TYPE_ALL&#39;, &#39;@all&#39;);define(&#39;SELECTOR_TYPE_SELF&#39;, &#39;@self&#39;);define(&#39;SELECTOR_TYPE_FRIENDS&#39;, &#39;@friends&#39;);// PHP 5 Compatabilityclass Configs{ const APPLICATION_KEY = &#39;api_oauth_consumer_key&#39;; const APPLICATION_SECRET = &#39;api_oauth_consumer_secret&#39;;}class SelectorType{ const SELECTOR_TYPE_ME = &#39;@me&#39;; const SELECTOR_TYPE_ALL = &#39;@all&#39;; const SELECTOR_TYPE_SELF = &#39;@self&#39;; const SELECTOR_TYPE_FRIENDS = &#39;@friends&#39;;}[/php]Even if they were to choose to go the PHP 5 way I would highly suggest that they do not use classes as containers for constants, there is no need to do this.  It is not using proper OOP methodologies.  Why create an object that just holds 2 - 4 constant variables, these would be better suited for define() calls in my opinion.I am not trying to flame the work of others, I would just like an idea of why they are using these methods.  Anyone reading this that knows the developers on the team feel free to have them explain what they were thinking when creating this code base.</p>
+                                        <p>Over the last few days I have been digging deep into the concepts of REST.  I have been reading through my copy of <a href="http://www.amazon.com/RESTful-Web-Services-Leonard-Richardson/dp/0596529260/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1240926906&amp;sr=8-1">RESTful Web Services</a>.  Out of curiosity I searched <a href="http://www.josephcrawford.com/2008/02/15/iphone-usage-shocks-google/" title="Google">Google</a> for a "php REST library" and it turned up the <a href="http://wiki.developer.myspace.com/index.php?title=Category:MDP_Libraries#Official_MySpace_REST_API_PHP_Library">Official MySpace PHP REST Library</a>.I started to look through the code and noticed something really weird about how the code is structured.  It looks like they are trying to use an Object Oriented approach however I think they are going about things improperly.  The code looks a lot like the following.[php]      class Configs {          public static $APPLICATION_KEY = "api_oauth_consumer_key";          public static $APPLICATION_SECRET = "api_oauth_consumer_secret";      }      class SelectorType {          public static $ME = "@me";          public static $ALL = "@all";          public static $SELF = "@self";          public static $FRIENDS = "@friends";      }[/php]Now the structure of these classes is fine, but it does bring out the question as to why they are using classes for this type of stuff. The classes have no methods, they have only provided public static properties. I am not sure why they took this approach. I am not sure if they are trying to remain backwards compatible with PHP 4 or not. If they are however I think they would be better off using constants for these values in the Common.php file, also I am pretty sure they are not trying to support PHP 4 because they are using the static keyword in the classes and I believe PHP 4 would FAIL with that being there. I am unsure why they are not using class constants. I would suggest a better way of doing things.[php]// PHP 4 Backwards Compatabilitydefine('APPLICATION_KEY', 'api_oauth_consumer_key');define('APPLICATION_SECRET', 'api_oauth_consumer_secret');define('SELECTOR_TYPE_ME', '@me');define('SELECTOR_TYPE_ALL', '@all');define('SELECTOR_TYPE_SELF', '@self');define('SELECTOR_TYPE_FRIENDS', '@friends');// PHP 5 Compatabilityclass Configs{ const APPLICATION_KEY = 'api_oauth_consumer_key'; const APPLICATION_SECRET = 'api_oauth_consumer_secret';}class SelectorType{ const SELECTOR_TYPE_ME = '@me'; const SELECTOR_TYPE_ALL = '@all'; const SELECTOR_TYPE_SELF = '@self'; const SELECTOR_TYPE_FRIENDS = '@friends';}[/php]Even if they were to choose to go the PHP 5 way I would highly suggest that they do not use classes as containers for constants, there is no need to do this.  It is not using proper OOP methodologies.  Why create an object that just holds 2 - 4 constant variables, these would be better suited for define() calls in my opinion.I am not trying to flame the work of others, I would just like an idea of why they are using these methods.  Anyone reading this that knows the developers on the team feel free to have them explain what they were thinking when creating this code base.</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -339,21 +339,6 @@
                                         <div class="one_fourth">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2007/08/review-zend-support-vs-sales-tactics" title="Review: Zend, Support vs Sales Tactics">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: Zend, Support vs Sales Tactics" alt="Review: Zend, Support vs Sales Tactics" width="153" height="75">
-                                                    </a>
-                                                </div>
-                                                <div class="post_grid_content">
-                                                    <p class="post_title">
-                                                        <a href="/2007/08/review-zend-support-vs-sales-tactics" title="Review: Zend, Support vs Sales Tactics" rel="bookmark">Review: Zend, Support vs Sales Tactics</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                        <div class="one_fourth">
-                                            <div class="post_grid_module">
-                                                <div class="post_grid_image">
                                                     <a href="/2007/09/nusphere-phped-for-mac-os-x" title="NuSphere PhpED for Mac OS X">
                                                         <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="NuSphere PhpED for Mac OS X" alt="NuSphere PhpED for Mac OS X" width="153" height="75">
                                                     </a>
@@ -369,13 +354,28 @@
                                         <div class="one_fourth">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2009/03/review-inspectorkit-10-released" title="Review: InspectorKit 1.0 Released">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: InspectorKit 1.0 Released" alt="Review: InspectorKit 1.0 Released" width="153" height="75">
+                                                    <a href="/2007/02/tubular-private-beta-4" title="Tubular Private Beta 4">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Tubular Private Beta 4" alt="Tubular Private Beta 4" width="153" height="75">
                                                     </a>
                                                 </div>
                                                 <div class="post_grid_content">
                                                     <p class="post_title">
-                                                        <a href="/2009/03/review-inspectorkit-10-released" title="Review: InspectorKit 1.0 Released" rel="bookmark">Review: InspectorKit 1.0 Released</a>
+                                                        <a href="/2007/02/tubular-private-beta-4" title="Tubular Private Beta 4" rel="bookmark">Tubular Private Beta 4</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2009/12/palm-app-catalog-has-a-stomach-bug" title="Palm App Catalog Has A Stomach Bug">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Palm App Catalog Has A Stomach Bug" alt="Palm App Catalog Has A Stomach Bug" width="153" height="75">
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2009/12/palm-app-catalog-has-a-stomach-bug" title="Palm App Catalog Has A Stomach Bug" rel="bookmark">Palm App Catalog Has A Stomach Bug</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -384,13 +384,13 @@
                                         <div class="one_fourth last">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2009/08/review-webos-resources" title="Review: WebOS Resources">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: WebOS Resources" alt="Review: WebOS Resources" width="153" height="75">
+                                                    <a href="/2008/02/kernel-panics" title="Kernel Panics">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Kernel Panics" alt="Kernel Panics" width="153" height="75">
                                                     </a>
                                                 </div>
                                                 <div class="post_grid_content">
                                                     <p class="post_title">
-                                                        <a href="/2009/08/review-webos-resources" title="Review: WebOS Resources" rel="bookmark">Review: WebOS Resources</a>
+                                                        <a href="/2008/02/kernel-panics" title="Kernel Panics" rel="bookmark">Kernel Panics</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -442,14 +442,6 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/development/" title="Development">Development</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/mac/" title="Mac">Mac</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/raves/" title="Raves">Raves</a>
                                 </li>
                                 
@@ -458,7 +450,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/software/" title="Software">Software</a>
+                                    <a href="/category/development/" title="Development">Development</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -466,7 +458,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/uncategorized/" title="Uncategorized">Uncategorized</a>
+                                    <a href="/category/work/" title="Work">Work</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -474,7 +466,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/local/" title="Local">Local</a>
+                                    <a href="/category/internet/" title="Internet">Internet</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -482,15 +474,11 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/work/" title="Work">Work</a>
+                                    <a href="/category/mac/" title="Mac">Mac</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/internet/" title="Internet">Internet</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/jokes/" title="Jokes">Jokes</a>
+                                    <a href="/category/software/" title="Software">Software</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -498,23 +486,23 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/tv/" title="Tv">Tv</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/ppp/" title="Ppp">Ppp</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
+                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/local/" title="Local">Local</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
                                     <a href="/category/useful/" title="Useful">Useful</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
                                 </li>
                                 
                       		</ul>
@@ -522,16 +510,6 @@
                         
                         <div class="clearboth"></div>
                         
-                        <div id="recent-posts-3" class="widget widget_recent_entries">
-                            <h4 class="widgettitle"><span>Recent Posts</span></h4>
-                            <ul>
-                                <li><a href="http://www.josephcrawford.com/2012/12/test/" title="Test">Test</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/12/php-master-series/" title="PHP Master Series">PHP Master Series</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/11/a-new-look/" title="A New Look">A New Look</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-timing/" title="Review: Timing">Review: Timing</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-markdown-pro/" title="Review: Markdown Pro">Review: Markdown Pro</a></li>
-                            </ul>
-                        </div>
                         <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
                             <li>
                                 <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
@@ -618,45 +596,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <span style='font-size: 75%'><a href='/tags/php/'>php</a></span>
-<span style='font-size: 75%'><a href='/tags/server-side/'>server-side</a></span>
-<span style='font-size: 75%'><a href='/tags/best-practices/'>best-practices</a></span>
-<span style='font-size: 75%'><a href='/tags/ide/'>ide</a></span>
-<span style='font-size: 75%'><a href='/tags/software/'>software</a></span>
-<span style='font-size: 174%'><a href='/tags/development/'>Development</a></span>
-<span style='font-size: 194%'><a href='/tags/mac/'>Mac</a></span>
-<span style='font-size: 280%'><a href='/tags/raves/'>Raves</a></span>
-<span style='font-size: 279%'><a href='/tags/reviews/'>Reviews</a></span>
-<span style='font-size: 128%'><a href='/tags/software/'>Software</a></span>
-<span style='font-size: 203%'><a href='/tags/rants/'>Rants</a></span>
-<span style='font-size: 75%'><a href='/tags/uncategorized/'>Uncategorized</a></span>
-<span style='font-size: 280%'><a href='/tags/entertainment/'>Entertainment</a></span>
-<span style='font-size: 150%'><a href='/tags/local/'>Local</a></span>
-<span style='font-size: 280%'><a href='/tags/news/'>News</a></span>
-<span style='font-size: 75%'><a href='/tags/work/'>Work</a></span>
-<span style='font-size: 280%'><a href='/tags/internet/'>Internet</a></span>
-<span style='font-size: 75%'><a href='/tags/jokes/'>Jokes</a></span>
-<span style='font-size: 100%'><a href='/tags/tutorials/'>Tutorials</a></span>
-<span style='font-size: 224%'><a href='/tags/websites/'>Websites</a></span>
-<span style='font-size: 75%'><a href='/tags/tv/'>TV</a></span>
-<span style='font-size: 75%'><a href='/tags/ppp/'>PPP</a></span>
-<span style='font-size: 75%'><a href='/tags/javascript/'>JavaScript</a></span>
-<span style='font-size: 75%'><a href='/tags/php/'>PHP</a></span>
-<span style='font-size: 113%'><a href='/tags/useful/'>Useful</a></span>
-<span style='font-size: 75%'><a href='/tags/frameworks/'>Frameworks</a></span>
-<span style='font-size: 75%'><a href='/tags/family/'>Family</a></span>
-<span style='font-size: 75%'><a href='/tags/tmc/'>TMC</a></span>
-<span style='font-size: 75%'><a href='/tags/macdev/'>MacDev</a></span>
-<span style='font-size: 75%'><a href='/tags/scams/'>Scams</a></span>
-<span style='font-size: 75%'><a href='/tags/palm/'>Palm</a></span>
-<span style='font-size: 75%'><a href='/tags/css/'>CSS</a></span>
-<span style='font-size: 75%'><a href='/tags/political/'>Political</a></span>
-<span style='font-size: 75%'><a href='/tags/recruiters/'>Recruiters</a></span>
-<span style='font-size: 75%'><a href='/tags/hardware/'>Hardware</a></span>
-<span style='font-size: 75%'><a href='/tags/phones/'>Phones</a></span>
-<span style='font-size: 75%'><a href='/tags/nokia/'>Nokia</a></span>
-<span style='font-size: 75%'><a href='/tags/markdown/'>Markdown</a></span>
-<span style='font-size: 75%'><a href='/tags/productivity/'>Productivity</a></span>
+                        <a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
 
                         <!-- tagcloud goes here -->
                     </div>

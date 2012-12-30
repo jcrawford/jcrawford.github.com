@@ -228,7 +228,7 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>Last night I decided to attempt to install XP SP2 with BootCamp on my new Mac Pro.  Everything was going smooth, I got the OS to install perfectly, the Apple drivers worked like a charm.  It seemed everything was flawless, I even got the bluetooth keyboard and mouse to work in Windows which many people said was not possible.  I had everything setup and it was time to reboot to OS X.  I restarted the computer and held down the alt/option key waiting to see the screen where I could choose which OS to load.  To my surprise it just booted into Windows without ever showing me the screen to choose the OS.I did some quick Googling and found that the bluetooth keyboard was not working at that point.  My options were limited.  I had to keep a wired keyboard sitting next to my computer so that I could boot to the OS choice screen.  In my opinion this was not logical.  Why should I have to do that when the bluetooth keyboard works with the Mac on boot?  I can restart and hold down the eject key to get the optical drive to eject, so why can I not get it to boot to the OS choice screen?  I have been unable to come up with an answer for that.  This brought up the thought of... &quot;maybe there is a configuration file I can edit to make the OS choice screen show up on every boot and auto boot a default OS after a specified amount of time..&quot;  I did some digging but could not find anything.  Was there not a bootloader like <a href="http://refit.sourceforge.net/">Lilo</a> or <a href="http://www.gnu.org/software/grub/">Grub</a> for this?&lt;!--more--&gt;Since Bootcamp is not supported by Apple Care I could not just call them up and ask why.  I resorted to going to the Apple discussion forums and asking there.  Within a few hours someone responded to my question telling me that what they thought I needed to use was <a href="http://refit.sourceforge.net/">rEFIt</a>.  So what is rEFIt?&gt; rEFIt is a boot menu and maintenance toolkit for EFI-based machines like the Intel Macs. You can use it to boot multiple operating systems easily, including triple-boot setups with Boot Camp. It also provides an easy way to enter and explore the EFI pre-boot environment.Below is a screenshot of rEFIt running, however please note that this is not my install.  I took this screenshot for the rEFIt site and they stated that the image was cropped and that it is a full screen display.  Also the OS icons are not fixed, rEFIt detects the installed operating systems and shows the appropriate icons.  I have not fiddled with it yet but the documentation says that you can change the icons for the installed OS&#39;s and that you can disable the optional features under the OS images for situations like in a computer lab.<div align="center"><img src="http://www.josephcrawford.com/wp-content/uploads/2007/01/screen1.png" alt="rEFIt in action"></div>I have installed rEFIt on my machine and it was very simple.  Just download the Mac install package, run it and reboot.  rEFIt was exactly what I needed.  It worked with the bluetooth keyboard, it offered me a default OS and a timer to automatically boot the default OS if no keys were pressed.  I thank the developer of this software but also I thank <a href="http://discussions.apple.com/profile.jspa?userID=675477">Fortuny</a> for answering my question on the Apple forums.:: EDIT ::The only issue I seem to be having with the bluetooth keyboard and mouse is if they are in use on Windows and I reboot.  If i am rebooting from windows rEFIt will not see the keyboard or mouse, it will then automatically boot into OS X however since that is set as my default OS.  Once booted into OS X it picks them up.  I am almost betting that this is an issue in the way that windows handles bluetooth and nothing to do with the mac, however I will be digging into this to see if I can find a solution.  I will update this thread if I do in fact find a solution.</p>
+                                        <p>Last night I decided to attempt to install XP SP2 with BootCamp on my new Mac Pro.  Everything was going smooth, I got the OS to install perfectly, the Apple drivers worked like a charm.  It seemed everything was flawless, I even got the bluetooth keyboard and mouse to work in Windows which many people said was not possible.  I had everything setup and it was time to reboot to OS X.  I restarted the computer and held down the alt/option key waiting to see the screen where I could choose which OS to load.  To my surprise it just booted into Windows without ever showing me the screen to choose the OS.I did some quick Googling and found that the bluetooth keyboard was not working at that point.  My options were limited.  I had to keep a wired keyboard sitting next to my computer so that I could boot to the OS choice screen.  In my opinion this was not logical.  Why should I have to do that when the bluetooth keyboard works with the Mac on boot?  I can restart and hold down the eject key to get the optical drive to eject, so why can I not get it to boot to the OS choice screen?  I have been unable to come up with an answer for that.  This brought up the thought of... "maybe there is a configuration file I can edit to make the OS choice screen show up on every boot and auto boot a default OS after a specified amount of time.."  I did some digging but could not find anything.  Was there not a bootloader like <a href="http://refit.sourceforge.net/">Lilo</a> or <a href="http://www.gnu.org/software/grub/">Grub</a> for this?<!--more-->Since Bootcamp is not supported by Apple Care I could not just call them up and ask why.  I resorted to going to the Apple discussion forums and asking there.  Within a few hours someone responded to my question telling me that what they thought I needed to use was <a href="http://refit.sourceforge.net/">rEFIt</a>.  So what is rEFIt?> rEFIt is a boot menu and maintenance toolkit for EFI-based machines like the Intel Macs. You can use it to boot multiple operating systems easily, including triple-boot setups with Boot Camp. It also provides an easy way to enter and explore the EFI pre-boot environment.Below is a screenshot of rEFIt running, however please note that this is not my install.  I took this screenshot for the rEFIt site and they stated that the image was cropped and that it is a full screen display.  Also the OS icons are not fixed, rEFIt detects the installed operating systems and shows the appropriate icons.  I have not fiddled with it yet but the documentation says that you can change the icons for the installed OS's and that you can disable the optional features under the OS images for situations like in a computer lab.<div align="center"><img src="http://www.josephcrawford.com/wp-content/uploads/2007/01/screen1.png" alt="rEFIt in action" /></div>I have installed rEFIt on my machine and it was very simple.  Just download the Mac install package, run it and reboot.  rEFIt was exactly what I needed.  It worked with the bluetooth keyboard, it offered me a default OS and a timer to automatically boot the default OS if no keys were pressed.  I thank the developer of this software but also I thank <a href="http://discussions.apple.com/profile.jspa?userID=675477">Fortuny</a> for answering my question on the Apple forums.:: EDIT ::The only issue I seem to be having with the bluetooth keyboard and mouse is if they are in use on Windows and I reboot.  If i am rebooting from windows rEFIt will not see the keyboard or mouse, it will then automatically boot into OS X however since that is set as my default OS.  Once booted into OS X it picks them up.  I am almost betting that this is an issue in the way that windows handles bluetooth and nothing to do with the mac, however I will be digging into this to see if I can find a solution.  I will update this thread if I do in fact find a solution.</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -339,36 +339,6 @@
                                         <div class="one_fourth">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2009/03/review-inspectorkit-10-released" title="Review: InspectorKit 1.0 Released">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: InspectorKit 1.0 Released" alt="Review: InspectorKit 1.0 Released" width="153" height="75">
-                                                    </a>
-                                                </div>
-                                                <div class="post_grid_content">
-                                                    <p class="post_title">
-                                                        <a href="/2009/03/review-inspectorkit-10-released" title="Review: InspectorKit 1.0 Released" rel="bookmark">Review: InspectorKit 1.0 Released</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                        <div class="one_fourth">
-                                            <div class="post_grid_module">
-                                                <div class="post_grid_image">
-                                                    <a href="/2008/05/review-securityspy" title="Review: SecuritySpy">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: SecuritySpy" alt="Review: SecuritySpy" width="153" height="75">
-                                                    </a>
-                                                </div>
-                                                <div class="post_grid_content">
-                                                    <p class="post_title">
-                                                        <a href="/2008/05/review-securityspy" title="Review: SecuritySpy" rel="bookmark">Review: SecuritySpy</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    
-                                        <div class="one_fourth">
-                                            <div class="post_grid_module">
-                                                <div class="post_grid_image">
                                                     <a href="/2008/02/more-leopard-docks" title="More Leopard Docks">
                                                         <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="More Leopard Docks" alt="More Leopard Docks" width="153" height="75">
                                                     </a>
@@ -381,7 +351,7 @@
                                             </div>
                                         </div>
                                     
-                                        <div class="one_fourth last">
+                                        <div class="one_fourth">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
                                                     <a href="/2007/01/the-new-mac-pro-with-parallels" title="The New Mac Pro With Parallels">
@@ -391,6 +361,36 @@
                                                 <div class="post_grid_content">
                                                     <p class="post_title">
                                                         <a href="/2007/01/the-new-mac-pro-with-parallels" title="The New Mac Pro With Parallels" rel="bookmark">The New Mac Pro With Parallels</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2007/01/your-dvd-collection-itunes-and-the-apple-tv" title="Your DVD Collection, iTunes and the Apple TV">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Your DVD Collection, iTunes and the Apple TV" alt="Your DVD Collection, iTunes and the Apple TV" width="153" height="75">
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2007/01/your-dvd-collection-itunes-and-the-apple-tv" title="Your DVD Collection, iTunes and the Apple TV" rel="bookmark">Your DVD Collection, iTunes and the Apple TV</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="one_fourth last">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2007/12/os-x-vs-ubuntu-compiz-fusion" title="OS X vs Ubuntu + Compiz-Fusion">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="OS X vs Ubuntu + Compiz-Fusion" alt="OS X vs Ubuntu + Compiz-Fusion" width="153" height="75">
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2007/12/os-x-vs-ubuntu-compiz-fusion" title="OS X vs Ubuntu + Compiz-Fusion" rel="bookmark">OS X vs Ubuntu + Compiz-Fusion</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -442,14 +442,6 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/development/" title="Development">Development</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/mac/" title="Mac">Mac</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/raves/" title="Raves">Raves</a>
                                 </li>
                                 
@@ -458,7 +450,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/software/" title="Software">Software</a>
+                                    <a href="/category/development/" title="Development">Development</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -466,7 +458,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/uncategorized/" title="Uncategorized">Uncategorized</a>
+                                    <a href="/category/work/" title="Work">Work</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -474,7 +466,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/local/" title="Local">Local</a>
+                                    <a href="/category/internet/" title="Internet">Internet</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -482,15 +474,11 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/work/" title="Work">Work</a>
+                                    <a href="/category/mac/" title="Mac">Mac</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/internet/" title="Internet">Internet</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/jokes/" title="Jokes">Jokes</a>
+                                    <a href="/category/software/" title="Software">Software</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -498,23 +486,23 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/tv/" title="Tv">Tv</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/ppp/" title="Ppp">Ppp</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
+                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/local/" title="Local">Local</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
                                     <a href="/category/useful/" title="Useful">Useful</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
                                 </li>
                                 
                       		</ul>
@@ -522,16 +510,6 @@
                         
                         <div class="clearboth"></div>
                         
-                        <div id="recent-posts-3" class="widget widget_recent_entries">
-                            <h4 class="widgettitle"><span>Recent Posts</span></h4>
-                            <ul>
-                                <li><a href="http://www.josephcrawford.com/2012/12/test/" title="Test">Test</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/12/php-master-series/" title="PHP Master Series">PHP Master Series</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/11/a-new-look/" title="A New Look">A New Look</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-timing/" title="Review: Timing">Review: Timing</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-markdown-pro/" title="Review: Markdown Pro">Review: Markdown Pro</a></li>
-                            </ul>
-                        </div>
                         <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
                             <li>
                                 <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
@@ -618,45 +596,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <span style='font-size: 75%'><a href='/tags/php/'>php</a></span>
-<span style='font-size: 75%'><a href='/tags/server-side/'>server-side</a></span>
-<span style='font-size: 75%'><a href='/tags/best-practices/'>best-practices</a></span>
-<span style='font-size: 75%'><a href='/tags/ide/'>ide</a></span>
-<span style='font-size: 75%'><a href='/tags/software/'>software</a></span>
-<span style='font-size: 174%'><a href='/tags/development/'>Development</a></span>
-<span style='font-size: 194%'><a href='/tags/mac/'>Mac</a></span>
-<span style='font-size: 280%'><a href='/tags/raves/'>Raves</a></span>
-<span style='font-size: 279%'><a href='/tags/reviews/'>Reviews</a></span>
-<span style='font-size: 128%'><a href='/tags/software/'>Software</a></span>
-<span style='font-size: 203%'><a href='/tags/rants/'>Rants</a></span>
-<span style='font-size: 75%'><a href='/tags/uncategorized/'>Uncategorized</a></span>
-<span style='font-size: 280%'><a href='/tags/entertainment/'>Entertainment</a></span>
-<span style='font-size: 150%'><a href='/tags/local/'>Local</a></span>
-<span style='font-size: 280%'><a href='/tags/news/'>News</a></span>
-<span style='font-size: 75%'><a href='/tags/work/'>Work</a></span>
-<span style='font-size: 280%'><a href='/tags/internet/'>Internet</a></span>
-<span style='font-size: 75%'><a href='/tags/jokes/'>Jokes</a></span>
-<span style='font-size: 100%'><a href='/tags/tutorials/'>Tutorials</a></span>
-<span style='font-size: 224%'><a href='/tags/websites/'>Websites</a></span>
-<span style='font-size: 75%'><a href='/tags/tv/'>TV</a></span>
-<span style='font-size: 75%'><a href='/tags/ppp/'>PPP</a></span>
-<span style='font-size: 75%'><a href='/tags/javascript/'>JavaScript</a></span>
-<span style='font-size: 75%'><a href='/tags/php/'>PHP</a></span>
-<span style='font-size: 113%'><a href='/tags/useful/'>Useful</a></span>
-<span style='font-size: 75%'><a href='/tags/frameworks/'>Frameworks</a></span>
-<span style='font-size: 75%'><a href='/tags/family/'>Family</a></span>
-<span style='font-size: 75%'><a href='/tags/tmc/'>TMC</a></span>
-<span style='font-size: 75%'><a href='/tags/macdev/'>MacDev</a></span>
-<span style='font-size: 75%'><a href='/tags/scams/'>Scams</a></span>
-<span style='font-size: 75%'><a href='/tags/palm/'>Palm</a></span>
-<span style='font-size: 75%'><a href='/tags/css/'>CSS</a></span>
-<span style='font-size: 75%'><a href='/tags/political/'>Political</a></span>
-<span style='font-size: 75%'><a href='/tags/recruiters/'>Recruiters</a></span>
-<span style='font-size: 75%'><a href='/tags/hardware/'>Hardware</a></span>
-<span style='font-size: 75%'><a href='/tags/phones/'>Phones</a></span>
-<span style='font-size: 75%'><a href='/tags/nokia/'>Nokia</a></span>
-<span style='font-size: 75%'><a href='/tags/markdown/'>Markdown</a></span>
-<span style='font-size: 75%'><a href='/tags/productivity/'>Productivity</a></span>
+                        <a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
 
                         <!-- tagcloud goes here -->
                     </div>

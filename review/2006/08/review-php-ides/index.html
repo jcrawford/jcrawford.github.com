@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Review: PHP IDE's</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    
+    <meta property="og:type" content="blog" />
+    <meta property="og:title" content="Joseph Crawford" />
+    <meta property="og:url" content="http://www.josephcrawford.com" />
+    <meta property="og:site_name" content="Joseph Crawford" />
+    
+        <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
+    <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
+    <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
+    <!--[if IE 9]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie9.css"> <![endif]-->
+    <!--[if lt IE 10]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie.css"> <![endif]-->
+
+    <style type="text/css">
+        .floatleft {
+            float: left;
+            margin: 0px 10px 10px 0px;
+            border: 1px solid #000000;
+            padding: 2px;
+            display: inline;
+        }
+
+        .floatcenter {
+            text-align: center;
+            margin: 0px 10px 10px 0px;
+            border: 1px solid #000000;
+            padding: 2px;
+        }
+
+        .floatright {
+            float: right;
+            margin: 0px 0px 10px 10px;
+            border: 1px solid #000000;
+            padding: 2px;
+            display: inline;
+        }
+    </style>
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        var imageResize = "wordpress",
+            resizeDisabled = "",
+            assetsUri = "/images/production",
+            imageNonce = "7072fe5b36";
+        document.write('<style type="text/css">.noscript{visibility: hidden;}</style>');
+    /* ]]> */
+    </script>
+    
+
+
+    <link rel='stylesheet' id='pygments-css'  href='/css/pygments.css' type='text/css' media='screen' /> 
+    <link rel='stylesheet' id='miss_prettyphoto-css'  href='/css/prettyPhoto.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missfont1-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C700italic%2C800italic%2C400%2C800%2C700%2C600%2C300&#038;ver=1.0.8' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missfont2-css'  href='http://fonts.googleapis.com/css?family=Droid+Sans%3A400%2C700&#038;ver=1.0.8' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missfont3-css'  href='http://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%2C900%2C900italic&#038;ver=1.0.8' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missfont4-css'  href='http://fonts.googleapis.com/css?family=Monda' type='text/css' media='screen' />
+    
+    <link rel='stylesheet' id='missshortcodes-css'  href='/css/shortcodes.css' type='text/css' media='screen' />
+	<link rel='stylesheet' id='misswidgets-css'  href='/css/widgets.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missgeneral-css'  href='/css/style.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missresponsive-css'  href='/css/responsive.css' type='text/css' media='screen' />
+    <link rel='stylesheet' id='missscore-css'  href='/css/score.css' type='text/css' media='screen' /> 
+    <link rel='stylesheet' id='dropkick-css'  href='/css/jquery.selectbox.css' type='text/css' media='screen' />
+    
+    <link rel='stylesheet' id='light_lightblue-css'  href='/css/themes/light_lightblue.css' type='text/css' media='screen' title="light_lightblue" />
+    <link rel='alternate stylesheet' id='gravity-css'  href='/css/themes/gravity.css' type='text/css' media='screen' title="gravity" />	
+    <link rel='alternate stylesheet' id='dark_blue-css'  href='/css/themes/dark_blue.css' type='text/css' media='screen' title="dark_blue" />
+    <link rel='alternate stylesheet' id='dark_coral-css'  href='/css/themes/dark_coral.css' type='text/css' media='screen' title="dark_coral" />
+    <link rel='alternate stylesheet' id='dark_glance-css'  href='/css/themes/dark_glance.css' type='text/css' media='screen' title="dark_glance" />
+    <link rel='alternate stylesheet' id='dark_crimson-css'  href='/css/themes/dark_crimson.css' type='text/css' media='screen' title="dark_crimson" />
+    <link rel='alternate stylesheet' id='dark_glance-css'  href='/css/themes/dark_glance.css' type='text/css' media='screen' title="dark_glance" />
+    <link rel='alternate stylesheet' id='dark_green-css'  href='/css/themes/dark_green.css' type='text/css' media='screen' title="dark_green" />
+    <link rel='alternate stylesheet' id='dark_hotpink-css'  href='/css/themes/dark_hotpink.css' type='text/css' media='screen' title="dark_hotpink" />
+
+    <link rel='stylesheet' id='override-css'  href='/css/override.css' type='text/css' media='screen' /> 
+    <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type='text/javascript' src="/js/style-switcher.js"></script>
+	<script type='text/javascript' src="/js/jquery.selectbox-0.2.min.js"></script>
+    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+    <script type='text/javascript' src='/js/tabs.min.js'></script>
+    <script type='text/javascript' src='/js/jquery.flexslider-min.js'></script>
+    <script type='text/javascript' src='/js/custom.js'></script>
+    <script type='text/javascript' src='/js/stemmer.js'></script>
+    <script type='text/javascript' src='/js/site-search.js'></script>
+
+    <meta name="generator" content="Jekyll 0.11.2" />
+    <link rel='shortlink' href='http://wp.me/sEFF' />
+
+    <!-- Jetpack Open Graph Tags -->
+
+    <script type="text/javascript">
+		$(document).ready(function() {
+			var cookie = readCookie("style");
+			var title = cookie ? cookie : getPreferredStyleSheet();
+			setActiveStyleSheet(title);
+			
+			$("#switcher").selectbox({
+				onChange: function (val, inst) {
+					setActiveStyleSheet(val);
+				},
+			});
+			
+		});
+	
+        // var _gaq = _gaq || [];
+        // _gaq.push(['_setAccount', 'UA-18267810-1']);
+        // _gaq.push(['_trackPageview']);
+        (function() {
+           // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+		
+
+    </script>
+</head>
+
+<body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
+    <div class="background">
+        <div class="background_inner"></div>
+    </div>
+
+    <div id="page_inner">
+        <div class="top-pattern"></div>
+        <div class="container">
+            <div class="sixteen columns">
+                <div id="header_extras">
+                    <div class="header_social">
+                        <div class="social_icon default">
+                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+                        </div>
+                        <div class="social_icon default">
+                            <a href="https://www.facebook.com/joseph.crawford.16">
+                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header_text">I also waste time on the following social networks:</div>
+                    <div class="clearboth"></div>
+                </div><!-- #header_extras -->
+            </div>
+            <div id="header">
+                <div class="sixteen columns">
+                    <div class="logo">
+                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+                            <span>Joseph</span><span>Crawford</span>
+                        </a>
+                    </div><!-- .logo -->
+                    <div id="header_ad">
+                    <script type="text/javascript">
+                        <!--
+                            google_ad_client = "ca-pub-4815878521361271";
+                            /* header right */
+                            google_ad_slot = "4528456168";
+                            google_ad_width = 234;
+                            google_ad_height = 60;
+                        //-->
+                    </script>
+
+                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+                </div>
+            </div>
+        </div><!-- #header -->
+        
+                <div id="main_menu" class="sixteen columns row">
+            <div class="main_navigation">
+                <ul id="menu-menu" class="">
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
+                        <a href="#"><span>Articles</span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
+                    </li>
+                    <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
+                        <a href="#"><span>Resume</span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-2022" class="menu-item menu-item-type-custom menu-item-object-custom">
+                                <a href="/resume/resume.pdf">PDF</a>
+                            </li>
+                            <li id="menu-item-2023" class="menu-item menu-item-type-custom menu-item-object-custom">
+                                <a href="/resume/resume.doc">Word</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/contact/"><span>Contact Me</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearboth"></div>
+        </div><!-- #main_menu -->
+        
+        <div id="content">
+            <div id="content_inner">
+                <div id="main" class="ten columns clearfix">
+            	    <div id="main_inner">
+                        <div class="single_post_module">
+                            <div id="post" class="post type-post status-publish format-standard hentry">
+            			        <div class="single_post_content">
+            				        <h2 class="post_title">Review: PHP IDE's</h2>
+                                    <p class="post_meta">
+                                        <span class="meta_date">Posted <a href="/2006/08/" title="August 24, 2006">August 24, 2006</a></span>
+                                        <span class="meta_category">in <a class='category' href='/category/development/'>development</a>, <a class='category' href='/category/reviews/'>reviews</a></span>
+                                        <span class="meta_comments"> with <a href="/review/2006/08/review-php-ides/#respond" title="Comment on Review: PHP IDE's">0 Comments</a></span>
+                                    </p>
+                                    <div class="single_post_image" style="width:730px;">
+                                        <a rel="prettyPhoto" href="/images/posts/featured/" title="Review: PHP IDE's" class="blog_index_image_load" style="background-image: url(/images/production/zoom.png); display: block; position: relative; height: 390px; width: 730px; background-position: 50% 50%; background-repeat: no-repeat no-repeat;">
+                                            <span id="61_img_1">
+                                                <img src="/images/posts/featured/" title="Review: PHP IDE's" alt="Review: PHP IDE's" width="720" height="380" style="opacity: 1;" class="hover_fade_js">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="clearboth"></div>
+            				        <div class="entry">
+                                        <p>I have been a faithful Zend Studio user for about 2 years now, however i have started a new job and all the developers stand by Eclipse.  I have been testing Eclipse, Komodo, Zend to compare the 3 and decide which would best suit my needs.  This is not a full review on all of the IDE's however only a review on the features that I require on a daily basis.</p>
+
+<p>I am going to start off by explaining my situation.</font><font face="Verdana">At work we have a sandbox environment setup so every developer can create a virtual web server for testing/debugging purposes.  Every developer has their own home directory which can be mounted as a virtual drive on our local systems.  This is where all of our files reside.  In order to mount that drive we must be connected to the VPN.  I am evaluating IDE's to see which will best suit this situation.</p>
+
+<p>Working with files on a remotely mounted drive is sometimes slow.  Also loading the project files from this sometimes slow disk can be annoying.</p>
+
+<h3><a href="http://www.zend.com/products/zend_studio" title="Zend Studio"><strong>Zend Studio</strong></a></h3>
+
+<p>This is a very nice IDE, it is written in Java so it is cross platform.  When you buy this IDE (Standard: $99, Professional: $299) it is a per computer license, which means if you put it on windows, you have to buy another license for your Mac or linux machine.</p>
+
+<p>This IDE I have found to be very nice, it is easy to use and the debugging capabilities are really good.  Like the others it allows you to debug locally or remotely.  When this first hit the market it was sluggish but they have since fixed that and it runs quite fast now.  It has built in support for <strong>CVS/SVN</strong> however I am finding that it's not the easiest to use, i cannot get it to checkout a certain branch for a repository (I am not saying it cannot be done, it's just not easy like in other editors).</p>
+
+<p>I really like one feature this has and that is when you right click a directory or project directory, you can choose <em>Find in Files</em>, this will search all of the files for a string even if the file is not open.  With Zend Studio you can edit files locally or you can create an FTP connection and edit files directly on the server.  Zend has no problems what so ever when creating/opening a project that has 1000's of files on a mounted virtual drive while connected to a VPN.</font><!--more--><font face="Verdana"> </font><font face="Verdana"><a href="http://easyeclipse.org/site/distributions/php.html" title="EasyEclipse for PHP"><strong>EasyEclipse for PHP</strong></a>While testing out Eclipse i found it to be pretty easy to use, there are a ton of plugins that you can download to extend the features of this IDE.  This is open source so you can use it at no cost, i am sure you can donate to the project if you do like the IDE and use it all the time.  Showing support for open source projects makes development survive ;).  The <u><em>Source Control</em></u> feature in this IDE is really nice, they provide you with a graphical interface for the initial checkout, and they allow you to grab a particular branch or the head using this graphical interface.  The only issue i had was figuring out how to do the initial checkout, one would think you would have a menu at the top of the application in the menu bar that would allow you to open the source control dialogs.  However it is a bit confusing, first you create your php project, then you have to create another project and choose source control.  I am not sure why they would consider this a project but it was a bit hard to find.  The one feature that i use a lot <u><em>Find in Files</em></u> i cannot seem to find in this IDE, i would hope they have it but i cannot find it which is a real drawback for me.  One drawback that i am seeing to Eclipse is the time it takes to load a project.  What i am doing is mounting a virtual drive while connected to the VPN, this is where my project files are stored.  I create a new project and assign that path as the workspace, while it imports the 1000's of files it just hangs while loading until it says not responding.  This does not happen all the time, however it has happened about 4 out of 10 tests.</font><font face="Verdana"> </font><font face="Verdana"><a href="http://www.activestate.com/Products/Komodo/overview.plex" title="ActiveState's Komodo"><strong>Komodo</strong></a>ActiveState's Komodo at first glance looks like a really nice IDE, it has a very easy to navigate UI and has a regex tester built into the application.  The <u><em>Source Control</em></u> feature was fairly easy to use, and it was also easy to find in the context menu's.  Using this IDE proved to be a good experience, the <u><em>syntax highlighting</em></u> (as the other IDE's have) was very nice and the same for the <u><em>code folding</em></u> (the others have this as well).  This IDE has the <u><em>Find in Files</em></u> feature i was looking for so i really thought i found the best IDE for my needs.  There was one <strong>BIG</strong> drawback to this editor though and it was the factor that made me decide that this editor was not for me.  When i loaded up a rather large legacy PHP file, this editor slowed down almost to a halt.  It became very hard to scroll through the document, open/close menu's etc.  I actually had to force the app to quit, and it caused a kernel panic on my Mac Quad G5.  After that i did not hesitate to uninstall this application and never look back.  It could have all the features in the world but if it runs slow and causes a mac to crash there are issues.</font><font face="Verdana"> </font><font face="Verdana">I am still on the lookout for the BEST IDE for PHP development but for now i still have to do some more testing to decide whether to use Zend or Eclipse.  The only thing that will tell me is using Eclipse for a while and seeing what roadblocks i hit that i flew through in Zend and vice versa.  I will post again once i make the decision and share what the deciding factors were.</font>UPDATE - 8/03/2007I have since tested Komodo again and sinceI got the Mac Pro and the Intel version of Komodo it seems to run fine.Â  The only issue I have is that it is very slow when working on the SMB share.</p>
+
+                                        <div class="clearboth"></div>
+            						</div><!-- .entry -->
+            				        <p class="post_meta_bottom">
+                                        <span class="meta_post_tag"> <em>Tags:</em>&nbsp;<a class='tag' href='/tags/ide/'>ide</a>, <a class='tag' href='/tags/software/'>software</a></span>
+                                    </p>
+                                    <div class="share_this_module">
+    <div class="share_this_content">
+        <a href="http://twitter.com/home?status=PHP%20Master%20Series%20-%20http://www.josephcrawford.com/?p=2116">
+            <img alt="Twitter" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/twitter.png" />
+        </a>
+        <a href="http://www.stumbleupon.com/submit?url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series">
+            <img alt="StumbleUpon" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/stumbleupon.png" />
+        </a>
+        <a href="http://reddit.com/submit?url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series">
+            <img alt="Reddit" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/reddit.png" />
+        </a>
+        <a href="http://digg.com/submit?phase=2&amp;url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series&amp;bodytext=What%20are%20your%20plans%20December%2021st%3F%20%20Other%20than%20the%20world%20coming%20to%20an%20end%20Cal%20Evans%20has%20organized%20an%20amazing%20online%20PHP%20conference.%20%20If%20you%20are%20a%20PHP%20Developer%20there%20will%20be%20no%20better%20way%20to%20spend%20that%20day%20than%20to%20attend%20the%20PHP%20Master%20Series%20online%20developer%20conference.%20%20Seriously%20if%20you%20are%20a%20PHP%20developer%20YOU%20NEED%20TO%20ATTEND%20this%20online%20conference."><img alt="Digg" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/digg.png" />
+        </a>
+        <a href="http://delicious.com/post?url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series&amp;notes=What%20are%20your%20plans%20December%2021st%3F%20%20Other%20than%20the%20world%20coming%20to%20an%20end%20Cal%20Evans%20has%20organized%20an%20amazing%20online%20PHP%20conference.%20%20If%20you%20are%20a%20PHP%20Developer%20there%20will%20be%20no%20better%20way%20to%20spend%20that%20day%20than%20to%20attend%20the%20PHP%20Master%20Series%20online%20developer%20conference.%20%20Seriously%20if%20you%20are%20a%20PHP%20developer%20YOU%20NEED%20TO%20ATTEND%20this%20online%20conference.">
+            <img alt="del.icio.us" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/delicious.png" />
+        </a>
+        <a href="http://www.facebook.com/share.php?u=http://www.josephcrawford.com/?p=2116&amp;t=PHP%20Master%20Series">
+            <img alt="Facebook" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/facebook.png" />
+        </a>
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://www.josephcrawford.com/?p=2116&amp;title=PHP%20Master%20Series&amp;source=Joseph+Crawford+&amp;summary=What%20are%20your%20plans%20December%2021st%3F%20%20Other%20than%20the%20world%20coming%20to%20an%20end%20Cal%20Evans%20has%20organized%20an%20amazing%20online%20PHP%20conference.%20%20If%20you%20are%20a%20PHP%20Developer%20there%20will%20be%20no%20better%20way%20to%20spend%20that%20day%20than%20to%20attend%20the%20PHP%20Master%20Series%20online%20developer%20conference.%20%20Seriously%20if%20you%20are%20a%20PHP%20developer%20YOU%20NEED%20TO%20ATTEND%20this%20online%20conference.">
+            <img alt="LinkedIn" class="post_sociable" src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/post_sociables/linkedin.png" />
+        </a>
+    </div><!-- .share_this_content -->
+</div><!-- .share_this_module -->
+                                </div><!-- .single_post_content -->
+                            </div><!-- #post-## -->
+                        </div><!-- .single_post_module -->
+                        <div class="additional_posts_module">
+                            <div class="blog_tabs_container">
+                                <ul class="blog_tabs">
+                                    <li><a href="#" class="current">Latest</a></li>
+                                    <li><a href="#">Related</a></li>
+                                </ul>
+                                <div class="blog_tabs_content">
+                                    <div class="post_grid four_column_blog">
+                                    
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2012/12/dear-recruiters" title="Dear Recruiters">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/Recruiters.png" title="Dear Recruiters" alt="Dear Recruiters" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2012/12/dear-recruiters" title="Dear Recruiters" rel="bookmark">Dear Recruiters</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2012/12/php-master-series" title="PHP Master Series">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/phpmaster.png" title="PHP Master Series" alt="PHP Master Series" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2012/12/php-master-series" title="PHP Master Series" rel="bookmark">PHP Master Series</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="one_fourth">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2012/11/a-new-look" title="A New Look">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/Old-Look.png" title="A New Look" alt="A New Look" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2012/11/a-new-look" title="A New Look" rel="bookmark">A New Look</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="one_fourth last">
+                                            <div class="post_grid_module">
+                                                <div class="post_grid_image">
+                                                    <a href="/2012/10/sub-domain-pointing-to-my-home-computer" title="Sub-Domain Pointing to my Home Computer">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/dns.png" title="Sub-Domain Pointing to my Home Computer" alt="Sub-Domain Pointing to my Home Computer" width="153" height="75" />
+                                                    </a>
+                                                </div>
+                                                <div class="post_grid_content">
+                                                    <p class="post_title">
+                                                        <a href="/2012/10/sub-domain-pointing-to-my-home-computer" title="Sub-Domain Pointing to my Home Computer" rel="bookmark">Sub-Domain Pointing to my Home Computer</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                                <div class="blog_tabs_content" style="display: block;">
+                                    <div class="post_grid four_column_blog">
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>							
+                        <div class="clearboth"></div>
+            	    </div><!-- #main_inner -->
+                </div><!-- #main -->
+
+                                <div id="sidebar" class="six columns">
+                    <div id="sidebar_inner">
+                        <div id="search-3" class="widget widget_search">
+                            <form id="searchform">
+                                <input type="text" name="s" id="s" value="Enter Your Search Term" onfocus="if(this.value=='Enter Your Search Term')this.value='';" onblur="if(this.value=='')this.value='Enter Your Search Term';">
+                            </form>
+                        </div>
+						<div id="themes">
+							<div id="style-switcher">
+								<span style="font-size: 16px;">Select Theme: </span>
+								<select name="switcher" id="switcher" style="pretty dk">
+									<option value='light_lightblue'>Default</option>
+									<option value='gravity'>Gravity</option>
+									<option value='dark_blue'>Dark Blue</option>
+									<option value='dark_coral'>Dark Coral</option>
+									<option value='dark_crimson'>Dark Crimson</option>
+									<option value='dark_glance'>Dark Glance</option>
+									<option value='dark_green'>Dark Green</option>
+									<option value='dark_hotpink'>Dark Hotpink</option>
+								</select>
+							</div>
+						</div>
+                        
+						<div class="clearboth"></div>
+                        
+                        <div id="categories-3" class="widget widget_categories">
+                            <h4 class="widgettitle"><span>Categories</span></h4>
+                            <ul>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/development/" title="Development">Development</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/reviews/" title="Reviews">Reviews</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/raves/" title="Raves">Raves</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/reviews/" title="Reviews">Reviews</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/development/" title="Development">Development</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/rants/" title="Rants">Rants</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/work/" title="Work">Work</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/entertainment/" title="Entertainment">Entertainment</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/internet/" title="Internet">Internet</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/news/" title="News">News</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/mac/" title="Mac">Mac</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/software/" title="Software">Software</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/tutorials/" title="Tutorials">Tutorials</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/ppp/" title="Ppp">Ppp</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/local/" title="Local">Local</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/useful/" title="Useful">Useful</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
+                                </li>
+                                
+                      		</ul>
+                        </div>
+                        
+                        <div class="clearboth"></div>
+                        
+                        <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/php-articles/going-deep-inside-php-sessions/" class="bump-view" data-bump-view="tp">Going deep inside PHP sessions</a></div>
+                            </li>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2012/12/php-master-series/" class="bump-view" data-bump-view="tp">PHP Master Series</a></div>
+                            </li>
+                            <li>
+                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2008/04/tagchimp.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2008/05/metax-and-tagchimp/" class="bump-view" data-bump-view="tp">MetaX and tagChimp</a></div>
+                            </li>
+                            <li>
+                                <img src="http://i1.wp.com/www.josephcrawford.com/wp-content/uploads/2009/05/ffusa-featured.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2009/05/first-financial-usa-ffusa/" class="bump-view" data-bump-view="tp">First Financial USA (FFUSA)</a></div>
+                            </li>
+                            <li>
+                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2009/08/WebOS.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2009/08/a-basic-webos-application-and-the-depot/" class="bump-view" data-bump-view="tp">A Basic WebOS Application and the Depot</a></div>
+                            </li>
+                            <li>
+                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2006/11/photo_isight.jpeg?resize=40%2C40" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2006/11/scary-isight-trick/" class="bump-view" data-bump-view="tp">Scary iSight Trick</a></div>
+                            </li>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2010/09/bose-companion-5-and-ubuntu/" class="bump-view" data-bump-view="tp">Bose Companion 5 and Ubuntu (SOLVED)</a></div>
+                            </li>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/about/" class="bump-view" data-bump-view="tp">About</a></div>
+                            </li>
+                            <li>
+                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
+                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/macdev-articles/using-foundations-nslog-function/" class="bump-view" data-bump-view="tp">Using Foundation&#039;s NSLog Function</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="popularwidget-2" class="widget miss_popular_widget">
+                        <h4 class="widgettitle">
+                            <span>Popular Posts</span>
+                        </h4>
+                        <ul class="post_list small_post_list">
+                            <li class="post_list_module">
+                                <div class="post_list_image">
+                                    <a href="http://www.josephcrawford.com/2007/11/phpwomen-a-site-for-women-programming-php/" title="PHPWomen: A site for women programming PHP">
+                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/php_women_2010_large_calendar-p158038689179469171b7aic_400-119x72.jpeg" title="PHPWomen: A site for women programming PHP" alt="Php Women 2010 Large Calendar P158038689179469171b7aic 400" width="119" height="72" />
+                                    </a>
+                                </div>
+                                <div class="post_list_content">
+                                    <p class="post_title">
+                                        <a rel="bookmark" href="http://www.josephcrawford.com/2007/11/phpwomen-a-site-for-women-programming-php/" title="PHPWomen: A site for women programming PHP">PHPWomen: A site for women programming PHP</a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="post_list_module">
+                                <div class="post_list_image">
+                                    <a href="http://www.josephcrawford.com/2009/03/the-new-itunes-hdcp-content/" title="The New iTunes HDCP Content">
+                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/hdcp-featured-119x72.png" title="The New iTunes HDCP Content" alt="Hdcp Featured" width="119" height="72" />
+                                    </a>
+                                </div>
+                                <div class="post_list_content">
+                                    <p class="post_title">
+                                        <a rel="bookmark" href="http://www.josephcrawford.com/2009/03/the-new-itunes-hdcp-content/" title="The New iTunes HDCP Content">The New iTunes HDCP Content</a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="post_list_module">
+                                <div class="post_list_image">
+                                    <a href="http://www.josephcrawford.com/2007/10/customizing-the-leopard-dock/" title="Customizing the Leopard Dock">
+                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/dock-featured-119x72.png" title="Customizing the Leopard Dock" alt="Dock Featured" width="119" height="72" />
+                                    </a>
+                                </div>
+                                <div class="post_list_content">
+                                    <p class="post_title">
+                                        <a rel="bookmark" href="http://www.josephcrawford.com/2007/10/customizing-the-leopard-dock/" title="Customizing the Leopard Dock">Customizing the Leopard Dock</a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="popularwidget-2" class="widget">
+                        <h4 class="widgettitle">
+                            <span>Tag Cloud</span>
+                        </h4>
+                        <a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+
+                        <!-- tagcloud goes here -->
+                    </div>
+                </div><!-- #sidebar_inner -->
+            </div><!-- #sidebar -->
+              
+                <div class="clearboth"></div>
+            </div><!-- #content_inner -->
+        </div><!-- #content -->
+    </div> <!-- .container -->
+    
+    <div id="footer">
+        <div class="background">
+            <div class="background"></div>
+        </div>
+        <div class="container">
+            <div class="sixteen columns">
+                <div class="one_fourth">
+                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
+                        <h4 class="widgettitle">
+                            <span>Sponsors</span>
+                        </h4>
+                        <div class="textwidget">
+                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="three_fourth last"></div>
+                <div class="clearboth"></div>
+            </div>
+        </div>
+    </div><!-- #footer -->
+    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
+    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    jQuery('.single_post_module').preloader({
+        imgSelector: '.blog_index_image_load span img',
+        imgAppend: '.blog_index_image_load'
+    });
+    /* ]]> */
+
+    <!--[if lt IE 10]>
+        <script type="text/javascript">
+          jQuery(".flex - imageLink img ").animate({
+              height ":"
+              386px 
+          },500);
+        </script>
+    <![endif]-->
+    </body>
+</html>

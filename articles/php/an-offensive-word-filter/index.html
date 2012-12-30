@@ -263,9 +263,11 @@
 </code></pre>
 </div>
 
+
 <p>Once we have the ability to load the offensive word list we now need to work on checking whether there are offensive words within a string and a method for censoring them out. In the isOffensive static method we first need to check and see if the word list has been loaded, we simply count how many words are in the class property $_word_list. If there are more than 0 then the list has already been loaded, if not we need to call the load_bad_word_list() method. Once we have the list of words we need to loop over every word and check to see if our string contains any of the offensive words. For this task I am using the strpos php function. A lot of people would have just used the strstr function but for this situation strpos is better. The reason is because strstr will return the word found in the string and strpos just returns a true/false value. strpos takes less processing especially when you just want to know if a value exists or not. Looping over the words if any are found the method will return true otherwise when the looping is over it will return false. Pretty simple eh.</p>
 
 <p>Now for the most complicated part of the entire class….. Believe me it’s really not that bad. We need to create the censor method. This method will actually replace all offensive words in the string. I have opted to use an &lowast; as the blackout character and I have also opted to only show the first and last letter of the offending word. You can choose to do this however you wish. To get the results I wanted I had to use a mixture of substr, strlen and sprintf. To do the actual word replacement I am using eregi_replace which is a regular expression function that is case-insensitive. One thing that I should also mention is that I am passing the string in by reference. You will see the &amp; symbol in the function definition. If you do not know what passing by reference is you should <a href="http://us.php.net/manual/en/language.references.pass.php">read up on passing by reference</a> however I will explain it briefly. Passing a variable by reference is passing the memory location where the variable is stored. Normally when you pass a variable around in php it will create a copy of the variable. Since the string is passed in by reference any operations completed on the string inside the censor method will effect the variable outside of the method. Let me show a small example.</p>
+
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * Passing by reference</span>
@@ -282,12 +284,12 @@
 <span class="k">echo</span> <span class="nv">$a</span><span class="p">;</span>
 <span class="nx">addref</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$a</span><span class="p">;</span>
-
+ 
 <span class="k">function</span> <span class="nf">addref</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$a</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$a</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="p">}</span>
-
+ 
 <span class="k">function</span> <span class="nf">add</span><span class="p">(</span><span class="nv">$a</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$a</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
@@ -295,9 +297,11 @@
 </code></pre>
 </div>
 
+
 <p>Notice that the add function call does not effect the value of $a outside of the add method. However the addref method call does. This is because you are passing $a into addref by reference. When you call the add method call php will create a copy of the $a variable and any operations inside the add function are completed on the copy of the variable.</p>
 
 <p>In the censor method I am also calling the isOffensive method to check and see if the string contains any offensive words. If there are no offensive words there is no point in doing any further processing. Another thing that you might find confusing are all of the references to self:: in the code. Things have to be done like this due to the methods being defined as static. You are probably use to seeing $this rather than self:: but if you are confused I suggest you read up on the <a href="http://us.php.net/manual/en/language.oop5.static.php">PHP 5 static keyword</a>.</p>
+
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
 <span class="sd"> * An Offensive Word Filtering Class</span>
@@ -307,7 +311,7 @@
 <span class="p">{</span>   
     <span class="k">static</span> <span class="k">private</span> <span class="nv">$_word_list</span><span class="p">;</span>
     <span class="k">static</span> <span class="k">private</span> <span class="nv">$_total_words_in_list</span><span class="p">;</span>
-
+ 
     <span class="sd">/**</span>
 <span class="sd">     * Class Constructor</span>
 <span class="sd">     * </span>
@@ -316,9 +320,9 @@
 <span class="sd">     */</span>
     <span class="k">private</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span> <span class="p">)</span>
     <span class="p">{</span>
-
+ 
     <span class="p">}</span>
-
+ 
     <span class="sd">/**</span>
 <span class="sd">     * Load the offensive word list</span>
 <span class="sd">     *</span>
@@ -342,7 +346,7 @@
         <span class="p">}</span>
         <span class="k">else</span> <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
     <span class="p">}</span>
-
+ 
     <span class="sd">/**</span>
 <span class="sd">     * Sort the word list by string length, longest to smallest string. </span>
 <span class="sd">     * This is the user defined callback function for the usort </span>
@@ -356,11 +360,11 @@
     <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span> <span class="nb">strlen</span><span class="p">(</span> <span class="nv">$a</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="nb">strlen</span><span class="p">(</span> <span class="nv">$b</span> <span class="p">)</span> <span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
         <span class="k">if</span><span class="p">(</span> <span class="nb">strlen</span><span class="p">(</span> <span class="nv">$a</span> <span class="p">)</span> <span class="o">&gt;</span> <span class="nb">strlen</span><span class="p">(</span> <span class="nv">$b</span> <span class="p">)</span> <span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-
+ 
         <span class="c1">// they must be the same length</span>
         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">}</span>
-
+ 
     <span class="sd">/**</span>
 <span class="sd">     * Check to see if there are offensive words in the string</span>
 <span class="sd">     *</span>
@@ -371,17 +375,17 @@
     <span class="p">{</span>
         <span class="k">if</span><span class="p">(</span> <span class="nb">count</span><span class="p">(</span> <span class="nx">self</span><span class="o">::</span><span class="nv">$_word_list</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> 
             <span class="nx">self</span><span class="o">::</span><span class="na">load_bad_word_list</span><span class="p">(</span> <span class="p">);</span>
-
+            
         <span class="nv">$total_words</span> <span class="o">=</span> <span class="nx">self</span><span class="o">::</span><span class="nv">$_total_words_in_list</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
         <span class="k">for</span><span class="p">(</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="nv">$total_words</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span> <span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span><span class="p">(</span><span class="nb">stripos</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="nx">self</span><span class="o">::</span><span class="nv">$_word_list</span><span class="p">[</span><span class="nv">$i</span><span class="p">]))</span>
                 <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
         <span class="p">}</span>
-
+        
         <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
     <span class="p">}</span>
-
+ 
     <span class="sd">/**</span>
 <span class="sd">     * Actually censor out the offensive words from the string.</span>
 <span class="sd">     *</span>
@@ -412,13 +416,14 @@
         <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-
+ 
 <span class="nv">$string</span> <span class="o">=</span> <span class="s1">&#39;Some crappy words are in this crap.&#39;</span><span class="p">;</span>
 <span class="nx">OffensiveWord</span><span class="o">::</span><span class="na">censor</span><span class="p">(</span> <span class="nv">$string</span> <span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$string</span><span class="p">;</span>
 <span class="c1">// outputs: Some c****y words are in this c**p</span>
 </code></pre>
 </div>
+
 
 <p>If you have any questions about this article please feel free to contact me. If there is a topic you would like explained, drop me a line and I will try to get an article posted to better explain it for you.</p>
 
@@ -464,14 +469,6 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/development/" title="Development">Development</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/mac/" title="Mac">Mac</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/raves/" title="Raves">Raves</a>
                                 </li>
                                 
@@ -480,7 +477,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/software/" title="Software">Software</a>
+                                    <a href="/category/development/" title="Development">Development</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -488,7 +485,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/uncategorized/" title="Uncategorized">Uncategorized</a>
+                                    <a href="/category/work/" title="Work">Work</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -496,7 +493,7 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/local/" title="Local">Local</a>
+                                    <a href="/category/internet/" title="Internet">Internet</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -504,15 +501,11 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/work/" title="Work">Work</a>
+                                    <a href="/category/mac/" title="Mac">Mac</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/internet/" title="Internet">Internet</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/jokes/" title="Jokes">Jokes</a>
+                                    <a href="/category/software/" title="Software">Software</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -520,23 +513,23 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/tv/" title="Tv">Tv</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/ppp/" title="Ppp">Ppp</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
+                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/local/" title="Local">Local</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
                                     <a href="/category/useful/" title="Useful">Useful</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
                                 </li>
                                 
                       		</ul>
@@ -544,16 +537,6 @@
                         
                         <div class="clearboth"></div>
                         
-                        <div id="recent-posts-3" class="widget widget_recent_entries">
-                            <h4 class="widgettitle"><span>Recent Posts</span></h4>
-                            <ul>
-                                <li><a href="http://www.josephcrawford.com/2012/12/test/" title="Test">Test</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/12/php-master-series/" title="PHP Master Series">PHP Master Series</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/11/a-new-look/" title="A New Look">A New Look</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-timing/" title="Review: Timing">Review: Timing</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-markdown-pro/" title="Review: Markdown Pro">Review: Markdown Pro</a></li>
-                            </ul>
-                        </div>
                         <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
                             <li>
                                 <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
@@ -640,45 +623,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <span style='font-size: 75%'><a href='/tags/php/'>php</a></span>
-<span style='font-size: 75%'><a href='/tags/server-side/'>server-side</a></span>
-<span style='font-size: 75%'><a href='/tags/best-practices/'>best-practices</a></span>
-<span style='font-size: 75%'><a href='/tags/ide/'>ide</a></span>
-<span style='font-size: 75%'><a href='/tags/software/'>software</a></span>
-<span style='font-size: 174%'><a href='/tags/development/'>Development</a></span>
-<span style='font-size: 194%'><a href='/tags/mac/'>Mac</a></span>
-<span style='font-size: 280%'><a href='/tags/raves/'>Raves</a></span>
-<span style='font-size: 279%'><a href='/tags/reviews/'>Reviews</a></span>
-<span style='font-size: 128%'><a href='/tags/software/'>Software</a></span>
-<span style='font-size: 203%'><a href='/tags/rants/'>Rants</a></span>
-<span style='font-size: 75%'><a href='/tags/uncategorized/'>Uncategorized</a></span>
-<span style='font-size: 280%'><a href='/tags/entertainment/'>Entertainment</a></span>
-<span style='font-size: 150%'><a href='/tags/local/'>Local</a></span>
-<span style='font-size: 280%'><a href='/tags/news/'>News</a></span>
-<span style='font-size: 75%'><a href='/tags/work/'>Work</a></span>
-<span style='font-size: 280%'><a href='/tags/internet/'>Internet</a></span>
-<span style='font-size: 75%'><a href='/tags/jokes/'>Jokes</a></span>
-<span style='font-size: 100%'><a href='/tags/tutorials/'>Tutorials</a></span>
-<span style='font-size: 224%'><a href='/tags/websites/'>Websites</a></span>
-<span style='font-size: 75%'><a href='/tags/tv/'>TV</a></span>
-<span style='font-size: 75%'><a href='/tags/ppp/'>PPP</a></span>
-<span style='font-size: 75%'><a href='/tags/javascript/'>JavaScript</a></span>
-<span style='font-size: 75%'><a href='/tags/php/'>PHP</a></span>
-<span style='font-size: 113%'><a href='/tags/useful/'>Useful</a></span>
-<span style='font-size: 75%'><a href='/tags/frameworks/'>Frameworks</a></span>
-<span style='font-size: 75%'><a href='/tags/family/'>Family</a></span>
-<span style='font-size: 75%'><a href='/tags/tmc/'>TMC</a></span>
-<span style='font-size: 75%'><a href='/tags/macdev/'>MacDev</a></span>
-<span style='font-size: 75%'><a href='/tags/scams/'>Scams</a></span>
-<span style='font-size: 75%'><a href='/tags/palm/'>Palm</a></span>
-<span style='font-size: 75%'><a href='/tags/css/'>CSS</a></span>
-<span style='font-size: 75%'><a href='/tags/political/'>Political</a></span>
-<span style='font-size: 75%'><a href='/tags/recruiters/'>Recruiters</a></span>
-<span style='font-size: 75%'><a href='/tags/hardware/'>Hardware</a></span>
-<span style='font-size: 75%'><a href='/tags/phones/'>Phones</a></span>
-<span style='font-size: 75%'><a href='/tags/nokia/'>Nokia</a></span>
-<span style='font-size: 75%'><a href='/tags/markdown/'>Markdown</a></span>
-<span style='font-size: 75%'><a href='/tags/productivity/'>Productivity</a></span>
+                        <a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
 
                         <!-- tagcloud goes here -->
                     </div>

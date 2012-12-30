@@ -228,25 +228,25 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>Many people seem to be irritated by the new Leopard dock.  I myself was a bit upset with the new indicator icon change.  They used to have black triangles that would allow you to know what applications were open at a quick glance.  Now they have changed that indicator to a light blue orb which is kinda hard to see.  I found a method on changing the indicators back at a website.  I tested it and it worked however the indicator icons were not the proper dimensions as they looked stretched.<br>
+                                        <p>Many people seem to be irritated by the new Leopard dock.  I myself was a bit upset with the new indicator icon change.  They used to have black triangles that would allow you to know what applications were open at a quick glance.  Now they have changed that indicator to a light blue orb which is kinda hard to see.  I found a method on changing the indicators back at a website.  I tested it and it worked however the indicator icons were not the proper dimensions as they looked stretched.<br/>
 I then found another site which had a much better set of indicators which will be used here.</p>
 
 <p>Below are the steps which you need to complete in order to change your indicator icons.</p>
 
-<p>&lt;!--more--&gt;1.) Download the <a href="http://www.josephcrawford.com/wp-content/uploads/2007/10/indicators.zip" title="Dock Indicators">Dock Indicators</a><br>
+<p>  <!--more-->1.) Download the <a href="http://www.josephcrawford.com/wp-content/uploads/2007/10/indicators.zip" title="Dock Indicators">Dock Indicators</a><br/>
 2.) Unzip them to your desktop.</p>
 
 <p>3.) open Terminal.app and issue the following command                    _ cd /System/Library/CoreServices/Dock.app/Content/Resources/_</p>
 
 <p>4.) Now that you are in that directory you need to rename the current dock indicators for a backup                    _ sudo mv indicator_small.png original_indicator_small.png                     sudo mv indicator_medium.png original_indicator_medium.png                     sudo mv indicator_large.png original_indicator_large.png_</p>
 
-<p>5.) With the backups made it is time to copy over the indicators that you downloaded.                    _ sudo cp -rf /Users         /Desktop/indicators/indicator_* /System/Library/CoreServices/Dock.app/Content/Resources/_</p>
+<p>5.) With the backups made it is time to copy over the indicators that you downloaded.                    _ sudo cp -rf /Users         /Desktop/indicators/indicator<em>* /System/Library/CoreServices/Dock.app/Content/Resources/</em></p>
 
 <p>6.) The final step is to restart the dock with the following command                     killall Dock</p>
 
 <p>After you have completed the above steps you will be able to have that lovely black triangle back as the dock indicator.</p>
 
-<p>People have also figured out that you can change the color of the dock as well.  You do this in the same manner as you did above for the dock indicator, the only difference is that you are dealing with different images.  The images you want to be concerned with are the scurve_x.png images in the /Content/Resources/ directory along with the indicator images.  Make sure you back up the original images before you do anything.  You can download the modified <a href="http://www.josephcrawford.com/wp-content/uploads/2007/10/dock.zip" title="Dock Images">Dock Images</a> and save them to your desktop.  I have included both the black and orange colors, you just need to rename them to scurve_x.png where x is the size sm, m, l, xl.  Once you put the proper images in place do not forget to do the killall Dock command to restart the dock.  Now I did notice that these images will only work if your dock is on the bottom of your screen, they will not work for the right or left sides.  I do imagine it is just another image switch like these though.  Above is a picture of my current Dock.  While the initial setup of this is a bit technical I for see some smart developer writing a small application which will allow you to do this in a very easy method.  The only question that lies is why did Apple not make the ability to accomplish this rather than allowing some 3rd party to do it?  </p>
+<p>People have also figured out that you can change the color of the dock as well.  You do this in the same manner as you did above for the dock indicator, the only difference is that you are dealing with different images.  The images you want to be concerned with are the scurve_x.png images in the /Content/Resources/ directory along with the indicator images.  Make sure you back up the original images before you do anything.  You can download the modified <a href="http://www.josephcrawford.com/wp-content/uploads/2007/10/dock.zip" title="Dock Images">Dock Images</a> and save them to your desktop.  I have included both the black and orange colors, you just need to rename them to scurve_x.png where x is the size sm, m, l, xl.  Once you put the proper images in place do not forget to do the killall Dock command to restart the dock.  Now I did notice that these images will only work if your dock is on the bottom of your screen, they will not work for the right or left sides.  I do imagine it is just another image switch like these though.  Above is a picture of my current Dock.  While the initial setup of this is a bit technical I for see some smart developer writing a small application which will allow you to do this in a very easy method.  The only question that lies is why did Apple not make the ability to accomplish this rather than allowing some 3rd party to do it?</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -372,13 +372,13 @@ I then found another site which had a much better set of indicators which will b
                                         <div class="one_fourth">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2009/03/review-inspectorkit-10-released" title="Review: InspectorKit 1.0 Released">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: InspectorKit 1.0 Released" alt="Review: InspectorKit 1.0 Released" width="153" height="75">
+                                                    <a href="/2008/02/more-leopard-docks" title="More Leopard Docks">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="More Leopard Docks" alt="More Leopard Docks" width="153" height="75">
                                                     </a>
                                                 </div>
                                                 <div class="post_grid_content">
                                                     <p class="post_title">
-                                                        <a href="/2009/03/review-inspectorkit-10-released" title="Review: InspectorKit 1.0 Released" rel="bookmark">Review: InspectorKit 1.0 Released</a>
+                                                        <a href="/2008/02/more-leopard-docks" title="More Leopard Docks" rel="bookmark">More Leopard Docks</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -387,13 +387,13 @@ I then found another site which had a much better set of indicators which will b
                                         <div class="one_fourth">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2008/05/review-securityspy" title="Review: SecuritySpy">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="Review: SecuritySpy" alt="Review: SecuritySpy" width="153" height="75">
+                                                    <a href="/2008/01/more-quick-look-plug-ins-for-leopard" title="More Quick Look Plug-ins For Leopard">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="More Quick Look Plug-ins For Leopard" alt="More Quick Look Plug-ins For Leopard" width="153" height="75">
                                                     </a>
                                                 </div>
                                                 <div class="post_grid_content">
                                                     <p class="post_title">
-                                                        <a href="/2008/05/review-securityspy" title="Review: SecuritySpy" rel="bookmark">Review: SecuritySpy</a>
+                                                        <a href="/2008/01/more-quick-look-plug-ins-for-leopard" title="More Quick Look Plug-ins For Leopard" rel="bookmark">More Quick Look Plug-ins For Leopard</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -402,13 +402,13 @@ I then found another site which had a much better set of indicators which will b
                                         <div class="one_fourth last">
                                             <div class="post_grid_module">
                                                 <div class="post_grid_image">
-                                                    <a href="/2008/02/more-leopard-docks" title="More Leopard Docks">
-                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="More Leopard Docks" alt="More Leopard Docks" width="153" height="75">
+                                                    <a href="/2007/12/os-x-vs-ubuntu-compiz-fusion" title="OS X vs Ubuntu + Compiz-Fusion">
+                                                        <img class="hover_fade_js" src="/images/posts/featured/thumbs/" title="OS X vs Ubuntu + Compiz-Fusion" alt="OS X vs Ubuntu + Compiz-Fusion" width="153" height="75">
                                                     </a>
                                                 </div>
                                                 <div class="post_grid_content">
                                                     <p class="post_title">
-                                                        <a href="/2008/02/more-leopard-docks" title="More Leopard Docks" rel="bookmark">More Leopard Docks</a>
+                                                        <a href="/2007/12/os-x-vs-ubuntu-compiz-fusion" title="OS X vs Ubuntu + Compiz-Fusion" rel="bookmark">OS X vs Ubuntu + Compiz-Fusion</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -460,14 +460,6 @@ I then found another site which had a much better set of indicators which will b
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/development/" title="Development">Development</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/mac/" title="Mac">Mac</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/raves/" title="Raves">Raves</a>
                                 </li>
                                 
@@ -476,7 +468,7 @@ I then found another site which had a much better set of indicators which will b
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/software/" title="Software">Software</a>
+                                    <a href="/category/development/" title="Development">Development</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -484,7 +476,7 @@ I then found another site which had a much better set of indicators which will b
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/uncategorized/" title="Uncategorized">Uncategorized</a>
+                                    <a href="/category/work/" title="Work">Work</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -492,7 +484,7 @@ I then found another site which had a much better set of indicators which will b
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/local/" title="Local">Local</a>
+                                    <a href="/category/internet/" title="Internet">Internet</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -500,15 +492,11 @@ I then found another site which had a much better set of indicators which will b
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/work/" title="Work">Work</a>
+                                    <a href="/category/mac/" title="Mac">Mac</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/internet/" title="Internet">Internet</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/jokes/" title="Jokes">Jokes</a>
+                                    <a href="/category/software/" title="Software">Software</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -516,23 +504,23 @@ I then found another site which had a much better set of indicators which will b
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/tv/" title="Tv">Tv</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/ppp/" title="Ppp">Ppp</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
+                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/local/" title="Local">Local</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
                                     <a href="/category/useful/" title="Useful">Useful</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
+                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
                                 </li>
                                 
                       		</ul>
@@ -540,16 +528,6 @@ I then found another site which had a much better set of indicators which will b
                         
                         <div class="clearboth"></div>
                         
-                        <div id="recent-posts-3" class="widget widget_recent_entries">
-                            <h4 class="widgettitle"><span>Recent Posts</span></h4>
-                            <ul>
-                                <li><a href="http://www.josephcrawford.com/2012/12/test/" title="Test">Test</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/12/php-master-series/" title="PHP Master Series">PHP Master Series</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/11/a-new-look/" title="A New Look">A New Look</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-timing/" title="Review: Timing">Review: Timing</a></li>
-                                <li><a href="http://www.josephcrawford.com/2012/10/review-markdown-pro/" title="Review: Markdown Pro">Review: Markdown Pro</a></li>
-                            </ul>
-                        </div>
                         <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
                             <li>
                                 <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
@@ -636,45 +614,35 @@ I then found another site which had a much better set of indicators which will b
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <span style='font-size: 75%'><a href='/tags/php/'>php</a></span>
-<span style='font-size: 75%'><a href='/tags/server-side/'>server-side</a></span>
-<span style='font-size: 75%'><a href='/tags/best-practices/'>best-practices</a></span>
-<span style='font-size: 75%'><a href='/tags/ide/'>ide</a></span>
-<span style='font-size: 75%'><a href='/tags/software/'>software</a></span>
-<span style='font-size: 174%'><a href='/tags/development/'>Development</a></span>
-<span style='font-size: 194%'><a href='/tags/mac/'>Mac</a></span>
-<span style='font-size: 280%'><a href='/tags/raves/'>Raves</a></span>
-<span style='font-size: 279%'><a href='/tags/reviews/'>Reviews</a></span>
-<span style='font-size: 128%'><a href='/tags/software/'>Software</a></span>
-<span style='font-size: 203%'><a href='/tags/rants/'>Rants</a></span>
-<span style='font-size: 75%'><a href='/tags/uncategorized/'>Uncategorized</a></span>
-<span style='font-size: 280%'><a href='/tags/entertainment/'>Entertainment</a></span>
-<span style='font-size: 150%'><a href='/tags/local/'>Local</a></span>
-<span style='font-size: 280%'><a href='/tags/news/'>News</a></span>
-<span style='font-size: 75%'><a href='/tags/work/'>Work</a></span>
-<span style='font-size: 280%'><a href='/tags/internet/'>Internet</a></span>
-<span style='font-size: 75%'><a href='/tags/jokes/'>Jokes</a></span>
-<span style='font-size: 100%'><a href='/tags/tutorials/'>Tutorials</a></span>
-<span style='font-size: 224%'><a href='/tags/websites/'>Websites</a></span>
-<span style='font-size: 75%'><a href='/tags/tv/'>TV</a></span>
-<span style='font-size: 75%'><a href='/tags/ppp/'>PPP</a></span>
-<span style='font-size: 75%'><a href='/tags/javascript/'>JavaScript</a></span>
-<span style='font-size: 75%'><a href='/tags/php/'>PHP</a></span>
-<span style='font-size: 113%'><a href='/tags/useful/'>Useful</a></span>
-<span style='font-size: 75%'><a href='/tags/frameworks/'>Frameworks</a></span>
-<span style='font-size: 75%'><a href='/tags/family/'>Family</a></span>
-<span style='font-size: 75%'><a href='/tags/tmc/'>TMC</a></span>
-<span style='font-size: 75%'><a href='/tags/macdev/'>MacDev</a></span>
-<span style='font-size: 75%'><a href='/tags/scams/'>Scams</a></span>
-<span style='font-size: 75%'><a href='/tags/palm/'>Palm</a></span>
-<span style='font-size: 75%'><a href='/tags/css/'>CSS</a></span>
-<span style='font-size: 75%'><a href='/tags/political/'>Political</a></span>
-<span style='font-size: 75%'><a href='/tags/recruiters/'>Recruiters</a></span>
-<span style='font-size: 75%'><a href='/tags/hardware/'>Hardware</a></span>
-<span style='font-size: 75%'><a href='/tags/phones/'>Phones</a></span>
-<span style='font-size: 75%'><a href='/tags/nokia/'>Nokia</a></span>
-<span style='font-size: 75%'><a href='/tags/markdown/'>Markdown</a></span>
-<span style='font-size: 75%'><a href='/tags/productivity/'>Productivity</a></span>
+                        <a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
 
                         <!-- tagcloud goes here -->
                     </div>
