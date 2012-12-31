@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Beginning Photography</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -228,7 +240,7 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>Before I begin telling the following story I must inform all of my readers that until recently I was not fully aware of this entire story.  It was not until recently that I had a discussion with my mother which enlightened me to the full story.When I was young my father had bought my mother a used 35mm camera with a few lenses.  I am not 100% sure of the brand but I think it was a Minolta.  The camera was 100% manual as this was before the automatic modes we have today were invented.  She was playing with her camera and tried to attend some photo journalism courses.  However when I was 5 years old my mother and father separated and my mother soon found that she could not afford to support me as well as pay for her course books and classes.  She played with the camera on her own time to learn the settings and how to take some decent shots.  When I was 14 I saw a photograph that she had taken which intrigued me.  It was a simple shot of a highway at night which did not have any cars on it.  Rather it was just streaks of red and white lights bending around the corners following the lanes.  I am not sure what it was about the photo that struck my interest but it did to the point that I had to ask my mother if I could use her camera.  At the age of 14 I somehow thought using this nice (what seemed professional to me at the time) camera I would also get some amazing shots.  I have to tell you I could not have been more wrong.<!--more-->I took the camera to school one day and was snapping some shots around school.  I quickly filled up the roll of film and took it to get developed.  I was shocked because not a single shot I took actually came out with any clarity, everything was out of focus or blurry from camera shake.  A teacher at the school named Gary Baker was always toting his camera gear around with him.  It did not take me long to find out that he was not only a teacher at the school but a photographer for the local newspaper (<a href="http://www.manchesterjournal.com/">The Manchester Journal</a>).  Looking at the photos today it appears he is still working for them.  Mr. Baker told me that anytime I wanted film just ask him and he would provide me with all of the black &amp; white film I could use.  At first I was not inclined to take the black and white film but the more I thought about it how could I turn down free film of any kind?  Mr. Baker was also going to use the schools dark room to develop my shots for me all for free.  I understand now that he was attempting to really get me interested in taking pictures.  I played with the camera for a few weeks taking pictures but at that time I was 14 and did not have that large of an attention span.  I ended up giving the camera back to my mother and going on to be a 14 year old.When I was about 20 my father took me on a trip to Florida and because I was not yet 21 the only place I could gamble was on a Casino Cruise which took us out to international waters.  I played with the $1000 that he gave me for a while and about 3/4 of the way through the night I still had $800 in my pocket.  I went and sat next to my father at the Black Jack table.  It was not long before he looked at me and asked are you out of money.  I replied by telling him no, I just didn't want to lose all of it because I wanted to buy a digital camera the next day.  He told me he gave me the money to have fun with, go enjoy it and he would buy me the camera the next day.  I did as instructed and had a great night.  The next morning I was so excited to go down to the camera shop and see what they had for Digital cameras.  I knew they would be expensive because they had just started coming out and the high-end consumer models were only at 2.1 MP.  I ended up getting an Epson 2.1MP camera (which i cannot find on the internet anywhere) which had a small optical zoom where the lens went in and out through the built in lens hood.  The camera was being sold for $800 and I was in love with it (you have to remember this was in 2000).  I bought it and used it for snapping shots for about 5 years.  In 2005 I finally splurged for a real Digital SLR camera and got a Canon EOS 20D kit from <a href="http://www.cameta.com/">Cameta Camera</a>.  What exactly drew my attention to this particular camera shop being that I lived in VT?  Solely the fact that they are based in Amityville NY.  If you are not sure where that is take a look on <a href="http://en.wikipedia.org/wiki/The_Amityville_Horror">Wikipedia</a>.  This was a movie that I had watched when I was younger and who ever said good things don't come out of bad things?  Cameta made a sale just because I noticed they were from Amityville :)I used this camera for about 2 years and had about 3 lenses and the Canon 580EX speed-light.  In the end the camera ended up getting stolen by an ex-girlfriend of mine so I was left without a camera for the longest time.  I went back to using a point and click camera because when I had the 20D I never really took it out of automatic mode.  I got some great shots with the camera and loved it.  When I was recently in the market for another camera I knew I had to continue with Canon so I went to <a href="http://www.huntsphotoandvideo.com/">Hunts Photo &amp; Video</a> in Melrose, MA and bought the Canon EOS 60D with the 18-135mm lens.  I used it for about a week and then I went back to the store and had to buy more goodies.  I got a tripod, cleaning kit, blow bulb for cleaning the camera sensor.  Last week my fiance Claire said she wanted to buy me a nice lens that would be both my Valentines Day and Birthday gift.  I first bought the Tamron 70-300mm lens and found that I did not like how it felt like a toy based on the plastics they used to construct the lens.  Since it was a $450 lens and the other one I was looking at was $699 I ended up returning the Tamron and getting the Canon 70-200 f/4 L USM lens.  I did not get the IS version because I could barely justify spending $700 on a single lens never-mind almost $1500 for the one that has the image stabilizer.  I figure I will be using this lens while it is on the tripod most of the time anyway.Over the last few weeks I have really been hitting the books and Internet very hard learning everything I can about photography.  It has been absorbing almost 98% of my free time outside of work.  I figure if I start to learn photography now by the time I am set to retire I should be a professional.  With this in mind I could use photography which is something that has always interested me and intrigued me to make some extra money when in retirement.  What I have found however is that I will need to find a way for my new hobby to pay for itself at the bare minimum.  I would love to have one of those very nice f/2.8 lenses and even a lens that will zoom to 400-600mm but I cannot afford those without finding a way to make money first.Over the next year you can expect to see the website make a change in direction (and hopefully design too).  I will stop writing so much about random stuff and focus more on photography.  Will I continue to post reviews and other technology related stuff?  I probably will however I am not going to guarantee that because after 13 years of programming it's no longer fun to do outside of work.  Sometimes I wonder why I took my passion and turned it into a career...</p>
+                                        <p>Before I begin telling the following story I must inform all of my readers that until recently I was not fully aware of this entire story.  It was not until recently that I had a discussion with my mother which enlightened me to the full story.When I was young my father had bought my mother a used 35mm camera with a few lenses.  I am not 100% sure of the brand but I think it was a Minolta.  The camera was 100% manual as this was before the automatic modes we have today were invented.  She was playing with her camera and tried to attend some photo journalism courses.  However when I was 5 years old my mother and father separated and my mother soon found that she could not afford to support me as well as pay for her course books and classes.  She played with the camera on her own time to learn the settings and how to take some decent shots.  When I was 14 I saw a photograph that she had taken which intrigued me.  It was a simple shot of a highway at night which did not have any cars on it.  Rather it was just streaks of red and white lights bending around the corners following the lanes.  I am not sure what it was about the photo that struck my interest but it did to the point that I had to ask my mother if I could use her camera.  At the age of 14 I somehow thought using this nice (what seemed professional to me at the time) camera I would also get some amazing shots.  I have to tell you I could not have been more wrong.&lt;!--more--&gt;I took the camera to school one day and was snapping some shots around school.  I quickly filled up the roll of film and took it to get developed.  I was shocked because not a single shot I took actually came out with any clarity, everything was out of focus or blurry from camera shake.  A teacher at the school named Gary Baker was always toting his camera gear around with him.  It did not take me long to find out that he was not only a teacher at the school but a photographer for the local newspaper (<a href="http://www.manchesterjournal.com/">The Manchester Journal</a>).  Looking at the photos today it appears he is still working for them.  Mr. Baker told me that anytime I wanted film just ask him and he would provide me with all of the black &amp; white film I could use.  At first I was not inclined to take the black and white film but the more I thought about it how could I turn down free film of any kind?  Mr. Baker was also going to use the schools dark room to develop my shots for me all for free.  I understand now that he was attempting to really get me interested in taking pictures.  I played with the camera for a few weeks taking pictures but at that time I was 14 and did not have that large of an attention span.  I ended up giving the camera back to my mother and going on to be a 14 year old.When I was about 20 my father took me on a trip to Florida and because I was not yet 21 the only place I could gamble was on a Casino Cruise which took us out to international waters.  I played with the $1000 that he gave me for a while and about 3/4 of the way through the night I still had $800 in my pocket.  I went and sat next to my father at the Black Jack table.  It was not long before he looked at me and asked are you out of money.  I replied by telling him no, I just didn&#39;t want to lose all of it because I wanted to buy a digital camera the next day.  He told me he gave me the money to have fun with, go enjoy it and he would buy me the camera the next day.  I did as instructed and had a great night.  The next morning I was so excited to go down to the camera shop and see what they had for Digital cameras.  I knew they would be expensive because they had just started coming out and the high-end consumer models were only at 2.1 MP.  I ended up getting an Epson 2.1MP camera (which i cannot find on the internet anywhere) which had a small optical zoom where the lens went in and out through the built in lens hood.  The camera was being sold for $800 and I was in love with it (you have to remember this was in 2000).  I bought it and used it for snapping shots for about 5 years.  In 2005 I finally splurged for a real Digital SLR camera and got a Canon EOS 20D kit from <a href="http://www.cameta.com/">Cameta Camera</a>.  What exactly drew my attention to this particular camera shop being that I lived in VT?  Solely the fact that they are based in Amityville NY.  If you are not sure where that is take a look on <a href="http://en.wikipedia.org/wiki/The_Amityville_Horror">Wikipedia</a>.  This was a movie that I had watched when I was younger and who ever said good things don&#39;t come out of bad things?  Cameta made a sale just because I noticed they were from Amityville :)I used this camera for about 2 years and had about 3 lenses and the Canon 580EX speed-light.  In the end the camera ended up getting stolen by an ex-girlfriend of mine so I was left without a camera for the longest time.  I went back to using a point and click camera because when I had the 20D I never really took it out of automatic mode.  I got some great shots with the camera and loved it.  When I was recently in the market for another camera I knew I had to continue with Canon so I went to <a href="http://www.huntsphotoandvideo.com/">Hunts Photo &amp; Video</a> in Melrose, MA and bought the Canon EOS 60D with the 18-135mm lens.  I used it for about a week and then I went back to the store and had to buy more goodies.  I got a tripod, cleaning kit, blow bulb for cleaning the camera sensor.  Last week my fiance Claire said she wanted to buy me a nice lens that would be both my Valentines Day and Birthday gift.  I first bought the Tamron 70-300mm lens and found that I did not like how it felt like a toy based on the plastics they used to construct the lens.  Since it was a $450 lens and the other one I was looking at was $699 I ended up returning the Tamron and getting the Canon 70-200 f/4 L USM lens.  I did not get the IS version because I could barely justify spending $700 on a single lens never-mind almost $1500 for the one that has the image stabilizer.  I figure I will be using this lens while it is on the tripod most of the time anyway.Over the last few weeks I have really been hitting the books and Internet very hard learning everything I can about photography.  It has been absorbing almost 98% of my free time outside of work.  I figure if I start to learn photography now by the time I am set to retire I should be a professional.  With this in mind I could use photography which is something that has always interested me and intrigued me to make some extra money when in retirement.  What I have found however is that I will need to find a way for my new hobby to pay for itself at the bare minimum.  I would love to have one of those very nice f/2.8 lenses and even a lens that will zoom to 400-600mm but I cannot afford those without finding a way to make money first.Over the next year you can expect to see the website make a change in direction (and hopefully design too).  I will stop writing so much about random stuff and focus more on photography.  Will I continue to post reviews and other technology related stuff?  I probably will however I am not going to guarantee that because after 13 years of programming it&#39;s no longer fun to do outside of work.  Sometimes I wonder why I took my passion and turned it into a career...</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -596,35 +608,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+                        <a style='font-size: 271%' href='/tags/Raves'>Raves</a>
 <a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
 <a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
 <a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -637,44 +649,100 @@
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>

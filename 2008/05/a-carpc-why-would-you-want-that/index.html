@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>A CarPC, Why would you want that?</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -228,10 +240,10 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>Since late 2000 I have been thinking of building a CarPuter (as they are called) however the costs were expensive.  I needed to take the time to plan out how I would install the system, modify the vehicle as needed, etc.  It was just more than I wanted to take on financially and time wise.  Now however I am thinking about integrating one into a car I plan to buy within the next few months.</p>
+                                        <p>Since late 2000 I have been thinking of building a CarPuter (as they are called) however the costs were expensive.  I needed to take the time to plan out how I would install the system, modify the vehicle as needed, etc.  It was just more than I wanted to take on financially and time wise.  Now however I am thinking about integrating one into a car I plan to buy within the next few months. </p>
 
 <p>You might be wondering why in the world anyone would want to put a computer in their car..  There are many reasons, below are just a few.
-[styled_list style="arrow_list" variation="green"]- Music
+[styled_list style=&quot;arrow_list&quot; variation=&quot;green&quot;]- Music
 - Movies
 - Gaming
 - GPS Integration
@@ -244,23 +256,23 @@ Just so there is no confusion I am not the first person to do this.  Many people
 <p>The main interests for me to integrate this would be so that I could have all my music at my fingertips, be able to buy songs from the iTunes Music Store wherever there is a WiFi connection.  I would also be able to throw on a movie for the kids in the back seat while on a long road trip.  The only thing I would like to figure out is how to throw a movie on the rear displays while still being able to control the system from the front display.  It would be very nice if I could have the option of only having audio while playing movies go through headphone jacks so that we could still enjoy music through the car audio system.</p>
 
 <p>The following are the features I want to get out of my CarPuter
-[styled_list style="arrow_list" variation="green"]    - Music  <br/>
-- Movies  <br/>
-- Wireless Internet  <br/>
-- GPS Navigation  <br/>
-- Satellite Radio  <br/>
-- Regular FM / AM Radio  <br/>
-- Remotely Start the car (not sure how to do this yet)  <br/>
-- Automatic Climate Control (hvac)  <br/>
-- Back-up Camera  <br/>
-- Back-up Sensors (beeps when close to something)  <br/>
-- Automatic headlight switching from hi/low beams with on-coming traffic  <br/>
-- Skype Integration (have yet to look into this but seems possible)  <br/>
+[styled_list style=&quot;arrow_list&quot; variation=&quot;green&quot;]    - Music<br>
+- Movies<br>
+- Wireless Internet<br>
+- GPS Navigation<br>
+- Satellite Radio<br>
+- Regular FM / AM Radio<br>
+- Remotely Start the car (not sure how to do this yet)<br>
+- Automatic Climate Control (hvac)<br>
+- Back-up Camera<br>
+- Back-up Sensors (beeps when close to something)<br>
+- Automatic headlight switching from hi/low beams with on-coming traffic<br>
+- Skype Integration (have yet to look into this but seems possible)<br>
 - Anything else I find interesting....
 [/styled_list]
 I am sure that the installation of this system will take some time and I plan to document it with pictures.  When I do this I will probably create a page on this site that will outline everything I have done with photographs for every step (that will be the most time consuming).  I have been investigating the products that I will need to buy in order to make this a reality.  I plan to spend no more than $4,000 on the parts that will be necessary to install this system.  Below is a list of parts that I know I will need.
-[styled_list style="arrow_list" variation="green"]- Mac Mini
-- <a href="https://www.xenarcdirect.com/product.php?productid=16136&amp;cat=249&amp;page=1">Xenarc 7" LCD Display</a>
+[styled_list style=&quot;arrow_list&quot; variation=&quot;green&quot;]- Mac Mini
+- <a href="https://www.xenarcdirect.com/product.php?productid=16136&amp;cat=249&amp;page=1">Xenarc 7&quot; LCD Display</a>
 - Screens for the headrests for the backseat passengers.
 - <a href="http://www.usglobalsat.com/p-214-bt-359c.aspx">GlobalSat BT-359 GPS Receiver</a>
 - <a href="http://www.carnetix.com/CNXP1900.htm">CNX P-1900 DC-DC Power Regulator</a> (Power Supply for computer)
@@ -273,7 +285,7 @@ I am sure that the installation of this system will take some time and I plan to
 [/styled_list]
 I am sure that there are other products that I will be required to buy including cables, fuses, switches, sensors, etc.  There will probably also be other products that I will need to buy to incorporate more features that I wish to have.  For now though I am going with a pretty basic setup so that I can get the GPS Navigation which is my main priority.  Once I get the CarPuter installed the way I want it and running properly I will integrate things like the Fusion Brain to add more capabilities.  I like the fact that I could have my car in the driveway and be able to SSH into my car and control it.  I also like the fact that I could throw songs at my car from inside my home.  I could also integrate a backup solution for my CarPuter that would backup the entire system to a backup drive at my house every night at a certain time.  You can do anything on the CarPuter that you could do on your home computer.  Check your e-mail, browse the internet, make calls through Skype, I could even work from my car if I wanted to.</p>
 
-<p>If you have integrated a CarPuter or just want to throw any resources my way such as articles, how-to's etc.  Please feel free to discuss it in the comments.</p>
+<p>If you have integrated a CarPuter or just want to throw any resources my way such as articles, how-to&#39;s etc.  Please feel free to discuss it in the comments.</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -641,35 +653,35 @@ I am sure that there are other products that I will be required to buy including
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+                        <a style='font-size: 92%' href='/tags/Phones'>Phones</a>
 <a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
 <a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
 <a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -682,44 +694,100 @@ I am sure that there are other products that I will be required to buy including
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>

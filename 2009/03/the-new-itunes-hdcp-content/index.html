@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>The New iTunes HDCP Content</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -228,7 +240,7 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>I ran into an issue with iTunes and purchased content a few months back.  I had bought the Knight Rider season pass from the iTunes store.  When ever I tried to play an episode I would be presented with a video window that was all gray and a nice little alert box telling me that my displays are not HDCP authorized.  I got on the phone with Apple support and iTunes support and could not come to a conclusion as to why this was happening.  I have a 24" Apple Display that is about 2 years old and a 30" Apple Display that is about a year old so everything should be golden.  They are both HD displays so that is not an issue.  Where the issue comes from is when Apple decided to make all of their iTMS content require HDCP displays.  I guess this is some new standard although I am not quite sure why because I have never had a problem playing any of my content in HD format at all.  After making an appointment at the Genius Bar and them telling me that there should not be a problem since my display is only a year old and suggesting that I contact Apple and get in touch with the Customer Care department I came home and did just that.I have been dealing with a guy named Chad Jones on this case.  He said that he did the research on the account and I had accidentally purchased the standard definition version of the season pass and that is why I was getting these errors.  This might be the case but if it is then why is my iTunes downloading both the SD and HD versions of these shows?  Chad suggested that I buy the HD version of the show so rather than me buying the entire season to test this out I tried to buy one episode in HD.  The purchase went through however I cannot watch it in HD.  This is starting to really get irritating and the worst part is I have left Chad about 3 voice mails since providing my case number, contact number and letting him know that I attempted to try an HD version and it did not work.  I think Apple is just pushing this off to the side thinking that there is no point in helping me.  I just fell through the cracks when THEY decided that they were going to support a new standard.  Screw me for spending about $2800 on their displays and any iTunes content that I might have purchased.  The most irritating part is the fact that it has been about 9 days since I last left a message for Chad so I think today I will probably call back in and try to deal with someone else.  Apple needs to fix this.  There is no reason I should not be able to play HD content on these displays or at-least the 30" display!Now in my case it is not "that" big of a deal, I will just stop buying the iTunes content and find my shows elsewhere.  I had only bought Knight Rider as a test to see how the experience was and up to this point it was good.  However not being able to watch my purchased content does get really irritating.  I have an HD display but cannot watch the iTunes HD content.  Below is an image of the alert dialog that I get when I attempt to watch a video.  Now through research I have found that there are adapters that you can buy to make your display become HDCP compliant but I am not so sure that will work because the error says the display is not HDCP authorized.  Since when does anything or anyone have to authorize your display for use?</p>
+                                        <p>I ran into an issue with iTunes and purchased content a few months back.  I had bought the Knight Rider season pass from the iTunes store.  When ever I tried to play an episode I would be presented with a video window that was all gray and a nice little alert box telling me that my displays are not HDCP authorized.  I got on the phone with Apple support and iTunes support and could not come to a conclusion as to why this was happening.  I have a 24&quot; Apple Display that is about 2 years old and a 30&quot; Apple Display that is about a year old so everything should be golden.  They are both HD displays so that is not an issue.  Where the issue comes from is when Apple decided to make all of their iTMS content require HDCP displays.  I guess this is some new standard although I am not quite sure why because I have never had a problem playing any of my content in HD format at all.  After making an appointment at the Genius Bar and them telling me that there should not be a problem since my display is only a year old and suggesting that I contact Apple and get in touch with the Customer Care department I came home and did just that.I have been dealing with a guy named Chad Jones on this case.  He said that he did the research on the account and I had accidentally purchased the standard definition version of the season pass and that is why I was getting these errors.  This might be the case but if it is then why is my iTunes downloading both the SD and HD versions of these shows?  Chad suggested that I buy the HD version of the show so rather than me buying the entire season to test this out I tried to buy one episode in HD.  The purchase went through however I cannot watch it in HD.  This is starting to really get irritating and the worst part is I have left Chad about 3 voice mails since providing my case number, contact number and letting him know that I attempted to try an HD version and it did not work.  I think Apple is just pushing this off to the side thinking that there is no point in helping me.  I just fell through the cracks when THEY decided that they were going to support a new standard.  Screw me for spending about $2800 on their displays and any iTunes content that I might have purchased.  The most irritating part is the fact that it has been about 9 days since I last left a message for Chad so I think today I will probably call back in and try to deal with someone else.  Apple needs to fix this.  There is no reason I should not be able to play HD content on these displays or at-least the 30&quot; display!Now in my case it is not &quot;that&quot; big of a deal, I will just stop buying the iTunes content and find my shows elsewhere.  I had only bought Knight Rider as a test to see how the experience was and up to this point it was good.  However not being able to watch my purchased content does get really irritating.  I have an HD display but cannot watch the iTunes HD content.  Below is an image of the alert dialog that I get when I attempt to watch a video.  Now through research I have found that there are adapters that you can buy to make your display become HDCP compliant but I am not so sure that will work because the error says the display is not HDCP authorized.  Since when does anything or anyone have to authorize your display for use?</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -596,35 +608,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+                        <a style='font-size: 75%' href='/tags/Scams'>Scams</a>
 <a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
 <a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
 <a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -637,44 +649,100 @@
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>

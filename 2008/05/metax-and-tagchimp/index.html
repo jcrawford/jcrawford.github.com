@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>MetaX and tagChimp</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -228,20 +240,17 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p><a href="http://www.tagchimp.com/"><img src="http://www.josephcrawford.com/wp-content/uploads/2008/04/tagchimp.png" title="tagChimp" alt="tagChimp" /></a>Last week I wrote a review on <a href="/2008/04/19/review-handbrake-metax/">Handbrake and MetaX</a> which lightly touched on <a href="http://www.tagchimp.com/">tagChimp</a>.  This week I am going to review a nice web based service that <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> has been tightly integrated with. <a href="http://www.tagchimp.com/">tagChimp</a>.</p>
+                                        <p><a href="http://www.tagchimp.com/"><img src="http://www.josephcrawford.com/wp-content/uploads/2008/04/tagchimp.png" alt="tagChimp" title="tagChimp"></a>Last week I wrote a review on <a href="/2008/04/19/review-handbrake-metax/">Handbrake and MetaX</a> which lightly touched on <a href="http://www.tagchimp.com/">tagChimp</a>.  This week I am going to review a nice web based service that <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> has been tightly integrated with. <a href="http://www.tagchimp.com/">tagChimp</a>.</p>
 
-<p><a href="http://www.kerstetter.net/page53/page54/page54.html"><img src="http://www.josephcrawford.com/wp-content/uploads/2008/04/metax.png" title="MetaX" alt="" /></a>If you like me have a lot of movies in your iTunes library, you will like this web based service that is community driven.  <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> used to only search Amazon, but now has the ability to search <a href="http://www.tagchimp.com/">tagChimp</a>.  Before this integration you were subject to low quality cover art and you had to settle for less than perfect tag data (unless you added the missing information from Amazon).  Now however when you perform a search you get high quality artwork (generally a max height of 600px) and accurate tag data.  Now if you do not find the movie you are tagging in <a href="http://www.tagchimp.com/">tagChimp's</a> database, not to worry.  When you click on Write in <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> it will add the data to <a href="http://www.tagchimp.com/">tagChimp</a> (Only if you have not disabled sharing with <a href="http://www.tagchimp.com/">tagChimp</a> in <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX's</a> preferences).  At this time <a href="http://www.tagchimp.com/">tagChimp</a> is relatively new so not all movies have the chapter data associated with them.  Tim is still hard at work making improvments to the site every day.  Recently he made it so that if the movie you are editing does not have chapters or the chapters are named like Chapter 1, Chapter 2, etc. it will not add the movie to the <a href="http://www.tagchimp.com/">tagChimp</a> database.  This was done to ensure that the <a href="http://www.tagchimp.com/">tagChimp</a> data was the highest quality possible.</p>
+<p><a href="http://www.kerstetter.net/page53/page54/page54.html"><img src="http://www.josephcrawford.com/wp-content/uploads/2008/04/metax.png" alt="" title="MetaX"></a>If you like me have a lot of movies in your iTunes library, you will like this web based service that is community driven.  <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> used to only search Amazon, but now has the ability to search <a href="http://www.tagchimp.com/">tagChimp</a>.  Before this integration you were subject to low quality cover art and you had to settle for less than perfect tag data (unless you added the missing information from Amazon).  Now however when you perform a search you get high quality artwork (generally a max height of 600px) and accurate tag data.  Now if you do not find the movie you are tagging in <a href="http://www.tagchimp.com/">tagChimp&#39;s</a> database, not to worry.  When you click on Write in <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> it will add the data to <a href="http://www.tagchimp.com/">tagChimp</a> (Only if you have not disabled sharing with <a href="http://www.tagchimp.com/">tagChimp</a> in <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX&#39;s</a> preferences).  At this time <a href="http://www.tagchimp.com/">tagChimp</a> is relatively new so not all movies have the chapter data associated with them.  Tim is still hard at work making improvments to the site every day.  Recently he made it so that if the movie you are editing does not have chapters or the chapters are named like Chapter 1, Chapter 2, etc. it will not add the movie to the <a href="http://www.tagchimp.com/">tagChimp</a> database.  This was done to ensure that the <a href="http://www.tagchimp.com/">tagChimp</a> data was the highest quality possible.
+&lt;!--more--&gt;
+The main new feature I like in <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> is in the chapter editing section.  Before you could not use the slider to always get an accurate time for the chapter.  It would jump between 1:22 -&gt; 1:27 etc.  This did not always happen and it depended on the length of the chapter you were editing.  Now though Rodney was nice enough to give up left and right arrows in the UI that would nudge the value by :01 so that we can have accurate times.</p>
 
-<!--more-->
-
-
-<p>The main new feature I like in <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> is in the chapter editing section.  Before you could not use the slider to always get an accurate time for the chapter.  It would jump between 1:22 -> 1:27 etc.  This did not always happen and it depended on the length of the chapter you were editing.  Now though Rodney was nice enough to give up left and right arrows in the UI that would nudge the value by :01 so that we can have accurate times.</p>
-
-<p>Over the last few weeks I have seen drastic improvements to <a href="http://www.tagchimp.com/">tagChimp</a> as well as <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a>.  The developers have even more features planned for the near future.  Today I noticed a new feature of <a href="http://www.tagchimp.com/">tagChimp</a> that I find to be quite cool.  Although I don't own an iPhone they have created the ability for you to export your iTunes library to an xml file and upload it to <a href="http://www.tagchimp.com/">tagChimp</a>.  You might be asking yourself: "Why would I want to upload my movie data to <a href="http://www.tagchimp.com/">tagChimp</a>?"  Well if you are anything like me you cannot remember every movie that you own at home.  This service allows you to login to the <a href="http://www.tagchimp.com/">tagChimp</a> website and check your library to see if you already have the movie at home.</p>
+<p>Over the last few weeks I have seen drastic improvements to <a href="http://www.tagchimp.com/">tagChimp</a> as well as <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a>.  The developers have even more features planned for the near future.  Today I noticed a new feature of <a href="http://www.tagchimp.com/">tagChimp</a> that I find to be quite cool.  Although I don&#39;t own an iPhone they have created the ability for you to export your iTunes library to an xml file and upload it to <a href="http://www.tagchimp.com/">tagChimp</a>.  You might be asking yourself: &quot;Why would I want to upload my movie data to <a href="http://www.tagchimp.com/">tagChimp</a>?&quot;  Well if you are anything like me you cannot remember every movie that you own at home.  This service allows you to login to the <a href="http://www.tagchimp.com/">tagChimp</a> website and check your library to see if you already have the movie at home.</p>
 
 <p>While <a href="http://www.tagchimp.com/">tagChimp</a> still has some issues they are working hard to iron them out.  Things such as duplicate movies in the database.  They are working on a method to stop from having duplicates and are weeding through all of the data to ensure the highest quality data is retained.</p>
 
-<p>Features that I would love to see in future revisions of <a href="http://www.tagchimp.com/">tagChimp</a> would include the following:- Advanced User PrivilegesBy this I mean a system that would allow a user that has proven to submit only the highest quality tag data would have the ability to delete duplicates, lock tags, etc.  This could be achieved through the admin's locking the users tags.  For instance if I have submitted 50 movies that the admins have locked (meaning high quality data which can no longer be edited) then the site would give me the advanced user features.
+<p>Features that I would love to see in future revisions of <a href="http://www.tagchimp.com/">tagChimp</a> would include the following:- Advanced User PrivilegesBy this I mean a system that would allow a user that has proven to submit only the highest quality tag data would have the ability to delete duplicates, lock tags, etc.  This could be achieved through the admin&#39;s locking the users tags.  For instance if I have submitted 50 movies that the admins have locked (meaning high quality data which can no longer be edited) then the site would give me the advanced user features.
 More Ajax in the UIMore User StatisticsUser Statistics Accessable via Developers APICleaner Design on some of the pages (Community, My Account)Single Sign-On for the site and the forums (I hate having to sign-in for each)</p>
 
 <p>The more people who join the community the better the data that <a href="http://www.tagchimp.com/">tagChimp</a> provides will be.  I hope that more tagging applications integrate the <a href="http://www.tagchimp.com/dev/home.php">tagChimp Developer API</a> so that we can get windows users in the community.  Currently I am only aware of <a href="http://www.kerstetter.net/page53/page54/page54.html">MetaX</a> which supports <a href="http://www.tagchimp.com/">tagChimp</a>.  However I have noticed that the tag count seems to be increasing at a rapid rate over-night.</p>
@@ -614,35 +623,35 @@ More Ajax in the UIMore User StatisticsUser Statistics Accessable via Developers
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+                        <a style='font-size: 92%' href='/tags/TV'>TV</a>
 <a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
 <a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
 <a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
 <a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
 <a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
 <a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -655,44 +664,100 @@ More Ajax in the UIMore User StatisticsUser Statistics Accessable via Developers
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>

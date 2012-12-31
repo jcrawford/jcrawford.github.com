@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>An in-depth look at Coda</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -230,20 +242,17 @@
             				        <div class="entry">
                                         <p>A while back I took a look at <a href="http://www.panic.com/coda/">Coda</a> but it was so early in development it really did not interest me.  I was always stuck on using my IDE (<a href="http://www.zend.com/en/products/studio/">Zend Studio</a>) for my everyday development.  Today I downloaded <a href="http://www.panic.com/coda/">Coda</a> again to take a look at what it has to offer now.</p>
 
-<p>I started using <a href="http://www.panic.com/coda/">Coda</a> about an hour ago for my work.  I have been looking at all aspects of it and find it to be quite a nice tool and it almost replaces my other IDE.  I do not do a lot of debugging in the IDE so losing that feature does not really worry me.</p>
+<p>I started using <a href="http://www.panic.com/coda/">Coda</a> about an hour ago for my work.  I have been looking at all aspects of it and find it to be quite a nice tool and it almost replaces my other IDE.  I do not do a lot of debugging in the IDE so losing that feature does not really worry me.
+&lt;!--more--&gt;
+<a href="http://josephcrawford.com/wp-content/uploads/2008/07/sites-1.png"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/sites-1-150x150.png" alt="" title="sites"></a>I like how you can setup different &quot;sites&quot; in <a href="http://www.panic.com/coda/">Coda</a>, if you click on the image to the left you will see a larger screen shot of what the &quot;sites&quot; view in <a href="http://www.panic.com/coda/">Coda</a> looks like.  I have only added 2 sites so far so I am not sure there is any limit on how many sites you can manage within <a href="http://www.panic.com/coda/">Coda</a>.  The options that they give you when adding a site are quite good.  You can connect using the following protocols: FTP, SFTP, FTP with SSL (Implicit), FTP with TLS/SSL, WebDAV, WebDAV HTTPS.  In the dialog for adding a site they ask you for the connection information, it also asks for your SSH login information if you require the Terminal portion of the application for the site that you are adding.</p>
 
-<!--more-->
+<p><a href="http://josephcrawford.com/wp-content/uploads/2008/07/edit_file.png"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/edit_file-150x150.png" alt="" title="Edit File"></a>Using <a href="http://www.panic.com/coda/">Coda</a> to edit files could not be any easier than they have made it.  You simply connect to your site, double click the file and you can see the source code for that file.  As you can see in the screen-shot to the right <a href="http://www.panic.com/coda/">Coda</a> does support code suggestion for PHP programming.  I noticed that it does not automatically insert the closing HTML tag when you start a tag as <a href="http://www.zend.com/en/products/studio/">Zend Studio</a> does but this is a small feature to live without.  You can also see the clips section of <a href="http://www.panic.com/coda/">Coda</a> opened in the screen shot.  It is a place where you can put frequently used code and either double click to add it to your document or drag and drop the clip in to insert the proper text. There are a lot of features to the editor, way too many to cover individually.  However I do want to mention that you can share files using <a href="http://www.apple.com/macosx/technology/bonjour.html">Bonjour</a> and you can also turn on and off the line numbering.  If you click the Gear below the editor window you will see quite a few options for you to choose from.  The one thing that is not depicted in the screen shot is the ability for <a href="http://www.panic.com/coda/">Coda</a> to open image files.  It opens them and shows the image unlike most editors that show the binary output of the image.</p>
 
+<p><a href="http://josephcrawford.com/wp-content/uploads/2008/07/preview_site.png"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/preview_site-150x150.png" alt="" title="Site Preview"></a>The preview section of <a href="http://www.panic.com/coda/">Coda</a> is pretty powerful as well.  Not only does it give you a live preview but it has a javascript console as well that will help you when debugging those pesky javascript issues.  The best part I think I like about the preview window is the ability to turn on the DOM hierarchy viewer.  With this on you can hover your mouse over sections of the page and they will highlight blue.  You can click the section if you need the outline to remain in place after you move your mouse out of the area.  Under the preview it also shows you the trail of DOM elements to get to the highlighted point.  This is a great feature when you are trying to debug html / js / dom issues.  You can see in the image to the left that a portion of the page is highlighted blue, this is the DOM hierarchy inspector turned on and in use.</p>
 
-<p><a href="http://josephcrawford.com/wp-content/uploads/2008/07/sites-1.png"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/sites-1-150x150.png" title="sites" alt="" /></a>I like how you can setup different "sites" in <a href="http://www.panic.com/coda/">Coda</a>, if you click on the image to the left you will see a larger screen shot of what the "sites" view in <a href="http://www.panic.com/coda/">Coda</a> looks like.  I have only added 2 sites so far so I am not sure there is any limit on how many sites you can manage within <a href="http://www.panic.com/coda/">Coda</a>.  The options that they give you when adding a site are quite good.  You can connect using the following protocols: FTP, SFTP, FTP with SSL (Implicit), FTP with TLS/SSL, WebDAV, WebDAV HTTPS.  In the dialog for adding a site they ask you for the connection information, it also asks for your SSH login information if you require the Terminal portion of the application for the site that you are adding.</p>
+<p><a href="http://josephcrawford.com/wp-content/uploads/2008/07/edit_css.png"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/edit_css-150x150.png" alt="" title="CSS Editor"></a>I think the CSS editing feature of the application is what makes me like <a href="http://www.panic.com/coda/">Coda</a> the most.  Everything in the CSS is point and click.  You just choose the options that you want and the css is generated for you.  Now if you try to use the CSS Editor portion of <a href="http://www.panic.com/coda/">Coda</a> on a file that is not a CSS file, it will tell you that you are not using a valid CSS file.  When I say you can pretty much do your CSS with pointing and clicking I mean it.  There are so many options in this editor that makes it so easy it is unbelievable.  CSS is not a strong point for me so this tool will come in very handy when it comes to having to adjust things that are powered by CSS.  I will no longer have to wait for the guy who created the CSS to come online.  I can make the fix pretty quickly myself.  The CSS Editor offers many many options under the following categories: Text, Color &amp; Background, Dimensions, Margins &amp; Padding, Border, Lists, Layout, Tables and Printing.  You will have to check out this feature is CSS is not your strong point because it will really come in handy.  As you may see in the screen shot there is a column for the options you can edit but there is also a column that shows a preview of what every CSS element in the file will look like.</p>
 
-<p><a href="http://josephcrawford.com/wp-content/uploads/2008/07/edit_file.png"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/edit_file-150x150.png" title="Edit File" alt="" /></a>Using <a href="http://www.panic.com/coda/">Coda</a> to edit files could not be any easier than they have made it.  You simply connect to your site, double click the file and you can see the source code for that file.  As you can see in the screen-shot to the right <a href="http://www.panic.com/coda/">Coda</a> does support code suggestion for PHP programming.  I noticed that it does not automatically insert the closing HTML tag when you start a tag as <a href="http://www.zend.com/en/products/studio/">Zend Studio</a> does but this is a small feature to live without.  You can also see the clips section of <a href="http://www.panic.com/coda/">Coda</a> opened in the screen shot.  It is a place where you can put frequently used code and either double click to add it to your document or drag and drop the clip in to insert the proper text. There are a lot of features to the editor, way too many to cover individually.  However I do want to mention that you can share files using <a href="http://www.apple.com/macosx/technology/bonjour.html">Bonjour</a> and you can also turn on and off the line numbering.  If you click the Gear below the editor window you will see quite a few options for you to choose from.  The one thing that is not depicted in the screen shot is the ability for <a href="http://www.panic.com/coda/">Coda</a> to open image files.  It opens them and shows the image unlike most editors that show the binary output of the image.</p>
-
-<p><a href="http://josephcrawford.com/wp-content/uploads/2008/07/preview_site.png"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/preview_site-150x150.png" title="Site Preview" alt="" /></a>The preview section of <a href="http://www.panic.com/coda/">Coda</a> is pretty powerful as well.  Not only does it give you a live preview but it has a javascript console as well that will help you when debugging those pesky javascript issues.  The best part I think I like about the preview window is the ability to turn on the DOM hierarchy viewer.  With this on you can hover your mouse over sections of the page and they will highlight blue.  You can click the section if you need the outline to remain in place after you move your mouse out of the area.  Under the preview it also shows you the trail of DOM elements to get to the highlighted point.  This is a great feature when you are trying to debug html / js / dom issues.  You can see in the image to the left that a portion of the page is highlighted blue, this is the DOM hierarchy inspector turned on and in use.</p>
-
-<p><a href="http://josephcrawford.com/wp-content/uploads/2008/07/edit_css.png"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/edit_css-150x150.png" title="CSS Editor" alt="" /></a>I think the CSS editing feature of the application is what makes me like <a href="http://www.panic.com/coda/">Coda</a> the most.  Everything in the CSS is point and click.  You just choose the options that you want and the css is generated for you.  Now if you try to use the CSS Editor portion of <a href="http://www.panic.com/coda/">Coda</a> on a file that is not a CSS file, it will tell you that you are not using a valid CSS file.  When I say you can pretty much do your CSS with pointing and clicking I mean it.  There are so many options in this editor that makes it so easy it is unbelievable.  CSS is not a strong point for me so this tool will come in very handy when it comes to having to adjust things that are powered by CSS.  I will no longer have to wait for the guy who created the CSS to come online.  I can make the fix pretty quickly myself.  The CSS Editor offers many many options under the following categories: Text, Color &amp; Background, Dimensions, Margins &amp; Padding, Border, Lists, Layout, Tables and Printing.  You will have to check out this feature is CSS is not your strong point because it will really come in handy.  As you may see in the screen shot there is a column for the options you can edit but there is also a column that shows a preview of what every CSS element in the file will look like.</p>
-
-<p>For those of you who spend most of your day in Terminal like I do it's really nice that <a href="http://www.panic.com/coda/">Coda</a> offers a Terminal section so that you do not need to run multiple applications at once.  You can edit a file and jump over to the terminal section to run your commands.  It makes like really easy and I feel a bit "spoiled" by all of the nice features in this application.  I am really happy that someone is out there working on an All-In-One tool like this for developers.  I do have to admit I have seen nothing in the application pertaining to source control and that is a bit disappointing.  However in my case it's not a real issue.  My employer has a development server setup in the offices and I can connect to it fine using SFTP.  I make my changes, pop over to the terminal section and run my version control commands.  It is a really quick process (even faster than working in <a href="http://www.zend.com/en/products/studio/">Zend Studio</a>) which surprises me.</p>
+<p>For those of you who spend most of your day in Terminal like I do it&#39;s really nice that <a href="http://www.panic.com/coda/">Coda</a> offers a Terminal section so that you do not need to run multiple applications at once.  You can edit a file and jump over to the terminal section to run your commands.  It makes like really easy and I feel a bit &quot;spoiled&quot; by all of the nice features in this application.  I am really happy that someone is out there working on an All-In-One tool like this for developers.  I do have to admit I have seen nothing in the application pertaining to source control and that is a bit disappointing.  However in my case it&#39;s not a real issue.  My employer has a development server setup in the offices and I can connect to it fine using SFTP.  I make my changes, pop over to the terminal section and run my version control commands.  It is a really quick process (even faster than working in <a href="http://www.zend.com/en/products/studio/">Zend Studio</a>) which surprises me.</p>
 
 <p>As of this writing my feelings toward this application are very good.  I look forward to putting this application to the every day test.  As I have only been using it for a few hours I have not begun to find any real drawbacks to the application.  I will put this to the every day test and then write another review of the product when my trial is expired.</p>
 
@@ -614,34 +623,34 @@
                             <span>Tag Cloud</span>
                         </h4>
                         <a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
 <a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
 <a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
 <a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
 <a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
 <a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -654,44 +663,100 @@
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Netflix vs Blockbuster</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -228,7 +240,7 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>Over the past few years I have been happy with the service that Netflix offered. I was paying $16.99/mo and was able to have out 3 DVD's or Blu-Ray disks at a time. It was not until last month that I even thought of using another service. For the last year while subscribing to Netflix I was tempted to also subscribe to <a href="http://www.gamefly.com/">GameFly</a> because my kids and I love to play video games. I held off due to the fact that I would have two bills to pay every month just to feed our entertainment needs. While using Netflix I had very few issues, sure there was the occasional movie(s) lost in the mail while on the way to me but it did not happen that often. In-fact I think I only had to report 2 items as never received.<!--more-->Last month I received an email from Netflix stating that the package I was in was going to go through a price increase. They were increasing my price from $16.99 per month to $19.99 per month.  While this is only a $3.00 per month increase I started to look for other alternative services. That's when I found that for the same $19.99 per month I could use Blockbusters mail service. Initially I thought wow they are the same price, why would anyone make the switch. I then noticed that all video games for every platform were also included in the plan that Blockbuster offers. This was a win-win situation for me and I quickly made the switch. <a href="http://www.blockbuster.com/"><img src="http://www.josephcrawford.com/wp-content/uploads/2010/12/blockbuster-logo-o.jpg" title="Blockbuster" alt="Blockbuster" /></a>So you may be wondering what my experience has been with Blockbuster so far. Well it did not start off too well as the first 3 movies that were sent to me never arrived. I quickly went into my queue and reported them as not being received and Blockbuster immediately sent me another copy of each DVD that was not received. With Blockbuster you also have the option to return 5 of your mail rentals to a store and exchange them at no cost. I liked this option because it could take 3 days to return a DVD and receive the next. The one fall-back to this is exchanging for video games. I guess if you return any mail item whether it be a movie or a game and try to rent an in-store game they actually charge you around $5 for the rental. In my opinion they should not be charging for in-store games because the online games are included. I should be able to return 5 mail items for any movie or game in any Blockbuster store, however that is not the case yet. I have only been exchanging in-store for movies since I refuse to pay for the game, in this case I will wait for the item to be mailed. Now in the past I have had on 3 different occasions issues with returning rentals to the store. I would drop the movie off in the drop box and then a week later have Blockbuster emailing me or calling me asking when I was going to return the item. On 3 different occurrences they tried to charge me for these so called "missing" movies. I am not sure how they are missing when I dropped them into a slot which put them in their store. Up until I signed up for the online account I had given up on Blockbuster. Have you had an experience with any of the above mentioned companies? Please let me know if it was good or bad in the comments below. The only issue i seem to be having with the Blockbuster rentals is the fact that the paper packaging is much smaller than the Netflix offerings. While smaller packaging may be good for some people it is not for me. At out apartment we have mailboxes that are mounted on the wall of the building and with the Netflix rentals i could fold it over the edge of the mailbox and close the lid. This would reveal to the postmaster that i had some mail to go out and they would take them. They seem to never see the Blockbuster rentals in my box so i constantly have to make trips to the store to return them.</p>
+                                        <p>Over the past few years I have been happy with the service that Netflix offered. I was paying $16.99/mo and was able to have out 3 DVD&#39;s or Blu-Ray disks at a time. It was not until last month that I even thought of using another service. For the last year while subscribing to Netflix I was tempted to also subscribe to <a href="http://www.gamefly.com/">GameFly</a> because my kids and I love to play video games. I held off due to the fact that I would have two bills to pay every month just to feed our entertainment needs. While using Netflix I had very few issues, sure there was the occasional movie(s) lost in the mail while on the way to me but it did not happen that often. In-fact I think I only had to report 2 items as never received.&lt;!--more--&gt;Last month I received an email from Netflix stating that the package I was in was going to go through a price increase. They were increasing my price from $16.99 per month to $19.99 per month.  While this is only a $3.00 per month increase I started to look for other alternative services. That&#39;s when I found that for the same $19.99 per month I could use Blockbusters mail service. Initially I thought wow they are the same price, why would anyone make the switch. I then noticed that all video games for every platform were also included in the plan that Blockbuster offers. This was a win-win situation for me and I quickly made the switch. <a href="http://www.blockbuster.com/"><img src="http://www.josephcrawford.com/wp-content/uploads/2010/12/blockbuster-logo-o.jpg" alt="Blockbuster" title="Blockbuster"></a>So you may be wondering what my experience has been with Blockbuster so far. Well it did not start off too well as the first 3 movies that were sent to me never arrived. I quickly went into my queue and reported them as not being received and Blockbuster immediately sent me another copy of each DVD that was not received. With Blockbuster you also have the option to return 5 of your mail rentals to a store and exchange them at no cost. I liked this option because it could take 3 days to return a DVD and receive the next. The one fall-back to this is exchanging for video games. I guess if you return any mail item whether it be a movie or a game and try to rent an in-store game they actually charge you around $5 for the rental. In my opinion they should not be charging for in-store games because the online games are included. I should be able to return 5 mail items for any movie or game in any Blockbuster store, however that is not the case yet. I have only been exchanging in-store for movies since I refuse to pay for the game, in this case I will wait for the item to be mailed. Now in the past I have had on 3 different occasions issues with returning rentals to the store. I would drop the movie off in the drop box and then a week later have Blockbuster emailing me or calling me asking when I was going to return the item. On 3 different occurrences they tried to charge me for these so called &quot;missing&quot; movies. I am not sure how they are missing when I dropped them into a slot which put them in their store. Up until I signed up for the online account I had given up on Blockbuster. Have you had an experience with any of the above mentioned companies? Please let me know if it was good or bad in the comments below. The only issue i seem to be having with the Blockbuster rentals is the fact that the paper packaging is much smaller than the Netflix offerings. While smaller packaging may be good for some people it is not for me. At out apartment we have mailboxes that are mounted on the wall of the building and with the Netflix rentals i could fold it over the edge of the mailbox and close the lid. This would reveal to the postmaster that i had some mail to go out and they would take them. They seem to never see the Blockbuster rentals in my box so i constantly have to make trips to the store to return them.</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -596,35 +608,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+                        <a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
 <a style='font-size: 147%' href='/tags/Palm'>Palm</a>
 <a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
 <a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
 <a style='font-size: 235%' href='/tags/Mac'>Mac</a>
 <a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
 <a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -637,44 +649,100 @@
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>

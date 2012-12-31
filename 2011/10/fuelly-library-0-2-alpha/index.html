@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Fuelly Library (0.2-alpha)</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -228,7 +240,7 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>I have been using <a href="http://www.fuelly.com" title="Fuelly">Fuelly.com</a> for a while now to track my gas mileage on my motorcycle.  Every-time I fill-up my tank I send an SMS to Fuelly with the odometer reading, the price per gallon and how many gallons I put into the bike.A sample SMS message that I send looks like this> h 2799 4.099 3.06I prefix the message with the letter I have assigned to the vehicle in Fuelly so that it knows which vehicle to apply the fuel-up to.  This is very handy since Fuelly does all the calculations and shows my history for gas mileage.  However I was looking for a way to get the data from Fuelly to display on my site.  Currently even with the demand high Fuelly does not have the proper resources to develop and support an API at this time.  I sat down over the last week and began working on a <a href="http://www.josephcrawford.com/wp-content/uploads/2011/10/Fuelly-0.2-alpha.zip">library of Fuelly classes (Fuelly-0.2-alpha)</a> that could be used to fetch your data from the site.  Currently it requires that you provide a valid Fuelly username and password to fetch data but in the future I plan to remove this dependency.  In the future when you use this library to reach out to Fuelly if you do not pass a valid user object it will fetch only the "public" data that it can.  If you pass it a valid authenticated user object then it will also grab data which only you can see when you log-in. <!--more-->Currently it is very simple, the library consists of a handful of classes which are outlined below with a description of what each does.Fulley_Scraper - This is the heart of the library, it is the class that actually reaches out to Fuelly and fetches all the statistics.  It's then responsible for populating the other objects with the data.Fuelly_Response - This object is really just a container object at this time, it's only duty right now is to hold references to all the other objects keeping things organized nicely.  In the future I may add more functionality to this object but not at this time.Fuelly_User - This is the user object which you create with your username and password for Fuelly.  It is used for authenticated requests throughout the scraping process.Fuelly_Vehicle - This is the object that will hold all of the vehicle information along with a collection of fuel-ups for that particular vehicle.  Currently this is solely a container object as well.Fuelly_Fuelup - This object is what is populated for every fuel-up added to a vehicle.  The Fuelly_Vehicle holds a collection of fuel-ups which are all instances of Fuelly_FuelupFuelly_Object - This is the base object which all other objects inherit from.  It provides some base functionality such as magic <strong>get, </strong>set and <strong>call methods.Fuelly_Exception - This is just an exception class which currently only inherits the functionality of the built-in Exception object.Now that you know what all of the classes are and what they do it's time to look at some actual implementation code.  I have the library structured like the following:|- index.php|-- lib/|---- Fuelly/|------ Exception.php|------ Fuelup.php|------ Object.php|------ Scraper.php|------ Vehicle.phpThe index file is the where the process begins.  It does some preparatory tasks such as setting the include path and implementing an autoloader function.  Once this is setup you simply create an instance of Fuelly_User with your username and password and then you pass the Fuelly_User object into an instance of Fuelly_Scraper.  Once you have the scraper object there are 2 ways you can use it.  You can simply call the run method with no parameters and this will reach out and collect the statistics for every vehicle you have listed in Fuelly.  The other option is to pass in a vehicle display name and the library will only collect statistics on the specified vehicle.<pre lang="php" line="1">&lt;?phpdate_default_timezone_set('America/New_York');ini_set('include_path', get_include_path() . PATH_SEPARATOR . realpath(dirname(</strong>FILE<strong>)).'/lib/');function </strong>autoload($className) {$segments = explode('<em>', $className);$className = implode('/', $segments);if(file_exists('lib/'.$className . '.php')) include 'lib/'.$className . '.php';}try {$user = new Fuelly_User('test@mailinator.com', 'test');$response = Fuelly_Scraper::getInstance($user)->run();var_dump($response); exit;} catch(Fuelly_Exception $e) {echo $e->getMessage();}</pre>Ok I get it, implementation is easy but what does the output look like?  As you can see above I am currently just dumping the response object so that you can see the values, however there is much more you can do with this.  For instance you could total up the total miles driven for all vehicles or you could calculate how many miles you have driven over a date range, or for a specific day such as yesterday or today.  Currently none of the features I just talked about are implemented however it would be pretty easy to calculate.  For instance to calculate the total miles driven for all vehicles you could do something like this.<pre lang="php" line="1">&lt;?phpdate_default_timezone_set('America/New_York');ini_set('include_path', get_include_path() . PATH_SEPARATOR . realpath(dirname(<strong>FILE</strong>)).'/lib/');function __autoload($className) {$segments = explode('</em>', $className);$className = implode('/', $segments);if(file_exists('lib/'.$className . '.php')) include 'lib/'.$className . '.php';}try {$user = new Fuelly_User('test@mailinator.com', 'test');$response = Fuelly_Scraper::getInstance($user)->run();        $totalMiles = 0;        foreach($response->getVehicles() as $vehicle) {                $totalMiles += $vehicle->getTotalMilesTracked();        }        echo "I have driven a total of ".$totalMiles." in all vehicles tracked by Fuelly.";} catch(Fuelly_Exception $e) {echo $e->getMessage();}</pre>Currently there is no documentation for this code other than reading through it to see what is going on however that will be coming in the near future as well.  I want to get the library somewhat evolved before spending too much time on the documentation for the methods, etc.  PHPDoc will be a friend over the next few months.Ok so you are dying to see what a response object looks like when it's all populated here it is:<pre lang="php" line="1">object(Fuelly_Response)#3 (1) {  ["<em>properties":protected]=>  array(6) {    ["searchByVehicleName"]=>    bool(false)    ["searchVehicleFound"]=>    bool(false)    ["searchVehicleString"]=>    string(0) ""    ["totalVehiclesFound"]=>    int(1)    ["user"]=>    object(Fuelly_User)#1 (1) {      ["</em>properties":protected]=>      array(4) {        ["email"]=>        string(19) "test@mailinator.com"        ["password"]=>        string(4) "test"        ["displayName"]=>        string(6) "test27"        ["isLoggedIn"]=>        bool(true)      }    }    ["vehicles"]=>    array(1) {      ["2WT"]=>      object(Fuelly_Vehicle)#11 (1) {        ["<em>properties":protected]=>        array(15) {          ["id"]=>          string(5) "93749"          ["name"]=>          string(3) "2WT"          ["displayName"]=>          string(3) "2WT"          ["avgMilesPerGallon"]=>          string(4) "47.5"          ["lastMilesPerGallon"]=>          string(4) "64.5"          ["bestMilesPerGallon"]=>          string(4) "64.5"          ["avgPricePerGallon"]=>          string(5) "$3.92"          ["avgPricePerFuelUp"]=>          string(6) "$12.14"          ["avgPricePerMile"]=>          string(6) "$0.082"          ["totalFuelups"]=>          int(5)          ["totalSpent"]=>          string(6) "$60.71"          ["totalMilesTracked"]=>          string(3) "589"          ["totalMilesToday"]=>          int(0)          ["hasFirstFuelupOfTheDayBeenCompleted"]=>          bool(false)          ["fuelups"]=>          array(5) {            [0]=>            object(Fuelly_Fuelup)#18 (1) {              ["</em>properties":protected]=>              array(9) {                ["timestamp"]=>                int(1318365120)                ["odometer"]=>                string(3) "590"                ["miles"]=>                int(200)                ["gallons"]=>                string(3) "3.1"                ["milesPerGallon"]=>                float(64.5)                ["pricePerGallon"]=>                string(6) "$3.899"                ["note"]=>                string(16) "Cumberland Farms"                ["addedBy"]=>                string(6) "test27"                ["total"]=>                string(6) "$12.09"              }            }            [1]=>            object(Fuelly_Fuelup)#19 (1) {              ["<em>properties":protected]=>              array(9) {                ["timestamp"]=>                int(1317663120)                ["odometer"]=>                string(3) "390"                ["miles"]=>                int(109)                ["gallons"]=>                string(3) "3.1"                ["milesPerGallon"]=>                float(35.2)                ["pricePerGallon"]=>                string(6) "$3.999"                ["note"]=>                string(5) "Mobil"                ["addedBy"]=>                string(6) "test27"                ["total"]=>                string(6) "$12.40"              }            }            [2]=>            object(Fuelly_Fuelup)#21 (1) {              ["</em>properties":protected]=>              array(9) {                ["timestamp"]=>                int(1317576660)                ["odometer"]=>                string(3) "281"                ["miles"]=>                int(140)                ["gallons"]=>                string(3) "3.1"                ["milesPerGallon"]=>                float(45.2)                ["pricePerGallon"]=>                string(6) "$3.799"                ["note"]=>                string(0) ""                ["addedBy"]=>                string(6) "test27"                ["total"]=>                string(6) "$11.78"              }            }            [3]=>            object(Fuelly_Fuelup)#22 (1) {              ["<em>properties":protected]=>              array(9) {                ["timestamp"]=>                int(1317490200)                ["odometer"]=>                string(3) "141"                ["miles"]=>                int(140)                ["gallons"]=>                string(3) "3.1"                ["milesPerGallon"]=>                float(45.2)                ["pricePerGallon"]=>                string(6) "$3.899"                ["note"]=>                string(0) ""                ["addedBy"]=>                string(6) "test27"                ["total"]=>                string(6) "$12.09"              }            }            [4]=>            object(Fuelly_Fuelup)#23 (1) {              ["</em>properties":protected]=>              array(9) {                ["timestamp"]=>                int(1317490140)                ["odometer"]=>                string(1) "1"                ["miles"]=>                int(0)                ["gallons"]=>                string(3) "3.1"                ["milesPerGallon"]=>                float(0)                ["pricePerGallon"]=>                string(6) "$3.989"                ["note"]=>                string(0) ""                ["addedBy"]=>                string(6) "test27"                ["total"]=>                string(6) "$12.37"              }            }          }        }      }    }  }}</pre>Now what happens when you search for a specific vehicle which cannot be located in Fuelly?  Check the response below.<pre lang="php" line="1">object(Fuelly_Response)#3 (1) {  ["<em>properties":protected]=>  array(6) {    ["searchByVehicleName"]=>    bool(true)    ["searchVehicleFound"]=>    bool(false)    ["searchVehicleString"]=>    string(5) "MyCar"    ["totalVehiclesFound"]=>    int(0)    ["user"]=>    object(Fuelly_User)#1 (1) {      ["</em>properties":protected]=>      array(4) {        ["email"]=>        string(19) "test@mailinator.com"        ["password"]=>        string(4) "test"        ["displayName"]=>        string(6) "test27"        ["isLoggedIn"]=>        bool(true)      }    }    ["vehicles"]=>    array(0) {    }  }}</pre>You guessed it, it will return a response object without any vehicles.  Now one thing I want to point out is that the response object has a few properties that are related to the searching of vehicles.  You can see if a search for a vehicle was requested, if any match was found and also the name of the vehicle that is being searched for.You might have noticed that in the response object I have not parsed out any of the $ in the prices.  This is because I have not really played around with Fuelly too much and am not sure if Fuelly supports other languages yet or if everything is always in USD.  Once I figure that out I will be sure to have the code properly handle the currency symbols along with number_format rules for those languages.  I also have not supported posting any data to Fuelly, this might come in the future as it is possible however I wanted to start with pulling the data first as that is what I have a use for.I have licensed this code under the Creative Commons license so please feel free to use it as you wish.  If you end up using this code please let me know, as well if you have ideas for improvement or enhancement let me know that too.This library would not have had nearly as much progress made if it were not for the assistance of other people in ##php on irc.freenode.net most notably ymas and TML so a BIG THANK YOU to those guys for dealing with my XPath and DOMDocument questions.</p>
+                                        <p>I have been using <a href="http://www.fuelly.com" title="Fuelly">Fuelly.com</a> for a while now to track my gas mileage on my motorcycle.  Every-time I fill-up my tank I send an SMS to Fuelly with the odometer reading, the price per gallon and how many gallons I put into the bike.A sample SMS message that I send looks like this&gt; h 2799 4.099 3.06I prefix the message with the letter I have assigned to the vehicle in Fuelly so that it knows which vehicle to apply the fuel-up to.  This is very handy since Fuelly does all the calculations and shows my history for gas mileage.  However I was looking for a way to get the data from Fuelly to display on my site.  Currently even with the demand high Fuelly does not have the proper resources to develop and support an API at this time.  I sat down over the last week and began working on a <a href="http://www.josephcrawford.com/wp-content/uploads/2011/10/Fuelly-0.2-alpha.zip">library of Fuelly classes (Fuelly-0.2-alpha)</a> that could be used to fetch your data from the site.  Currently it requires that you provide a valid Fuelly username and password to fetch data but in the future I plan to remove this dependency.  In the future when you use this library to reach out to Fuelly if you do not pass a valid user object it will fetch only the &quot;public&quot; data that it can.  If you pass it a valid authenticated user object then it will also grab data which only you can see when you log-in. &lt;!--more--&gt;Currently it is very simple, the library consists of a handful of classes which are outlined below with a description of what each does.Fulley_Scraper - This is the heart of the library, it is the class that actually reaches out to Fuelly and fetches all the statistics.  It&#39;s then responsible for populating the other objects with the data.Fuelly_Response - This object is really just a container object at this time, it&#39;s only duty right now is to hold references to all the other objects keeping things organized nicely.  In the future I may add more functionality to this object but not at this time.Fuelly_User - This is the user object which you create with your username and password for Fuelly.  It is used for authenticated requests throughout the scraping process.Fuelly_Vehicle - This is the object that will hold all of the vehicle information along with a collection of fuel-ups for that particular vehicle.  Currently this is solely a container object as well.Fuelly_Fuelup - This object is what is populated for every fuel-up added to a vehicle.  The Fuelly_Vehicle holds a collection of fuel-ups which are all instances of Fuelly_FuelupFuelly_Object - This is the base object which all other objects inherit from.  It provides some base functionality such as magic <strong>get, __set and __call methods.Fuelly_Exception - This is just an exception class which currently only inherits the functionality of the built-in Exception object.Now that you know what all of the classes are and what they do it&#39;s time to look at some actual implementation code.  I have the library structured like the following:|- index.php|-- lib/|---- Fuelly/|------ Exception.php|------ Fuelup.php|------ Object.php|------ Scraper.php|------ Vehicle.phpThe index file is the where the process begins.  It does some preparatory tasks such as setting the include path and implementing an autoloader function.  Once this is setup you simply create an instance of Fuelly_User with your username and password and then you pass the Fuelly_User object into an instance of Fuelly_Scraper.  Once you have the scraper object there are 2 ways you can use it.  You can simply call the run method with no parameters and this will reach out and collect the statistics for every vehicle you have listed in Fuelly.  The other option is to pass in a vehicle display name and the library will only collect statistics on the specified vehicle.<pre lang="php" line="1">&lt;?phpdate_default_timezone_set(&#39;America/New_York&#39;);ini_set(&#39;include_path&#39;, get_include_path() . PATH_SEPARATOR . realpath(dirname(</strong>FILE__)).&#39;/lib/&#39;);function <strong>autoload($className) {$segments = explode(&#39;_&#39;, $className);$className = implode(&#39;/&#39;, $segments);if(file_exists(&#39;lib/&#39;.$className . &#39;.php&#39;)) include &#39;lib/&#39;.$className . &#39;.php&#39;;}try {$user = new Fuelly_User(&#39;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&#39;, &#39;test&#39;);$response = Fuelly_Scraper::getInstance($user)-&gt;run();var_dump($response); exit;} catch(Fuelly_Exception $e) {echo $e-&gt;getMessage();}</pre>Ok I get it, implementation is easy but what does the output look like?  As you can see above I am currently just dumping the response object so that you can see the values, however there is much more you can do with this.  For instance you could total up the total miles driven for all vehicles or you could calculate how many miles you have driven over a date range, or for a specific day such as yesterday or today.  Currently none of the features I just talked about are implemented however it would be pretty easy to calculate.  For instance to calculate the total miles driven for all vehicles you could do something like this.<pre lang="php" line="1">&lt;?phpdate_default_timezone_set(&#39;America/New_York&#39;);ini_set(&#39;include_path&#39;, get_include_path() . PATH_SEPARATOR . realpath(dirname(</strong>FILE__)).&#39;/lib/&#39;);function __autoload($className) {$segments = explode(&#39;_&#39;, $className);$className = implode(&#39;/&#39;, $segments);if(file_exists(&#39;lib/&#39;.$className . &#39;.php&#39;)) include &#39;lib/&#39;.$className . &#39;.php&#39;;}try {$user = new Fuelly_User(&#39;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&#39;, &#39;test&#39;);$response = Fuelly_Scraper::getInstance($user)-&gt;run();        $totalMiles = 0;        foreach($response-&gt;getVehicles() as $vehicle) {                $totalMiles += $vehicle-&gt;getTotalMilesTracked();        }        echo &quot;I have driven a total of &quot;.$totalMiles.&quot; in all vehicles tracked by Fuelly.&quot;;} catch(Fuelly_Exception $e) {echo $e-&gt;getMessage();}</pre>Currently there is no documentation for this code other than reading through it to see what is going on however that will be coming in the near future as well.  I want to get the library somewhat evolved before spending too much time on the documentation for the methods, etc.  PHPDoc will be a friend over the next few months.Ok so you are dying to see what a response object looks like when it&#39;s all populated here it is:<pre lang="php" line="1">object(Fuelly_Response)#3 (1) {  [&quot;_properties&quot;:protected]=&gt;  array(6) {    [&quot;searchByVehicleName&quot;]=&gt;    bool(false)    [&quot;searchVehicleFound&quot;]=&gt;    bool(false)    [&quot;searchVehicleString&quot;]=&gt;    string(0) &quot;&quot;    [&quot;totalVehiclesFound&quot;]=&gt;    int(1)    [&quot;user&quot;]=&gt;    object(Fuelly_User)#1 (1) {      [&quot;_properties&quot;:protected]=&gt;      array(4) {        [&quot;email&quot;]=&gt;        string(19) &quot;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&quot;        [&quot;password&quot;]=&gt;        string(4) &quot;test&quot;        [&quot;displayName&quot;]=&gt;        string(6) &quot;test27&quot;        [&quot;isLoggedIn&quot;]=&gt;        bool(true)      }    }    [&quot;vehicles&quot;]=&gt;    array(1) {      [&quot;2WT&quot;]=&gt;      object(Fuelly_Vehicle)#11 (1) {        [&quot;_properties&quot;:protected]=&gt;        array(15) {          [&quot;id&quot;]=&gt;          string(5) &quot;93749&quot;          [&quot;name&quot;]=&gt;          string(3) &quot;2WT&quot;          [&quot;displayName&quot;]=&gt;          string(3) &quot;2WT&quot;          [&quot;avgMilesPerGallon&quot;]=&gt;          string(4) &quot;47.5&quot;          [&quot;lastMilesPerGallon&quot;]=&gt;          string(4) &quot;64.5&quot;          [&quot;bestMilesPerGallon&quot;]=&gt;          string(4) &quot;64.5&quot;          [&quot;avgPricePerGallon&quot;]=&gt;          string(5) &quot;$3.92&quot;          [&quot;avgPricePerFuelUp&quot;]=&gt;          string(6) &quot;$12.14&quot;          [&quot;avgPricePerMile&quot;]=&gt;          string(6) &quot;$0.082&quot;          [&quot;totalFuelups&quot;]=&gt;          int(5)          [&quot;totalSpent&quot;]=&gt;          string(6) &quot;$60.71&quot;          [&quot;totalMilesTracked&quot;]=&gt;          string(3) &quot;589&quot;          [&quot;totalMilesToday&quot;]=&gt;          int(0)          [&quot;hasFirstFuelupOfTheDayBeenCompleted&quot;]=&gt;          bool(false)          [&quot;fuelups&quot;]=&gt;          array(5) {            [0]=&gt;            object(Fuelly_Fuelup)#18 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1318365120)                [&quot;odometer&quot;]=&gt;                string(3) &quot;590&quot;                [&quot;miles&quot;]=&gt;                int(200)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(64.5)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.899&quot;                [&quot;note&quot;]=&gt;                string(16) &quot;Cumberland Farms&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.09&quot;              }            }            [1]=&gt;            object(Fuelly_Fuelup)#19 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317663120)                [&quot;odometer&quot;]=&gt;                string(3) &quot;390&quot;                [&quot;miles&quot;]=&gt;                int(109)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(35.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.999&quot;                [&quot;note&quot;]=&gt;                string(5) &quot;Mobil&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.40&quot;              }            }            [2]=&gt;            object(Fuelly_Fuelup)#21 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317576660)                [&quot;odometer&quot;]=&gt;                string(3) &quot;281&quot;                [&quot;miles&quot;]=&gt;                int(140)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(45.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.799&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$11.78&quot;              }            }            [3]=&gt;            object(Fuelly_Fuelup)#22 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317490200)                [&quot;odometer&quot;]=&gt;                string(3) &quot;141&quot;                [&quot;miles&quot;]=&gt;                int(140)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(45.2)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.899&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.09&quot;              }            }            [4]=&gt;            object(Fuelly_Fuelup)#23 (1) {              [&quot;_properties&quot;:protected]=&gt;              array(9) {                [&quot;timestamp&quot;]=&gt;                int(1317490140)                [&quot;odometer&quot;]=&gt;                string(1) &quot;1&quot;                [&quot;miles&quot;]=&gt;                int(0)                [&quot;gallons&quot;]=&gt;                string(3) &quot;3.1&quot;                [&quot;milesPerGallon&quot;]=&gt;                float(0)                [&quot;pricePerGallon&quot;]=&gt;                string(6) &quot;$3.989&quot;                [&quot;note&quot;]=&gt;                string(0) &quot;&quot;                [&quot;addedBy&quot;]=&gt;                string(6) &quot;test27&quot;                [&quot;total&quot;]=&gt;                string(6) &quot;$12.37&quot;              }            }          }        }      }    }  }}</pre>Now what happens when you search for a specific vehicle which cannot be located in Fuelly?  Check the response below.<pre lang="php" line="1">object(Fuelly_Response)#3 (1) {  [&quot;_properties&quot;:protected]=&gt;  array(6) {    [&quot;searchByVehicleName&quot;]=&gt;    bool(true)    [&quot;searchVehicleFound&quot;]=&gt;    bool(false)    [&quot;searchVehicleString&quot;]=&gt;    string(5) &quot;MyCar&quot;    [&quot;totalVehiclesFound&quot;]=&gt;    int(0)    [&quot;user&quot;]=&gt;    object(Fuelly_User)#1 (1) {      [&quot;_properties&quot;:protected]=&gt;      array(4) {        [&quot;email&quot;]=&gt;        string(19) &quot;<a href="mailto:test@mailinator.com">test@mailinator.com</a>&quot;        [&quot;password&quot;]=&gt;        string(4) &quot;test&quot;        [&quot;displayName&quot;]=&gt;        string(6) &quot;test27&quot;        [&quot;isLoggedIn&quot;]=&gt;        bool(true)      }    }    [&quot;vehicles&quot;]=&gt;    array(0) {    }  }}</pre>You guessed it, it will return a response object without any vehicles.  Now one thing I want to point out is that the response object has a few properties that are related to the searching of vehicles.  You can see if a search for a vehicle was requested, if any match was found and also the name of the vehicle that is being searched for.You might have noticed that in the response object I have not parsed out any of the $ in the prices.  This is because I have not really played around with Fuelly too much and am not sure if Fuelly supports other languages yet or if everything is always in USD.  Once I figure that out I will be sure to have the code properly handle the currency symbols along with number_format rules for those languages.  I also have not supported posting any data to Fuelly, this might come in the future as it is possible however I wanted to start with pulling the data first as that is what I have a use for.I have licensed this code under the Creative Commons license so please feel free to use it as you wish.  If you end up using this code please let me know, as well if you have ideas for improvement or enhancement let me know that too.This library would not have had nearly as much progress made if it were not for the assistance of other people in ##php on irc.freenode.net most notably ymas and TML so a BIG THANK YOU to those guys for dealing with my XPath and DOMDocument questions.</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -596,35 +608,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
+                        <a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
 <a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
 <a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
 <a style='font-size: 224%' href='/tags/Local'>Local</a>
 <a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -637,44 +649,100 @@
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>

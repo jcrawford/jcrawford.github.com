@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Image Previews on iPad in the Field</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -228,7 +240,7 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p>Over the last few weeks I have been trying to figure out how I could take my iPad with me when taking pictures and have my image previews after each shot show on the iPad instead of the tiny LCD screen on my Canon EOS 60D.  I truly believe this would be a great feature for photographers as they could preview the image on a larger screen and instantly know if they got a nice shot and if not allow them to take another.  I don't know how many times I have taken shots and did not realize just how bad they were until I put them on my big screen at home.I was able to find a mount at <a href="http://www.bhphotovideo.com/">B&amp;H Photo</a> which I think would work.  While there is no picture of the mount I searched for other Clamp On mounts and found that the clamp would suffice for this implementation.  It is called <a href="http://www.bhphotovideo.com/c/product/754067-REG/K_M_19720_000_55_iPad_Holder_with_Clamp_On.html">K&amp;M iPad Holder with Clamp-On Mount</a>.I started to look at <a href="http://www.ononesoftware.com/products/dslr-camera-remote/">DSLR Camera Remote</a> by <a href="http://www.ononesoftware.com/">OnOne Software</a> and initially I thought this would do the trick.  After talking with customer service about what I wanted to do I got contradicting answers.  One person stated that it was possible to do but that I could not fully use the app (meaning control my camera) without connecting the camera to a computer.  Another told me that it was not possible at all.  I ended up calling support and talking with someone directly whom informed me that this was not currently possible.  Though it looks to be a nice piece of software it was a bit pricey for me as I was only concerned with a single feature and it turned out that it would not meet my needs so I immediately moved on to find another solution.<!--more-->A few weeks ago I saw a new type of SD card at Wal-Mart and almost bought it.  It's the new <a href="http://www.eye.fi/">Eye-Fi</a> cards and they immediately got my attention.  If you are not familiar with this product you really should take a peek at their website.  In a nutshell these are SD cards that have Wi-Fi capabilities so in theory as long as you are within range of your router your images can be transfered to your computer over wireless and organized automatically.  After looking on the package I decided to put the product back on the shelf and continue on shopping.  It was not until last night that I found out these cards could be used to provide the functionality I would like to have.  Using the <a href="http://www.eye.fi/">Eye-Fi</a> card and an application called <a href="http://www.shuttersnitch.com/">ShutterSnitch</a> ($15.99 currently) you can actually see your images on your iPad right after you take the shot.  Now I have not tried this solution yet so I cannot comment on the speed of the process.  What I mean is I cannot tell you if it takes 1 second or 30 seconds to see the preview appear on the iPad.I also found out that it appears that <a href="http://www.eye.fi/">Eye-Fi</a> is working on what they call Direct Mode which will allow you to preview your images on mobile devices like the iPad and will not require the purchase of a secondary application.  This would appeal to me the most but I plan to pick up one of these cards and the <a href="http://www.shuttersnitch.com/">ShutterSnitch</a> application for the time being.  They have not posted a release date for this new feature but it appears that all current cards will be supported when they do release this feature.I really like the idea of being able to have my 64GB iPad with me in the field and have the capability to take 64+ GB of photos.  I will never have to worry about running out of memory again.... Unless I take THAT many shots.  I say 64+ GB because if you think about it if I bought the 8GB card I would have a total of 72GB of space.Have you used this method?  Can you tell me and my readers how long on average it takes to see the preview image appear on the device?  If you have any experience with this please leave some comments below.</p>
+                                        <p>Over the last few weeks I have been trying to figure out how I could take my iPad with me when taking pictures and have my image previews after each shot show on the iPad instead of the tiny LCD screen on my Canon EOS 60D.  I truly believe this would be a great feature for photographers as they could preview the image on a larger screen and instantly know if they got a nice shot and if not allow them to take another.  I don&#39;t know how many times I have taken shots and did not realize just how bad they were until I put them on my big screen at home.I was able to find a mount at <a href="http://www.bhphotovideo.com/">B&amp;H Photo</a> which I think would work.  While there is no picture of the mount I searched for other Clamp On mounts and found that the clamp would suffice for this implementation.  It is called <a href="http://www.bhphotovideo.com/c/product/754067-REG/K_M_19720_000_55_iPad_Holder_with_Clamp_On.html">K&amp;M iPad Holder with Clamp-On Mount</a>.I started to look at <a href="http://www.ononesoftware.com/products/dslr-camera-remote/">DSLR Camera Remote</a> by <a href="http://www.ononesoftware.com/">OnOne Software</a> and initially I thought this would do the trick.  After talking with customer service about what I wanted to do I got contradicting answers.  One person stated that it was possible to do but that I could not fully use the app (meaning control my camera) without connecting the camera to a computer.  Another told me that it was not possible at all.  I ended up calling support and talking with someone directly whom informed me that this was not currently possible.  Though it looks to be a nice piece of software it was a bit pricey for me as I was only concerned with a single feature and it turned out that it would not meet my needs so I immediately moved on to find another solution.&lt;!--more--&gt;A few weeks ago I saw a new type of SD card at Wal-Mart and almost bought it.  It&#39;s the new <a href="http://www.eye.fi/">Eye-Fi</a> cards and they immediately got my attention.  If you are not familiar with this product you really should take a peek at their website.  In a nutshell these are SD cards that have Wi-Fi capabilities so in theory as long as you are within range of your router your images can be transfered to your computer over wireless and organized automatically.  After looking on the package I decided to put the product back on the shelf and continue on shopping.  It was not until last night that I found out these cards could be used to provide the functionality I would like to have.  Using the <a href="http://www.eye.fi/">Eye-Fi</a> card and an application called <a href="http://www.shuttersnitch.com/">ShutterSnitch</a> ($15.99 currently) you can actually see your images on your iPad right after you take the shot.  Now I have not tried this solution yet so I cannot comment on the speed of the process.  What I mean is I cannot tell you if it takes 1 second or 30 seconds to see the preview appear on the iPad.I also found out that it appears that <a href="http://www.eye.fi/">Eye-Fi</a> is working on what they call Direct Mode which will allow you to preview your images on mobile devices like the iPad and will not require the purchase of a secondary application.  This would appeal to me the most but I plan to pick up one of these cards and the <a href="http://www.shuttersnitch.com/">ShutterSnitch</a> application for the time being.  They have not posted a release date for this new feature but it appears that all current cards will be supported when they do release this feature.I really like the idea of being able to have my 64GB iPad with me in the field and have the capability to take 64+ GB of photos.  I will never have to worry about running out of memory again.... Unless I take THAT many shots.  I say 64+ GB because if you think about it if I bought the 8GB card I would have a total of 72GB of space.Have you used this method?  Can you tell me and my readers how long on average it takes to see the preview image appear on the device?  If you have any experience with this please leave some comments below.</p>
 
                                         <div class="clearboth"></div>
             						</div><!-- .entry -->
@@ -596,35 +608,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+                        <a style='font-size: 241%' href='/tags/Websites'>Websites</a>
 <a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
 <a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
 <a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
 <a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -637,44 +649,100 @@
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <!--[if !IE]><!--> <html lang="en-US"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Coda: An after use review</title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Joseph Crawford" />
-    <meta property="og:url" content="http://www.josephcrawford.com" />
-    <meta property="og:site_name" content="Joseph Crawford" />
-    
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Joseph Crawford</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	
+	<meta property="og:type" content="blog" />
+	<meta property="og:title" content="Joseph Crawford" />
+	<meta property="og:url" content="http://www.josephcrawford.com" />
+	<meta property="og:site_name" content="Joseph Crawford" />
+	
         <!--[if IE 6]> <meta http-equiv="refresh" content="1;url=/home/codeb2/public_html/jcrawford/wp-content/themes/radiostation/assets/styles/_ie/kill_ie6/ie6.html"><![endif]-->
     <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie7.css"> <![endif]-->
     <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/styles/_ie/ie8.css"> <![endif]-->
@@ -107,6 +107,17 @@
 				},
 			});
 			
+            
+            $('#main a, #footer a').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href)) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -120,72 +131,70 @@
 		
 
     </script>
+    
 </head>
 
 <body class="has_slider slider_nav_ flexslider has_header_social has_header_text is_home right_sidebar">
-    <div class="background">
-        <div class="background_inner"></div>
-    </div>
+	<div class="background">
+		<div class="background_inner"></div>
+	</div>
 
-    <div id="page_inner">
-        <div class="top-pattern"></div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div id="header_extras">
-                    <div class="header_social">
-                        <div class="social_icon default">
-                            <a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
-                        </div>
-                        <div class="social_icon default">
-                            <a href="https://www.facebook.com/joseph.crawford.16">
-                                <img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="header_text">I also waste time on the following social networks:</div>
-                    <div class="clearboth"></div>
-                </div><!-- #header_extras -->
-            </div>
-            <div id="header">
-                <div class="sixteen columns">
-                    <div class="logo">
-                        <a rel="home" href="http://www.josephcrawford.com/" class="site_title">
-                            <span>Joseph</span><span>Crawford</span>
-                        </a>
-                    </div><!-- .logo -->
-                    <div id="header_ad">
-                    <script type="text/javascript">
-                        <!--
-                            google_ad_client = "ca-pub-4815878521361271";
-                            /* header right */
-                            google_ad_slot = "4528456168";
-                            google_ad_width = 234;
-                            google_ad_height = 60;
-                        //-->
-                    </script>
+	<div id="page_inner">
+		<div class="top-pattern"></div>
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="header_extras">
+					<div class="header_social">
+						<div class="social_icon default">
+							<a href="http://twitter.com/josephcrawford"><img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/twitter.png" alt="" /></a>
+						</div>
+						<div class="social_icon default">
+							<a href="https://www.facebook.com/joseph.crawford.16">
+								<img src="http://www.josephcrawford.com/wp-content/themes/radiostation/assets/images/sociables/default/facebook.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="header_text">I also waste time on the following social networks:</div>
+					<div class="clearboth"></div>
+				</div><!-- #header_extras -->
+			</div>
+			<div id="header">
+				<div class="sixteen columns">
+					<div class="logo">
+						<a rel="home" href="http://www.josephcrawford.com/" class="site_title">
+							<span>Joseph</span><span>Crawford</span>
+						</a>
+					</div><!-- .logo -->
+					<div id="header_ad">
+					<script type="text/javascript">
+						<!--
+							// google_ad_client = "ca-pub-4815878521361271";
+							/* header right */
+							// google_ad_slot = "4528456168";
+							// google_ad_width = 234;
+							// google_ad_height = 60;
+						//-->
+					</script>
 
-                    <!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
-                </div>
-            </div>
-        </div><!-- #header -->
-        
-                <div id="main_menu" class="sixteen columns row">
+					<!-- <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
+				</div>
+			</div>
+		</div><!-- #header -->
+		
+		        <div id="main_menu" class="sixteen columns row">
             <div class="main_navigation">
                 <ul id="menu-menu" class="">
                     <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
                         <a href="/"><span>Home</span></a>
+                    </li>
+                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
+                        <a href="/reviews/"><span>Reviews</span></a>
                     </li>
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
                             <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
                         </ul>
-                    </li>
-                    <li id="menu-item-1135" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home">
-                        <a href="/reviews/"><span>Reviews</span></a>
-                    </li>
-                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
-                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Resume</span></a>
@@ -197,6 +206,9 @@
                                 <a href="/resume/resume.doc">Word</a>
                             </li>
                         </ul>
+                    </li>
+                    <li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="/about/"><span>About</span></a>
                     </li>
                     <li id="menu-item-2014" class="menu-item menu-item-type-post_type menu-item-object-page">
                         <a href="/contact/"><span>Contact Me</span></a>
@@ -228,16 +240,10 @@
                                     </div>
                                     <div class="clearboth"></div>
             				        <div class="entry">
-                                        <p><a href="http://www.panic.com/coda/"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/coda-logo.png" title="Coda Logo" alt="" /></a>If you have not already read <a href="http://josephcrawford.com/2008/07/10/an-in-depth-look-at-coda/">my review</a> on <a href="http://www.panic.com/coda/">Coda</a> you should do that now before you read this one.  This review is based on what I personally feel are drawbacks in the application.  I have been using <a href="http://www.panic.com/coda/">Coda</a> for the last few days pretty heavily for work.  I feel that I have given it a good chance to prove itself as the tool of choice for development.  In my last review I went over a lot of the good features that <a href="http://www.panic.com/coda/">Coda</a> has to offer, in this post however I will go over what I find to be drawbacks in the application.</p>
-
-<!--more-->
-
-
-<ol>
-<li><strong>No Save All Command</strong>I am not sure about you however when I am working generally I have several files open in the editor at one time.  I have been unable to find a command that will offer the save all functionality that I am used to.  I would love to see a save all menu item integrated into a later version of <a href="http://www.panic.com/coda/">Coda</a>.  This does not seem like a big deal but if you have 20 files open and edited you have to save them all individually rather than hitting one menu item or one keyboard short cut.  It just tends to be a bit of a pain for me.  <strong>In a response from <a href="http://www.panic.com/">Panic</a> I was told that holding down the opt key while choosing save will give you a save all option.</strong>
-<strong>No Close All Files Command</strong>I have been unable to find a command to close all of the opened files in a site that I am working on.  I have found a work around but it is not the best way.  I would love to see a close all files command added to a later version of <a href="http://www.panic.com/coda/">Coda</a>.  Currently I have to right click on the tab of an open file and choose close others.  I then have to close the remaining file that is left opened.<strong>Unable to set Default view when opening Coda</strong>This is not a show stopper when it comes to using <a href="http://www.panic.com/coda/">Coda</a>, however it is a bit annoying.  When I open <a href="http://www.panic.com/coda/">Coda</a> it always opens to the edit tab view of the interface with an untitled document open.  It would be nice if I could make it open to the sites tab view rather than the edit file.  I would like to open <a href="http://www.panic.com/coda/">Coda</a> and see all of my sites there ready for work. <strong>In the response from <a href="http://www.panic.com/">Panic</a> they also told me that you can set the view in the general preferences pane.  New windows open with?</strong><strong>Symbolic Link Issues</strong>I added a symbolic link to a directory, went back to the edit view in <a href="http://www.panic.com/coda/">Coda</a> and refreshed the directory.  I noticed that I used the wrong path when creating the symbolic link so I had to go back into the terminal and delete the symbolic link and re-create it.  After re-creating the link in the terminal I went back to the edit view and refreshed the directory.  To my surprise the symbolic link did not reload.  It still went to the old path from the first symbolic link created.  It did not update the symbolic link in the file list until I actually restarted <a href="http://www.panic.com/coda/">Coda</a>.<strong>F5 for Refresh</strong>While messing with the symbolic link stuff I noticed that there is only one way to refresh the file listing in <a href="http://www.panic.com/coda/">Coda</a>.  You have to right click and choose refresh.  It would be nice if I could click on a file and hit F5 to refresh the directory that I am viewing.  <strong><a href="http://www.panic.com/">Panic</a> also told me that you can refresh a directory by pushing Command-R if the file list is active it will refresh.</strong><strong>Terminal Settings</strong>I noticed that when setting up a site the terminal portion of the application uses the same Remote Root as the site.  It would be nice if I had the option to use a different Remote Root.  I have setup my site to use a Remote Root that is for instance /home/jcrawford/projects/site/trunk/workspace/.  This directory has symbolic links to different parts of the project such as the www, api, video, etc.  When I open the terminal app i constantly have to cd .. before I can run any svn commands.  This is because ./ is the svn root and not ./workspace/<strong>Searching A Site</strong>I have been unable to find a way to actually search a site for a string.  I am so used to having this ability.  Open a search dialog, tell it to search all files in a site and have it return the files where the match was found.  This is extremely helpful when it comes to finding strings in an entire project.  I thing this is the biggest issue I have with <a href="http://www.panic.com/coda/">Coda</a>.  It would be very nice to have this feature.<strong>Loses Remote Connection</strong>I have noticed that with <a href="http://www.panic.com/coda/">Coda</a> if you leave the application open for a while still connected to a remote site and then return to use it you will have to close the application and then re-open it.  Something happens with the remote connection when there is no activity because when I go to lunch and then come back trying to open a file results in an error from <a href="http://www.panic.com/coda/">Coda</a>.  Every time I try to open a file I would get a dialog that says "write error"  This happens until I restart the application.  I am not sure if this is an issue with <a href="http://www.panic.com/coda/">Coda</a> or if this is an issue with SSH, however couldn't <a href="http://www.panic.com/coda/">Coda</a> send a command to the site every so often to stop the timeouts?<strong>Code Templates</strong>When using Zend Studio I got used to the code templates that they offered.  You could go into the preferences and define a keyword such as 'prdebug' and you could have it use a specified set of code.  In the editor when you type 'prde' it would pop up a dialog much like the ones for the PHP functions that would put code in your editor for you.  I got used to the prdebug template that I created that would put nicely formatted print_r debugging commands in place.  The code I had generated wasecho '<pre>'; print_r($api_result); echo '</pre>'; exit;<strong>Variable Detection</strong>In other editors that I have used if you do something like the following:$var = 1;Later in your code if you started to type '$va' it would pop up the dialog box much like the php functions do that will allow you to choose the defined variables.  If for instance you had $var1 and $variable defined the popup would allow you to choose either variable.<strong>Active Line Highlighting</strong>It would be nice if <a href="http://www.panic.com/coda/">Coda</a> were to hilite the active line with a different color, a medium gray perhaps?  This would make it very easy to detect where your cursor was at any given time.</li>
-</ol>
-
+                                        <p><a href="http://www.panic.com/coda/"><img src="http://josephcrawford.com/wp-content/uploads/2008/07/coda-logo.png" alt="" title="Coda Logo"></a>If you have not already read <a href="http://josephcrawford.com/2008/07/10/an-in-depth-look-at-coda/">my review</a> on <a href="http://www.panic.com/coda/">Coda</a> you should do that now before you read this one.  This review is based on what I personally feel are drawbacks in the application.  I have been using <a href="http://www.panic.com/coda/">Coda</a> for the last few days pretty heavily for work.  I feel that I have given it a good chance to prove itself as the tool of choice for development.  In my last review I went over a lot of the good features that <a href="http://www.panic.com/coda/">Coda</a> has to offer, in this post however I will go over what I find to be drawbacks in the application. 
+&lt;!--more--&gt;
+1. <strong>No Save All Command</strong>I am not sure about you however when I am working generally I have several files open in the editor at one time.  I have been unable to find a command that will offer the save all functionality that I am used to.  I would love to see a save all menu item integrated into a later version of <a href="http://www.panic.com/coda/">Coda</a>.  This does not seem like a big deal but if you have 20 files open and edited you have to save them all individually rather than hitting one menu item or one keyboard short cut.  It just tends to be a bit of a pain for me.  <strong>In a response from <a href="http://www.panic.com/">Panic</a> I was told that holding down the opt key while choosing save will give you a save all option.</strong>
+<strong>No Close All Files Command</strong>I have been unable to find a command to close all of the opened files in a site that I am working on.  I have found a work around but it is not the best way.  I would love to see a close all files command added to a later version of <a href="http://www.panic.com/coda/">Coda</a>.  Currently I have to right click on the tab of an open file and choose close others.  I then have to close the remaining file that is left opened.**Unable to set Default view when opening Coda**This is not a show stopper when it comes to using <a href="http://www.panic.com/coda/">Coda</a>, however it is a bit annoying.  When I open <a href="http://www.panic.com/coda/">Coda</a> it always opens to the edit tab view of the interface with an untitled document open.  It would be nice if I could make it open to the sites tab view rather than the edit file.  I would like to open <a href="http://www.panic.com/coda/">Coda</a> and see all of my sites there ready for work. <strong>In the response from <a href="http://www.panic.com/">Panic</a> they also told me that you can set the view in the general preferences pane.  New windows open with?</strong>**Symbolic Link Issues**I added a symbolic link to a directory, went back to the edit view in <a href="http://www.panic.com/coda/">Coda</a> and refreshed the directory.  I noticed that I used the wrong path when creating the symbolic link so I had to go back into the terminal and delete the symbolic link and re-create it.  After re-creating the link in the terminal I went back to the edit view and refreshed the directory.  To my surprise the symbolic link did not reload.  It still went to the old path from the first symbolic link created.  It did not update the symbolic link in the file list until I actually restarted <a href="http://www.panic.com/coda/">Coda</a>.**F5 for Refresh**While messing with the symbolic link stuff I noticed that there is only one way to refresh the file listing in <a href="http://www.panic.com/coda/">Coda</a>.  You have to right click and choose refresh.  It would be nice if I could click on a file and hit F5 to refresh the directory that I am viewing.  <strong><a href="http://www.panic.com/">Panic</a> also told me that you can refresh a directory by pushing Command-R if the file list is active it will refresh.</strong>**Terminal Settings**I noticed that when setting up a site the terminal portion of the application uses the same Remote Root as the site.  It would be nice if I had the option to use a different Remote Root.  I have setup my site to use a Remote Root that is for instance /home/jcrawford/projects/site/trunk/workspace/.  This directory has symbolic links to different parts of the project such as the www, api, video, etc.  When I open the terminal app i constantly have to cd .. before I can run any svn commands.  This is because ./ is the svn root and not ./workspace/**Searching A Site**I have been unable to find a way to actually search a site for a string.  I am so used to having this ability.  Open a search dialog, tell it to search all files in a site and have it return the files where the match was found.  This is extremely helpful when it comes to finding strings in an entire project.  I thing this is the biggest issue I have with <a href="http://www.panic.com/coda/">Coda</a>.  It would be very nice to have this feature.**Loses Remote Connection**I have noticed that with <a href="http://www.panic.com/coda/">Coda</a> if you leave the application open for a while still connected to a remote site and then return to use it you will have to close the application and then re-open it.  Something happens with the remote connection when there is no activity because when I go to lunch and then come back trying to open a file results in an error from <a href="http://www.panic.com/coda/">Coda</a>.  Every time I try to open a file I would get a dialog that says &quot;write error&quot;  This happens until I restart the application.  I am not sure if this is an issue with <a href="http://www.panic.com/coda/">Coda</a> or if this is an issue with SSH, however couldn&#39;t <a href="http://www.panic.com/coda/">Coda</a> send a command to the site every so often to stop the timeouts?**Code Templates**When using Zend Studio I got used to the code templates that they offered.  You could go into the preferences and define a keyword such as &#39;prdebug&#39; and you could have it use a specified set of code.  In the editor when you type &#39;prde&#39; it would pop up a dialog much like the ones for the PHP functions that would put code in your editor for you.  I got used to the prdebug template that I created that would put nicely formatted print_r debugging commands in place.  The code I had generated wasecho &#39;<pre>&#39;; print_r($api_result); echo &#39;</pre>&#39;; exit;**Variable Detection**In other editors that I have used if you do something like the following:$var = 1;Later in your code if you started to type &#39;$va&#39; it would pop up the dialog box much like the php functions do that will allow you to choose the defined variables.  If for instance you had $var1 and $variable defined the popup would allow you to choose either variable.**Active Line Highlighting**It would be nice if <a href="http://www.panic.com/coda/">Coda</a> were to hilite the active line with a different color, a medium gray perhaps?  This would make it very easy to detect where your cursor was at any given time.</p>
 
 <p>These are all issues that I have found over the past few days.  Now I am sure that I will find other issues and features that I did not know about at the time of this writing.  I will not be doing another review on this application unless a new version is released.  None of the drawbacks listed above are a total show stopper for me.  Although I like the ability to search all files in a site I can just launch the terminal and grep or use Zend Studio to do my searching.</p>
 
@@ -609,35 +615,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+                        <a style='font-size: 241%' href='/tags/Websites'>Websites</a>
 <a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
 <a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
 <a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
 <a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
 <a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
 
                         <!-- tagcloud goes here -->
                     </div>
@@ -650,44 +656,100 @@
     </div> <!-- .container -->
     
     <div id="footer">
-        <div class="background">
-            <div class="background"></div>
-        </div>
-        <div class="container">
-            <div class="sixteen columns">
-                <div class="one_fourth">
-                    <div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget">
-                        <h4 class="widgettitle">
-                            <span>Sponsors</span>
-                        </h4>
-                        <div class="textwidget">
-                            <a href='http://www.shimonsandler.com/'>SEO Consulting</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="three_fourth last"></div>
-                <div class="clearboth"></div>
-            </div>
-        </div>
+    	<div class="background">
+    		<div class="background"></div>
+    	</div>
+    	<div class="container">
+    		<div class="sixteen columns">
+    			<div class="one_fourth"><div id="cr_plmanager_widget-2" class="widget widget_cr_plmanager_widget"><h4 class="widgettitle"><span>Sponsors</span></h4><div class="textwidget"><a href='http://www.shimonsandler.com/'>SEO Consulting</a></div></div></div><div class="three_fourth last"></div><div class="clearboth"></div>			</div>
+    	</div>
     </div><!-- #footer -->
-    <div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner --></div>
-    <script type='text/javascript' src='/js/jquery.prettyPhoto.js'></script>
+<div id="sub_footer"><div class="container"><div class="sixteen columns"><div class="copyright_text">Copyright &copy; "Joseph Crawford" 2012. All rights reserved. </div></div><!-- columns --></div><!-- container --></div><!-- #sub_footer --></div><!-- #page_inner -->
+<img src="http://www.josephcrawford.com/wp-content/plugins/welamazonadds/images/empty.png?n=0187a1f2eb&priceIndicator=&backgroundColor=%23F4F4F4&borderColor=%23000000&textColor=%23000000&linkColor=%230000FF&target=_blank&imageSize=IS2" src="" width="0" height="0" id="WAA_interim" />	<div style="display:none">
+	<div class="grofile-hash-map-bf6bc93ab3eeef8996970fa8ac9895a3">
+	</div>
+	</div>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/themes/radiostation/framework/scripts/prettyphoto/js/jquery.prettyPhoto.js?ver=1.0.8'></script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201251'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2012Decaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.josephcrawford.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.5'></script>
 
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery('.blog_layout1').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout2').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.blog_layout3').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.single_post_module').preloader({
+    imgSelector: '.blog_index_image_load span img',
+    imgAppend: '.blog_index_image_load'
+});
+jQuery('.one_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.two_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.three_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.four_column_portfolio').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.large_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.medium_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('.portfolio_gallery.small_post_list').preloader({
+    imgSelector: '.portfolio_img_load span img',
+    imgAppend: '.portfolio_img_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.portfolio_full_image span img',
+    imgAppend: '.portfolio_full_image'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.blog_sc_image_load span img',
+    imgAppend: '.blog_sc_image_load'
+});
+jQuery('#main_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+});
+jQuery('#intro_inner').preloader({
+    imgSelector: '.styled_image_load span img',
+    imgAppend: '.styled_image_load'
+}); /* ]]> */
+
+<!--[if lt IE 10]>
     <script type="text/javascript">
-    /* <![CDATA[ */
-    jQuery('.single_post_module').preloader({
-        imgSelector: '.blog_index_image_load span img',
-        imgAppend: '.blog_index_image_load'
-    });
-    /* ]]> */
-
-    <!--[if lt IE 10]>
-        <script type="text/javascript">
-          jQuery(".flex - imageLink img ").animate({
-              height ":"
-              386px 
-          },500);
-        </script>
-    <![endif]-->
-    </body>
+      jQuery(".flex - imageLink img ").animate({
+          height ":"
+          386px 
+      },500);
+    </script>
+<![endif]-->
+</body>
 </html>
