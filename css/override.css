@@ -32,7 +32,7 @@ div.highlight {
   margin-bottom: 5px;
 }
 
-.series .info .title {
+.series .info .title, .series .attachments .title, .series .references .title {
   font-weight: bold;
 }
 
@@ -50,6 +50,10 @@ div.highlight {
 }
 
 .series .attachments .attachment {
+  padding-left: 10px;
+}
+
+.series .references .reference {
   padding-left: 10px;
 }
 
