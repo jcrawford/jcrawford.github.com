@@ -532,7 +532,7 @@ body {
 /** END OF SEARCH RESULTS **/
 
 
-/** START OF SelectBox **/
+/** START OF Theme Switcher **/
 
 .sbHolder {
     width: 100%;
@@ -567,3 +567,16 @@ body {
 .sbOptions .sbGroup{
 	color: #8C8C8C;
 }
+
+/** END OF Theme Switcher **
+
+/** START OF SERIES TABLE OF CONTENTS **/
+
+.series {
+  border: 1px dashed black;
+  padding: 25px 15px;
+  width: 75%;
+  margin: 0px auto 10px auto;
+}
+
+/** END OF SERIES TABLE OF CONTENTS **/

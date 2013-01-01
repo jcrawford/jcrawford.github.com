@@ -6,7 +6,7 @@ div.highlight pre, div.highlight code {
     background-color: #272822 !important;
     font-family:  "Lato", "Open Sans", sans-serif;
     font-size: 13px;
-    line-height: 23px;
+    line-height: 25px;
 }
 
 div.highlight {
@@ -21,8 +21,32 @@ div.highlight {
     font-size: 13px;
 }
 
+/** START OF SERIES TABLE OF CONTENTS **/
 
+.series .toc {
+  font-weight: bold;
+}
+.series .info {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
 
+.series .info .title {
+  font-weight: bold;
+}
 
+.series .current .title {
+  font-style: italic;
+  font-weight: bold;
+}
 
+.series .series-item .title {
+  padding-left: 10px;
+}
 
+.series .attachments {
+  margin-top: 15px;
+}
+
+/** END OF SERIES TABLE OF CONTENTS **/
