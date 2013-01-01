@@ -241,25 +241,43 @@
         
             
                 <div class="series-item">
-                    <div class="title">3. <a href="/articles/jekyll/more-on-layouts-and-partials">More on Layouts and Partials</a></div>
+                    <div class="title">3. <a href="/articles/jekyll/layouts-and-includes">Layouts and Includes</a></div>
                 </div>
             
         
             
                 <div class="series-item">
-                    <div class="title">4. <a href="/articles/jekyll/conquering-pagination">Conquering Pagination</a></div>
+                    <div class="title">4. <a href="/articles/jekyll/jekyll-plugin-support">Jekyll Plugin Support</a></div>
+                </div>
+            
+        
+            
+                <div class="series-item">
+                    <div class="title">5. <a href="/articles/jekyll/conquering-pagination">Conquering Pagination</a></div>
                 </div>
             
         
                                 
         
+            <a name="attachments"></a>
+            <div class="attachments">
+            <div class="title">Attachments</div>
+            <div class="attachment">
+                
+                    
+                    <span class="index">1.</span> <a href="/files/articles/migrating-from-wordpress.zip">migrating-from-wordpress.zip</a><br/>
+                
+            </div>
+        </div>
+        
     </div>
 	
                         <div class="clearboth"></div>
+                        
                         <h1>Migrating from Wordpress</h1>
                         <h3 id="toc_0">The Import Process</h3>
 
-<p>I have been using Wordpress for about 5 years now and while it was easy to get running it wasn&#39;t the best platform for me.  While deciding if I would leave Wordpress behind I came up with a few requirements for the new site.  First I wanted the pages to load as fast as possible and you cannot get any faster than loading up static html pages.  The second requirement was related to security, I wanted the site to be as secure as possible, cutting out the database layer and any dynamic functionality will increase security quite a bit.  Once I made the decision to make the switch it was time to investigate how I would get my content migrated over to the new platform.  </p>
+<p>I have been using Wordpress for about 5 years now and while it was easy to get running it wasn&#39;t the best platform for me.  While deciding if I would leave Wordpress behind I came up with a few requirements for the new site.  First I wanted the pages to load as fast as possible and you cannot get any faster than loading up static html pages.  The second requirement was related to security, I wanted the site to be as secure as possible, cutting out the database layer and any dynamic functionality will increase security quite a bit.  Once I made the decision to make the switch it was time to investigate how I would get my content migrated over to the new platform.  If you do not plan to import your posts from Wordpress you can feel free to skip this article, if you are importing from another source you will have to ask <a href="http://www.google.com/">Google</a> how it should be done.  If you are not going to be importing any data you can start to create your posts now.</p>
 
 <p>When I first started migrating to Jekyll I was following <a href="http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/">this walk-through</a>.  I was not aware that Jekyll had some migrators built-in one of which is for Wordpress.  As I was not aware that these migrators were available I personally did not use them therefore cannot document them here.  However the process is the same if you decide to use the built-in migrators the only thing you should have to change is the path to the file in the command we use.  There are two ways in which you can import your content from Wordpress, the first is by using the database and the second is by using an export file from Wordpress.  I will be covering the method that uses the database for the content.  </p>
 
@@ -345,6 +363,8 @@
     <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
+<p>One thing to note about the code above is that I am using Markdown and the import process will need a way to convert HTML to markdown.  To do this it uses the downmark_it ruby module, which you <a href="https://github.com/cousine/downmark_it">can find here</a>.  You will have to put this in the _lib directory along side the wordpress.rb file you created.  I have also included it in the archive <a href="#attachments">attached</a> to this article.</p>
+
 <p>When you are going through this process feel free to investigate every method for importing and choose the one that best suits your needs, there is not going to be one uniform way to do it for everyone.  You might even find that you have to customize the importing script to get any specific data you need.  I would also urge you to try out the build in migrator for Wordpress, I might even go backup my current files and try giving it a run myself to see if and how it could benefit me.  </p>
 
 <p><strong>NOTE</strong>: If you choose to import your content from your database you must have the MySQL Rugy Gem installed, I am on Mac OS X and initially I had problems getting this to install and work properly.  I fought with Ruby and the gems for what seemed like hours before digging deep into Google and finding a solution.  If you cannot get the mysql gem to install I would suggest that you uninstall the mysql gem and then install the ruby-mysql gem.  Once I installed this everything went so smooth.  What I read on Google was that the mysql gem was no longer being actively maintained and that one should now use the ruby-mysql gem.  I spent hours figuring this out so don&#39;t let it bite you as well.  </p>
@@ -454,17 +474,34 @@ Successfully generated site: ~/starting_with_jekyll -&gt; ~/starting_with_jekyll
         
             
                 <div class="series-item">
-                    <div class="title">3. <a href="/articles/jekyll/more-on-layouts-and-partials">More on Layouts and Partials</a></div>
+                    <div class="title">3. <a href="/articles/jekyll/layouts-and-includes">Layouts and Includes</a></div>
                 </div>
             
         
             
                 <div class="series-item">
-                    <div class="title">4. <a href="/articles/jekyll/conquering-pagination">Conquering Pagination</a></div>
+                    <div class="title">4. <a href="/articles/jekyll/jekyll-plugin-support">Jekyll Plugin Support</a></div>
+                </div>
+            
+        
+            
+                <div class="series-item">
+                    <div class="title">5. <a href="/articles/jekyll/conquering-pagination">Conquering Pagination</a></div>
                 </div>
             
         
                                 
+        
+            <a name="attachments"></a>
+            <div class="attachments">
+            <div class="title">Attachments</div>
+            <div class="attachment">
+                
+                    
+                    <span class="index">1.</span> <a href="/files/articles/migrating-from-wordpress.zip">migrating-from-wordpress.zip</a><br/>
+                
+            </div>
+        </div>
         
     </div>
 	
@@ -664,35 +701,35 @@ Successfully generated site: ~/starting_with_jekyll -&gt; ~/starting_with_jekyll
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+                        <a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
 <a style='font-size: 230%' href='/tags/Development'>Development</a>
 <a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
 <a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
 <a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
 <a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
 
                         <!-- tagcloud goes here -->
                     </div>
