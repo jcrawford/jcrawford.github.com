@@ -246,25 +246,122 @@
             
         
             
-                <div class="series-item">
-                    <div class="title">4. <a href="/articles/jekyll/jekyll-plugin-support">Jekyll Plugin Support</a></div>
-                </div>
-            
-        
-            
                 <div class="series-item current">
-                    <div class="title">5. Conquering Pagination</div>
+                    <div class="title">4. Conquering Pagination</div>
                 </div>
             
         
                                 
+        
+            <a name="attachments"></a>
+            <div class="attachments">
+            <div class="title">Attachments</div>
+            <div class="attachment">
+                
+                    
+                    <span class="index">1.</span> <a href="/files/articles/conquering-pagination.zip">conquering-pagination.zip</a><br/>
+                
+            </div>
+        </div>
         
     </div>
 	
                         <div class="clearboth"></div>
                         
                         <h1>Conquering Pagination</h1>
-                        <p>Conquering Pagination here.....</p>
+                        <p>When migrating my site over to Jekyll one requirement was to continue to use the Wordpress theme that I had recently bought for my site.  I had a requirement to show only 5 pages in my pagination with the current one being in the middle and styled accordingly.  I also wanted to use special arrows for my next and previous pages.  Finally I had to have links to the First and Last page, there is quite a bit of logic behind when certain elements are generated which we will get into soon.  Below is an example of the pagination requirement.</p>
+
+<div class="wp-pagenavi"><span class="pagenavi-pages">Page 5 of 33</span><a href="#" class="first" title="&laquo; First">&laquo; First</a><a href="#">&larr;</a><a href="#" class="pagenavi-page" title="3">3</a><a href="#" class="pagenavi-page" title="4">4</a><span class="current">5</span><a href="#" class="pagenavi-page" title="6">6</a><a href="#" class="pagenavi-page" title="7">7</a><a href="#">&rarr;</a><a href="#" class="last" title="Last &raquo;">Last &raquo;</a></div>
+
+<p>At first I thought I was going to be able to get this functionality through using Liquid tags that were available in Jekyll however that was not possible.  The reason that it could not be completed solely in Liquid is because I needed to do some calculations to figure out what pages to show for instance in the example above the current page is 5.  We need to show the next 2 pages and the previous 2 pages in the page numbering.  In order to do that you have to do a simple inrement and decrement operation.  Liquid will allow you to do basic calculations like this however you have to use the capture tag and that always returns a string.  You then cannot use a string an integer in your looping construct, that is when I decided I would have to make this a custom plugin.  </p>
+
+<h3 id="toc_0">The Research</h3>
+
+<p>Before I could start writing this plugin I had to find out what Jekyll offered for pagination.  I found that it already offered a pagination component but I did not see a way to do anything but list all of your pages in your pager.  That looks pretty bad when you have 30+ pages of content.  I found that there was only one thing that I would have to do in order to make my custom pagination become a reality.  I would need to create a custom Pager class.</p>
+
+<h3 id="toc_1">Starting the Plugin</h3>
+
+<p>The first thing I did when creating this plugin was to create the _plugins\pagination.rb plugin file.  The full contents of the plugin are shown below.</p>
+<div class="highlight"><pre><code class="ruby"><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">class</span> <span class="nc">Pager</span>
+
+    <span class="n">alias_method</span> <span class="ss">:pagination_original_initialize</span><span class="p">,</span><span class="ss">:initialize</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">all_posts</span><span class="p">,</span> <span class="n">num_pages</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+
+      <span class="n">pagination_original_initialize</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">all_posts</span><span class="p">,</span> <span class="n">num_pages</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="p">(</span> <span class="n">page</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span> <span class="n">page</span> <span class="o">+</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="n">total_pages</span>
+        <span class="vi">@pager_start</span> <span class="o">=</span> <span class="n">page</span> <span class="o">-</span> <span class="mi">2</span>
+        <span class="vi">@pager_end</span> <span class="o">=</span> <span class="n">page</span> <span class="o">+</span> <span class="mi">2</span>
+      <span class="k">elsif</span> <span class="p">(</span> <span class="n">page</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+        <span class="vi">@pager_start</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="vi">@pager_end</span> <span class="o">=</span> <span class="mi">5</span>
+      <span class="k">elsif</span> <span class="p">(</span> <span class="n">page</span> <span class="o">+</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">&gt;=</span> <span class="p">(</span> <span class="n">total_pages</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+        <span class="k">if</span> <span class="n">page</span> <span class="o">==</span> <span class="n">total_pages</span>
+          <span class="vi">@pager_start</span> <span class="o">=</span> <span class="n">page</span> <span class="o">-</span> <span class="mi">4</span>
+          <span class="vi">@pager_end</span> <span class="o">=</span> <span class="n">page</span>
+        <span class="k">elsif</span> <span class="n">page</span> <span class="o">==</span> <span class="p">(</span> <span class="n">total_pages</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+          <span class="vi">@pager_start</span> <span class="o">=</span> <span class="n">page</span> <span class="o">-</span>  <span class="mi">3</span>
+          <span class="vi">@pager_end</span> <span class="o">=</span> <span class="n">total_pages</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="n">alias_method</span> <span class="ss">:pagination_original_to_liquid</span><span class="p">,</span> <span class="ss">:to_liquid</span>
+    <span class="k">def</span> <span class="nf">to_liquid</span>
+      <span class="n">pagination_hash_original</span> <span class="o">=</span> <span class="n">pagination_original_to_liquid</span>
+      <span class="n">pagination_hash_new</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;pager_start&quot;</span> <span class="o">=&gt;</span> <span class="vi">@pager_start</span><span class="p">,</span> <span class="s2">&quot;pager_end&quot;</span> <span class="o">=&gt;</span> <span class="vi">@pager_end</span> <span class="p">}</span>
+      <span class="k">return</span> <span class="n">pagination_hash_original</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">pagination_hash_new</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>In the Pager class I had to override the initialize method so that I could setup my class instance variables for the start and end of the pagination.  You might have noticed I aliased the original method name because I did not want to interrupt the execution of the original Pager class initialize method, I am just adding functionality I am not trying to change the functionality completely.  The first thing I do in the initialize method is to call the original initialize method and then I do my calculations for the start and end for the pagination.  </p>
+
+<p>I also found that I would have to also override the to_liquid method so that I could add the start and end page numbers into the hash that is used for the pagination template data.  With this plugin completed it was time to actually work on my template so I opened up the index.html file in the root of my site and changed it to look like the following.</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;h1&gt;</span>My Posts<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;posts&quot;</span><span class="nt">&gt;</span>
+{% for post in paginator.posts %}
+    <span class="nt">&lt;li&gt;&lt;span&gt;</span>{{ post.date | date: &#39;%B %d, %Y&#39; }}<span class="nt">&lt;/span&gt;</span> <span class="ni">&amp;raquo;</span> <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ post.url }}&quot;</span><span class="nt">&gt;</span>{{ post.title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>  
+{% endfor %}
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pagination&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;pagination-pages&quot;</span><span class="nt">&gt;</span>Page {{ paginator.page }} of {{ paginator.total_pages }}<span class="nt">&lt;/span&gt;&lt;br/&gt;</span>
+    {% if paginator.page &gt; 1 %}
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span> <span class="na">class=</span><span class="s">&quot;first&quot;</span> <span class="na">title=</span><span class="s">&quot;&amp;laquo; First&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;laquo;</span> First<span class="nt">&lt;/a&gt;</span>
+        {% if paginator.page == 2 %}
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span> <span class="nt">&gt;</span><span class="ni">&amp;larr;</span><span class="nt">&lt;/a&gt;</span>
+        {% else %}
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/page/{{ paginator.previous_page }}/&quot;</span> <span class="nt">&gt;</span><span class="ni">&amp;larr;</span><span class="nt">&lt;/a&gt;</span>
+        {% endif %}
+    {% endif %}
+
+
+    <span class="c">&lt;!-- pager_start: {{ paginagor.pager_start }}, pager_end: {{ paginator.pager_end }} --&gt;</span>
+    {% for count in (paginator.pager_start..paginator.pager_end) %}
+
+      {% if count == paginator.page %}
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;current&quot;</span><span class="nt">&gt;</span>{{ count }}<span class="nt">&lt;/span&gt;</span>
+      {% else %}
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/page/{{ count }}/&quot;</span> <span class="na">class=</span><span class="s">&quot;pagenavi-page&quot;</span> <span class="na">title=</span><span class="s">&quot;{{ count }}&quot;</span><span class="nt">&gt;</span>{{ count }}<span class="nt">&lt;/a&gt;</span>
+      {% endif %}
+    {% endfor %}
+
+    {% if paginator.page <span class="nt">&lt; paginator</span><span class="err">.</span><span class="na">total_pages</span> <span class="err">%}</span>
+        <span class="err">&lt;</span><span class="na">a</span> <span class="na">href=</span><span class="s">&quot;/page/{{ paginator.next_page }}/&quot;</span> <span class="nt">&gt;</span><span class="ni">&amp;rarr;</span><span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/page/{{ paginator.total_pages}}/&quot;</span> <span class="na">class=</span><span class="s">&quot;last&quot;</span> <span class="na">title=</span><span class="s">&quot;Last &amp;raquo;&quot;</span><span class="nt">&gt;</span>Last <span class="ni">&amp;raquo;</span><span class="nt">&lt;/a&gt;</span>
+    {% endif %}
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<p>Notice that when I loop over and list my posts I am no longer getting them from the site object rather I am pulling them from the paginator object.  This is done so that you only display the posts that are assigned to the current page during generation of the site.  I have also added some logic to the pagination so that the First and Last page links will only show if you are not currently on one of those pages.  Also notice that the looping of the pages is using attribute values from the paginator object for the start and end which were caluclated in the plugin.</p>
+
+<p>Now that we have the majority of the code in place there is still one thing we have to do, we need to tell Jekyll that we wish to use pagination and tell it how many we want to show per page.  I also altered the default way pages work by taking setting a paginate_path configuration option so that the pagination would resemble that of what I had with Wordpress.  I don&#39;t want to lose traffic due to the wrong pages being indexed in Google, so I have tried to follow the same url structure that I had previously.  Add the following to your _config.yml file.</p>
+<div class="highlight"><pre><code class="text">pagination: true
+paginate: 10
+paginate_path: /page/:num
+</code></pre></div>
+<p>With all of this in place I was able to generate the site and found that the custom pagination was working exactly as expected.</p>
 
 
                         
@@ -292,18 +389,23 @@
             
         
             
-                <div class="series-item">
-                    <div class="title">4. <a href="/articles/jekyll/jekyll-plugin-support">Jekyll Plugin Support</a></div>
-                </div>
-            
-        
-            
                 <div class="series-item current">
-                    <div class="title">5. Conquering Pagination</div>
+                    <div class="title">4. Conquering Pagination</div>
                 </div>
             
         
                                 
+        
+            <a name="attachments"></a>
+            <div class="attachments">
+            <div class="title">Attachments</div>
+            <div class="attachment">
+                
+                    
+                    <span class="index">1.</span> <a href="/files/articles/conquering-pagination.zip">conquering-pagination.zip</a><br/>
+                
+            </div>
+        </div>
         
     </div>
 	
@@ -373,15 +475,11 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/internet/" title="Internet">Internet</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/news/" title="News">News</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/mac/" title="Mac">Mac</a>
+                                    <a href="/category/internet/" title="Internet">Internet</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -389,15 +487,19 @@
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
+                                    <a href="/category/mac/" title="Mac">Mac</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/tutorials/" title="Tutorials">Tutorials</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/ppp/" title="Ppp">Ppp</a>
+                                    <a href="/category/websites/" title="Websites">Websites</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                    <a href="/category/ppp/" title="Ppp">Ppp</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -503,35 +605,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+                        <a style='font-size: 235%' href='/tags/Mac'>Mac</a>
 <a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
 <a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
 <a style='font-size: 279%' href='/tags/Internet'>Internet</a>
 <a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
 
                         <!-- tagcloud goes here -->
                     </div>
