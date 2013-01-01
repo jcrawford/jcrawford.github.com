@@ -193,7 +193,7 @@
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
-                            <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
+                            </li><li class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/jekyll/">Jekyll</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/jekyll/starting-with-jekyll/">[S] Moving to Jekyll</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li></ul></li>
                         </ul>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
@@ -221,27 +221,9 @@
             <div id="content_inner">
                 <div id="main" class="ten columns clearfix">
                     <div id="main_inner">
-                        
-                            <div id="series">
-                                <div class="info">This post is part of a series called: <span class="title">This is a test</span></div>
-                                <div class="toc">Table of Contents</div>
-                                
-                                    
-                                        <div class="series-item">
-                                            <div class="title">1. <a href="/articles/php/an-offensive-word-filter">An Offensive Word Filter</a></div>
-                                        </div>
-                                    
-                                
-                                    
-                                        <div class="series-item current">
-                                            <div class="title">2. Going Deep Inside PHP Sessions</div>
-                                        </div>
-                                    
-                                
-                            </div>
                         	
                         <div class="clearboth"></div>
-                            
+                        <h1>Going Deep Inside PHP Sessions</h1>
                         <p>A while back I was reading an article that <a href="http://shiflett.org/" target="_blank">Chris Shiflett</a> wrote called <a href="http://shiflett.org/articles/the-truth-about-sessions" target="_blank">The Truth About Sessions</a>. He goes into all the details about the HTTP protocol and how it is stateless, how the developer has to add state at the application level. He goes on to talk about how PHP handles storing sessions and why the out of the box solution that PHP offers is not very secure. I suggest you read Chris&#39;s article to better understand how the internal PHP sessions work. One aspect that I dislike about the internal PHP sessions is that they are stored in files on the hard disk (usually /tmp/) by default. This means anyone with access to the machine has access to read the session data. I prefer to store my session information in the database to add an extra layer of security.  </p>
 
 <p>Last year I had a talk with Chris about session handling and how to make it more secure. After a lengthy email conversation he brought light into the darkness that overwhelmed me. What I got from the conversation is that there is not much that you can rely on when it comes to making sure the visitor that comes to your site is who they say they are. Most people (as well as myself) would think well can&#39;t you just go by the IP that is returned from $_SERVER[&#39;REMOTE_ADDR&#39;]? The quick answer to this is no you cannot. Here is the explanation from Chris.  </p>
@@ -295,9 +277,7 @@
 
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>Now that you have the necessary methods you are going to have to put them to use. In order to use a class as a custom session handler you need to instruct PHP that you are going to do that and which methods should be called when necessary. In order to do this we need to create another file (I called this one global.php) that will instantiate the Session class. In this file we are creating an instance of the session class and then calling the php function session_set_save_handler(). You could easily use normal functions for a custom session handler, however because I am using a class you have to pass in an instance of the session object in an array also specifying the class method to use. Below is the code for the file.  </p>
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">require_once</span><span class="p">(</span><span class="s1">&#39;session.php&#39;</span><span class="p">);</span>
@@ -316,9 +296,7 @@
     <span class="k">array</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$s</span><span class="p">,</span> <span class="s1">&#39;destroy&#39;</span><span class="p">),</span>
     <span class="k">array</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$s</span><span class="p">,</span> <span class="s1">&#39;gc&#39;</span><span class="p">)</span>
 <span class="p">);</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>Notice that we are passing an instance of our database object into the session object. We will have to have a reference to this in order to store the sessions in the database. Also note that you are not required to use a database as a storage mechanism. You could very well use txt files stored in a secure directory, maybe even XML files if you wish. You can use whatever you wish for the storage mechanism just make sure that whatever you use is secured.  </p>
 
 <p>Now that we have all of that out of the way it is time to talk about what happens when. When you setup a custom session handler the PHP session functions will call the appropriate custom method you define. The method names are a bit self-explanatory however I will cover them here. The open method will be called when you call session_start() this is where we will setup the session for use, things such as setup the database connection. On every page load all of these methods will be called one after another, it will open the session, read the session, write the session, close the session and then call the garbage collector (gc) method to remove all of the expired sessions.  </p>
@@ -330,9 +308,7 @@
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span> <span class="o">=</span> <span class="nv">$db</span><span class="p">;</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span> <span class="o">=</span> <span class="nv">$table</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>Next we will implement the open method, we are not going to do a lot in this method. All we are going to do here is set the session lifetime based on the value in the PHP configuration.  </p>
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$db</span><span class="p">,</span> <span class="nv">$table</span> <span class="o">=</span> <span class="s1">&#39;sessions&#39;</span><span class="p">)</span>
@@ -340,9 +316,7 @@
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span> <span class="o">=</span> <span class="nv">$db</span><span class="p">;</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">table</span> <span class="o">=</span> <span class="nv">$table</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>Note that because the session handler requires it we still have to accept the $path and $name as parameters for our method, however since we are using a database for our storage mechanism we are not going to put them to use. All I did in this method was set the session lifetime based on the value in the PHP configuration. You can set this to whatever you would like to however it must be set in seconds.  </p>
 
 <p>Moving on we need to implement the close method, all that is done here is a bit of garbage cleanup. We do not want any expired sessions hanging out in the database. If someone closes the browser without the site destroying the session, the data will remain in the database table and will look like we have an open session when in fact we don&#39;t. This method will ensure that the sessions are cleared out.  </p>
@@ -351,9 +325,7 @@
 <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">gc</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>We have been talking about the gc method but I have yet to explain what it does. All the gc method does is delete all sessions from the database that have expired due to a timeout. We are figuring this out by calculating the time between the last access of the session subtracted from the current time. If the difference is greater than the session lifetime then we are dealing with an expired session.  </p>
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">gc</span><span class="p">()</span>
@@ -366,9 +338,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$session_res</span><span class="p">)</span> <span class="k">return</span> <span class="k">FALSE</span><span class="p">;</span>
     <span class="k">else</span> <span class="k">return</span> <span class="k">TRUE</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>Most of the work takes place in the read and write methods. I admit they are pretty simple as well. Actually there is not really anything overly complex about a custom session handler. The functionality that you will need in the read and write methods are below.  </p>
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">read</span><span class="p">(</span><span class="nv">$ses_id</span><span class="p">)</span>
@@ -416,9 +386,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$session_res</span><span class="p">)</span> <span class="k">return</span> <span class="k">FALSE</span><span class="p">;</span>
     <span class="k">else</span> <span class="k">return</span> <span class="k">TRUE</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>The code for the read and write methods is pretty self-explanatory however I am going to explain what is going on here. When you hit a page it reads the session data for your session id. It grabs the data from the database and it is put into the $_SESSION global array. When the page is finished processing it will call the write method to store the session values into the database.  </p>
 
 <p>Now that we have all of that out of the way and the code will work as a basic custom session handler it&#39;s time to talk about the session security and how we should handle the sessions. As was said above you really have no way to know if a person is whom they are reporting they are. You cannot rely on the users IP address because they could be in a computer lab on a local network where all computers are routed through the same proxy. They also could be an AOL user who&#39;s IP can change between page loads due to the proxies that AOL uses.  </p>
@@ -442,9 +410,7 @@ Accept-Language: en
 <p>The first thing we need to do is create the fingerprint We can do this in the session class, we will first create a parameter that will hold the secret key.  </p>
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">private</span> <span class="nv">$fingerprintKey</span> <span class="o">=</span> <span class="s1">&#39;sdfkj43545lkjlkmndsf89a*(&amp;amp;(Nhnkj2h349*&amp;amp;(&#39;</span><span class="p">;</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>This is where the system will get a bit more complex. Don&#39;t worry I am going to explain everything in depth. Before we jump into anymore code I am going to explain a bit about what we are going to accomplish. What our application will be doing is basically checking for abnormal activity from a user. We are not going to be assuming that the user will report any information to us and we are not going to require it. When I say this I mean that we are not going to rely on the users IP address and not going to assume that it wont change.  </p>
 
 <p>The main goal in securing the session is to watch for abnormal behavior. If a user comes to your site and they are reporting the same User Agent over say 50 page loads and all the sudden it changes, that&#39;s abnormal and we should take action, however it should not be a severe action. If they come to your site and the User Agent is constantly changing, then this is very normal for the user, maybe we should check another value that is reported by the user. I am not going to jump in and try to make this fail proof for you what I am going to do is show you how would can implement this using only 1 value that is reported by the user. We will use the User Agent header which is sent by the browser most of the time. We will discuss what should happen when the user hits the threshold and then the User Agent changes and what you shouldn&#39;t do as well.  </p>
@@ -533,9 +499,7 @@ Accept-Language: en
         <span class="k">else</span> <span class="k">return</span> <span class="k">TRUE</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>Now that we know what we are going to do it is time to look at the code that we will put into the Session class and explain what it does.  </p>
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">function</span> <span class="nf">HijackCheck</span><span class="p">()</span> 
@@ -595,9 +559,7 @@ Accept-Language: en
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>The first thing we need to do are set our limits.  We will need to set a user agent threshold. What is the user agent threshold?  The threshold is a number let&#39;s say 25.  This is the number that the user needs to reach without the user agent changing.  If they reach this number we are going to assume that it is not normal for the user agent for this user to change.  On every page load this method will be called and it will check the user agent against the one from the first page load (if there is one)  If it does not change it will increment the UA_CHECKS session variable.  Once the UA_CHECKS hits the UA_THRESHOLD we know that the user has loaded 25 pages without a change in the user agent.  If all of the sudden the user agent changes we know that something went wrong.  </p>
 
 <p>However we are going to treat this situation lightly, we are not going to assume that someone hijacked the system.  What we will do is just show the user the password form and make them provide their password again.  Since we are treating this situation lightly but we also do not want a hijacked session to remain open we will have to set a limit on the password checks.  I feel a good number for PW_MAX_CHECKS would be 3.  If the user does not provide the correct password after 3 attempts we will destroy the session. Doing this will log the user out of the system and any data stored in the session will be removed.  </p>
@@ -622,9 +584,7 @@ Accept-Language: en
     <span class="k">array</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$s</span><span class="p">,</span> <span class="s1">&#39;destroy&#39;</span><span class="p">),</span>
     <span class="k">array</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$s</span><span class="p">,</span> <span class="s1">&#39;gc&#39;</span><span class="p">)</span>
 <span class="p">);</span>
-</code></pre>
-</div>
-
+</code></pre></div>
 <p>So now if someone is browsing the site while logged in, and something out of the ordinary happens it will prompt the user for their password and if they do not provide the correct password after 3 attempts it will destroy the session.  Handling the situation lightly like this allows us to not assume anything and only react when there is definitely a problem.  If someone comes to the site and the user agent changes every 5 pages we will assume that is normal and we do not do anything.  You could take this class quite a bit further such as checking the users IP after the user fails the user agent checks but I think that would be overkill.  </p>
 
 <p>You can also take this further because now you have a custom session handler you can log what browser each user is using, the IP and keep your site&#39;s own traffic stats if you wanted.  I have this class extended to show what type of user the person is (Guest, Client, Admin) and I was even logging the pages that they have navigated and the time on each page.  Logging this in the admin interface would allow me to see which pages were most important to my users and also see how long the average user would remain on my site.  There are many directions you can take this, let me know which direction you go.</p>
@@ -826,35 +786,35 @@ Accept-Language: en
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+                        <a style='font-size: 75%' href='/tags/php'>php</a>
 <a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
 <a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
 <a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
 <a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
 <a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
 
                         <!-- tagcloud goes here -->
                     </div>

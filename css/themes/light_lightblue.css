@@ -641,24 +641,30 @@ background: #CACACA url('images/light_lightblue/bg_blockquote.png') top left no-
 /** START OF SERIES TABLE OF CONTENTS **/
 
 #series {
-  padding-left: 15px;
-  padding-bottom: 25px;
+  border: 1px dashed black;
+  padding: 25px 15px;
+  width: 75%;
+  margin: 0px auto 10px auto;
 }
 
+#series .toc {
+  font-weight: bold;
+}
 #series .info {
   font-size: 16px;
   font-style: italic;
+  margin-bottom: 5px;
 }
 
 #series .info .title {
   font-weight: bold;
 }
 
-#series .series-item .current .title {
+#series .current .title {
   font-style: italic;
   font-weight: bold;
 }
 
-.series-item .title {
+#series .series-item .title {
   padding-left: 10px;
 }

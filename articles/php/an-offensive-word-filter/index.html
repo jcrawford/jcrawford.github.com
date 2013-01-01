@@ -193,7 +193,7 @@
                     <li id="menu-item-2069" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
                         <a href="#"><span>Articles</span></a>
                         <ul class="sub-menu">
-                            <li id="menu-item-2070" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li></ul></li>
+                            </li><li class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/jekyll/">Jekyll</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/jekyll/starting-with-jekyll/">[S] Moving to Jekyll</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow"><a href="/articles/php/">PHP</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/going-deep-inside-php-sessions/">Going Deep Inside PHP Sessions</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/articles/php/an-offensive-word-filter/">An Offensive Word Filter</a></li></ul></li>
                         </ul>
                     </li>
                     <li id="menu-item-2021" class="menu-item menu-item-type-custom menu-item-object-custom menu_arrow">
@@ -221,27 +221,9 @@
             <div id="content_inner">
                 <div id="main" class="ten columns clearfix">
                     <div id="main_inner">
-                        
-                            <div id="series">
-                                <div class="info">This post is part of a series called: <span class="title">This is a test</span></div>
-                                <div class="toc">Table of Contents</div>
-                                
-                                    
-                                        <div class="series-item current">
-                                            <div class="title">1. An Offensive Word Filter</div>
-                                        </div>
-                                    
-                                
-                                    
-                                        <div class="series-item">
-                                            <div class="title">2. <a href="/articles/php/going-deep-inside-php-sessions">Going Deep Inside PHP Sessions</a></div>
-                                        </div>
-                                    
-                                
-                            </div>
                         	
                         <div class="clearboth"></div>
-                            
+                        <h1>An Offensive Word Filter</h1>
                         <p>One of my tasks recently was to create an offensive word filter.  This filter would be called on pages which had form posts that contained user data.  We did not want to allow offensive words to be shown.  Words like crap or crapping would be shown as c&lowast;&lowast;p and c&lowast;&lowast;&lowast;&lowast;&lowast;&lowast;g. The first thing I did was determine what methods would be required for the class.  We wanted to be able to check a string for offensive words as well as censor out the offensive words.  I created the class named OffensiveWord and created the appropriate methods called isOffensive and censor.</p>
 
 <p>We also did not want to have to instantiate the class in order to call the method so we opted to use static methods.  Using static methods we are able to call OffensiveWord::isOffensive( ‘string’ ); rather than having to instantiate the class. Along with these two methods we also needed a method for loading the offensive words into the object from a flat file. We choose to use a flat file but you could very well use a database table for this as well.</p>
@@ -290,8 +272,7 @@
      <span class="c1">// they must be the same length</span>
      <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
  <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>Once we have the ability to load the offensive word list we now need to work on checking whether there are offensive words within a string and a method for censoring them out. In the isOffensive static method we first need to check and see if the word list has been loaded, we simply count how many words are in the class property $_word_list. If there are more than 0 then the list has already been loaded, if not we need to call the load_bad_word_list() method. Once we have the list of words we need to loop over every word and check to see if our string contains any of the offensive words. For this task I am using the strpos php function. A lot of people would have just used the strstr function but for this situation strpos is better. The reason is because strstr will return the word found in the string and strpos just returns a true/false value. strpos takes less processing especially when you just want to know if a value exists or not. Looping over the words if any are found the method will return true otherwise when the looping is over it will return false. Pretty simple eh.</p>
 
@@ -323,8 +304,7 @@
 <span class="p">{</span>
     <span class="nv">$a</span> <span class="o">+=</span> <span class="mi">5</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>Notice that the add function call does not effect the value of $a outside of the add method. However the addref method call does. This is because you are passing $a into addref by reference. When you call the add method call php will create a copy of the $a variable and any operations inside the add function are completed on the copy of the variable.</p>
 
@@ -449,8 +429,7 @@
 <span class="nx">OffensiveWord</span><span class="o">::</span><span class="na">censor</span><span class="p">(</span> <span class="nv">$string</span> <span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$string</span><span class="p">;</span>
 <span class="c1">// outputs: Some c****y words are in this c**p</span>
-</code></pre>
-</div>
+</code></pre></div>
 
 <p>If you have any questions about this article please feel free to contact me. If there is a topic you would like explained, drop me a line and I will try to get an article posted to better explain it for you.</p>
 
@@ -651,35 +630,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
+                        <a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
 <a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
 <a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
 <a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
 <a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
 <a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
 
                         <!-- tagcloud goes here -->
                     </div>
