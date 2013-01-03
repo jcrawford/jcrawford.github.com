@@ -118,6 +118,23 @@
                    });
                }
             });
+            
+            $(document).ready(function () {  
+              var top = $('#series').offset().top - parseFloat($('#series').css('marginTop').replace(/auto/, 0));
+              $(window).scroll(function (event) {
+                // what the y position of the scroll is
+                var y = $(this).scrollTop();
+  
+                // whether that's below the form
+                if (y >= top) {
+                  // if so, ad the fixed class
+                  $('#series').addClass('fixed');
+                } else {
+                  // otherwise remove it
+                  $('#series').removeClass('fixed');
+                }
+              });
+            });
 		});
 	
         // var _gaq = _gaq || [];
@@ -221,76 +238,18 @@
             <div id="content_inner">
                 <div id="main" class="ten columns clearfix">
                     <div id="main_inner">
-                        
-    <a name="toc"></a>
-    <div class="series">
-        <div class="info">This article is part of a series called: <span class="title">Moving to Jekyll</span></div>
-        <div class="toc">Table of Contents</div>
-        
-            
-                <div class="series-item current">
-                    <div class="title">1. Starting wtih Jekyll</div>
-                </div>
-            
-        
-            
-                <div class="series-item">
-                    <div class="title">2. <a href="/articles/jekyll/migrating-from-wordpress">Migrating from Wordpress</a></div>
-                </div>
-            
-        
-            
-                <div class="series-item">
-                    <div class="title">3. <a href="/articles/jekyll/layouts-and-includes">Layouts and Includes</a></div>
-                </div>
-            
-        
-            
-                <div class="series-item">
-                    <div class="title">4. <a href="/articles/jekyll/conquering-pagination">Conquering Pagination</a></div>
-                </div>
-            
-        
-                                
-        
-            <a name="attachments"></a>
-            <div class="attachments">
-                <div class="title">Attachments</div>
-                <div class="attachment">
-                    
-                        
-                        <span class="index">1.</span> <a href="/files/articles/starting-with-jekyll.zip">starting-with-jekyll.zip</a><br/>
-                    
-                </div>
-            </div>
-        
-        
-        
-            <br />
-            <a name="references"></a>
-            <div class="references">
-                <div class="title">References</div>
-                <div class="reference">
-                    
-                        <span class="index">1.</span> <a href="http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/">How to Migrate from Wordpress to Jekyll</a><br/>
-                    
-                        <span class="index">2.</span> <a href="https://github.com/mojombo/jekyll/wiki/usage/">Jekyll Usage Documentation</a><br/>
-                    
-                </div>
-            </div>
-        
-    </div>
-	
-                        <div class="clearboth"></div>
-                        
                         <h1>Starting wtih Jekyll</h1>
-                        <h3 id="toc_0">Is Jekyll Right for You?</h3>
+                        <h3 id="toc_0">Before we Begin</h3>
+
+<p>Before we get started I need to make the disclaimer that I am not a Jekyll expert.  The experiences outlined here are experiences I have had along the road to migrating to Jekyll.  If you see something that is incorrect or if you know a better way to do something please speak up and let me know.  I am providing this walk-through to get people started with migrating to Jekyll.</p>
+
+<h3 id="toc_1">Is Jekyll Right for You?</h3>
 
 <p>Before you up and jump ship for Jekyll you need to make sure you are up for the task.  Jekyll is not a one click solution like other blogging platforms out there, it is meant for developers who love to hack on things.  It is going to take a considerable amount of effort to get the site layout in place and then you will find that many of the features you wish to have are not included so you have to start creating plugins so you can have this functionality.  </p>
 
 <p>Make sure you are up for the task before jumping in.  </p>
 
-<h3 id="toc_1">Installing Jekyll</h3>
+<h3 id="toc_2">Installing Jekyll</h3>
 
 <p>Installing Jekyll requires that you already have Ruby and RubyGems intalled, I will not be covering that in this article.  I am working on Mac OS X and it was already installed by default however I have installed <a href="http://mxcl.github.com/homebrew/">homebrew</a> and installed ruby manually so that I could be running on the latest version.  To install jekyll execute the command I used below.</p>
 <div class="highlight"><pre><code class="bash">jcrawford@Workstation:~/jcrawford.github.com - article_plugin *% <span class="c"># gem install jekyll</span>
@@ -303,7 +262,7 @@ jcrawford@Workstation:~/jcrawford.github.com - article_plugin *% <span class="c"
 </code></pre></div>
 <p>When you install it you might see other gems being installed as well, those are the required dependencies for jekyll and I already had them installed.</p>
 
-<h3 id="toc_2">Setting Up Your Site</h3>
+<h3 id="toc_3">Setting Up Your Site</h3>
 
 <p>When you first start you will need to decide how you want to setup your site.  You can choose one of two methods.</p>
 
@@ -312,7 +271,7 @@ jcrawford@Workstation:~/jcrawford.github.com - article_plugin *% <span class="c"
 <li>Create your site from scratch.</li>
 </ol>
 
-<p>I personally decided to go with creating my own from scratch because I didn&#39;t want to inherit anyone&#39;s layouts or custom plugins,  I wanted this to be a learning experience.  In this article I will be explaining how to create a site from scratch so if you fork a repository skip ahead to the next post in <a href="#toc">this series</a>.  I will also be using the Markdown format for my posts, however you are free to use whatever markup Jekyll supports.  You can also see the sites entire source for this site in my <a href="http://www.github.com/jcrawford/jcrawford.github.com/tree/dev">Github Repository</a>.</p>
+<p>I decided to go with creating my own from scratch because I didn&#39;t want to inherit anyone&#39;s layouts or custom plugins,  I wanted this to be a learning experience.  In this article I will be explaining how to create a site from scratch so if you fork a repository skip ahead to the next post in <a href="#toc">this series</a>.  I will also be using the Markdown format for my posts, however you are free to use whatever markup Jekyll supports.  You can also see the sites entire source for this site in my <a href="http://www.github.com/jcrawford/jcrawford.github.com/tree/dev">Github Repository</a>.</p>
 
 <p>To start from scratch we need to create an initial directory structure with a few initial files.  I have shown what your base directory should consist of but before you go and create this please read the explanations of what each are below.  </p>
 
@@ -342,7 +301,7 @@ This is where you will put all of your post files, each file MUST have a <a href
 When Jekyll builds your site this is the directory it uses to put the generated source in.<br></li>
 </ul>
 
-<h3 id="toc_3">Creating Your Files</h3>
+<h3 id="toc_4">Creating Your Files</h3>
 
 <p>The first thing you will have to create is the <code>\_config.yml</code> file to store all of your site configurations.</p>
 <div class="highlight"><pre><code class="text">title: &quot;My Blog&quot;
@@ -411,69 +370,9 @@ Successfully generated site: /Users/jcrawford/jcrawford.github.com -&gt; /Users/
 <span class="o">[</span>2012-12-31 22:39:18<span class="o">]</span> INFO  ruby 1.9.3 <span class="o">(</span>2012-11-10<span class="o">)</span> <span class="o">[</span>x86_64-darwin11.4.2<span class="o">]</span>
 <span class="o">[</span>2012-12-31 22:39:18<span class="o">]</span> INFO  WEBrick::HTTPServer#start: <span class="nv">pid</span><span class="o">=</span>36970 <span class="nv">port</span><span class="o">=</span>4000
 </code></pre></div>
-<p>You should see similar results that I have shown above, if not then something muat have gone wrong with your setup of the files or with your actual installation of Jekyll.  You will also notice that I used the <code>--server</code> argument when running the Jekyll command this tells Jekyll to fire up a basic web server using the WEBrick ruby gem so that you can test your site.  You can now load up your browser and type in http://localhost:4000/ and you should see your site.  As mentioned it is VERY basic but you should see an unordered list with the 2 posts we created earlier.  You should also be able to click on the links and it should take you to view the contents of the post.</p>
+<p>You should see similar results that I have shown above, if not then something must have gone wrong with your setup of the files or with your actual installation of Jekyll.  You will also notice that I used the <code>--server</code> argument when running the Jekyll command this tells Jekyll to fire up a basic web server using the WEBrick ruby gem so that you can test your site.  You can now load up your browser and type in http://localhost:4000/ and you should see your site.  As mentioned it is <strong>VERY</strong> basic but you should see an unordered list with the 2 posts we created earlier.  You should also be able to click on the links and it should take you to view the contents of the post.</p>
 
 
-                        
-    <a name="toc"></a>
-    <div class="series">
-        <div class="info">This article is part of a series called: <span class="title">Moving to Jekyll</span></div>
-        <div class="toc">Table of Contents</div>
-        
-            
-                <div class="series-item current">
-                    <div class="title">1. Starting wtih Jekyll</div>
-                </div>
-            
-        
-            
-                <div class="series-item">
-                    <div class="title">2. <a href="/articles/jekyll/migrating-from-wordpress">Migrating from Wordpress</a></div>
-                </div>
-            
-        
-            
-                <div class="series-item">
-                    <div class="title">3. <a href="/articles/jekyll/layouts-and-includes">Layouts and Includes</a></div>
-                </div>
-            
-        
-            
-                <div class="series-item">
-                    <div class="title">4. <a href="/articles/jekyll/conquering-pagination">Conquering Pagination</a></div>
-                </div>
-            
-        
-                                
-        
-            <a name="attachments"></a>
-            <div class="attachments">
-                <div class="title">Attachments</div>
-                <div class="attachment">
-                    
-                        
-                        <span class="index">1.</span> <a href="/files/articles/starting-with-jekyll.zip">starting-with-jekyll.zip</a><br/>
-                    
-                </div>
-            </div>
-        
-        
-        
-            <br />
-            <a name="references"></a>
-            <div class="references">
-                <div class="title">References</div>
-                <div class="reference">
-                    
-                        <span class="index">1.</span> <a href="http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/">How to Migrate from Wordpress to Jekyll</a><br/>
-                    
-                        <span class="index">2.</span> <a href="https://github.com/mojombo/jekyll/wiki/usage/">Jekyll Usage Documentation</a><br/>
-                    
-                </div>
-            </div>
-        
-    </div>
-	
                         <div class="clearboth"></div>
                     </div><!-- #main_inner -->
                 </div><!-- #main -->
@@ -485,9 +384,62 @@ Successfully generated site: /Users/jcrawford/jcrawford.github.com -&gt; /Users/
                                 <input type="text" name="s" id="s" value="Enter Your Search Term" onfocus="if(this.value=='Enter Your Search Term')this.value='';" onblur="if(this.value=='')this.value='Enter Your Search Term';">
                             </form>
                         </div>
+                        <div class="clearboth"></div>
+                        
+                            <div id="seriesWrapper">
+        <div id="series">
+            <h4 class="widgettitle"><span>Table of Contents</span></h4>
+            
+                <a name="toc"></a>
+                <div class="series">
+                    <div class="info">This article is part of a series called: <span class="title">Moving to Jekyll</span></div>
+                    <div class="toc">Table of Contents</div>
+                    
+                        
+                            <div class="series-item current">
+                                <div class="title">1. Starting wtih Jekyll</div>
+                            </div>
+                        
+                    
+                        
+                            <div class="series-item">
+                                <div class="title">2. <a href="/articles/jekyll/migrating-from-wordpress">Migrating from Wordpress</a></div>
+                            </div>
+                        
+                    
+                        
+                            <div class="series-item">
+                                <div class="title">3. <a href="/articles/jekyll/layouts-and-includes">Layouts and Includes</a></div>
+                            </div>
+                        
+                    
+                        
+                            <div class="series-item">
+                                <div class="title">4. <a href="/articles/jekyll/conquering-pagination">Conquering Pagination</a></div>
+                            </div>
+                        
+                    
+                                
+                    
+                        <a name='attachments'></a><div class='attachments'><div class='title'>Attachments</div><div class='attachment'><span class='index'>1.</span> <a href='/Volumes/Storage/Dropbox/Projects/jcrawford.github.com/files/articles/starting-with-jekyll.zip'>starting-with-jekyll.zip</a></div></div>
+                    
+        
+                    
+                        <a name='references'></a><div class='references'><div class='title'>References</div><div class='reference'><span class='index'>1.</span> <a href='http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/'>How to Migrate from Wordpress to Jekyll</a></div><div class='reference'><span class='index'>2.</span> <a href='https://github.com/mojombo/jekyll/wiki/usage/'>Jekyll Usage Documentation</a></div></div>
+                    
+        
+
+                </div>
+            	
+        </div>
+</div>
+
+                        
+                        <div class="clearboth"></div>
+                        
 						<div id="themes">
 							<div id="style-switcher">
-								<span style="font-size: 16px;">Select Theme: </span>
+								<h4 class="widgettitle">Select Theme: </h4>
 								<select name="switcher" id="switcher" style="pretty dk">
 									<option value='light_lightblue'>Default</option>
 									<option value='gravity'>Gravity</option>
@@ -502,7 +454,7 @@ Successfully generated site: /Users/jcrawford/jcrawford.github.com -&gt; /Users/
 						</div>
                         
 						<div class="clearboth"></div>
-                        
+                    
                         <div id="categories-3" class="widget widget_categories">
                             <h4 class="widgettitle"><span>Categories</span></h4>
                             <ul>
@@ -540,15 +492,11 @@ Successfully generated site: /Users/jcrawford/jcrawford.github.com -&gt; /Users/
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/news/" title="News">News</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/internet/" title="Internet">Internet</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/software/" title="Software">Software</a>
+                                    <a href="/category/news/" title="News">News</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -556,15 +504,19 @@ Successfully generated site: /Users/jcrawford/jcrawford.github.com -&gt; /Users/
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
+                                    <a href="/category/software/" title="Software">Software</a>
+                                </li>
+                                
+                        	    <li class="cat-item cat-item-4">
                                     <a href="/category/tutorials/" title="Tutorials">Tutorials</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
+                                    <a href="/category/ppp/" title="Ppp">Ppp</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
-                                    <a href="/category/ppp/" title="Ppp">Ppp</a>
+                                    <a href="/category/websites/" title="Websites">Websites</a>
                                 </li>
                                 
                         	    <li class="cat-item cat-item-4">
@@ -670,35 +622,35 @@ Successfully generated site: /Users/jcrawford/jcrawford.github.com -&gt; /Users/
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+                        <a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
 <a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
 <a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
+<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
 <a style='font-size: 75%' href='/tags/server-side'>server-side</a>
 <a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
 <a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
 
                         <!-- tagcloud goes here -->
                     </div>

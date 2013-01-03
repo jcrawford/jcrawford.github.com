@@ -1,18 +1,6 @@
-div.highlight pre, div.highlight code {
-    border: medium none;
-    margin: 0;
-    overflow: auto;
-    padding: 10px;
-    background-color: #272822 !important;
-    font-family:  "Lato", "Open Sans", sans-serif;
-    font-size: 13px;
-    line-height: 25px;
-}
 
 div.highlight {
     background-color: #272822 !important;
-    border-bottom: 1px solid #CCCCCC;
-    border-top: 1px solid #CCCCCC;
     margin-bottom: 10px;
     margin-top: 15px;
 }
@@ -23,13 +11,31 @@ div.highlight {
 
 /** START OF SERIES TABLE OF CONTENTS **/
 
+#seriesWrapper { 
+  position: absolute;
+  left: -916px;
+  top: 40px;
+  width: 280px;
+  margin: 0px auto 10px auto;
+}
+
+#series {
+  position: absolute;
+  width: 270px;
+  top: 0px;
+  border: 1px dashed black;
+  padding: 25px 15px;
+}
+
+#series.fixed {
+  width: 270px;
+  position: fixed;
+  top: 10px;
+}
+
+
 .series .toc {
   font-weight: bold;
-}
-.series .info {
-  font-size: 16px;
-  font-style: italic;
-  margin-bottom: 5px;
 }
 
 .series .info .title, .series .attachments .title, .series .references .title {
@@ -45,16 +51,25 @@ div.highlight {
   padding-left: 10px;
 }
 
-.series .attachments {
+.series .attachments, .series .references {
   margin-top: 15px;
 }
 
-.series .attachments .attachment {
-  padding-left: 10px;
-}
-
-.series .references .reference {
+.series .attachments .attachment, .series .references .reference {
   padding-left: 10px;
 }
 
 /** END OF SERIES TABLE OF CONTENTS **/
+
+pre, code {
+border: medium none;
+margin: 0;
+overflow: auto;
+background-color: #272822;
+
+font-family: 'Lucida Console', 'Monaco', 'monospace';
+font-size: 13px;
+
+padding: 2px 4px;
+color: #c5c8c6;
+}
