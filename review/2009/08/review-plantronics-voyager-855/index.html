@@ -120,12 +120,13 @@
             });
             
           var top = $('#sidebarWrapper').offset().top - parseFloat($('#sidebarWrapper').css('marginTop').replace(/auto/, 0));
+          
+                    
           $(window).scroll(function (event) {
             // what the y position of the scroll is
             var y = $(this).scrollTop();
             // whether that's below the form
-            var window_width = $(this).width();
-            if (y >= top && window_width > 767) {
+            if (y >= top) {
               // if so, ad the fixed class
               $('#sidebarWrapper').addClass('fixed');
               $('#sidebarWrapper').css('width', $('#sidebarWrapper').parent().width());
@@ -133,6 +134,10 @@
               // otherwise remove it
               $('#sidebarWrapper').removeClass('fixed');
             }
+          });
+          
+          $(window).resize(function() {
+              $('#sidebarWrapper').css('width', $('#sidebarWrapper').parent().width());
           });
 		});
 	
@@ -642,35 +647,35 @@
                         <h4 class="widgettitle">
                             <span>Tag Cloud</span>
                         </h4>
-                        <a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
+                        <a style='font-size: 237%' href='/tags/Rants'>Rants</a>
 <a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
+<a style='font-size: 266%' href='/tags/News'>News</a>
+<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
+<a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
+<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
+<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
+<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
+<a style='font-size: 224%' href='/tags/Local'>Local</a>
+<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
+<a style='font-size: 143%' href='/tags/Family'>Family</a>
+<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
+<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
+<a style='font-size: 217%' href='/tags/Software'>Software</a>
+<a style='font-size: 92%' href='/tags/TV'>TV</a>
+<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
+<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 181%' href='/tags/Work'>Work</a>
+<a style='font-size: 230%' href='/tags/Development'>Development</a>
 <a style='font-size: 75%' href='/tags/Scams'>Scams</a>
 <a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
+<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
 <a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
+<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
+<a style='font-size: 75%' href='/tags/php'>php</a>
+<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
+<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
+<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
 
                         <!-- tagcloud goes here -->
                     </div>

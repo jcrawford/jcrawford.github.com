@@ -120,12 +120,13 @@
             });
             
           var top = $('#sidebarWrapper').offset().top - parseFloat($('#sidebarWrapper').css('marginTop').replace(/auto/, 0));
+          
+                    
           $(window).scroll(function (event) {
             // what the y position of the scroll is
             var y = $(this).scrollTop();
             // whether that's below the form
-            var window_width = $(this).width();
-            if (y >= top && window_width > 767) {
+            if (y >= top) {
               // if so, ad the fixed class
               $('#sidebarWrapper').addClass('fixed');
               $('#sidebarWrapper').css('width', $('#sidebarWrapper').parent().width());
@@ -133,6 +134,10 @@
               // otherwise remove it
               $('#sidebarWrapper').removeClass('fixed');
             }
+          });
+          
+          $(window).resize(function() {
+              $('#sidebarWrapper').css('width', $('#sidebarWrapper').parent().width());
           });
 		});
 	
