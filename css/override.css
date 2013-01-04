@@ -53,6 +53,5 @@ color: #c5c8c6;
 
 #sidebarWrapper.fixed {
   position: fixed;
-  width: inherit;
   top: 10px;
 }
