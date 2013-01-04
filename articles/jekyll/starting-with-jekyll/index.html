@@ -126,9 +126,9 @@
             // whether that's below the form
             var window_width = $(this).width();
             if (y >= top && window_width > 767) {
-              console.log(window_width)
               // if so, ad the fixed class
               $('#sidebarWrapper').addClass('fixed');
+              $('#sidebarWrapper').css('width', $('#sidebarWrapper').parent().width());
             } else {
               // otherwise remove it
               $('#sidebarWrapper').removeClass('fixed');
