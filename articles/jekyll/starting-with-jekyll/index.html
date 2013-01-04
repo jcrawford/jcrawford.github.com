@@ -119,22 +119,21 @@
                }
             });
             
-            $(document).ready(function () {  
-              var top = $('#series').offset().top - parseFloat($('#series').css('marginTop').replace(/auto/, 0));
-              $(window).scroll(function (event) {
-                // what the y position of the scroll is
-                var y = $(this).scrollTop();
-  
-                // whether that's below the form
-                if (y >= top) {
-                  // if so, ad the fixed class
-                  $('#series').addClass('fixed');
-                } else {
-                  // otherwise remove it
-                  $('#series').removeClass('fixed');
-                }
-              });
-            });
+          var top = $('#sidebarWrapper').offset().top - parseFloat($('#sidebarWrapper').css('marginTop').replace(/auto/, 0));
+          $(window).scroll(function (event) {
+            // what the y position of the scroll is
+            var y = $(this).scrollTop();
+            // whether that's below the form
+            var window_width = $(this).width();
+            if (y >= top && window_width > 767) {
+              console.log(window_width)
+              // if so, ad the fixed class
+              $('#sidebarWrapper').addClass('fixed');
+            } else {
+              // otherwise remove it
+              $('#sidebarWrapper').removeClass('fixed');
+            }
+          });
 		});
 	
         // var _gaq = _gaq || [];
@@ -377,16 +376,10 @@ Successfully generated site: /Users/jcrawford/jcrawford.github.com -&gt; /Users/
                     </div><!-- #main_inner -->
                 </div><!-- #main -->
 
-                                <div id="sidebar" class="six columns">
-                    <div id="sidebar_inner">
-                        <div id="search-3" class="widget widget_search">
-                            <form id="searchform">
-                                <input type="text" name="s" id="s" value="Enter Your Search Term" onfocus="if(this.value=='Enter Your Search Term')this.value='';" onblur="if(this.value=='')this.value='Enter Your Search Term';">
-                            </form>
-                        </div>
-                        <div class="clearboth"></div>
-                        
-                        
+                    <div id="sidebar" class="six columns">
+        <div id="sidebar_inner">
+            <div id="sidebarWrapper">
+            
     <div id="seriesWrapper">
         <div id="series">
             <h4 class="widgettitle"><span>Table of Contents</span></h4>
@@ -431,229 +424,34 @@ Successfully generated site: /Users/jcrawford/jcrawford.github.com -&gt; /Users/
             </div>
         </div>
     </div>
+    <div class="clearboth"></div>
 	
-                        
-                        <div class="clearboth"></div>
-                        
-						<div id="themes">
-							<div id="style-switcher">
-								<h4 class="widgettitle">Select Theme: </h4>
-								<select name="switcher" id="switcher" style="pretty dk">
-									<option value='light_lightblue'>Default</option>
-									<option value='gravity'>Gravity</option>
-									<option value='dark_blue'>Dark Blue</option>
-									<option value='dark_coral'>Dark Coral</option>
-									<option value='dark_crimson'>Dark Crimson</option>
-									<option value='dark_glance'>Dark Glance</option>
-									<option value='dark_green'>Dark Green</option>
-									<option value='dark_hotpink'>Dark Hotpink</option>
-								</select>
-							</div>
-						</div>
-                        
-						<div class="clearboth"></div>
-                    
-                        <div id="categories-3" class="widget widget_categories">
-                            <h4 class="widgettitle"><span>Categories</span></h4>
-                            <ul>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/development/" title="Development">Development</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/reviews/" title="Reviews">Reviews</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/raves/" title="Raves">Raves</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/reviews/" title="Reviews">Reviews</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/development/" title="Development">Development</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/rants/" title="Rants">Rants</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/work/" title="Work">Work</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/entertainment/" title="Entertainment">Entertainment</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/internet/" title="Internet">Internet</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/news/" title="News">News</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/mac/" title="Mac">Mac</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/software/" title="Software">Software</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/tutorials/" title="Tutorials">Tutorials</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/ppp/" title="Ppp">Ppp</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/websites/" title="Websites">Websites</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/local/" title="Local">Local</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/useful/" title="Useful">Useful</a>
-                                </li>
-                                
-                        	    <li class="cat-item cat-item-4">
-                                    <a href="/category/javascript/" title="Javascript">Javascript</a>
-                                </li>
-                                
-                      		</ul>
-                        </div>
-                        
-                        <div class="clearboth"></div>
-                        
-                        <div id="top-posts-2" class="widget widget_top-posts"><h4 class="widgettitle"><span>Top Posts &amp; Pages</span></h4><ul class='widgets-list-layout no-grav'>
-                            <li>
-                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/php-articles/going-deep-inside-php-sessions/" class="bump-view" data-bump-view="tp">Going deep inside PHP sessions</a></div>
-                            </li>
-                            <li>
-                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2012/12/php-master-series/" class="bump-view" data-bump-view="tp">PHP Master Series</a></div>
-                            </li>
-                            <li>
-                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2008/04/tagchimp.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2008/05/metax-and-tagchimp/" class="bump-view" data-bump-view="tp">MetaX and tagChimp</a></div>
-                            </li>
-                            <li>
-                                <img src="http://i1.wp.com/www.josephcrawford.com/wp-content/uploads/2009/05/ffusa-featured.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2009/05/first-financial-usa-ffusa/" class="bump-view" data-bump-view="tp">First Financial USA (FFUSA)</a></div>
-                            </li>
-                            <li>
-                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2009/08/WebOS.png?resize=40%2C40" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2009/08/a-basic-webos-application-and-the-depot/" class="bump-view" data-bump-view="tp">A Basic WebOS Application and the Depot</a></div>
-                            </li>
-                            <li>
-                                <img src="http://i0.wp.com/www.josephcrawford.com/wp-content/uploads/2006/11/photo_isight.jpeg?resize=40%2C40" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2006/11/scary-isight-trick/" class="bump-view" data-bump-view="tp">Scary iSight Trick</a></div>
-                            </li>
-                            <li>
-                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/2010/09/bose-companion-5-and-ubuntu/" class="bump-view" data-bump-view="tp">Bose Companion 5 and Ubuntu (SOLVED)</a></div>
-                            </li>
-                            <li>
-                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/about/" class="bump-view" data-bump-view="tp">About</a></div>
-                            </li>
-                            <li>
-                                <img src="http://1.gravatar.com/avatar/bf6bc93ab3eeef8996970fa8ac9895a3?s=40&#038;d=http%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwhite-gray-80.png%3Fs%3D40&#038;r=PG" class='widgets-list-layout-blavatar' />
-                                <div class="widgets-list-layout-links"><a href="http://www.josephcrawford.com/macdev-articles/using-foundations-nslog-function/" class="bump-view" data-bump-view="tp">Using Foundation&#039;s NSLog Function</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="popularwidget-2" class="widget miss_popular_widget">
-                        <h4 class="widgettitle">
-                            <span>Popular Posts</span>
-                        </h4>
-                        <ul class="post_list small_post_list">
-                            <li class="post_list_module">
-                                <div class="post_list_image">
-                                    <a href="http://www.josephcrawford.com/2007/11/phpwomen-a-site-for-women-programming-php/" title="PHPWomen: A site for women programming PHP">
-                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/php_women_2010_large_calendar-p158038689179469171b7aic_400-119x72.jpeg" title="PHPWomen: A site for women programming PHP" alt="Php Women 2010 Large Calendar P158038689179469171b7aic 400" width="119" height="72" />
-                                    </a>
-                                </div>
-                                <div class="post_list_content">
-                                    <p class="post_title">
-                                        <a rel="bookmark" href="http://www.josephcrawford.com/2007/11/phpwomen-a-site-for-women-programming-php/" title="PHPWomen: A site for women programming PHP">PHPWomen: A site for women programming PHP</a>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="post_list_module">
-                                <div class="post_list_image">
-                                    <a href="http://www.josephcrawford.com/2009/03/the-new-itunes-hdcp-content/" title="The New iTunes HDCP Content">
-                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/hdcp-featured-119x72.png" title="The New iTunes HDCP Content" alt="Hdcp Featured" width="119" height="72" />
-                                    </a>
-                                </div>
-                                <div class="post_list_content">
-                                    <p class="post_title">
-                                        <a rel="bookmark" href="http://www.josephcrawford.com/2009/03/the-new-itunes-hdcp-content/" title="The New iTunes HDCP Content">The New iTunes HDCP Content</a>
-                                    </p>
-                                </div>
-                            </li>
-                            <li class="post_list_module">
-                                <div class="post_list_image">
-                                    <a href="http://www.josephcrawford.com/2007/10/customizing-the-leopard-dock/" title="Customizing the Leopard Dock">
-                                        <img class="hover_fade_js" src="http://www.josephcrawford.com/wp-content/themes/radiostation/cache/dock-featured-119x72.png" title="Customizing the Leopard Dock" alt="Dock Featured" width="119" height="72" />
-                                    </a>
-                                </div>
-                                <div class="post_list_content">
-                                    <p class="post_title">
-                                        <a rel="bookmark" href="http://www.josephcrawford.com/2007/10/customizing-the-leopard-dock/" title="Customizing the Leopard Dock">Customizing the Leopard Dock</a>
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="popularwidget-2" class="widget">
-                        <h4 class="widgettitle">
-                            <span>Tag Cloud</span>
-                        </h4>
-                        <a style='font-size: 207%' href='/tags/Tutorials'>Tutorials</a>
-<a style='font-size: 217%' href='/tags/Software'>Software</a>
-<a style='font-size: 212%' href='/tags/Useful'>Useful</a>
-<a style='font-size: 157%' href='/tags/Frameworks'>Frameworks</a>
-<a style='font-size: 75%' href='/tags/Hardware'>Hardware</a>
-<a style='font-size: 75%' href='/tags/server-side'>server-side</a>
-<a style='font-size: 280%' href='/tags/Entertainment'>Entertainment</a>
-<a style='font-size: 230%' href='/tags/Development'>Development</a>
-<a style='font-size: 92%' href='/tags/Phones'>Phones</a>
-<a style='font-size: 241%' href='/tags/Websites'>Websites</a>
-<a style='font-size: 237%' href='/tags/Rants'>Rants</a>
-<a style='font-size: 165%' href='/tags/PHP'>PHP</a>
-<a style='font-size: 92%' href='/tags/TV'>TV</a>
-<a style='font-size: 75%' href='/tags/Scams'>Scams</a>
-<a style='font-size: 143%' href='/tags/Family'>Family</a>
-<a style='font-size: 75%' href='/tags/best-practices'>best-practices</a>
-<a style='font-size: 266%' href='/tags/News'>News</a>
-<a style='font-size: 92%' href='/tags/Uncategorized'>Uncategorized</a>
-<a style='font-size: 181%' href='/tags/PPP'>PPP</a>
-<a style='font-size: 250%' href='/tags/Reviews'>Reviews</a>
-<a style='font-size: 181%' href='/tags/Work'>Work</a>
-<a style='font-size: 143%' href='/tags/JavaScript'>JavaScript</a>
-<a style='font-size: 75%' href='/tags/php'>php</a>
-<a style='font-size: 235%' href='/tags/Mac'>Mac</a>
-<a style='font-size: 224%' href='/tags/Local'>Local</a>
-<a style='font-size: 279%' href='/tags/Internet'>Internet</a>
-<a style='font-size: 147%' href='/tags/Palm'>Palm</a>
-<a style='font-size: 147%' href='/tags/Jokes'>Jokes</a>
-<a style='font-size: 271%' href='/tags/Raves'>Raves</a>
-
-                        <!-- tagcloud goes here -->
-                    </div>
-                </div><!-- #sidebar_inner -->
-            </div><!-- #sidebar -->
+            <div class="clearboth"></div>
+            <div id="search-3" class="widget widget_search">
+                <form id="searchform">
+                    <input type="text" name="s" id="s" value="Enter Your Search Term" onfocus="if(this.value=='Enter Your Search Term')this.value='';" onblur="if(this.value=='')this.value='Enter Your Search Term';">
+                </form>
+            </div>
+            <div class="clearboth"></div>
+            
+			<div id="themes">
+				<div id="style-switcher">
+					<h4 class="widgettitle">Select Theme: </h4>
+					<select name="switcher" id="switcher" style="pretty dk">
+						<option value='light_lightblue'>Default</option>
+						<option value='gravity'>Gravity</option>
+						<option value='dark_blue'>Dark Blue</option>
+						<option value='dark_coral'>Dark Coral</option>
+						<option value='dark_crimson'>Dark Crimson</option>
+						<option value='dark_glance'>Dark Glance</option>
+						<option value='dark_green'>Dark Green</option>
+						<option value='dark_hotpink'>Dark Hotpink</option>
+					</select>
+				</div>
+			</div>
+        </div>
+    </div><!-- #sidebar_inner -->
+</div><!-- #sidebar -->
                     
                 <div class="clearboth"></div>
             </div><!-- #content_inner -->

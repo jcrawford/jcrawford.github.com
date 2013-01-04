@@ -572,11 +572,11 @@ body {
 
 /** START OF SERIES TABLE OF CONTENTS **/
 
-.series {
+#series {
   border: 1px dashed black;
   padding: 25px 15px;
-  width: 75%;
-  margin: 0px auto 10px auto;
+  margin-bottom: 15px;
 }
+
 
 /** END OF SERIES TABLE OF CONTENTS **/

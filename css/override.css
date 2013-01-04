@@ -11,29 +11,6 @@ div.highlight {
 
 /** START OF SERIES TABLE OF CONTENTS **/
 
-#seriesWrapper { 
-  position: absolute;
-  left: -916px;
-  top: 40px;
-  width: 280px;
-  margin: 0px auto 10px auto;
-}
-
-#series {
-  position: absolute;
-  width: 270px;
-  top: 0px;
-  border: 1px dashed black;
-  padding: 25px 15px;
-}
-
-#series.fixed {
-  width: 270px;
-  position: fixed;
-  top: 10px;
-}
-
-
 .series .toc {
   font-weight: bold;
 }
@@ -72,4 +49,10 @@ font-size: 13px;
 
 padding: 2px 4px;
 color: #c5c8c6;
+}
+
+#sidebarWrapper.fixed {
+  position: fixed;
+  width: inherit;
+  top: 10px;
 }

@@ -637,3 +637,14 @@ background: #CACACA url('images/light_lightblue/bg_blockquote.png') top left no-
 }
 
 /** END OF Theme Switcher **
+
+/** START OF SERIES TABLE OF CONTENTS **/
+
+#series {
+  border: 1px dashed black;
+  padding: 25px 15px;
+  margin-bottom: 15px;
+}
+
+
+/** END OF SERIES TABLE OF CONTENTS **/
