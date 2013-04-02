@@ -1,0 +1,37 @@
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/js/style-switcher.js"></script>
+	<script src="/js/jquery.selectbox-0.2.min.js"></script>
+    <script type='text/javascript' src='/js/tabs.min.js'></script>
+    <script type='text/javascript' src='/js/jquery.flexslider-min.js'></script>
+    <script type='text/javascript' src='/js/custom.js'></script>
+
+    <meta name="generator" content="Jekyll 0.11.2" />
+    <link rel='shortlink' href='http://wp.me/sEFF' />
+
+    <!-- Jetpack Open Graph Tags -->
+
+    <script type="text/javascript">
+		$(document).ready(function() {
+			var cookie = readCookie("style");
+			var title = cookie ? cookie : getPreferredStyleSheet();
+			setActiveStyleSheet(title);
+			
+			$("#switcher").selectbox({
+				onChange: function (val, inst) {
+					setActiveStyleSheet(val);
+				},
+			});
+			
+		});
+	
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-18267810-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+		
+
+    </script>

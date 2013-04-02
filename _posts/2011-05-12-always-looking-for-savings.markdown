@@ -1,0 +1,27 @@
+--- 
+layout: post
+is_review: false
+image: savings.png
+title: Always Looking For Savings
+tags: 
+- title: Useful
+  autoslug: useful
+  slug: useful
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+- title: PPP
+  autoslug: ppp
+  slug: ppp
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Websites
+  autoslug: websites
+  slug: websites
+excerpt: I am constantly going from site to site trying to find out where I can save even a few pennies.  Anything from free shipping to saving $0.10 I will take.  Why turn down anything with the word savings in it :)  Well that is unless it comes with some shady gimmick to get you to buy into things.
+---
+I am constantly going from site to site trying to find out where I can save even a few pennies.  Anything from free shipping to saving $0.10 I will take.  Why turn down anything with the word savings in it :)  Well that is unless it comes with some shady gimmick to get you to buy into things.  Today I was browsing around and I found the website [http://www.savings.com](http://www.savings.com/m-CheapOair-coupons.html).  I did some poking around and I have to say I bookmarked this page for future use.  There are a lot of savings on that site from many different retailers.  Obviously I am not in the market for a new $1200 jacket but if I was I would be sure to look online for coupons.  I never used to be like this either I used to just buy things at the spur of the moment and I still find myself doing that from time to time.  I have to get a better handle on some of my spending habits but I am glad that there are sites like [http://www.savings.com](http://www.savings.com/m-CheapOair-coupons.html) which can help you save that precious money I will need in the future to send my kids off to College.Have you used this site or other sites like it?  How did the site(s) work for you and your spending habits?  Please let me know below in the comments.

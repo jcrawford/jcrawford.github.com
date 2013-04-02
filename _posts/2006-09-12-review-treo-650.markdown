@@ -1,0 +1,24 @@
+--- 
+layout: post
+is_review: true
+title: "Review: Treo 650"
+tags: 
+- title: Raves
+  autoslug: raves
+  slug: raves
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+---
+
+A few months back i purchased a new Treo 650 for my cell phone.  I must say that this is the best phone i have ever had.  I love the fact that it can sync with my calendar, contacts, etc that are on my computer.  I have a hard time remembering what day it is since i work from home, so it's nice to have the phone beep when i am out and about to tell me about an upcoming meeting, or to just remind me about something such as pick up milk.  I think I would be lost if I did not have this phone now, I am so used to it that it would be like taking heat away from people ;)
+
+The only issue i have had with the phone is trying to dial a number while driving the car.  The number keys are so small it's hard to get the number punched in correctly on the first try.  I would use the touch screen but i have bought a protective case for the phone which is a thick rubber skin with a clear plastic window that covers the screen to prevent damage.  The window opens up but it's a pain to deal with so i leave it closed.  I am very glad that i bought this $30 case because i have dropped the phone countless times and i am sure that if i did not have the thick rubber case which absorbs most of the shock from a fall, i would have a broken phone.
+
+If you are going to get a phone like this make sure that you get atleast a 512mb SD card for the expansion slot.  Since this can also work as an MP3 player it can handle using songs with vocals as ringtones.  I have used a program on the mac to create my own ringtones from MP3's that i have on my computer.  I use a program called Ringo to manage the cell phone ringtones and love it.  If you would like to have MP3 ringtones on your Treo<http://www.palm.com/us/products/smartphones/> you should check out this application.  Ringo also has the ability to show a picture of the person whom is calling in.  This is very handy if you want to see who it is rather than read a name, it also is good when you see the person and you dont want to talk to them, you just ignore the call ;)  I also use a program called PhotoDial which will allow me to see a list of pictures, i choose who i want to call by selecting the picture.  I must admit this is pretty much just wasting my storage space as it is RARELY used.
+<!--more-->
+I also use a program called LauncherX which is much better than the default launcher that is built into Palm OS.  LauncherX allows you to organize applications using tabs and allows for an easy access menu at the bottom of the screen where you can drag and drop applications to the trash to uninstall.  LauncherX makes using your Treo a bit easier but it also allows you to download themes to apply to LauncherX.  With the theme capability you can give your Treo a new look anytime you want.
+
+If i had to decide which phone to buy again, i wouldnt waste my time.  I would buy the [Treo](http://www.palm.com/us/products/smartphones/ "Palm Smartphones") again.  I am looking forward to the next upgrade on the phone, I would get the 700p now however my phone company only supports the 650 which is a bummer.
+
+If there are any apps you cannot live without please let me know, i am always looking for more ways to use my phone.

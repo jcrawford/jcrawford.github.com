@@ -1,0 +1,22 @@
+--- 
+layout: post
+is_review: false
+title: Banking Nightmares, Citizens Bank = BAD
+tags: 
+- title: Rants
+  autoslug: rants
+  slug: rants
+- title: News
+  autoslug: news
+  slug: news
+- title: Local
+  autoslug: local
+  slug: local
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+---
+I have been using Citizens Bank for the last 3 years or so and I have had my fair share of problems with them.  You will find in previous posts that I loved them because they were quick to stop fraud and while that is great they have some major drawbacks.Over the last year I went into the negative (yes I know it's wrong) and was forced to remain there because of the bank.  I would go $200 into the negative and they would tack on another $300 in overdraft fee's.  They charge $38 per item that overdrafts your bank account.   While this is in the terms of the agreement when the money is replaced the next day and your account is back in the positive they should wipe out some if not all of the charges.  This week Unicel screwed me over because I had a $400 bill to pay, I told them I could pay $250 that day and post-date the remainder for the following Friday.  They agreed to that but for some reason they pushed both payments through on the same day.  This pulled me into the negative by about $150, then a few more payments did hit my account, the total amount was about $500 in the negative.  After all of the bank's fee's I found myself $1200 in the negative.This was on a Thursday and my direct deposit was going to hit the account on Friday.  I contacted the bank to see if they would drop some of the fee's.  They told me that they were unable to do anything about the fee's.  While they are good at catching fraud before it actually hit's your account, if you go into the negative they do everything they can to keep you there.  There was one time where I was in and out of the negative for a few months last year.  I ended up paying approx. $5,000 in charges last year alone.  I am changing banks very soon but when you have multiple accounts and outstanding checks, payment it makes it tough.<!--more-->One thing they did that I almost feel was illegal was the following.  I had 2 accounts at the time one a business account with my business tax id, and a personal checking account.  The business account went into the negative and they ended up taking the money from my personal account to 0 out the business account.  I did not have any overdraft protection setup on either account and they were in no way linked to each other.  The worst part was they did this on Oct. 31 which left me without rent for November of last year.  When I questioned this they said that they have the right to remove the funds from any account with my name on it.  It makes me wonder how they can do that because I could not put business checks into my personal account, they were seperate entities when I wanted to do that.  A business account is supposed to be completely seperate from a personal account.Needless to say when I contacted them and told them I would be switching banks they said we are sorry to hear this, please keep in mind why you joined out bank to begin with, the low intrest rates, yada yada.  My response was what good are these benefits when you hammer your customers with these outrageous fee's.It's kind of ironic tonight I was browsing through the comment spam that I recieve on this blog I found the following entry.>  Citizens Bank | SPAM URL HERE | IP: 65.98.59.210Carolynâ€¦I found this article to be extremely useful for me. Thanks!â€¦I just think that is funny ;)

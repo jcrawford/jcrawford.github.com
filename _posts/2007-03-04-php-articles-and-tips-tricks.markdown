@@ -1,0 +1,28 @@
+--- 
+layout: post
+is_review: false
+title: PHP Articles and Tips & Tricks
+tags: 
+- title: News
+  autoslug: news
+  slug: news
+- title: Local
+  autoslug: local
+  slug: local
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Development
+  autoslug: development
+  slug: development
+- title: PHP
+  autoslug: php
+  slug: php
+- title: Websites
+  autoslug: websites
+  slug: websites
+---
+I have been using this blog for everything from Mac to PHP to my everyday jokes etc.  I am going to be starting up another blog that will be dedicated ONLY to PHP.  This is where you will find all of my related PHP articles and code examples.  I am also going to customize the site to have a question &amp; answer section.  Please do note that I am employed full time and run more than one site in my spare time along with having kids.  Responses may not be very quick at first but I hope to get more PHP savvy people involved in the PHP site as well.I am not looking to become the next large hit with the PHP site but I would like to be able to help more people learn and learn the right way.

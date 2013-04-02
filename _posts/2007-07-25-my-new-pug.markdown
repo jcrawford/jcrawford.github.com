@@ -1,0 +1,19 @@
+--- 
+layout: post
+is_review: false
+title: My New Pug
+tags: 
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Local
+  autoslug: local
+  slug: local
+- title: News
+  autoslug: news
+  slug: news
+- title: Raves
+  autoslug: raves
+  slug: raves
+---
+![Pug](http://www.josephcrawford.com/wp-content/uploads/2007/07/pug.jpg)Yesterday I finally got my new pug.  It has been 9 weeks of waiting and I am so happy.  The only problem I have is coming up with a good name for her.  This is so bad lol usually you have the name picked out before you receive the puppy.  She is going to be so spoiled.  We were at PetSmart yesterday and just had to buy her some cute clothes to take pictures with.  I had no idea that they had so much for dogs, I actually saw boots for them to keep their feet clean and warm while they are out in the mud or snow.I was actually really satisfied with the color she has and with how healthy she seems to be.  She is getting along great with the other animals here.  She just loves playing with our cocker spaniel babies.  It's funny the pups get together and tag-team the Persian kitties that the girls have.  If you can think of any really good names please let me know through comments.  I am going to come up with a really clever and cute name.If you are in the market for a Pug in the near future, I highly suggest you contact Angela over at [Trinity Kennels](http://www.trinitykennel.com/ "Trinity Kennels"), she was really great to deal with and the quality of her pups is impressive.

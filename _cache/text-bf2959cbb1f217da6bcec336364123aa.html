@@ -1,0 +1,96 @@
+<div class="highlight"><pre><code class="text">/**
+ * An Offensive Word Filtering Class
+ *
+ */
+class OffensiveWord
+{   
+    static private $_word_list;
+    static private $_total_words_in_list;
+
+    /**
+     * Class Constructor
+     * 
+     * Currently this is not used because the public methods that are
+     * available are all statically called
+     */
+    private function __construct( )
+    {
+
+    }
+
+    /**
+     * Load the offensive word list
+     *
+     * @return boolean
+     */
+    private function load_bad_word_list( )
+    {
+        if( is_file( INCLUDE_DIR.&#39;/offensiveword.txt&#39; ) &amp;&amp; is_readable( INCLUDE_DIR.&#39;/offensiveword.txt&#39; ) )
+        {
+            $lines = file( INCLUDE_DIR.&#39;/offensiveword.txt&#39; );
+            self::$_total_words_in_list = count( $lines );
+            for( $i = 0; $i &lt;= ( self::$_total_words_in_list - 1); $i++ ) if( $lines[$i] != &quot;&quot; ) self::$_word_list[] = trim( strtolower( $lines[$i] ) );
+            usort(self::$_word_list, array( self, &#39;sort&#39; ) );
+            $lines = null;
+            return true;
+        }
+        else return false;
+    }
+
+    /**
+     * Sort the word list by string length, longest to smallest string. This
+     * is the user defined callback function for the usort function call
+     * in the load_bad_word_list method.
+     *
+     * @param string $a
+     * @param string $b
+     * @return integer
+     */
+    private function sort( $a, $b )
+    {
+        if( strlen( $a ) &lt; strlen( $b ) ) return 1;
+        if( strlen( $a ) &gt; strlen( $b ) ) return -1;
+
+        // they must be the same length
+        return 0;
+    }
+
+    /**
+     * Check to see if there are offensive words in the string
+     *
+     * @param string $string
+     * @return boolean
+     */
+    static public function isOffensive( $string )
+    {
+        if( count( self::$_word_list ) == 0 ) self::load_bad_word_list( );
+        for( $i = 0; $i &lt;= ( self::$_total_words_in_list - 1 ); $i++ )
+        {
+            if( stripos( $string, self::$_word_list[$i] ) ) return true;
+        }
+        return false;
+    }
+
+    /**
+     * Actually censor out the offensive words from the string.
+     *
+     * @param string $string by reference
+     * @return boolean
+     */
+    static public function censor( &amp;$string = null )
+    {
+        if( self::isOffensive( $string ) === false ) return true;
+        for( $i = 0; $i &lt;= ( self::$_total_words_in_list - 1 ); $i++ )
+        {
+            $string = eregi_replace(self::$_word_list[$i], substr(self::$_word_list[$i], 0, 1).sprintf(&quot;%&#39;*&quot;.(strlen(self::$_word_list[$i])-2).&quot;s&quot;, NULL).substr(self::$_word_list[$i], strlen(self::$_word_list[$i])-1, 1), $string);
+        }
+        return true;
+    }
+}
+
+$string = &#39;Some crappy words are in this crap.&#39;;
+OffensiveWord::censor( $string );
+echo $string;
+// outputs: Some c&amp;lowast;&amp;lowast;&amp;lowast;&amp;lowast;y words are in this c&amp;lowast;&amp;lowast;p
+</code></pre>
+</div>

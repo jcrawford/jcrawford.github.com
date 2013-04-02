@@ -1,0 +1,21 @@
+--- 
+layout: post
+is_review: false
+image: child-featured.png
+title: Such A Sad Scenario
+tags: 
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: News
+  autoslug: news
+  slug: news
+- title: Rants
+  autoslug: rants
+  slug: rants
+excerpt: As some of you may know we rented one of those big moon walk / bounce houses that you see at carnivals for Dylan's Birthday party.  We had about 12 kids over yesterday for the party and they were loving the bounce house.  There were some Spanish kids next door as they were having a party as well and as expected they had been caught many time peering over the fence at the bounce house.  I had told them 3 times that if they asked their parents that they could come bounce with the kids.
+---
+As some of you may know we rented one of those big moon walk / bounce houses that you see at carnivals for Dylan's Birthday party.  We had about 12 kids over yesterday for the party and they were loving the bounce house.  There were some Spanish kids next door as they were having a party as well and as expected they had been caught many time peering over the fence at the bounce house.  I had told them 3 times that if they asked their parents that they could come bounce with the kids.  About an hour later a little Spanish girl walked into the back yard near our trash barrels that were about 10 feet away from where we were sitting.  I instantly asked her "Would you like to go bounce sweetie?"  She responded with a quick no and I said "It's ok you can bounce as long as your parents say it's ok.  What she did next made me feel so sad.  You see I thought she was one of the kids from the neighbors house but as it turns out her mother was waiting on the sidewalk.  She quickly grabbed a soda can out of the trash and ran back to her mother.  I could not believe that a parent would have their kids do something like that.  I mean I understand there are families out there that have to do what they have to do in order to make it through life.  I just do not understand why they would bring their kids with them and have them be the ones to go into someones back yard which is being used for a party to collect cans.  I half expect to go downstairs this morning to find all the cans removed from the barrels.I just could not believe what had just happened.

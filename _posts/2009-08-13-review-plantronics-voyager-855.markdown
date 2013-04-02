@@ -1,0 +1,42 @@
+--- 
+layout: post
+is_review: true
+title: "Review: Plantronics Voyager 855"
+tags: 
+- title: Reviews
+  autoslug: reviews
+  slug: reviews
+- title: Raves
+  autoslug: raves
+  slug: raves
+- title: News
+  autoslug: news
+  slug: news
+- title: Internet
+  autoslug: internet
+  slug: internet
+- title: Entertainment
+  autoslug: entertainment
+  slug: entertainment
+- title: Useful
+  autoslug: useful
+  slug: useful
+---
+
+![Plantronics Voyager 855](http://josephcrawford.com/wp-content/uploads/2009/08/voyager855.jpg "Plantronics Voyager 855")After buying the [Palm Pre](http://www.josephcrawford.com/2009/07/10/review-the-palm-pre/ "Palm Pre") last month and discovering Pandora Radio I just had to find a bluetooth headset to use with the device that would allow for listening to music and for making/receiving calls.  I was using some cheap wired headphones that I would have to unplug every-time a call came in.  I would also have to unplug the [phone](http://www.josephcrawford.com/2008/07/17/its-a-phone-its-a-phone/ "Phone") from the computer and try to answer the call.  Most of the time I would either be too late answering the call or I would hit the wrong button and ignore the call.  I needed an easy way to answer calls and listen to music.  Introduce the [Plantronics Voyager 855](http://www.plantronics.com/north_america/en_US/products/mobile/bluetooth-headsets/voyager-855;jsessionid=UHCGPOP541JUWCQBGNXSFFAKAEZXAIV0).
+
+I was browsing around the internet looking for a bluetooth headset that would first of all support music.  Finding one that came in stereo was even better.  I am not sure I would be able to listen to music in one ear leaving the other wide open to surrounding noise.  At first I thought I was going to have to wear one of the over the head style headsets like I had owned in the past.  However Plantronics has engineered a headset that allows you to use it in one ear, or you can attach the adapter that gives you the earbud for the second ear.  So let’s move on to the review.
+<!--more-->**Battery Power**<br />This is definately not an area I will complain about after today.  I have been using my headset listening to music steady from 7:30AM this morning.  I did have to stop using them for 5 minutes and plug them in to charge a little bit but I think that is because I did not fully charge them last night.  In any case I think upwards of 6 hours of constant music use is good for a device this small.
+**Distance**I was able to walk a good 30-40 feet from my device before the stream broke away.  If you ask me this is a good distance.  I am not sure who would walk that distance away from the source in a typical sized home/office.  As I got further and further away the sound quality did not digress.  It continued playing until eventually it just cut out.  I like the fact that you don’t lose sound quality as signal gets weaker and weaker.
+
+**Sound Quality**I have to say that I am a bit disappointed in the sound quality that this headset has.  It’s not that it is bad sound but I do not think they put out *any* bass at all.  This is disappointing because when you are listening to hip hop / r&b the songs sound odd without the drum beats.  I used to have the over the head style headset that [Plantronics](http://www.plantronics.com/) put out a while ago and loved it.  The sound was great and the sound quality when making calls was great.  I actually went to the [Plantronics](http://www.plantronics.com/) site to look for that exact same set or an updated version but it looks like they may have cut that from their line-up.
+
+I also have to touch on the volume level of the headset.  I was expecting it to be a bit louder than it actually is.  I have turned the volume all the way up on the headset and on the phone.  I have personally used cheap ear buds from Wal-Mart that were louder than these things, and they also had better sound quality.
+
+**Price Point**As I said above I was disappointed with the sound quality.  If I had paid the $150 price as listed on the Plantronics site I would have returned them immediately.  They are definitely not work that much money.  Instead of buying directly from them at that price I went to eBay and picked them up for $39.  I suggest you look around and compare prices you might even be able to find them cheaper that I did.  If you pay the $150 that Plantronics is asking you will feel like an idiot after using them, as you rightfully should.
+
+**Phone Call Quality**The first time I was listening to music and a call came in I was a bit confused on how to answer.  I would hit the button my my phone and try to answer the call but all this did was answer the call, it did not send the sound to my headset.  The best way is to just ignore your phone and push the button on the headset to answer the call.  This will push the call to your headset.  When I was on a call I could hear the other party just fine however they had a bit of a difficult time understanding me unless I spoke louder than usual.  I had the boom mic pulled out so I should not have had to raise my voice for them to hear me but I did.  I would have to say that the microphone on this headset could benefit from being a bit more sensitive.
+
+**Comfort**If you will be wearing your headset for long periods of time this one might make your ear sore.  I have been wearing mine for 6+ hours and my ears are very sore.  It is almost time for a break.  Although I have never worn another headset for 6+ hours this one started to make my ears hurt after only using them for about an hour.  I have worn other ear bud headsets that were much more comfortable but then again they were upwards of $100 for them.  It seems that the ear bud that is attached to the headset itself is a bit more comfortable than the secondary ear bud.  Maybe this is due to the piece that goes over your ear.
+
+One thing that I noticed is that the piece that goes over your ear does not seem to keep the device firmly in place.  The ear loops seem to be too large for my ears and I have always though that I had larger than normal ears.  If you have small ears you probably will not like this headset because it will not stay firmly in place.  When I run up the stairs here at work it seems to always want to fall off of my ear.  The small ear bud stays in place but it does not have the weight of the actual device attached to it.
